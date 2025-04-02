@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>You You News - By You, For You!</title>
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+        :root {
+
+            --primary-color: #2c3e50;
+
+            --secondary-color: #3498db;
+
+            --light-bg: #f4f4f8;
+
+            --text-color: #333;
+
+        }
+
+        body {
+
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+            line-height: 1.6;
+
+            background-color: var(--light-bg);
+
+            color: var(--text-color);
+
+            font-family: 'Times New Roman', serif;
+
+        }
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 20px;
+
+        }
+        p1::first-letter {
+        font-size: 3em; /* Make the first letter larger */
+        font-weight: bold; /* Make it bold */
+        color: blue; /* Change the color */
+        float: left; /* Float the letter to the left */
+        margin-right: 5px; /* Add some space between the letter and the text */
+        }
+
+        p1 {
+            font-size: 1.25em;
+        }
+
+        header {
+
+            background:
+
+                /* top, transparent black, faked with gradient */ 
+
+                linear-gradient(
+
+                    rgba(0, 0, 0, 0.7), 
+
+                    rgba(0, 0, 0, 0.7)
+
+                ),
+
+                /* bottom, image */
+
+                url('https://cdn.tinybuddha.com/wp-content/uploads/2015/05/Couple-on-the-Beach-Painting.jpg');
+
+            background-color: var(--primary-color);
+
+            background-position-y: center;
+
+            background-position-x: center;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 20px 0;
+
+            font-family: 'Times New Roman', serif;
+
+        }
+
+        header h1 {
+
+            font-size: 2.5em;
+
+            letter-spacing: -1px;
+
+        }
+
+        h2 {
+            font-size: 3.5em;
+            line-height: 1.2;
+        }
+
+        section1 {
+            width: 80;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        nav {
+
+            background-color: #34495e;
+
+            padding: 10px 0;
+
+        }
+
+        nav ul {
+
+            display: flex;
+
+            justify-content: center;
+
+            list-style: none;
+
+        }
+
+        nav ul li {
+
+            margin: 0 15px;
+
+        }
+        nav ul li1 {
+
+            margin: 0 15px;
+
+        }
+
+        nav ul li a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: color 0.3s ease;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+        }
+        nav ul li1 a {
+            color: aquamarine;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+
+            color: var(--secondary-color);
+
+        }
+        nav ul li1 a:hover {
+            color: white;
+        }
+        .section-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+
+            margin-top: 30px;
+
+        }
+
+        .section-card {
+
+            background-color: white;
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+            transition: transform 0.3s ease;
+
+        }
+
+        .section-card:hover {
+
+            transform: scale(1.03);
+
+        }
+
+        .section-card img {
+
+            width: 100%;
+
+            height: 250px;
+
+            object-fit: cover;
+
+        }
+
+        .section-content {
+
+            padding: 15px;
+
+        }
+
+        .section-content h2 {
+
+            margin-bottom: 10px;
+
+            font-size: 1.3em;
+
+            color: var(--primary-color);
+
+        }
+
+        .section-content p {
+
+            color: #666;
+
+        }
+
+        .forum-section {
+
+            background-color: white;
+
+            border-radius: 8px;
+
+            padding: 20px;
+
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+        }
+
+        .forum-list {
+
+            list-style-type: none;
+
+        }
+
+        .forum-list li {
+
+            padding: 10px;
+
+            border-bottom: 1px solid #f1f1f1;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+        .forum-list li:last-child {
+
+            border-bottom: none;
+
+        }
+
+        .forum-list li a {
+
+            color: var(--primary-color);
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+        }
+
+        .forum-list li span {
+
+            color: #666;
+
+            font-size: 0.9em;
+
+        }
+
+        footer {
+
+            background-color: var(--primary-color);
+
+            color: white;
+
+            text-align: center;
+
+            padding: 20px 0;
+
+            margin-top: 30px;
+
+        }
+
+        .cta-button {
+
+            display: inline-block;
+
+            background-color: var(--secondary-color);
+
+            color: white;
+
+            padding: 10px 20px;
+
+            border-radius: 5px;
+
+            text-decoration: none;
+
+            margin-top: 15px;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+        .cta-button:hover {
+
+            background-color: #2980b9;
+
+        }
+
+        div.scroll-container {
+            background-color: #333;
+            overflow: auto;
+            white-space: nowrap;
+            padding: 1px;
+        }
+
+        div.scroll-container img {
+            padding: 1px;
+        }
+
+    </style>
+<script type="text/javascript"> //<![CDATA[ 
+var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+//]]>
+</script>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="container">
+
+            <h1>You You News</h1>
+
+            <p>Your Ultimate Source for Trending Content</p>
+
+        </div>
+
+    </header>
+
+
+    <nav>
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tech.html">Tech</a></li>
+            <li1><a href="sports.html">Sports</a></li1>
+            <li><a href="tv.html">TV</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="forums.html">Forums</a></li>
+        </ul>
+
+    </nav>
+
+
+    <div class="container">
+
+        <h2>Final 4: The Pinnacle of College Basketball Excitement... or Something Like It</h2>
+        <div class="scroll-container">
+            <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2025-03/250328-cooper-flagg-mn-0743-265637.jpg" alt="Cinque Terre">
+            <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_4056,h_2281,x_0,y_482/c_fill,w_912,ar_16:9,f_auto,q_auto,g_auto/images/ImagnImages/mmsport/si/01jm50j6m1jdgchvegjz.jpg" alt="Forest">
+          </div>
+        <br>
+        <p1>
+
+In a stunning development that has rocked the sports world (or at least the living rooms of couch-bound fans), the NCAA Men’s Basketball Tournament has winnowed down to the Final 4 teams. Yes, just four teams out of thousands, because clearly, that makes perfect sense.
+
+This year’s lineup features a delightful mix of traditional powerhouses and some underdogs who probably filled out their brackets using nothing but sheer optimism and a lucky penny. Analysts are buzzing with excitement—likely because they just discovered a new coffee blend—as they attempt to explain how these teams made it this far without relying on actual skill or a crystal ball.
+
+As the matchups approach, fans everywhere are dusting off their lucky jerseys, ready to engage in the time-honored tradition of yelling at young men half their age as if that will somehow influence the outcome. Expect nail-biting finishes and absolutely no shortage of commercials for snacks you didn’t intend to purchase but will absolutely consume in bulk during the games.
+
+So, get your snacks ready and prepare for what the marketing folks are hawking as “the most thrilling weekend in sports.” Spoiler alert: it’s basketball, and yes, someone will definitely be climbing a light pole by the end of the night. Enjoy the festivities!</p1>
+
+        <section style="margin-top: 40px;">
+
+            <h2>Community Forums</h2>
+
+            <div class="section-grid">
+
+                <div class="forum-section">
+
+                    <h3>Tech Forum</h3>
+
+                    <ul class="forum-list">
+
+                        <li>
+
+                            <a href="#">Jensen Huang</a>
+
+                            <span>245 discussions</span>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">deepseek vs openai</a>
+
+                            <span>189 discussions</span>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">Programming Help</a>
+
+                            <span>376 discussions</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="forum-section">
+
+                    <h3>Sports Forum</h3>
+
+                    <ul class="forum-list">
+
+                        <li>
+
+                            <a href="#">March Madness</a>
+
+                            <span>512 discussions</span>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">Fantasy Football</a>
+
+                            <span>287 discussions</span>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">Canucks vs Devils</a>
+
+                            <span>203 discussions</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="forum-section">
+
+                    <h3>TV Forum</h3>
+
+                    <ul class="forum-list">
+
+                        <li>
+
+                            <a href="#">Grant Ellis: The Bachelor</a>
+
+                            <span>421 discussions</span>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">Streaming Recommendations</a>
+
+                            <span>356 discussions</span>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">TV Show Theories</a>
+
+                            <span>278 discussions</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="forum-section">
+
+                    <h3>Music Forum</h3>
+
+                    <ul class="forum-list">
+
+                        <li>
+
+                            <a href="#">New Releases</a>
+
+                            <span>332 discussions</span>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">Genre Discussions</a>
+
+                            <span>245 discussions</span>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">Concert Experiences</a>
+
+                            <span>167 discussions</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <footer>
+
+        <div class="container">
+
+            <p>&copy; 2025 You You News. All Rights Reserved.</p>
+
+            <p>Connect with us on social media</p>
+            <img src="sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+        </div>
+
+    </footer>
+<script language="JavaScript" type="text/javascript">
+TrustLogo("https://www.youyounews.live/", "CL1", "none");
+</script>
+<a  href="https://ssl.comodo.com/free-ssl-certificate.php" id="comodoTL">Free SSL</a>
+</body>
+
+</html>
