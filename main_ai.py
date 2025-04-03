@@ -466,12 +466,14 @@ def main():
 """)
     Func.close()
     print("func written")
+    
+    overall_text = """"""
+    with open("test.html", "r") as f_first:
+        overall_text = f_first.read()
 
 
     with open("test.html", "w") as f:
-        overall_text = f.read()
         img_src_split = overall_text.split("img src=")
-        alt_split = overall_text.split(" alt=")
         final = """"""
         if category == 'tv':
             for i in range(3):
