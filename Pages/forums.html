@@ -196,19 +196,50 @@
         #status-message {
             margin-bottom: 15px;
         }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
     </style>
+<script type="text/javascript"> //<![CDATA[ 
+    var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+    document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+</script>
+<script async type="application/javascript"
+        src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
+<script>
+  (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
+    basicSubscriptions.init({
+      type: "NewsArticle",
+      isPartOfType: ["Product"],
+      isPartOfProductId: "CAow7-3aCw:openaccess",
+      clientOptions: { theme: "light", lang: "en" },
+    });
+  });
+</script>
 </head>
 <body>
     <header>
-        <nav>
-            <h1>Interactive Forum</h1>
-            <ul>
-                <li><a href="#" id="home-link">Home</a></li>
-                <li><a href="#" id="login-nav">Login</a></li>
-                <li><a href="#" id="register-nav">Register</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>You You News</h1>
+            <p>Your Ultimate Source for Trending Content</p>
+        </div>
     </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="tech.html">Tech</a></li>
+            <li><a href="sports.html">Sports</a></li>
+            <li1><a href="tv.html">TV</a></li1>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="forums.html">Forums</a></li>
+        </ul>
+    </nav>
 
     <!-- Status Message Area -->
     <div id="status-message"></div>
@@ -732,5 +763,16 @@
         // Initialize the forum
         showForum();
     </script>
+<footer>
+    <div class="container">
+        <p>&copy; 2025 You You News. All Rights Reserved.</p>
+        <p>Connect with us on social media</p>
+        <div id="footerlink">
+            <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
+        </div>
+        <br>
+        <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+    </div>
+</footer>
 </body>
 </html>
