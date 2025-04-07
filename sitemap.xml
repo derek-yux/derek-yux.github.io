@@ -2,14 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-  <loc>https://www.youyounews.live/</loc>
-  <news:news>
-    <news:publication>
-      <news:name>You You News</news:name>
-      <news:language>en</news:language>
-    </news:publication>
-    <news:publication_date>2025-04-05</news:publication_date>
-    <news:title>Add Your Voice to Trending News Discussions!</news:title>
-  </news:news>
+  <loc>https://www.youyounews.live/Pages/tech.html</loc>
+  <news: news>
+    <news: publication>
+      <news: name>You You News</news:name>
+      <news: language>en</news:language>
+    </ news: publication>
+    <news: publication_date>2025-04-05</news:publication_date>
+    <news: title>Latest Tech News, Blogs, And Discussions</news:title>
+    <news: keywords>Tech, news, you, trending</ news: keywords> 
+  </ news: news>
+  <loc>https://www.youyounews.live/Pages/tv.html</loc>
+  <news: news>
+    <news: publication>
+      <news: name>You You News</news:name>
+      <news: language>en</news:language>
+    </ news: publication>
+    <news: publication_date>2025-04-05</news:publication_date>
+    <news: title>Latest TV News, Blogs, And Discussions</news:title>
+    <news: keywords>TV, news, you, reality, trending</ news: keywords> 
+  </ news: news>
+  <loc>https://www.youyounews.live/Pages/music.html</loc>
+  <news: news>
+    <news: publication>
+      <news: name>You You News</news:name>
+      <news: language>en</news:language>
+    </ news: publication>
+    <news: publication_date>2025-04-05</news:publication_date>
+    <news: title>Latest Music News, Blogs, And Discussions</news:title>
+    <news: keywords>Music, news, you, releases, trending</ news: keywords> 
+  </ news: news>
+  <loc>https://www.youyounews.live/Pages/sports.html</loc>
+  <news: news>
+    <news: publication>
+      <news: name>You You News</news:name>
+      <news: language>en</news:language>
+    </ news: publication>
+    <news: publication_date>2025-04-05</news:publication_date>
+    <news: title>Latest Sports News, Blogs, And Discussions</news:title>
+    <news: keywords>Sports, news, you, march madness, trending</ news: keywords> 
+  </ news: news>
   </url>
 </urlset>
