@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="You You News Trending Content">
+    <meta name="author" content="Derek (Yue) Yu">
+    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
     <title>You You News - By You, For You!</title>
-    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
+    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
     <style>
         * {
             margin: 0;
@@ -72,7 +75,7 @@
             margin: 0 15px;
         }
         nav ul li1 a {
-            color: gold;
+            color: aquamarine;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
@@ -93,74 +96,14 @@
         nav ul li1 a:hover {
             color: white;
         }
-        .section-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .section-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .section-card:hover {
-            transform: scale(1.03);
-        }
-        .section-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        .section-content {
-            padding: 15px;
-        }
-        .section-content h2 {
-            margin-bottom: 10px;
-            font-size: 1.3em;
-            color: var(--primary-color);
-        }
-        .section-content p {
-            color: #666;
-        }
-        .forum-section {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .forum-list {
-            list-style-type: none;
-        }
-        .forum-list li {
-            padding: 10px;
-            border-bottom: 1px solid #f1f1f1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .forum-list li:last-child {
-            border-bottom: none;
-        }
-        .forum-list li a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .forum-list li span {
-            color: #666;
-            font-size: 0.9em;
-        }
-        footer {
-            background-color: var(--primary-color);
+        nav a {
             color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 30px;
+            text-decoration: none;
         }
-        .cta-button {
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        .btn {
             display: inline-block;
             background-color: var(--secondary-color);
             color: white;
@@ -170,175 +113,624 @@
             margin-top: 15px;
             transition: background-color 0.3s ease;
         }
-        .cta-button:hover {
+        .btn:hover {
             background-color: #2980b9;
         }
+        .btn-danger {
+            background-color: #e74c3c;
+        }
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+        .discussion {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .discussion-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .discussion-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .discussion-meta {
+            font-size: 14px;
+            color: #777;
+        }
+        .comment {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            margin: 10px 0;
+        }
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #555;
+        }
+        .comment-author {
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        textarea {
+            min-height: 100px;
+        }
+        .hidden {
+            display: none;
+        }
+        .discussion-actions {
+            margin-top: 10px;
+        }
+        .alert {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            color: white;
+        }
+        .alert-success {
+            background-color: #2ecc71;
+        }
+        .alert-danger {
+            background-color: #e74c3c;
+        }
+        #status-message {
+            margin-bottom: 15px;
+        }
     </style>
-<script type="text/javascript"> //<![CDATA[ 
-    var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
-    document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
-    //]]>
-</script>
-<script async type="application/javascript"
-        src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
-<script>
-  (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
-    basicSubscriptions.init({
-      type: "NewsArticle",
-      isPartOfType: ["Product"],
-      isPartOfProductId: "CAow7-3aCw:openaccess",
-      clientOptions: { theme: "light", lang: "en" },
-    });
-  });
-</script>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>You You News</h1>
-            <p>Your Ultimate Source for Trending Content</p>
-        </div>
+        <nav>
+            <h1>Interactive Forum</h1>
+            <ul>
+                <li><a href="#" id="home-link">Home</a></li>
+                <li><a href="#" id="login-nav">Login</a></li>
+                <li><a href="#" id="register-nav">Register</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="tech.html">Tech</a></li>
-            <li><a href="sports.html">Sports</a></li>
-            <li><a href="tv.html">TV</a></li>
-            <li><a href="music.html">Music</a></li>
-            <li1><a href="forums.html">Forums</a></li1>
-        </ul>
-    </nav>
+    <!-- Status Message Area -->
+    <div id="status-message"></div>
 
-    <div class="container">
-        <section>
-            <h2>Latest Blog Sections</h2>
-            <div class="section-grid">
-                <article class="section-card">
-                    <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2023-07/230703-tesla-al-1145-b37eb9.jpg" alt="Tech Blog">
-                    <div class="section-content">
-                        <h2>Tesla Stocks Soaring</h2>
-                        <p>Well, Elon must be happy. Tesla stocks rebounded Tuesday morning from its historically shocking...</p>
-                        <a href="#" class="cta-button">Read More</a>
-                    </div>
-                </article>
-                <article class="section-card">
-                    <img src="https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_191,w_7627,h_4290/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/ImagnImages/mmsport/83/01jmt9wmz1pnfgh1m1m9.jpg" alt="Sports Blog">
-                    <div class="section-content">
-                        <h2>AD's Electrifying Return vs Nets</h2>
-                        <p>Nico Harrison can finally sleep; after his controversial G-League stint, Mavs superstar Anthony Davis made...</p>
-                        <a href="Final 4: The Pinnacle of College Basketball Excitement... or Something Like It.html" class="cta-button">Read More</a>
-                    </div>
-                </article>
-                <article class="section-card">
-                    <img src="https://people.com/thmb/WoERchP7xKZ-qk4XcJ6PNLBWHtU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(731x253:733x255):format(webp)/Grant-Ellis-Litia-Juliana-tout2-032425-dbc360c399db4a928aec77318c8cbc0c.jpg" alt="TV Blog">
-                    <div class="section-content">
-                        <h2>The Decision, Grant Ellis ver.</h2>
-                        <p>More than ten years after LeBron, the Decision strikes again...just that this time, Bachelor Grant Ellis must...</p>
-                        <a href="#" class="cta-button">Read More</a>
-                    </div>
-                </article>
-                <article class="section-card">
-                    <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2025/03/videoframe_181015.png" alt="Music Blog">
-                    <div class="section-content">
-                        <h2>New Release: JENNIE & Dua Lipa Steal Hearts With "Handlebars"</h2>
-                        <p>How is Blackpink even going to fit all these record-breaking solos into their tour? JENNIE strikes again, this time...</p>
-                        <a href="#" class="cta-button">Read More</a>
-                    </div>
-                </article>
+    <!-- Login Form -->
+    <div id="login-form" class="container hidden">
+        <h2>Login</h2>
+        <div id="login-status"></div>
+        <form id="login-form-element">
+            <div class="form-group">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" required>
             </div>
-        </section>
-
-        <section style="margin-top: 40px;">
-            <h2>Community Forums</h2>
-            <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="#">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="#">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="#">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="#">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
-                </div>
+            <div class="form-group">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
             </div>
-        </section>
+            <button type="submit" class="btn" id="login-button">Login</button>
+        </form>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 You You News. All Rights Reserved.</p>
-            <p>Connect with us on social media</p>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
+    <!-- Register Form -->
+    <div id="register-form" class="container hidden">
+        <h2>Register</h2>
+        <div id="register-status"></div>
+        <form id="register-form-element">
+            <div class="form-group">
+                <label for="register-username">Username:</label>
+                <input type="text" id="register-username" required>
             </div>
-            <br>
-            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+            <div class="form-group">
+                <label for="register-email">Email:</label>
+                <input type="email" id="register-email" required>
+            </div>
+            <div class="form-group">
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" required>
+            </div>
+            <div class="form-group">
+                <label for="register-confirm">Confirm Password:</label>
+                <input type="password" id="register-confirm" required>
+            </div>
+            <button type="submit" class="btn" id="register-button">Register</button>
+        </form>
+    </div>
+
+    <!-- Main Forum Area -->
+    <div id="forum-container" class="container">
+        <div class="forum-header">
+            <h2>Discussions</h2>
+            <button id="new-discussion-btn" class="btn">New Discussion</button>
         </div>
-    </footer>
-<script language="JavaScript" type="text/javascript">
-TrustLogo("https://www.youyounews.live/", "CL1", "none");
-</script>
-<a  href="https://ssl.comodo.com/free-ssl-certificate.php" id="comodoTL">Free SSL</a>
+        
+        <div id="discussions-list">
+            <!-- Discussions will be loaded here -->
+        </div>
+    </div>
+
+    <!-- New Discussion Form -->
+    <div id="new-discussion-form" class="container hidden">
+        <h2>Create New Discussion</h2>
+        <form id="discussion-form">
+            <div class="form-group">
+                <label for="discussion-title">Title:</label>
+                <input type="text" id="discussion-title" required>
+            </div>
+            <div class="form-group">
+                <label for="discussion-content">Content:</label>
+                <textarea id="discussion-content" required></textarea>
+            </div>
+            <button type="submit" class="btn" id="create-discussion-button">Create Discussion</button>
+            <button type="button" id="cancel-discussion" class="btn btn-danger">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Discussion Detail View -->
+    <div id="discussion-detail" class="container hidden">
+        <button id="back-to-forum" class="btn">Back to Discussions</button>
+        <div id="discussion-content">
+            <!-- Discussion content will be loaded here -->
+        </div>
+        
+        <div id="comments-section">
+            <h3>Comments</h3>
+            <div id="comments-list">
+                <!-- Comments will be loaded here -->
+            </div>
+            
+            <div id="comment-form">
+                <h4>Add Comment</h4>
+                <form id="comment-form-element">
+                    <div class="form-group">
+                        <textarea id="comment-content" required placeholder="Write your comment here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" id="post-comment-button">Post Comment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulated database for the demo
+        let currentUser = null;
+        let discussions = [
+            {
+                id: 1,
+                title: "Welcome to our Interactive Forum",
+                content: "This is the first discussion on our interactive forum. Feel free to comment and create your own discussions!",
+                author: "admin",
+                date: "April 4, 2025",
+                comments: [
+                    {
+                        id: 1,
+                        author: "moderator",
+                        content: "Great to have this forum up and running! Looking forward to interesting discussions.",
+                        date: "April 4, 2025"
+                    }
+                ]
+            },
+            {
+                id: 2,
+                title: "Best Programming Languages for Beginners",
+                content: "What do you think are the best programming languages for someone just starting to learn coding? I'm looking to get into web development.",
+                author: "newcoder",
+                date: "April 3, 2025",
+                comments: [
+                    {
+                        id: 1,
+                        author: "webdev",
+                        content: "I'd recommend starting with HTML, CSS, and JavaScript. They're fundamental for web development.",
+                        date: "April 3, 2025"
+                    },
+                    {
+                        id: 2,
+                        author: "pythonfan",
+                        content: "Python is a great first language because of its simple syntax and readability.",
+                        date: "April 4, 2025"
+                    }
+                ]
+            }
+        ];
+        let users = [
+            { username: "admin", password: "admin123", email: "admin@example.com" },
+            { username: "moderator", password: "mod123", email: "mod@example.com" },
+            { username: "newcoder", password: "password", email: "newcoder@example.com" },
+            { username: "webdev", password: "webdev123", email: "webdev@example.com" },
+            { username: "pythonfan", password: "python123", email: "python@example.com" }
+        ];
+        
+        // DOM Elements
+        const homeLink = document.getElementById('home-link');
+        const loginNav = document.getElementById('login-nav');
+        const registerNav = document.getElementById('register-nav');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const forumContainer = document.getElementById('forum-container');
+        const discussionsList = document.getElementById('discussions-list');
+        const newDiscussionBtn = document.getElementById('new-discussion-btn');
+        const newDiscussionForm = document.getElementById('new-discussion-form');
+        const discussionDetail = document.getElementById('discussion-detail');
+        const discussionContent = document.getElementById('discussion-content');
+        const commentsList = document.getElementById('comments-list');
+        const backToForumBtn = document.getElementById('back-to-forum');
+        const cancelDiscussionBtn = document.getElementById('cancel-discussion');
+        const statusMessage = document.getElementById('status-message');
+        const loginStatus = document.getElementById('login-status');
+        const registerStatus = document.getElementById('register-status');
+        
+        // Current active discussion for commenting
+        let currentDiscussionId = null;
+        
+        // Display a status message
+        function showMessage(message, type = 'success') {
+            statusMessage.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            setTimeout(() => {
+                statusMessage.innerHTML = '';
+            }, 3000);
+        }
+        
+        // Handle login - Fixed function
+        function handleLogin(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Debug output to check values
+            console.log('Login attempt:', username, password);
+            
+            const user = users.find(u => u.username === username && u.password === password);
+            
+            if (user) {
+                currentUser = username;
+                showMessage(`Welcome back, ${username}!`);
+                loginStatus.innerHTML = '';
+                document.getElementById('login-username').value = '';
+                document.getElementById('login-password').value = '';
+                showForum();
+                updateNavigation();
+            } else {
+                loginStatus.innerHTML = '<div class="alert alert-danger">Invalid username or password.</div>';
+            }
+        }
+        
+        // Handle register - Fixed function
+        function handleRegister(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('register-username').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirm = document.getElementById('register-confirm').value;
+            
+            if (password !== confirm) {
+                registerStatus.innerHTML = '<div class="alert alert-danger">Passwords do not match.</div>';
+                return;
+            }
+            
+            if (users.some(u => u.username === username)) {
+                registerStatus.innerHTML = '<div class="alert alert-danger">Username already exists.</div>';
+                return;
+            }
+            
+            users.push({ username, email, password });
+            currentUser = username;
+            showMessage('Registration successful!');
+            registerStatus.innerHTML = '';
+            
+            // Clear form fields
+            document.getElementById('register-username').value = '';
+            document.getElementById('register-email').value = '';
+            document.getElementById('register-password').value = '';
+            document.getElementById('register-confirm').value = '';
+            
+            showForum();
+            updateNavigation();
+        }
+        
+        // Handle new discussion - Fixed function
+        function handleNewDiscussion(e) {
+            e.preventDefault();
+            
+            if (!currentUser) {
+                showMessage('Please login to create a discussion.', 'danger');
+                showLoginForm();
+                return;
+            }
+            
+            const title = document.getElementById('discussion-title').value;
+            const content = document.getElementById('discussion-content').value;
+            
+            const newDiscussion = {
+                id: discussions.length + 1,
+                title,
+                content,
+                author: currentUser,
+                date: getCurrentDate(),
+                comments: []
+            };
+            
+            discussions.unshift(newDiscussion);
+            
+            // Clear form fields
+            document.getElementById('discussion-title').value = '';
+            document.getElementById('discussion-content').value = '';
+            
+            showMessage('Discussion created successfully!');
+            showForum();
+        }
+        
+        // Handle new comment - Fixed function
+        function handleNewComment(e) {
+            e.preventDefault();
+            
+            if (!currentUser) {
+                showMessage('Please login to comment.', 'danger');
+                showLoginForm();
+                return;
+            }
+            
+            const content = document.getElementById('comment-content').value;
+            
+            const discussion = discussions.find(d => d.id === currentDiscussionId);
+            if (discussion) {
+                const newComment = {
+                    id: discussion.comments.length + 1,
+                    author: currentUser,
+                    content,
+                    date: getCurrentDate()
+                };
+                
+                discussion.comments.push(newComment);
+                
+                // Clear form field
+                document.getElementById('comment-content').value = '';
+                
+                showMessage('Comment added successfully!');
+                
+                // Refresh comments
+                loadComments(discussion);
+            }
+        }
+        
+        // Show forum page
+        function showForum() {
+            hideAllContainers();
+            forumContainer.classList.remove('hidden');
+            loadDiscussions();
+        }
+        
+        // Show login form
+        function showLoginForm() {
+            hideAllContainers();
+            loginForm.classList.remove('hidden');
+        }
+        
+        // Show register form
+        function showRegisterForm() {
+            hideAllContainers();
+            registerForm.classList.remove('hidden');
+        }
+        
+        // Show new discussion form
+        function showNewDiscussionForm() {
+            if (!currentUser) {
+                showMessage('Please login to create a discussion.', 'danger');
+                showLoginForm();
+                return;
+            }
+            hideAllContainers();
+            newDiscussionForm.classList.remove('hidden');
+        }
+        
+        // Show discussion detail
+        function showDiscussionDetail(id) {
+            hideAllContainers();
+            currentDiscussionId = id;
+            const discussion = discussions.find(d => d.id === id);
+            
+            // Populate discussion content
+            discussionContent.innerHTML = `
+                <div class="discussion">
+                    <div class="discussion-header">
+                        <h2 class="discussion-title">${discussion.title}</h2>
+                        <div class="discussion-meta">Posted by ${discussion.author} on ${discussion.date}</div>
+                    </div>
+                    <div class="discussion-body">
+                        <p>${discussion.content}</p>
+                    </div>
+                </div>
+            `;
+            
+            // Load comments
+            loadComments(discussion);
+            
+            discussionDetail.classList.remove('hidden');
+        }
+        
+        // Hide all containers
+        function hideAllContainers() {
+            loginForm.classList.add('hidden');
+            registerForm.classList.add('hidden');
+            forumContainer.classList.add('hidden');
+            newDiscussionForm.classList.add('hidden');
+            discussionDetail.classList.add('hidden');
+        }
+        
+        // Load discussions
+        function loadDiscussions() {
+            discussionsList.innerHTML = '';
+            discussions.forEach(discussion => {
+                const discussionEl = document.createElement('div');
+                discussionEl.className = 'discussion';
+                discussionEl.innerHTML = `
+                    <div class="discussion-header">
+                        <h3 class="discussion-title">${discussion.title}</h3>
+                        <div class="discussion-meta">Posted by ${discussion.author} on ${discussion.date}</div>
+                    </div>
+                    <p>${truncateText(discussion.content, 150)}</p>
+                    <div class="discussion-meta">${discussion.comments.length} comments</div>
+                    <div class="discussion-actions">
+                        <button class="btn view-discussion" data-id="${discussion.id}">View Discussion</button>
+                    </div>
+                `;
+                discussionsList.appendChild(discussionEl);
+            });
+            
+            // Add event listeners to view buttons
+            document.querySelectorAll('.view-discussion').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = parseInt(this.getAttribute('data-id'));
+                    showDiscussionDetail(id);
+                });
+            });
+            
+            updateNavigation();
+        }
+        
+        // Load comments
+        function loadComments(discussion) {
+            commentsList.innerHTML = '';
+            discussion.comments.forEach(comment => {
+                const commentEl = document.createElement('div');
+                commentEl.className = 'comment';
+                commentEl.innerHTML = `
+                    <div class="comment-header">
+                        <span class="comment-author">${comment.author}</span>
+                        <span class="comment-date">${comment.date}</span>
+                    </div>
+                    <div class="comment-body">
+                        <p>${comment.content}</p>
+                    </div>
+                `;
+                commentsList.appendChild(commentEl);
+            });
+            
+            // Show/hide comment form based on login status
+            document.getElementById('comment-form').style.display = currentUser ? 'block' : 'none';
+            if (!currentUser) {
+                const loginPrompt = document.createElement('p');
+                loginPrompt.textContent = 'Please login to comment.';
+                commentsList.appendChild(loginPrompt);
+            }
+        }
+        
+        // Update navigation based on login status
+        function updateNavigation() {
+            if (currentUser) {
+                loginNav.textContent = `Logged in as ${currentUser}`;
+                registerNav.textContent = 'Logout';
+            } else {
+                loginNav.textContent = 'Login';
+                registerNav.textContent = 'Register';
+            }
+        }
+        
+        // Handle logout
+        function handleLogout() {
+            currentUser = null;
+            showMessage('You have been logged out.');
+            updateNavigation();
+            showForum();
+        }
+        
+        // Get current date
+        function getCurrentDate() {
+            return "April 4, 2025";
+        }
+        
+        // Truncate text
+        function truncateText(text, maxLength) {
+            if (text.length <= maxLength) return text;
+            return text.substr(0, maxLength) + '...';
+        }
+        
+        // Event Listeners - FIXED with direct event handling
+        homeLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            showForum();
+        });
+        
+        loginNav.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (currentUser) {
+                // If already logged in, show user info
+                showMessage(`Currently logged in as ${currentUser}`);
+            } else {
+                showLoginForm();
+            }
+        });
+        
+        registerNav.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (currentUser) {
+                handleLogout();
+            } else {
+                showRegisterForm();
+            }
+        });
+        
+        newDiscussionBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showNewDiscussionForm();
+        });
+        
+        backToForumBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showForum();
+        });
+        
+        cancelDiscussionBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showForum();
+        });
+        
+        // Fix form submissions with more explicit event handling
+        document.getElementById('login-form-element').addEventListener('submit', handleLogin);
+        document.getElementById('login-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            handleLogin(e);
+        });
+        
+        document.getElementById('register-form-element').addEventListener('submit', handleRegister);
+        document.getElementById('register-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            handleRegister(e);
+        });
+        
+        document.getElementById('discussion-form').addEventListener('submit', handleNewDiscussion);
+        document.getElementById('create-discussion-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            handleNewDiscussion(e);
+        });
+        
+        document.getElementById('comment-form-element').addEventListener('submit', handleNewComment);
+        document.getElementById('post-comment-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            handleNewComment(e);
+        });
+        
+        // Initialize the forum
+        showForum();
+    </script>
 </body>
 </html>
