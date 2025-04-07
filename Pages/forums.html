@@ -43,7 +43,7 @@
                     rgba(0, 0, 0, 0.7)
                 ),
                 /* bottom, image */
-                url('https://cdn.tinybuddha.com/wp-content/uploads/2015/05/Couple-on-the-Beach-Painting.jpg');
+                url('../Assets/lemonadehappy.png');
             background-color: var(--primary-color);
             background-position-y: center;
             background-position-x: center;
@@ -195,9 +195,6 @@
         .alert-danger {
             background-color: #e74c3c;
         }
-        #status-message {
-            margin-bottom: 15px;
-        }
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -226,19 +223,22 @@
 </head>
 <body>
     <header>
-        <h1>You You Forum</h1>
-        <nav>
-            <ul>
-                <li><a href="#" id="home-link">Home</a></li>
-                <li><a href="#" id="login-nav">Login</a></li>
-                <li><a href="#" id="register-nav">Register</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>You You Forum</h1>
+            <p>Please Let Us Hear Your Opinions on the World's Trendiest Topics!</p>
+        </div>
     </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li1><a href="#" id="home-link">Forums</a></li1>
+            <li><a href="#" id="login-nav">Login</a></li>
+            <li><a href="#" id="register-nav">Register</a></li>
+        </ul>
+    </nav>
 
     <!-- Status Message Area -->
     <div id="status-message"></div>
-
     <!-- Login Form -->
     <div id="login-form" class="container hidden">
         <h2>Login</h2>
@@ -416,13 +416,13 @@
             }, 3000);
         }
 
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-        }
+        // function onSignIn(googleUser) {
+        //     var profile = googleUser.getBasicProfile();
+        //     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        //     console.log('Name: ' + profile.getName());
+        //     console.log('Image URL: ' + profile.getImageUrl());
+        //     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        // }
         
         // Handle login - Fixed function
         function handleLogin(e) {
@@ -684,10 +684,10 @@
         // Handle logout
         function handleLogout() {
             currentUser = null;
-            var auth2 = gapi.auth2.getAuthInstance();
-                auth2.signOut().then(function () {
-                console.log('User signed out.');
-            });
+            // var auth2 = gapi.auth2.getAuthInstance();
+            //     auth2.signOut().then(function () {
+            //     console.log('User signed out.');
+            // });
             showMessage('You have been logged out.');
             updateNavigation();
             showForum();
@@ -709,7 +709,7 @@
             e.preventDefault();
             showForum();
         });
-        
+    
         loginNav.addEventListener('click', function(e) {
             e.preventDefault();
             if (currentUser) {
