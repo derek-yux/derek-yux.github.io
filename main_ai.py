@@ -183,8 +183,10 @@ def main():
         }
         pre {
             font-family: 'Times New Roman', serif;
-               padding: 20px;
-               text-align: center;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
         }
         .container {
             width: 90%;
