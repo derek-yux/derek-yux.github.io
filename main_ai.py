@@ -183,6 +183,8 @@ def main():
         }
         pre {
             font-family: 'Times New Roman', serif;
+               padding: 20px;
+               text-align: center;
         }
         .container {
             width: 90%;
@@ -377,7 +379,9 @@ def main():
           </div>
         <br>
         <h2>""" + str(response_title) + """</h2>
+        <pre>
         <p class="p1">""" + str(response_rest) + """</p>
+        </pre>
         </div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
