@@ -1,5 +1,5 @@
 from pathlib import Path
-from seleniumdrivers import get_prompt, get_images
+from seleniumdrivers import get_prompt, get_images, get_article, combine
 
 import streamlit as st
 from openai import OpenAI
@@ -13,7 +13,9 @@ options.add_argument('--disable-blink-features=AutomationControlled')
 DB_FILE = 'db.json'
 THIS_DIR = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 CSS_FILE = THIS_DIR / "Styles" / "main.css"
-temp = str(get_prompt())
+trending_prompt = get_prompt()
+trending_url = get_article(trending_prompt)
+temp = combine(trending_prompt, trending_url)[:4090]
 
 
 def load_css_file(css_file_path):
@@ -81,7 +83,7 @@ def main():
     
     spliter = str(response)[2:].split('**')
     response_title = spliter[0]
-    response_rest = spliter[1:][0]
+    response_rest = str(response[2 + len(response_title):]).strip()
 
     new_temp = "Which of these four categories is this topic closest to: music, tv, tech, or sports? Reply with one word."
     st.session_state.messages.append({"role": "user", "content": new_temp})
@@ -108,12 +110,9 @@ def main():
     if category not in ['tv', 'music', 'tech', 'sports']:
         category = 'tv'
 
-    print("about to run images")
     images = get_images(temp.split(":")[1])
-    print("images success")
-    print(images)
     edited_list = """
-            <li1><a href="../test.html">Home</a></li1>
+            <li1><a href="../index.html">Home</a></li1>
             <li><a href="../Pages/tech.html">Tech</a></li>
             <li><a href="../Pages/sports.html">Sports</a></li>
             <li><a href="../Pages/tv.html">TV</a></li>
@@ -121,7 +120,7 @@ def main():
             <li><a href="../Pages/forums.html">Forums</a></li>"""
     if category == 'tv':
         edited_list = """
-            <li><a href="../test.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="../Pages/tech.html">Tech</a></li>
             <li><a href="../Pages/sports.html">Sports</a></li>
             <li1><a href="../Pages/tv.html">TV</a></li1>
@@ -129,7 +128,7 @@ def main():
             <li><a href="../Pages/forums.html">Forums</a></li>"""
     elif category == 'tech':
         edited_list = """
-            <li><a href="../test.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li1><a href="../Pages/tech.html">Tech</a></li1>
             <li><a href="../Pages/sports.html">Sports</a></li>
             <li><a href="../Pages/tv.html">TV</a></li>
@@ -137,7 +136,7 @@ def main():
             <li><a href="../Pages/forums.html">Forums</a></li>"""
     elif category == 'sports':
         edited_list = """
-            <li><a href="../test.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="../Pages/tech.html">Tech</a></li>
             <li1><a href="../Pages/sports.html">Sports</a></li1>
             <li><a href="../Pages/tv.html">TV</a></li>
@@ -145,7 +144,7 @@ def main():
             <li><a href="../Pages/forums.html">Forums</a></li>"""
     elif category == 'music':
         edited_list = """
-            <li><a href="../test.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="../Pages/tech.html">Tech</a></li>
             <li><a href="../Pages/sports.html">Sports</a></li>
             <li><a href="../Pages/tv.html">TV</a></li>
