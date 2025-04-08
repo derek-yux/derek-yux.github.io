@@ -181,6 +181,9 @@ def main():
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
@@ -193,21 +196,18 @@ def main():
         .shrinker {
             margin-right: 120px;
             margin-left: 120px;
+            object-fit: cover;
         }
         .slider_image {
-            max-width: 352px;
-            max-height: 198px;
-            min-width: 352px;
-            min-height: 198px;
-            overflow: hidden;
-            image-rendering: high-quality;
-            image-resolution: 300dpi;
+            width: 352px;
+            height: 198px;
+            object-fit: cover;
         }
         div.scroll-container {
-        background-color: #333;
-        overflow: auto;
-        white-space: nowrap;
-        padding: 1px;
+            background-color: #333;
+            overflow: auto;
+            white-space: nowrap;
+            padding: 1px;
         }
         div.scroll-container img {
             padding: 1px;
@@ -464,10 +464,12 @@ def main():
 </html>
 """)
     Func.close()
-    print("func written")
+
+    overall_text = """"""
+    with open("index.html", "r") as f0:
+        overall_text = f0.read()
 
     with open("index.html", "w") as f:
-        overall_text = f.read()
         img_src_split = overall_text.split("img src=")
         final = """"""
         if category == 'tv':
@@ -485,8 +487,7 @@ def main():
                 </div>
             </article>
             <article class="section-card">
-                <
-            """
+                <"""
             for i in range(4, len(img_src_split)):
                 final += "img src="
                 final += img_src_split[i]
@@ -505,8 +506,7 @@ def main():
                 </div>
             </article>
             <article class="section-card">
-                <
-            """
+                <"""
             for i in range(3, len(img_src_split)):
                 final += "img src="
                 final += img_src_split[i]
@@ -631,49 +631,11 @@ def main():
                 </div>
             </article>
             <article class="section-card">
-                <
-            """
+                <"""
             for i in range(2, len(img_src_split)):
                 final += "img src="
                 final += img_src_split[i]
         f.write(final)
-    # Find the RELEVANT img src AND href
-    # Replace it with the new ones
-    # TODO: the home page can teach me how to limit images
-
-
-
-
-
-
-    # Accept user input
-    # if prompt := st.chat_input("Tell me a fact! (ex. I will eat tacos every day)"):
-    #     # Add user message to chat history
-    #     print(temp)
-    #     st.session_state.messages.append({"role": "user", "content": temp})
-    #     # Display user message in chat message container
-    #     with st.chat_message("user"):
-    #         st.markdown(temp)
-
-    #     # Display assistant response in chat message container
-    #     with st.chat_message("assistant"):
-    #         tone=st.session_state["tone"]
-    #         lang=st.session_state["lang"]
-    #         stream = client.chat.completions.create(
-    #             model=st.session_state["openai_model"],
-    #             messages=[
-    #                 {"role": m["role"], "content": m["content"]}
-    #                 for m in st.session_state.messages
-    #             ],
-    #             stream=True,
-    #         )
-    #         response = st.write_stream(stream)
-    #     st.session_state.messages.append({"role": "assistant", "content": response})
-
-    #     # Store chat history to db.json
-    #     db['chat_history'] = st.session_state.messages
-    #     with open(DB_FILE, 'w') as file:
-    #         json.dump(db, file)
 
 
 if __name__ == '__main__':
