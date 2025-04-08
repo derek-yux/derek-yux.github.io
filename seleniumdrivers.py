@@ -1,6 +1,14 @@
+import datetime
+today = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S').split(" ")[0])
+from newspaper import Article
 
-# TODO:
-# https://www.youtube.com/watch?v=eC841kSk-q0
+
+def newspaper_text_extraction(article_url):
+    article = Article(article_url)
+    article.download()
+    article.parse()
+    return article.text
+
 
 def get_prompt() -> str:
     """"""
@@ -19,7 +27,7 @@ def get_prompt() -> str:
     CSS_FILE = THIS_DIR / "Styles" / "main.css"
 
 
-    PATH = "/Users/Derek/Code/ML/Selenium/chromedriver"
+    PATH = "/Users/derek/Code/ML/derek-yux.github.io/chromedriver"
     cService = webdriver.ChromeService(executable_path=PATH)
     driver = webdriver.Chrome(service=cService)
     driver.get("https://trends.google.com/trending?geo=US&sort=search-volume")
@@ -30,8 +38,7 @@ def get_prompt() -> str:
 
     trend = driver.find_element(By.CLASS_NAME, "mZ3RIc").get_attribute("innerText")
     driver.quit()
-    all_trends = "Write a short, dry sarcasm, everyday language news report that contains bolded numbers and is accurate as of today on: " + str(trend)
-    return all_trends
+    return trend
 
 
 def get_images(topic: str) -> list:
@@ -49,7 +56,7 @@ def get_images(topic: str) -> list:
     CSS_FILE = THIS_DIR / "Styles" / "main.css"
 
 
-    PATH = "/Users/Derek/Code/ML/Selenium/chromedriver"
+    PATH = "/Users/derek/Code/ML/derek-yux.github.io/chromedriver"
     cService = webdriver.ChromeService(executable_path=PATH)
     driver = webdriver.Chrome(service=cService)
     url_p1 = "https://www.google.com/search?sca_esv=cd731438e95bc999&sxsrf=AHTn8zrMi6atrpzMrtDb1K9DOEKL0MQCVQ:1743542414604&q="
@@ -114,3 +121,36 @@ def get_images(topic: str) -> list:
     result.append(str(final2.get_attribute("src")))
     driver.quit()
     return result
+
+def get_article(topic: str) -> str:
+    """"""
+    from selenium import webdriver
+    # from selenium.webdriver.chrome.service import Service
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.common.keys import Keys
+    from selenium.webdriver.support.ui import WebDriverWait
+    import time
+    from selenium.webdriver.support import expected_conditions as EC
+    from pathlib import Path
+
+
+    DB_FILE = 'db.json'
+    THIS_DIR = Path(__file__).parent if "__file__" in locals() else Path.cwd()
+    CSS_FILE = THIS_DIR / "Styles" / "main.css"
+
+
+    PATH = "/Users/derek/Code/ML/derek-yux.github.io/chromedriver"
+    cService = webdriver.ChromeService(executable_path=PATH)
+    driver = webdriver.Chrome(service=cService)
+    driver.get("https://www.google.com/search?q=" + topic.replace(" ", "+"))
+    time.sleep(15)
+    WebDriverWait(driver, 5).until(
+        EC.presence_of_element_located((By.CLASS_NAME, "b8lM7"))
+    )
+    large_area = driver.find_element(By.CLASS_NAME, "b8lM7")
+    search = large_area.find_element(By.TAG_NAME, "a").get_attribute("href")
+    driver.quit()
+    return search
+
+def combine(topic: str, source_url: str) -> str:
+    return "Write a short news story on '" + topic + "' in the humor style of Craig Ferguson by summarizing this article: " + newspaper_text_extraction(source_url)
