@@ -11,6 +11,7 @@
 
     <title>You You News - By You, For You!</title>
     <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
 
@@ -404,6 +405,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
             <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_4056,h_2281,x_0,y_482/c_fill,w_912,ar_16:9,f_auto,q_auto,g_auto/images/ImagnImages/mmsport/si/01jm50j6m1jdgchvegjz.jpg" alt="Forest">
           </div>
         <br>
+        <div data-aos="fade-up">
         <p1>
 
 In a stunning development that has rocked the sports world (or at least the living rooms of couch-bound fans), the NCAA Men’s Basketball Tournament has winnowed down to the Final 4 teams. Yes, just four teams out of thousands, because clearly, that makes perfect sense.
@@ -413,7 +415,7 @@ This year’s lineup features a delightful mix of traditional powerhouses and so
 As the matchups approach, fans everywhere are dusting off their lucky jerseys, ready to engage in the time-honored tradition of yelling at young men half their age as if that will somehow influence the outcome. Expect nail-biting finishes and absolutely no shortage of commercials for snacks you didn’t intend to purchase but will absolutely consume in bulk during the games.
 
 So, get your snacks ready and prepare for what the marketing folks are hawking as “the most thrilling weekend in sports.” Spoiler alert: it’s basketball, and yes, someone will definitely be climbing a light pole by the end of the night. Enjoy the festivities!</p1>
-
+        </div>
         <section style="margin-top: 40px;">
 
             <h2>Community Forums</h2>
@@ -578,6 +580,32 @@ So, get your snacks ready and prepare for what the marketing folks are hawking a
 TrustLogo("https://www.youyounews.live/", "CL1", "none");
 </script>
 <a  href="https://ssl.comodo.com/free-ssl-certificate.php" id="comodoTL">Free SSL</a>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+    AOS.init({
+    // Global settings:
+    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+    initClassName: 'aos-init', // class applied after initialization
+    animatedClassName: 'aos-animate', // class applied on animation
+    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+    
+
+    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    offset: 120, // offset (in px) from the original trigger point
+    delay: 0, // values from 0 to 3000, with step 50ms
+    duration: 400, // values from 0 to 3000, with step 50ms
+    easing: 'ease', // default easing for AOS animations
+    once: false, // whether animation should happen only once - while scrolling down
+    mirror: false, // whether elements should animate out while scrolling past them
+    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+    });
+</script>
 </body>
 
 </html>
