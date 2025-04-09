@@ -108,7 +108,9 @@ def main():
             <li><a href="../Pages/tv.html">TV</a></li>
             <li><a href="../Pages/music.html">Music</a></li>
             <li><a href="../Pages/forums.html">Forums</a></li>"""
+    header_url = '../Assets/header.png'
     if category == 'tv':
+        header_url = '../Assets/tvheader.png'
         edited_list = """
             <li><a href="../index.html">Home</a></li>
             <li><a href="../Pages/tech.html">Tech</a></li>
@@ -117,6 +119,7 @@ def main():
             <li><a href="../Pages/music.html">Music</a></li>
             <li><a href="../Pages/forums.html">Forums</a></li>"""
     elif category == 'tech':
+        header_url = '../Assets/techheader.png'
         edited_list = """
             <li><a href="../index.html">Home</a></li>
             <li1><a href="../Pages/tech.html">Tech</a></li1>
@@ -125,6 +128,7 @@ def main():
             <li><a href="../Pages/music.html">Music</a></li>
             <li><a href="../Pages/forums.html">Forums</a></li>"""
     elif category == 'sports':
+        header_url = '../Assets/sportsheader.png'
         edited_list = """
             <li><a href="../index.html">Home</a></li>
             <li><a href="../Pages/tech.html">Tech</a></li>
@@ -133,6 +137,7 @@ def main():
             <li><a href="../Pages/music.html">Music</a></li>
             <li><a href="../Pages/forums.html">Forums</a></li>"""
     elif category == 'music':
+        header_url = '../Assets/musicheader.png'
         edited_list = """
             <li><a href="../index.html">Home</a></li>
             <li><a href="../Pages/tech.html">Tech</a></li>
@@ -216,7 +221,7 @@ def main():
                     rgba(0, 0, 0, 0.7)
                 ),
                 /* bottom, image */
-                url('https://cdn.tinybuddha.com/wp-content/uploads/2015/05/Couple-on-the-Beach-Painting.jpg');
+                url('""" + header_url + """');
             background-color: var(--primary-color);
             background-position-y: center;
             background-position-x: center;
