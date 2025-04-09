@@ -11,19 +11,9 @@ options = Options()
 options.add_argument('--disable-blink-features=AutomationControlled')
 
 DB_FILE = 'db.json'
-THIS_DIR = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-CSS_FILE = THIS_DIR / "Styles" / "main.css"
 trending_prompt = get_prompt()
 trending_url = get_article(trending_prompt)
 temp = combine(trending_prompt, trending_url)[:4090]
-
-
-def load_css_file(css_file_path):
-    with open(css_file_path) as f:
-        return st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-
-load_css_file(CSS_FILE)
 
 
 def main():

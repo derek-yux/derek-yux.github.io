@@ -1,7 +1,14 @@
 import datetime
 today = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S').split(" ")[0])
 from newspaper import Article
-
+from selenium import webdriver
+# from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+import time
+from selenium.webdriver.support import expected_conditions as EC
+from pathlib import Path
 
 def newspaper_text_extraction(article_url):
     article = Article(article_url)
@@ -12,21 +19,6 @@ def newspaper_text_extraction(article_url):
 
 def get_prompt() -> str:
     """"""
-    from selenium import webdriver
-    # from selenium.webdriver.chrome.service import Service
-    from selenium.webdriver.common.by import By
-    # from selenium.webdriver.common.keys import Keys
-    from selenium.webdriver.support.ui import WebDriverWait
-    # import time
-    from selenium.webdriver.support import expected_conditions as EC
-    from pathlib import Path
-
-
-    DB_FILE = 'db.json'
-    THIS_DIR = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-    CSS_FILE = THIS_DIR / "Styles" / "main.css"
-
-
     PATH = "/Users/derek/Code/ML/derek-yux.github.io/chromedriver"
     cService = webdriver.ChromeService(executable_path=PATH)
     driver = webdriver.Chrome(service=cService)
@@ -43,19 +35,6 @@ def get_prompt() -> str:
 
 def get_images(topic: str) -> list:
     """"""
-    from selenium import webdriver
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.support.ui import WebDriverWait
-    from selenium.webdriver.support import expected_conditions as EC
-    from pathlib import Path
-    from time import sleep
-
-
-    DB_FILE = 'db.json'
-    THIS_DIR = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-    CSS_FILE = THIS_DIR / "Styles" / "main.css"
-
-
     PATH = "/Users/derek/Code/ML/derek-yux.github.io/chromedriver"
     cService = webdriver.ChromeService(executable_path=PATH)
     driver = webdriver.Chrome(service=cService)
@@ -124,21 +103,6 @@ def get_images(topic: str) -> list:
 
 def get_article(topic: str) -> str:
     """"""
-    from selenium import webdriver
-    # from selenium.webdriver.chrome.service import Service
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.common.keys import Keys
-    from selenium.webdriver.support.ui import WebDriverWait
-    import time
-    from selenium.webdriver.support import expected_conditions as EC
-    from pathlib import Path
-
-
-    DB_FILE = 'db.json'
-    THIS_DIR = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-    CSS_FILE = THIS_DIR / "Styles" / "main.css"
-
-
     PATH = "/Users/derek/Code/ML/derek-yux.github.io/chromedriver"
     cService = webdriver.ChromeService(executable_path=PATH)
     driver = webdriver.Chrome(service=cService)
