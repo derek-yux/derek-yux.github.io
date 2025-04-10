@@ -528,8 +528,8 @@ def main():
             " alt="TV Blog">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
-                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + """</p>
-                    <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read More</a>
+                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + "..." + """</p>
+                    <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read Now!</a>
                 </div>
             </article>
         </div>
@@ -549,8 +549,8 @@ def main():
             " alt="Sports Blog">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
-                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + """</p>
-                    <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read More</a>
+                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + "..." + """</p>
+                    <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read Now!</a>
                 </div>
             </article>
         </div>
@@ -570,8 +570,8 @@ def main():
             " alt="Music Blog">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
-                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + """</p>
-                    <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read More</a>
+                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + "..." + """</p>
+                    <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read Now!</a>
                 </div>
             </article>
         </div>
@@ -711,8 +711,8 @@ def main():
             " alt="Tech Blog">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
-                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + """</p>
-                    <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read More</a>
+                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + "..." + """</p>
+                    <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read Now!</a>
                 </div>
             </article>
         </div>
