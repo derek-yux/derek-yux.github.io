@@ -117,7 +117,9 @@ def main():
             <li><a href="../Pages/music.html">Music</a></li>
             <li><a href="../Pages/forums.html">Forums</a></li>"""
     header_url = '../Assets/header.png'
+    b_pos = 'center'
     if category == 'tv':
+        b_pos = '850px'
         header_url = '../Assets/tvheader.png'
         edited_list = """
             <li><a href="../index.html">Home</a></li>
@@ -136,6 +138,7 @@ def main():
             <li><a href="../Pages/music.html">Music</a></li>
             <li><a href="../Pages/forums.html">Forums</a></li>"""
     elif category == 'sports':
+        b_pos = '670px'
         header_url = '../Assets/sportsheader.png'
         edited_list = """
             <li><a href="../index.html">Home</a></li>
@@ -257,7 +260,7 @@ def main():
                 /* bottom, image */
                 url('""" + header_url + """');
             background-color: var(--primary-color);
-            background-position-y: center;
+            background-position-y: """ + b_pos + """;
             background-position-x: center;
             color: white;
             text-align: center;
