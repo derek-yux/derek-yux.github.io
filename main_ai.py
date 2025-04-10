@@ -232,8 +232,8 @@ def main():
         }
         .shrinker {
             text-align: center;
-            margin-right: 20px;
-            margin-left: 20px;
+            margin-right: 7vw;
+            margin-left: 7vw;
             object-fit: cover;
         }
         .slider_image {
