@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,11 +30,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="You You News Trending Content">
-    <meta name="author" content="Derek (Yue) Yu">
-    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
     <title>You You News - By You, For You!</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         * {
@@ -53,10 +52,12 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
+        pre {
             font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
         }
         .container {
             width: 90%;
@@ -64,6 +65,29 @@
             margin: 0 auto;
             padding: 20px;
         }
+        .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 12vw;
+            margin-left: 12vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        }      
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -72,9 +96,9 @@
                     rgba(0, 0, 0, 0.7)
                 ),
                 /* bottom, image */
-                url('/Assets/header.png');
+                url('../Assets/tvheader.png');
             background-color: var(--primary-color);
-            background-position-y: center;
+            background-position-y: 850px;
             background-position-x: center;
             color: white;
             text-align: center;
@@ -100,14 +124,6 @@
         nav ul li1 {
             margin: 0 15px;
         }
-        nav ul li1 a {
-            color: aquamarine;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
         nav ul li a {
             color: white;
             text-decoration: none;
@@ -118,6 +134,14 @@
         }
         nav ul li a:hover {
             color: var(--secondary-color);
+        }
+        nav ul li1 a {
+            color: aquamarine;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         nav ul li1 a:hover {
             color: white;
@@ -211,157 +235,120 @@
             <p>Your Ultimate Source for Trending Content</p>
         </div>
     </header>
-
     <nav>
         <ul>
-            <li1><a href="index.html">Home</a></li1>
-            <li><a href="Pages/tech.html">Tech</a></li>
-            <li><a href="Pages/sports.html">Sports</a></li>
-            <li><a href="Pages/tv.html">TV</a></li>
-            <li><a href="Pages/music.html">Music</a></li>
-            <li><a href="Pages/forums.html">Forums</a></li>
-        </ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Pages/tech.html">Tech</a></li>
+            <li><a href="../Pages/sports.html">Sports</a></li>
+            <li1><a href="../Pages/tv.html">TV</a></li1>
+            <li><a href="../Pages/music.html">Music</a></li>
+            <li><a href="../Pages/forums.html">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections</h2>
-            <div class="section-grid">
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2023-07/230703-tesla-al-1145-b37eb9.jpg" alt="Tech Blog">
-                        <div class="section-content">
-                            <h2>Tesla Stocks Soaring</h2>
-                            <p>Well, Elon must be happy. Tesla stocks rebounded Tuesday morning from its historically shocking...</p>
-                            <a href="#" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_903,h_507,x_110,y_0/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/si/01jr9vk74ycktapwm6mv.jpg" alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Gators Snatch Championship Trophy: They’re Back, Baby!</h2>
-                            <p>In a dramatic showdown that had more twists than a late-night soap opera, the Florida Gators...</p>
-                            <a href="/Archive/Gators Snatch Championship Trophy: They’re Back, Baby!.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://imageio.forbes.com/specials-images/imageserve/67f55d7d8be5f6f4ad6b55bb/-Black-Mirror--Season-7/0x0.jpg?format=jpg&crop=1048,698,x71,y0,safe&width=960" alt="TV Blog">
-                        <div class="section-content">
-                            <h2>Black Mirror Season 7 Release</h2>
-                            <p>Well, folks, grab your tinfoil hats and prepare for another season of Black Mirror, the show that...</p>
-                            <a href="/Archive/BREAKING NEWS: Black Mirror Season 7 Release.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2025/03/videoframe_181015.png" alt="Music Blog">
-                        <div class="section-content">
-                            <h2>New Release: JENNIE & Dua Lipa Steal Hearts With "Handlebars"</h2>
-                            <p>How is Blackpink even going to fit all these record-breaking solos into their tour? JENNIE strikes again, this time...</p>
-                            <a href="#" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
+        <div class="shrinker">
+            <h2>BREAKING NEWS: Black Mirror Season 7 Release</h2>
+            <br>
+        <div class="scroll-container">
+            <img src='https://imageio.forbes.com/specials-images/imageserve/67f55d7d8be5f6f4ad6b55bb/-Black-Mirror--Season-7/0x0.jpg?format=jpg&crop=1048,698,x71,y0,safe&width=960' alt="Cinque Terre" class="slider_image">
+            <img src='https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQSUDQzUFH48r3nucqnatWSEUldawM3OVoN2lXcq2gq6JMQgkz8vdIYALr_wXhJGdHxnL5zZQiPzBrIr4L6hPnrtIw4reDcqbHJPGHXPBcfYs6BGma0ULFS6370HEpifeXiqn1f9EMjFXrjkVfioesFHYlSY.jpg?r=cf8' alt="Cinque Terre" class="slider_image">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD6z985B6mWV0s4wMPn0qnSZ8TQ0PeqP8E6g&s' alt="Cinque Terre" class="slider_image">
+          </div>
+        <pre>
+        <div data-aos="fade-up">
+        <p class="p1">Well, folks, grab your tinfoil hats and prepare for another season of Black Mirror, the show that has somehow managed to make us more terrified of technology, social media, and, quite frankly, existence itself. That's right—season 7 of this mind-bending anthology is dropping soon, and it promises to deliver more nightmares that feel too real for comfort. Great, just what we needed.
+</p></div>
+<div data-aos="fade-up"><p class="p1">
+According to reports from USA Today (and let’s be honest, they’re probably just as excited as we are), the show will return to Netflix on June 15th, 2025, which is the exact date the universe will finally collapse under the weight of its own absurdity. But don’t worry, we’ve got six new episodes to make sure we’re all emotionally wrecked before that happens.
+</p></div>
+<div data-aos="fade-up"><p class="p1">
+Now, here's the twist: Black Mirror might not be the ultra-dark, dystopian sledgehammer to your psyche that it once was. Reports indicate that this season might actually bring some — and I can’t believe I’m saying this — hope? Or at least, some moments of light before the next wave of existential dread rolls in. We’ll see, though. Hope is a tricky thing. It’s like trusting a self-driving car—you’re in for a ride, but you’re not sure if you’re going to make it to your destination.
+</p></div>
+<div data-aos="fade-up"><p class="p1">
+So, what can we expect? New cast members, a mind-bending plot twist (surprise, surprise), and an exploration of our ever-creeping fears of technology. Will it be all about how we’re doomed to live in a hyperconnected nightmare? Yes. Will it make us question everything we’ve ever known about that black mirror in our pocket? Definitely. Will we binge-watch it and forget to eat? Oh, absolutely.
+</p></div>
+<div data-aos="fade-up"><p class="p1">
+The countdown is on, my friends—get ready to feel just a little bit worse about the future. June 15th, 2025: the day we realize the robots have won… and maybe they’re not even that bad? We’ll see.
+</p></div>
+        </pre>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div data-aos="fade-up">
-                    <div class="forum-section">
-                        <h3>Tech Forum</h3>
-                        <ul class="forum-list">
-                            <li>
-                                <a href="#">Jensen Huang</a>
-                                <span>245 discussions</span>
-                            </li>
-                            <li>
-                                <a href="#">deepseek vs openai</a>
-                                <span>189 discussions</span>
-                            </li>
-                            <li>
-                                <a href="#">Programming Help</a>
-                                <span>376 discussions</span>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="forum-section">
+                    <h3>Tech Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="#">Jensen Huang</a>
+                            <span>245 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">deepseek vs openai</a>
+                            <span>189 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Programming Help</a>
+                            <span>376 discussions</span>
+                        </li>
+                    </ul>
                 </div>
-                <div data-aos="fade-up">
-                    <div class="forum-section">
-                        <h3>Sports Forum</h3>
-                        <ul class="forum-list">
-                            <li>
-                                <a href="#">March Madness</a>
-                                <span>512 discussions</span>
-                            </li>
-                            <li>
-                                <a href="#">Fantasy Football</a>
-                                <span>287 discussions</span>
-                            </li>
-                            <li>
-                                <a href="#">Canucks vs Devils</a>
-                                <span>203 discussions</span>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="forum-section">
+                    <h3>Sports Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="#">March Madness</a>
+                            <span>512 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Fantasy Football</a>
+                            <span>287 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Canucks vs Devils</a>
+                            <span>203 discussions</span>
+                        </li>
+                    </ul>
                 </div>
-                <div data-aos="fade-up">
-                    <div class="forum-section">
-                        <h3>TV Forum</h3>
-                        <ul class="forum-list">
-                            <li>
-                                <a href="#">Grant Ellis: The Bachelor</a>
-                                <span>421 discussions</span>
-                            </li>
-                            <li>
-                                <a href="#">Streaming Recommendations</a>
-                                <span>356 discussions</span>
-                            </li>
-                            <li>
-                                <a href="#">TV Show Theories</a>
-                                <span>278 discussions</span>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="forum-section">
+                    <h3>TV Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="#">Grant Ellis: The Bachelor</a>
+                            <span>421 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Streaming Recommendations</a>
+                            <span>356 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">TV Show Theories</a>
+                            <span>278 discussions</span>
+                        </li>
+                    </ul>
                 </div>
-                <div data-aos="fade-up">
-                    <div class="forum-section">
-                        <h3>Music Forum</h3>
-                        <ul class="forum-list">
-                            <li>
-                                <a href="#">New Releases</a>
-                                <span>332 discussions</span>
-                            </li>
-                            <li>
-                                <a href="#">Genre Discussions</a>
-                                <span>245 discussions</span>
-                            </li>
-                            <li>
-                                <a href="#">Concert Experiences</a>
-                                <span>167 discussions</span>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="forum-section">
+                    <h3>Music Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="#">New Releases</a>
+                            <span>332 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Genre Discussions</a>
+                            <span>245 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Concert Experiences</a>
+                            <span>167 discussions</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
     </div>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
-            <img src="/Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -378,7 +365,7 @@
         debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
         throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
         
-
+    
         // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
         offset: 120, // offset (in px) from the original trigger point
         delay: 0, // values from 0 to 3000, with step 50ms
@@ -387,7 +374,7 @@
         once: false, // whether animation should happen only once - while scrolling down
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-
+    
         });
     </script>
 </body>
