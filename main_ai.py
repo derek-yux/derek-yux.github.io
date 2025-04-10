@@ -203,13 +203,14 @@ def main():
             font-size: 1.5em;
         }
         .shrinker {
-            margin-right: 120px;
-            margin-left: 120px;
+            text-align: center;
+            margin-right: 20px;
+            margin-left: 20px;
             object-fit: cover;
         }
         .slider_image {
-            width: 352px;
-            height: 198px;
+            width: 432px;
+            height: 323px;
             object-fit: cover;
         }
         div.scroll-container {
@@ -379,13 +380,13 @@ def main():
     </nav>
     <div class="container">
         <div class="shrinker">
+        <h2>""" + str(response_title) + """</h2>
+        <br>
         <div class="scroll-container">
             <img src='""" + str(images[0]) + """' alt="Cinque Terre" class="slider_image">
             <img src='""" + str(images[1]) + """' alt="Cinque Terre" class="slider_image">
             <img src='""" + str(images[2]) + """' alt="Cinque Terre" class="slider_image">
           </div>
-        <br>
-        <h2>""" + str(response_title) + """</h2>
         <pre>
         <p class="p1">""" + str(temp_repr) + """</p>
         </pre>

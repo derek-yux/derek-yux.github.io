@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You You News - By You, For You!</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-bg: #f4f4f8;
+            --text-color: #333;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            font-family: 'Times New Roman', serif;
+        }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 20px;
+            margin-left: 20px;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        }      
+        header {
+            background:
+                /* top, transparent black, faked with gradient */ 
+                linear-gradient(
+                    rgba(0, 0, 0, 0.7), 
+                    rgba(0, 0, 0, 0.7)
+                ),
+                /* bottom, image */
+                url('https://cdn.tinybuddha.com/wp-content/uploads/2015/05/Couple-on-the-Beach-Painting.jpg');
+            background-color: var(--primary-color);
+            background-position-y: center;
+            background-position-x: center;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Times New Roman', serif;
+        }
+        header h1 {
+            font-size: 2.5em;
+            letter-spacing: -1px;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 10px 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li1 {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        nav ul li1 a {
+            color: aquamarine;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav ul li1 a:hover {
+            color: white;
+        }
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .section-card:hover {
+            transform: scale(1.03);
+        }
+        .section-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .section-content {
+            padding: 15px;
+        }
+        .section-content h2 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+            color: var(--primary-color);
+        }
+        .section-content p {
+            color: #666;
+        }
+        .forum-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .forum-list {
+            list-style-type: none;
+        }
+        .forum-list li {
+            padding: 10px;
+            border-bottom: 1px solid #f1f1f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .forum-list li:last-child {
+            border-bottom: none;
+        }
+        .forum-list li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .forum-list li span {
+            color: #666;
+            font-size: 0.9em;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+<script type="text/javascript"> //<![CDATA[ 
+    var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+    document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+</script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>You You News</h1>
+            <p>Your Ultimate Source for Trending Content</p>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Pages/tech.html">Tech</a></li>
+            <li><a href="../Pages/sports.html">Sports</a></li>
+            <li1><a href="../Pages/tv.html">TV</a></li1>
+            <li><a href="../Pages/music.html">Music</a></li>
+            <li><a href="../Pages/forums.html">Forums</a></li></ul>
+    </nav>
+    <div class="container">
+        <div class="shrinker">
+            <h2>Gators Snatch Championship Trophy: They’re Back, Baby!</h2>
+            <br>
+        <div class="scroll-container">
+            <img src='https://www.usatoday.com/gcdn/authoring/authoring-images/2025/04/08/USAT/82985885007-usatsi-25874332.jpg?crop=4300,2419,x1749,y664&width=660&height=371&format=pjpg&auto=webp' alt="Cinque Terre" class="slider_image">
+            <img src='https://images2.minutemediacdn.com/image/upload/c_crop,w_903,h_507,x_110,y_0/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/si/01jr9vk74ycktapwm6mv.jpg' alt="Cinque Terre" class="slider_image">
+            <img src='https://www.usatoday.com/gcdn/authoring/authoring-images/2025/04/08/USAT/82985307007-usp-ncaa-basketball-final-four-national-champions.jpg?crop=2891,2891,x386,y0' alt="Cinque Terre" class="slider_image">
+          </div>
+        <pre>
+        <div data-aos="fade-up">
+        <p class="p1">In a dramatic showdown that had more twists than a late-night soap opera, the Florida Gators emerged victorious in the NCAA Tournament, defeating the Houston Cougars 65-63 and claiming the national championship. Yes, folks, the trophy is heading to Gainesville, where it will be warmly welcomed by a city known for its larger-than-life alligators and, apparently, basketball miracles.
+</p></div>
+<div data-aos="fade-up"><p class="p1">
+Coach Todd Golden didn’t just lead his team to victory; he made history by becoming the youngest coach to win a national championship since Jim Valvano rocked it back in 1983. Let’s be honest, Golden probably didn’t need to go to the gym during the tournament—who has time to lift weights when you’re lifting a whole program to glory?
+</p></div>
+<div data-aos="fade-up"><p class="p1">
+The Gators staged yet another thrilling comeback, proving they could turn adversity into a sport of its own. After trailing at halftime and digging themselves out of a 12-point hole in the second half, Florida managed to score more heart-stopping points than a contestant on a reality dating show. Indeed, they held Houston scoreless for the last 2:05 of the game, which must have been quite the relief for fans who had already popped their anxiety medication.
+</p></div>
+<div data-aos="fade-up"><p class="p1">
+In the nail-biting finale, Alex Condon sealed the win with an impressive—and totally planned—jump onto a loose ball moments before the buzzer. Meanwhile, Houston's Emanuel Sharp was faced with the decision of shooting a three-pointer or traveling, and much like any sane person, he went with the former and ended up with neither.
+</p></div>
+<div data-aos="fade-up"><p class="p1">
+With this victory, Florida not only claimed its third title in program history, but also ended a 13-year championship drought for the SEC, giving their fans reason to throw a party that would make Mardi Gras look like a quiet evening at home.
+</p></div>
+<div data-aos="fade-up"><p class="p1">
+So raise your glasses, folks! The Gators have proved once again that they know how to bounce back—this time, all the way to the top!</p>
+        </pre>
+        </div>
+        </div>
+        <section style="margin-top: 40px;">
+            <h2>Community Forums</h2>
+            <div class="section-grid">
+                <div class="forum-section">
+                    <h3>Tech Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="#">Jensen Huang</a>
+                            <span>245 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">deepseek vs openai</a>
+                            <span>189 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Programming Help</a>
+                            <span>376 discussions</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="forum-section">
+                    <h3>Sports Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="#">March Madness</a>
+                            <span>512 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Fantasy Football</a>
+                            <span>287 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Canucks vs Devils</a>
+                            <span>203 discussions</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="forum-section">
+                    <h3>TV Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="#">Grant Ellis: The Bachelor</a>
+                            <span>421 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Streaming Recommendations</a>
+                            <span>356 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">TV Show Theories</a>
+                            <span>278 discussions</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="forum-section">
+                    <h3>Music Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="#">New Releases</a>
+                            <span>332 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Genre Discussions</a>
+                            <span>245 discussions</span>
+                        </li>
+                        <li>
+                            <a href="#">Concert Experiences</a>
+                            <span>167 discussions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 You You News. All Rights Reserved.</p>
+            <p>Connect with us on social media</p>
+            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+    
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+    
+        });
+    </script>
+</body>
+</html>
