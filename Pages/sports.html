@@ -33,6 +33,7 @@
     <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
     <title>You You News - By You, For You!</title>
     <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         * {
             margin: 0;
@@ -226,6 +227,16 @@
         <section>
             <h2>Latest Blog Sections</h2>
             <div class="section-grid">
+                <div data-aos="fade-up">
+                    <article class="section-card">
+                        <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_903,h_507,x_110,y_0/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/si/01jr9vk74ycktapwm6mv.jpg" alt="Sports Blog">
+                        <div class="section-content">
+                            <h2>Gators Snatch Championship Trophy: They’re Back, Baby!</h2>
+                            <p>In a dramatic showdown that had more twists than a late-night soap opera, the Florida Gators...</p>
+                            <a href="/Archive/Gators Snatch Championship Trophy: They’re Back, Baby!.html" class="cta-button">Read Now!</a>
+                        </div>
+                    </article>
+                </div>
                 <article class="section-card">
                     <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2023-07/230703-tesla-al-1145-b37eb9.jpg" alt="Tech Blog">
                     <div class="section-content">
@@ -347,5 +358,31 @@
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+        });
+    </script>
 </body>
 </html>
