@@ -74,6 +74,14 @@ def main():
     spliter = str(response)[2:].split('**')
     response_title = spliter[0]
     response_rest = str(response[2 + len(response_title):]).strip()
+    temp_repr = """"""
+    temp_list = response_rest.split("\n")
+    for item in temp_list:
+        temp_repr += '<div data-aos="fade-up">'
+        temp_repr += '<p class="p1>'
+        temp_repr += item
+        temp_repr += '</p>'
+        temp_repr += '</div>'
 
     new_temp = "Which of these four categories is this topic closest to: music, tv, tech, or sports? Reply with one word."
     st.session_state.messages.append({"role": "user", "content": new_temp})
@@ -379,7 +387,7 @@ def main():
         <br>
         <h2>""" + str(response_title) + """</h2>
         <pre>
-        <p class="p1">""" + str(response_rest) + """</p>
+        <p class="p1">""" + str(temp_repr) + """</p>
         </pre>
         </div>
         <section style="margin-top: 40px;">
