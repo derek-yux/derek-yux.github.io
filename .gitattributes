@@ -1,2 +1,6 @@
 *.html linguist-vendored
 *.css linguist-vendored
+*.sql linguist-detectable=true
+*.js linguist-detectable=true
+*.php linguist-detectable=true
+*.py linguist-detectable=true
