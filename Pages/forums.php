@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+require_once('pdo.php');
+require_once('util.php');
+session_start();
+
+?>
 <html lang="en">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4F7KKQ08M"></script>
