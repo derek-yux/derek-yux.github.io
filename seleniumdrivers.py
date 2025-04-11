@@ -117,8 +117,4 @@ def get_article(topic: str) -> str:
     return search
 
 def combine(topic: str, source_url: str) -> str:
-<<<<<<< HEAD
-    return "Write a short, informative, and quantitative news story on '" + topic + "' in the humor style of Dave Chappelle by summarizing this article: " + newspaper_text_extraction(source_url)
-=======
     return "Write a short, informative, and quantitative news story on '" + topic + "' with a bolded title that does not contain quotation marks nor slashes and multiple twists and turns by summarizing this article: " + newspaper_text_extraction(source_url)
->>>>>>> ef70771 (html end test v2)
