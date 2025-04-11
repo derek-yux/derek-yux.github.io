@@ -536,12 +536,12 @@ session_start();
   
   <nav>
     <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="tech.html">Tech</a></li>
-        <li><a href="sports.html">Sports</a></li>
-        <li><a href="tv.html">TV</a></li>
-        <li><a href="music.html">Music</a></li>
-        <li1><a href="forums.html">Forums</a></li1>
+        <li><a href="../">Home</a></li>
+        <li><a href="tech">Tech</a></li>
+        <li><a href="sports">Sports</a></li>
+        <li><a href="tv">TV</a></li>
+        <li><a href="music">Music</a></li>
+        <li1><a href="forums.php">Forums</a></li1>
     </ul>
   </nav>
   
