@@ -117,4 +117,4 @@ def get_article(topic: str) -> str:
     return search
 
 def combine(topic: str, source_url: str) -> str:
-    return "Write a short news story on '" + topic + "' in the humor style of Dave Chappelle by summarizing this article: " + newspaper_text_extraction(source_url)
+    return "Write a short, informative, and quantitative news story on '" + topic + "' in the humor style of Dave Chappelle by summarizing this article: " + newspaper_text_extraction(source_url)
