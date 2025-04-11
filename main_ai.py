@@ -729,7 +729,7 @@ def main():
 
 
 if __name__ == '__main__':
-    st.session_state['openai_api_key'] = """"""
+    st.session_state['openai_api_key'] = ''
 
     if 'openai_api_key' in st.session_state and st.session_state.openai_api_key:
         main()
