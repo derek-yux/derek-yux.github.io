@@ -82,28 +82,8 @@ def main():
         temp_repr += item
         temp_repr += '</p>'
         temp_repr += '</div>'
-
-    new_temp = "Which of these four categories is this topic closest to: music, tv, tech, or sports? Reply with one word."
-    st.session_state.messages.append({"role": "user", "content": new_temp})
-    with st.chat_message("user"):
-            st.markdown(new_temp)
-    with st.chat_message("assistant"):
-        tone=st.session_state["tone"]
-        lang=st.session_state["lang"]
-        stream = client.chat.completions.create(
-            model=st.session_state["openai_model"],
-            messages=[
-                {"role": m["role"], "content": m["content"]}
-                for m in st.session_state.messages
-            ],
-            stream=True,
-        )
-        response = st.write_stream(stream)
-    st.session_state.messages.append({"role": "assistant", "content": response})
-    db['chat_history'] = st.session_state.messages
-    with open(DB_FILE, 'w') as file:
-        json.dump(db, file)
     
+    response = input("Which category?")
     category = str(response).strip().lower()
     if category not in ['tv', 'music', 'tech', 'sports']:
         category = 'tv'
@@ -749,7 +729,7 @@ def main():
 
 
 if __name__ == '__main__':
-    st.session_state['openai_api_key'] = ''
+    st.session_state['openai_api_key'] = """"""
 
     if 'openai_api_key' in st.session_state and st.session_state.openai_api_key:
         main()
