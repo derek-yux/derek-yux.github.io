@@ -95,7 +95,7 @@ def main():
             <li><a href="../Pages/sports">Sports</a></li>
             <li><a href="../Pages/tv">TV</a></li>
             <li><a href="../Pages/music">Music</a></li>
-            <li><a href="../Pages/forums.php">Forums</a></li>"""
+            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>"""
     header_url = '../Assets/header.png'
     b_pos = 'center'
     if category == 'tv':
@@ -107,7 +107,7 @@ def main():
             <li><a href="../Pages/sports">Sports</a></li>
             <li1><a href="../Pages/tv">TV</a></li1>
             <li><a href="../Pages/music">Music</a></li>
-            <li><a href="../Pages/forums.php">Forums</a></li>"""
+            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>"""
     elif category == 'tech':
         header_url = '../Assets/techheader.png'
         edited_list = """
@@ -116,7 +116,7 @@ def main():
             <li><a href="../Pages/sports">Sports</a></li>
             <li><a href="../Pages/tv">TV</a></li>
             <li><a href="../Pages/music">Music</a></li>
-            <li><a href="../Pages/forums.php">Forums</a></li>"""
+            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>"""
     elif category == 'sports':
         b_pos = '670px'
         header_url = '../Assets/sportsheader.png'
@@ -126,7 +126,7 @@ def main():
             <li1><a href="../Pages/sports">Sports</a></li1>
             <li><a href="../Pages/tv">TV</a></li>
             <li><a href="../Pages/music">Music</a></li>
-            <li><a href="../Pages/forums.php">Forums</a></li>"""
+            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>"""
     elif category == 'music':
         header_url = '../Assets/musicheader.png'
         edited_list = """
@@ -135,7 +135,7 @@ def main():
             <li><a href="../Pages/sports">Sports</a></li>
             <li><a href="../Pages/tv">TV</a></li>
             <li1><a href="../Pages/music">Music</a></li1>
-            <li><a href="../Pages/forums.php">Forums</a></li>"""
+            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>"""
 
     final_html = "Archive/"
     final_html += f"{response_title.strip('%20 ')}.html"
