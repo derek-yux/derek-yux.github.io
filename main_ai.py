@@ -71,11 +71,11 @@ def main():
         json.dump(db, file)
 
     
-    spliter = str(response)[2:].split('\n')
+    spliter = str(response)[2:].split('+++++')
     response_title = spliter[0]
     response_rest = str(response[2 + len(response_title):]).strip()
     temp_repr = """April 11, 2025: """
-    temp_list = response_rest.split("\n")
+    temp_list = response_rest.split("+++++")
     for item in temp_list:
         temp_repr += '<div data-aos="fade-up">'
         temp_repr += '<p class="p1>'
