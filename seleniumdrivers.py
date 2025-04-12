@@ -19,7 +19,7 @@ def newspaper_text_extraction(article_url):
 
 def get_prompt() -> str:
     """"""
-    PATH = "/Users/derek/Code/ML/derek-yux.github.io/chromedriver"
+    PATH = "/Applications/MAMP/htdocs/derek-yux.github.io/chromedriver"
     cService = webdriver.ChromeService(executable_path=PATH)
     driver = webdriver.Chrome(service=cService)
     driver.get("https://trends.google.com/trending?geo=US&sort=search-volume")
@@ -35,7 +35,7 @@ def get_prompt() -> str:
 
 def get_images(topic: str) -> list:
     """"""
-    PATH = "/Users/derek/Code/ML/derek-yux.github.io/chromedriver"
+    PATH = "/Applications/MAMP/htdocs/derek-yux.github.io/chromedriver"
     cService = webdriver.ChromeService(executable_path=PATH)
     driver = webdriver.Chrome(service=cService)
     url_p1 = "https://www.google.com/search?sca_esv=cd731438e95bc999&sxsrf=AHTn8zrMi6atrpzMrtDb1K9DOEKL0MQCVQ:1743542414604&q="
@@ -103,7 +103,7 @@ def get_images(topic: str) -> list:
 
 def get_article(topic: str) -> str:
     """"""
-    PATH = "/Users/derek/Code/ML/derek-yux.github.io/chromedriver"
+    PATH = "/Applications/MAMP/htdocs/derek-yux.github.io/chromedriver"
     cService = webdriver.ChromeService(executable_path=PATH)
     driver = webdriver.Chrome(service=cService)
     driver.get("https://www.google.com/search?q=" + topic.replace(" ", "+"))
