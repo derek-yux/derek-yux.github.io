@@ -275,6 +275,8 @@
         
         // Register user
         function registerUser(username, password) {
+            header('Location: test_register.php');
+            return;
             // Reset previous errors
             resetFormErrors('register-form');
             
