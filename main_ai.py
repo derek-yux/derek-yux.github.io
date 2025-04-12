@@ -71,10 +71,10 @@ def main():
         json.dump(db, file)
 
     
-    spliter = str(response)[2:].split('**')
+    spliter = str(response)[2:].split('\n')
     response_title = spliter[0]
     response_rest = str(response[2 + len(response_title):]).strip()
-    temp_repr = """"""
+    temp_repr = """April 11, 2025: """
     temp_list = response_rest.split("\n")
     for item in temp_list:
         temp_repr += '<div data-aos="fade-up">'
@@ -397,7 +397,7 @@ def main():
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <<div data-aos="fade-up">
+                <div data-aos="fade-up">
                     <div class="forum-section">
                         <h3>Tech Forum</h3>
                         <ul class="forum-list">
