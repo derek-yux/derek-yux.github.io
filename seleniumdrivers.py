@@ -117,4 +117,4 @@ def get_article(topic: str) -> str:
     return search
 
 def combine(topic: str, source_url: str) -> str:
-    return "Write a short, informative, and quantitative news story on '" + topic + "' with a bolded title that does not contain quotation marks nor slashes and multiple twists and turns by summarizing this article: " + newspaper_text_extraction(source_url) + ". Separate your title from the text by ending the title with '+++++'. Also, end each paragraph with '+++++'."
+    return "Write a short, informative, and quantitative news story on '" + topic + "' with a bolded title that does not contain quotation marks nor slashes, multiple twists and turns, and end each paragraph and the title with a string '+++++' by summarizing this article: " + newspaper_text_extraction(source_url)
