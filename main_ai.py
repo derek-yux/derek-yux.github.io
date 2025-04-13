@@ -88,7 +88,7 @@ def main():
     if category not in ['tv', 'music', 'tech', 'sports']:
         category = 'tv'
 
-    images = get_images(temp.split(":")[1])
+    images = get_images(trending_prompt)
     edited_list = """
             <li1><a href="../">Home</a></li1>
             <li><a href="../Pages/tech">Tech</a></li>
