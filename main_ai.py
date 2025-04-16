@@ -73,7 +73,7 @@ def main():
     
     spliter = str(response)[2:].split('+++++')
     response_title = spliter[0]
-    response_rest = str("".join(spliter[1:])).strip()
+    response_rest = str("".join(spliter[1:]))
     temp_repr = """April 11, 2025: """
     temp_list = response_rest.split("+++++")
     for item in temp_list:
