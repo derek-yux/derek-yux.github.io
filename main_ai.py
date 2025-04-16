@@ -73,12 +73,12 @@ def main():
     
     spliter = str(response)[2:].split('+++++')
     response_title = spliter[0]
-    response_rest = str("".join(spliter[1:]))
+    response_rest = str(" ".join(spliter[1:]))
     temp_repr = """"""
-    temp_list = response_rest.split("+++++")
+    temp_list = spliter[1:]
     for item in temp_list:
         temp_repr += '<div data-aos="fade-up">'
-        temp_repr += '<p class="p1>'
+        temp_repr += '<p class="p1">'
         temp_repr += item
         temp_repr += '</p>'
         temp_repr += '</div>'
