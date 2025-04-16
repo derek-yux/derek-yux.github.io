@@ -73,7 +73,7 @@ def main():
     
     spliter = str(response)[2:].split('+++++')
     response_title = spliter[0]
-    response_rest = str(response[2 + len(response_title):]).strip()
+    response_rest = str("".join(spliter[1:])).strip()
     temp_repr = """April 11, 2025: """
     temp_list = response_rest.split("+++++")
     for item in temp_list:
@@ -172,10 +172,14 @@ def main():
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="You You News Trending Content">
+    <meta name="author" content="Derek (Yue) Yu">
+    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
     <title>You You News - By You, For You!</title>
     <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <style>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -186,6 +190,12 @@ def main():
             --secondary-color: #3498db;
             --light-bg: #f4f4f8;
             --text-color: #333;
+            --color-blue: #83af9b;
+            --color-green: #c8c8a9;
+            --color-brown: #774f38;
+            --color-beige: #ece5ce;
+            --color-yellow: #f9cdad;
+            --color-pink: #fe4365;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -194,12 +204,10 @@ def main():
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
-        pre {
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
             font-family: 'Times New Roman', serif;
-            padding: 20px;
-            text-align: center;
-            margin: auto;
-            white-space: pre-wrap;
         }
         .container {
             width: 90%;
@@ -207,29 +215,6 @@ def main():
             margin: 0 auto;
             padding: 20px;
         }
-        .p1 {
-            font-size: 1.5em;
-        }
-        .shrinker {
-            text-align: center;
-            margin-right: 7vw;
-            margin-left: 7vw;
-            object-fit: cover;
-        }
-        .slider_image {
-            width: 432px;
-            height: 323px;
-            object-fit: cover;
-        }
-        div.scroll-container {
-            background-color: #333;
-            overflow: auto;
-            white-space: nowrap;
-            padding: 1px;
-        }
-        div.scroll-container img {
-            padding: 1px;
-        }      
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -238,9 +223,9 @@ def main():
                     rgba(0, 0, 0, 0.7)
                 ),
                 /* bottom, image */
-                url('""" + header_url + """');
+                url('/Assets/header.png');
             background-color: var(--primary-color);
-            background-position-y: """ + b_pos + """;
+            background-position-y: center;
             background-position-x: center;
             color: white;
             text-align: center;
@@ -266,6 +251,14 @@ def main():
         nav ul li1 {
             margin: 0 15px;
         }
+        nav ul li1 a {
+            color: aquamarine;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
         nav ul li a {
             color: white;
             text-decoration: none;
@@ -276,14 +269,6 @@ def main():
         }
         nav ul li a:hover {
             color: var(--secondary-color);
-        }
-        nav ul li1 a {
-            color: aquamarine;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
         nav ul li1 a:hover {
             color: white;
@@ -368,6 +353,83 @@ def main():
         .cta-button:hover {
             background-color: #2980b9;
         }
+        .bbb {
+            height: 50vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            font: 2vw system-ui;
+            background-color: var(--color-yellow);
+        }
+
+        .bbb a {
+            transform: translatey(0px);
+            animation: float 5s ease-in-out infinite;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 15px;
+            color: var(--color-brown);
+            background-color: var(--color-beige);
+            padding: 50px;
+            border-radius: 11px;
+            position: relative;
+            box-shadow: 20px 20px var(--color-blue);
+            font-family: "Baloo 2", cursive;
+            border: 1px solid var(--color-green);
+        }
+        .bbb a:after {
+            transform: translatey(0px);
+            animation: float2 5s ease-in-out infinite;
+            content: ".";
+            font-weight: bold;
+            -webkit-text-stroke: 0.5px var(--color-green);
+            -webkit-text-fill-color: var(--color-beige);
+            border: 1px solid var(--color-green);
+            text-shadow: 22px 22px var(--color-blue);
+            text-align: left;
+            font-size: 55px;
+            width: 55px;
+            height: 11px;
+            line-height: 30px;
+            border-radius: 11px;
+            background-color: var(--color-beige);
+            position: absolute;
+            display: block;
+            bottom: -30px;
+            left: 0;
+            box-shadow: 22px 22px var(--color-blue);
+            z-index: -2;
+        }
+        @keyframes float {
+            0% {
+                transform: translatey(0px);
+            }
+            50% {
+                transform: translatey(-20px);
+            }
+            100% {
+                transform: translatey(0px);
+            }
+        }
+
+        @keyframes float2 {
+            0% {
+                line-height: 30px;
+                transform: translatey(0px);
+            }
+            55% {
+                transform: translatey(-20px);
+            }
+            60% {
+                line-height: 10px;
+            }
+            100% {
+                line-height: 30px;
+                transform: translatey(0px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -394,6 +456,7 @@ def main():
         <p class="p1">""" + str(temp_repr) + """</p>
         </pre>
         </div>
+        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
@@ -580,7 +643,7 @@ def main():
         </div>
     </div>
     </section>
-
+        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
