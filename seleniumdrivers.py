@@ -62,7 +62,7 @@ def get_images(topic: str) -> list:
     url_p2 += topic.replace(" ", "+")
     if url_p2.endswith("+"):
         url_p2 = url_p2[:len(url_p2) - 1]
-    url_p2 += "+trending+picture"
+    url_p2 += "+2025"
     url_p2 += "&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpmDtIGL1r84kuKz6yAcD_igefx-eKq1gCPHF3zhthFol4Ng0BskIHiWtseitnxRUsdhuojFXPgEoHpG0GIfMKVPk2BkHblkxSI-tfKD1XmeeaqS5FHtrr8wsFXMuCe4QoMNCRPqH1YGzoZ9-eFehql3ssOZfjNPT2O6Pssj429Q7oCx7XuiHvC1mkqPCqfpKED5Tzqw&sa=X&ved=2ahUKEwjWxJfS4beMAxWUrokEHS93ABAQtKgLegQIIxAB&biw=1512&bih=784&dpr=2"
     driver.get(url_p2)
 
@@ -83,7 +83,7 @@ def get_images(topic: str) -> list:
     url_p3 += topic.replace(" ", "+")
     if url_p3.endswith("+"):
         url_p3 = url_p3[:len(url_p3) - 1]
-    url_p3 += "+funny+picture+news"
+    url_p3 += "+meme"
     url_p3 += "&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpmDtIGL1r84kuKz6yAcD_igefx-eKq1gCPHF3zhthFol4Ng0BskIHiWtseitnxRUsdhuojFXPgEoHpG0GIfMKVPk2BkHblkxSI-tfKD1XmeeaqS5FHtrr8wsFXMuCe4QoMNCRPqH1YGzoZ9-eFehql3ssOZfjNPT2O6Pssj429Q7oCx7XuiHvC1mkqPCqfpKED5Tzqw&sa=X&ved=2ahUKEwjWxJfS4beMAxWUrokEHS93ABAQtKgLegQIIxAB&biw=1512&bih=784&dpr=2"
     driver.get(url_p3)
 
