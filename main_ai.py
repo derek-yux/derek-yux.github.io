@@ -140,7 +140,7 @@ def main():
             <li1><a href="../Pages/music">Music</a></li1>
             <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>"""
 
-    final_html = "Archive/"
+    final_html = "Articles/"
     final_html += f"{response_title.strip('%20 ')}.html"
     Func = open(final_html, "w")
     Func.write("""
