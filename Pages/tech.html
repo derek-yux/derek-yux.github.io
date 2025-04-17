@@ -32,7 +32,9 @@
     <meta name="author" content="Derek (Yue) Yu">
     <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
     <title>You You News - By You, For You!</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -44,6 +46,12 @@
             --secondary-color: #3498db;
             --light-bg: #f4f4f8;
             --text-color: #333;
+            --color-blue: #83af9b;
+            --color-green: #c8c8a9;
+            --color-brown: #774f38;
+            --color-beige: #ece5ce;
+            --color-yellow: #f9cdad;
+            --color-pink: #fe4365;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -201,6 +209,83 @@
         .cta-button:hover {
             background-color: #2980b9;
         }
+        .bbb {
+            height: 50vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            font: 2vw system-ui;
+            background-color: var(--color-yellow);
+        }
+
+        .bbb a {
+            transform: translatey(0px);
+            animation: float 5s ease-in-out infinite;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 15px;
+            color: var(--color-brown);
+            background-color: var(--color-beige);
+            padding: 50px;
+            border-radius: 11px;
+            position: relative;
+            box-shadow: 20px 20px var(--color-blue);
+            font-family: "Baloo 2", cursive;
+            border: 1px solid var(--color-green);
+        }
+        .bbb a:after {
+            transform: translatey(0px);
+            animation: float2 5s ease-in-out infinite;
+            content: ".";
+            font-weight: bold;
+            -webkit-text-stroke: 0.5px var(--color-green);
+            -webkit-text-fill-color: var(--color-beige);
+            border: 1px solid var(--color-green);
+            text-shadow: 22px 22px var(--color-blue);
+            text-align: left;
+            font-size: 55px;
+            width: 55px;
+            height: 11px;
+            line-height: 30px;
+            border-radius: 11px;
+            background-color: var(--color-beige);
+            position: absolute;
+            display: block;
+            bottom: -30px;
+            left: 0;
+            box-shadow: 22px 22px var(--color-blue);
+            z-index: -2;
+        }
+        @keyframes float {
+            0% {
+                transform: translatey(0px);
+            }
+            50% {
+                transform: translatey(-20px);
+            }
+            100% {
+                transform: translatey(0px);
+            }
+        }
+
+        @keyframes float2 {
+            0% {
+                line-height: 30px;
+                transform: translatey(0px);
+            }
+            55% {
+                transform: translatey(-20px);
+            }
+            60% {
+                line-height: 10px;
+            }
+            100% {
+                line-height: 30px;
+                transform: translatey(0px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -226,14 +311,17 @@
         <section>
             <h2>Latest Blog Sections &#10629Assuming Cows are Uniform Spheres&#10630</h2>
             <div class="section-grid">
-                <article class="section-card">
-                    <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2023-07/230703-tesla-al-1145-b37eb9.jpg" alt="Tech Blog">
-                    <div class="section-content">
-                        <h2>Tesla Stocks Soaring</h2>
-                        <p>Well, Elon must be happy. Tesla stocks rebounded Tuesday morning from its historically shocking...</p>
-                        <a href="#" class="cta-button">Read More</a>
+                <div data-aos="fade-up">
+                    <article class="section-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAbSrM5tT60KIfUBz5XY7TXPt0wpXveA4NmA&s
+                        " alt="Tech Blog">
+                            <div class="section-content">
+                                <h2>Spotify Expands Global Reach with New Language Options</h2>
+                                <p>Spotify, the leading music streaming platform, has announced the introduction of new language options on its...</p>
+                                <a href="Archive/Spotify Expands Global Reach with New Language Options.html" class="cta-button">Read Now!</a>
+                            </div>
+                        </article>
                     </div>
-                </article>
                 <article class="section-card">
                     <img src="https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_191,w_7627,h_4290/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/ImagnImages/mmsport/83/01jmt9wmz1pnfgh1m1m9.jpg" alt="Sports Blog">
                     <div class="section-content">
@@ -260,7 +348,7 @@
                 </article>
             </div>
         </section>
-
+        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
@@ -347,5 +435,31 @@
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+        });
+    </script>
 </body>
 </html>
