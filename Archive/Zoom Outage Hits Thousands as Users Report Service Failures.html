@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,10 +34,10 @@
     <meta name="author" content="Derek (Yue) Yu">
     <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
     <title>You You News - By You, For You!</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -60,12 +62,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -74,7 +104,7 @@
                     rgba(0, 0, 0, 0.7)
                 ),
                 /* bottom, image */
-                url('../Assets/techheader.png');
+                url('/Assets/header.png');
             background-color: var(--primary-color);
             background-position-y: center;
             background-position-x: center;
@@ -83,14 +113,16 @@
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -295,146 +327,115 @@
             <p>Your Ultimate Source for Trending Content</p>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="../">Home</a></li>
-            <li1><a href="tech">Tech</a></li1>
-            <li><a href="sports">Sports</a></li>
-            <li><a href="tv">TV</a></li>
-            <li><a href="music">Music</a></li>
-            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>
-        </ul>
+            <li1><a href="../Pages/tech">Tech</a></li1>
+            <li><a href="../Pages/sports">Sports</a></li>
+            <li><a href="../Pages/tv">TV</a></li>
+            <li><a href="../Pages/music">Music</a></li>
+            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections &#10629Assuming Cows are Uniform Spheres&#10630</h2>
-            <div class="section-grid">
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAbSrM5tT60KIfUBz5XY7TXPt0wpXveA4NmA&s
-                        " alt="Tech Blog">
-                            <div class="section-content">
-                                <h2>Spotify Expands Global Reach with New Language Options</h2>
-                                <p>Spotify, the leading music streaming platform, has announced the introduction of new language options on its...</p>
-                                <a href="Archive/Spotify Expands Global Reach with New Language Options.html" class="cta-button">Read Now!</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div data-aos="fade-up">
-                        <article class="section-card">
-                            <img src="https://www.uctoday.com/wp-content/uploads/2025/04/Zoom-Suffers-Major-Global-Outage-Has-Now-Recovered.jpg
-                            " alt="Tech Blog">
-                                <div class="section-content">
-                                    <h2>Zoom Outage Hits Thousands as Users Report Service Failures</h2>
-                                    <p>Zoom experienced a significant outage on April 16, 2025, affecting users worldwide as over 67,000 outage reports...</p>
-                                    <a href="Archive/Zoom Outage Hits Thousands as Users Report Service Failures.html" class="cta-button">Read Now!</a>
-                                </div>
-                            </article>
-                        </div>
-                <article class="section-card">
-                    <img src="https://people.com/thmb/WoERchP7xKZ-qk4XcJ6PNLBWHtU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(731x253:733x255):format(webp)/Grant-Ellis-Litia-Juliana-tout2-032425-dbc360c399db4a928aec77318c8cbc0c.jpg" alt="TV Blog">
-                    <div class="section-content">
-                        <h2>The Decision, Grant Ellis ver.</h2>
-                        <p>More than ten years after LeBron, the Decision strikes again...just that this time, Bachelor Grant Ellis must...</p>
-                        <a href="#" class="cta-button">Read More</a>
-                    </div>
-                </article>
-                <article class="section-card">
-                    <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2025/03/videoframe_181015.png" alt="Music Blog">
-                    <div class="section-content">
-                        <h2>New Release: JENNIE & Dua Lipa Steal Hearts With "Handlebars"</h2>
-                        <p>How is Blackpink even going to fit all these record-breaking solos into their tour? JENNIE strikes again, this time...</p>
-                        <a href="#" class="cta-button">Read More</a>
-                    </div>
-                </article>
-            </div>
-        </section>
+        <div class="shrinker">
+        <h2>Zoom Outage Hits Thousands as Users Report Service Failures</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://www.uctoday.com/wp-content/uploads/2025/04/Zoom-Suffers-Major-Global-Outage-Has-Now-Recovered.jpg' alt="Cinque Terre" class="slider_image">
+            <img src='https://economymiddleeast.com/cdn-cgi/imagedelivery/Xfg_b7GtigYi5mxeAzkt9w/economymiddleeast.com/2025/04/zoom-1-1.jpg/w=1200,h=800' alt="Cinque Terre" class="slider_image">
+            <img src='https://www.reuters.com/resizer/v2/Q4QAYZY6PRIC5AVNWSYHUUPSME.jpg?auth=c10450cd89fbe3808eb57eda85d5c928dd4a23086dba08cbbf7d5885cb4c47ff&height=628&width=1200&quality=80&smart=true' alt="Cinque Terre" class="slider_image">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">Zoom experienced a significant outage on April 16, 2025, affecting users worldwide as over 67,000 outage reports flooded into Down Detector within a short period. This disruptive incident has left countless meetings unresolved, potentially derailing critical business discussions for many organizations relying heavily on the video conferencing platform. As remote work gains traction, this outage highlights the platform's crucial role in daily operations.</p></div><br><div data-aos="fade-up"><p class="p1">The company's status page quickly acknowledged the issue, indicating that they are investigating domain name resolution problems related to the zoom.us domain. This quick acknowledgment is an essential step in ensuring users are informed, but it raises concerns about how rapidly the situation can be resolved. As remote employees search for alternatives, many companies may struggle to pivot to competing services due to the established dependency on Zoom.</p></div><br><div data-aos="fade-up"><p class="p1">While Zoom worked on resolution efforts, the outage's impact was felt across numerous services, including Zoom Meetings, Zoom Phone, and the Zoom Contact Center. Users reported connectivity issues that stalled communication, prompting concerns about operational productivity. In the interim, workers attempted to find temporary solutions, but the hassle of switching platforms can hinder workflow continuity.</p></div><br><div data-aos="fade-up"><p class="p1">Adding complexity to the situation, some users speculated that the outage might be linked to a Distributed Denial of Service (DDoS) attack by the hacker group DarkStorm, who claimed responsibility for taking down the Zoom servers. While no definitive confirmation has been provided from Zoom regarding the attack, such allegations circulate particularly during significant outages, creating potential public relations challenges for the company.</p></div><br><div data-aos="fade-up"><p class="p1">As users continue to wait for a resolution, Zoom's proactive communication will be crucial in restoring confidence among its customers. With the growing number of businesses and individuals relying on its services, addressing these technical glitches promptly is essential for Zoom to maintain its lead in the competitive video conferencing market. Future updates will determine how quickly the platform can recover, as users remain hopeful for a swift restoration of service.</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
+        </div>
         <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="#">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="#">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="#">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="#">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="#">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="#">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="#">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="#">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="#">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="#">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href="#">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="#">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="#">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="#">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="#">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="#">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="#">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
