@@ -82,6 +82,9 @@ def main():
         temp_repr += item.strip('**').strip()
         temp_repr += '</p>'
         temp_repr += '</div>'
+        temp_repr += '<br>'
+    if temp_repr.endswith('<br>'):
+        temp_repr = temp_repr[:len(temp_repr) - 4]
     
     response = input("Which category?")
     category = str(response).strip().lower()
@@ -624,7 +627,7 @@ def main():
             " alt="TV Blog">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
-                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + "..." + """</p>
+                    <p>""" + str(" ".join(response_rest.split(" ")[:14])) + "..." + """</p>
                     <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read Now!</a>
                 </div>
             </article>
@@ -645,7 +648,7 @@ def main():
             " alt="Sports Blog">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
-                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + "..." + """</p>
+                    <p>""" + str(" ".join(response_rest.split(" ")[:14])) + "..." + """</p>
                     <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read Now!</a>
                 </div>
             </article>
@@ -666,7 +669,7 @@ def main():
             " alt="Music Blog">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
-                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + "..." + """</p>
+                    <p>""" + str(" ".join(response_rest.split(" ")[:14])) + "..." + """</p>
                     <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read Now!</a>
                 </div>
             </article>
@@ -807,7 +810,7 @@ def main():
             " alt="Tech Blog">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
-                    <p>""" + str(" ".join(response_rest.split(" ")[:16])) + "..." + """</p>
+                    <p>""" + str(" ".join(response_rest.split(" ")[:14])) + "..." + """</p>
                     <a href=""" + '"' + final_html + '"' + """ class="cta-button">Read Now!</a>
                 </div>
             </article>
