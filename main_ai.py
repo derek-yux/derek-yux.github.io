@@ -249,9 +249,9 @@ def main():
                     rgba(0, 0, 0, 0.7)
                 ),
                 /* bottom, image */
-                url('/Assets/header.png');
+                url('""" + header_url + """');
             background-color: var(--primary-color);
-            background-position-y: center;
+            background-position-y: """ + b_pos + """;
             background-position-x: center;
             color: white;
             text-align: center;
