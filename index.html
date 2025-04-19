@@ -19,7 +19,9 @@
                 "ngrok-skip-browser-warning": "69420",
             }),
             })
-            .then((response) => response.json())
+            .then((response) => {
+                window.location.href = url;
+            })
             .then((data) => console.log(data))
             .catch((err) => console.log(err));
         }
