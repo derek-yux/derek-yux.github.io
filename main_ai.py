@@ -510,6 +510,7 @@ def main():
             </div>
             </div>
         </section>
+        <br>
         <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
