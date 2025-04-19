@@ -117,4 +117,4 @@ def get_article(topic: str) -> str:
     return search
 
 def combine(topic: str, source_url: str) -> str:
-    return "Write a short, informative, only slightly (around 10%) sarcastically funny in the style of Rick Riordan, and quantitative news story on '" + topic + "' with a bolded title that does not contain quotation marks nor slashes, multiple twists and turns, less than 50 words for each paragraph, and end each paragraph and the title with a string '+++++' by summarizing this article: " + newspaper_text_extraction(source_url)
+    return "Write a short, only slightly (around 10%) sarcastically funny in the style of Rick Riordan, and quantitative news story with lots of bolded numbers on '" + topic + "' with a bolded title that does not contain quotation marks nor slashes and is not all caps, multiple twists and turns, less than 50 words for each paragraph, and end each paragraph and the title with a string '+++++' by summarizing this article: " + newspaper_text_extraction(source_url) + ". Your goal is to keep the reader curious and guessing at what comes next at the end of each paragraph."

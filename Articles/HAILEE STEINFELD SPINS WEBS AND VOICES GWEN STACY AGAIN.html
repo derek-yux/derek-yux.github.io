@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,11 +33,11 @@
     <meta name="description" content="You You News Trending Content">
     <meta name="author" content="Derek (Yue) Yu">
     <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>You You News - By You, For You!</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <title>You You News</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -60,12 +62,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -83,14 +113,16 @@
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -295,161 +327,115 @@
             <p>Your Ultimate Source for Trending Content</p>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="../">Home</a></li>
-            <li><a href="tech">Tech</a></li>
-            <li><a href="sports">Sports</a></li>
-            <li1><a href="tv">TV</a></li1>
-            <li><a href="music">Music</a></li>
-            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>
-        </ul>
+            <li><a href="../Pages/tech">Tech</a></li>
+            <li><a href="../Pages/sports">Sports</a></li>
+            <li1><a href="../Pages/tv">TV</a></li1>
+            <li><a href="../Pages/music">Music</a></li>
+            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections</h2>
-            <div class="section-grid">
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://s.yimg.com/ny/api/res/1.2/oviVQc_Z.KfEwnDisuK4iw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTY0MA--/https://media.zenfs.com/en/people_218/29810ca02a8dbbfe45729b8256986899
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>HAILEE STEINFELD SPINS WEBS AND VOICES GWEN STACY AGAIN</h2>
-                            <p>Hold onto your spidey suits! Hailee Steinfeld is swinging back into action as Gwen...</p>
-                            <a href="Articles/HAILEE STEINFELD SPINS WEBS AND VOICES GWEN STACY AGAIN.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://www.joblo.com/wp-content/uploads/2025/01/ryan-gosling-star-wars-movie.jpg
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>Ryan Gosling Joins the Star Wars Universe as Starfighter</h2>
-                            <p>In news that might make even the stoic Jedi smile, Ryan Gosling is set...</p>
-                            <a href="/Articles/Ryan Gosling Joins the Star Wars Universe as Starfighter.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDZ35ZtMalXPpw-jD69t4BHLI3YEIFZglkyw&s
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>Michael B. Jordan Reflects on Sinners and Chadwick Boseman's Legacy</h2>
-                            <p>In a recent interview about his new film *Sinners*, Michael B. Jordan shared insights...</p>
-                            <a href="/Articles/Michael B. Jordan Reflects on Sinners and Chadwick Boseman's Legacy.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                <article class="section-card">
-                    <img src="https://imageio.forbes.com/specials-images/imageserve/67f55d7d8be5f6f4ad6b55bb/-Black-Mirror--Season-7/0x0.jpg?format=jpg&crop=1048,698,x71,y0,safe&width=960" alt="TV Blog">
-                    <div class="section-content">
-                        <h2>Black Mirror Season 7 Release</h2>
-                        <p>Well, folks, grab your tinfoil hats and prepare for another season of Black Mirror, the show that...</p>
-                        <a href="../Articles/BREAKING NEWS: Black Mirror Season 7 Release.html" class="cta-button">Read Now!</a>
-                    </div>
-                </article>
-                </div>
-                <div data-aos="fade-up">
-                <article class="section-card">
-                    <img src="https://people.com/thmb/WoERchP7xKZ-qk4XcJ6PNLBWHtU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(731x253:733x255):format(webp)/Grant-Ellis-Litia-Juliana-tout2-032425-dbc360c399db4a928aec77318c8cbc0c.jpg" alt="TV Blog">
-                    <div class="section-content">
-                        <h2>The Decision, Grant Ellis ver.</h2>
-                        <p>More than ten years after LeBron, the Decision strikes again...just that this time, Bachelor Grant Ellis must...</p>
-                        <a href="#" class="cta-button">Read More</a>
-                    </div>
-                </article>
-                </div>
-            </div>
-        </section>
+        <div class="shrinker">
+        <h2>HAILEE STEINFELD SPINS WEBS AND VOICES GWEN STACY AGAIN</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://s.yimg.com/ny/api/res/1.2/oviVQc_Z.KfEwnDisuK4iw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTY0MA--/https://media.zenfs.com/en/people_218/29810ca02a8dbbfe45729b8256986899' alt="Cinque Terre" class="slider_image">
+            <img src='https://deadline.com/wp-content/uploads/2025/04/hailee-steinfeld-spiderman-beyond-the-spider-verse.jpg' alt="Cinque Terre" class="slider_image">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnSg4NO30a7vCyBlFPxfVCI3LfIodteiS6A&s' alt="Cinque Terre" class="slider_image">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">Hold onto your spidey suits! Hailee Steinfeld is swinging back into action as Gwen Stacy in the animated blockbuster Spider-Man: Across the Spider-Verse. The cinematic gem hits theaters on June 4, 2027—because why rush perfection, right?</p></div><br><div data-aos="fade-up"><p class="p1">In a thrilling chat with MTV, Steinfeld dropped hints about her time in the recording booth, saying, “We’re well into that thing.” Her enthusiasm is contagious, even if her lips seem to be sealed tighter than Aunt May’s cookie jar. Trusting the process, she vowed to leave it in the capable hands of Marvel’s wizards.</p></div><br><div data-aos="fade-up"><p class="p1">This will mark her third outing as Gwen, who first swung into our hearts in 2018’s Spider-Man: Into the Spider-Verse. As if two memorable roles weren’t enough, she’s also hustling it out on the small screen as Kate Bishop in Hawkeye. Multi-tasking, meet superhero-level!</p></div><br><div data-aos="fade-up"><p class="p1">While fans eagerly await her live-action return in the ever-elusive Avengers: Doomsday, Steinfeld expertly dodged questions like Spider-Man on a bad day. “I sure hope not,” she said when asked about her superhero future. With a cast featuring familiar names and tantalizing hints, we can only hope Spider-Gwen’s true nemesis isn’t time itself!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
+        </div>
         <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
