@@ -9,6 +9,31 @@
 
     gtag('config', 'G-B4F7KKQ08M');
     </script>
+
+    <script>
+        function handleNgrokLink(event, url) {
+            event.preventDefault();
+            
+            // Create a new fetch request with the required header
+            fetch(url, {
+                headers: {
+                    "ngrok-skip-browser-warning": "69420"
+                },
+                // Credentials needed if your site uses cookies/authentication
+                credentials: "include"
+            })
+            .then(response => {
+                // After successful fetch, redirect to the URL
+                window.location.href = url;
+            })
+            .catch(error => {
+                console.error("Error pre-fetching ngrok URL:", error);
+                // Fallback to direct navigation if fetch fails
+                window.location.href = url;
+            });
+        }
+    </script>
+
     <script type="text/javascript"> //<![CDATA[ 
         var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
         document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
@@ -303,7 +328,7 @@
             <li><a href="Pages/sports">Sports</a></li>
             <li><a href="Pages/tv">TV</a></li>
             <li><a href="Pages/music">Music</a></li>
-            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>
+            <li><a href="#" onclick="handleNgrokLink(event, 'https://reindeer-blessed-adversely.ngrok-free.app/')">Forums</a></li>
         </ul>
     </nav>
 
