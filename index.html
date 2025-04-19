@@ -13,24 +13,15 @@
     <script>
         function handleNgrokLink(event, url) {
             event.preventDefault();
-            
-            // Create a new fetch request with the required header
             fetch(url, {
-                headers: {
-                    "ngrok-skip-browser-warning": "69420"
-                },
-                // Credentials needed if your site uses cookies/authentication
-                credentials: "include"
+            method: "get",
+            headers: new Headers({
+                "ngrok-skip-browser-warning": "69420",
+            }),
             })
-            .then(response => {
-                // After successful fetch, redirect to the URL
-                window.location.href = url;
-            })
-            .catch(error => {
-                console.error("Error pre-fetching ngrok URL:", error);
-                // Fallback to direct navigation if fetch fails
-                window.location.href = url;
-            });
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err));
         }
     </script>
 
