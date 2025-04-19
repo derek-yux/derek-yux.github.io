@@ -303,7 +303,7 @@
             <li><a href="Pages/sports">Sports</a></li>
             <li><a href="Pages/tv">TV</a></li>
             <li><a href="Pages/music">Music</a></li>
-            <li><a href="#" id="ngrok-link">Forums</a></li>
+            <li><a href="redirector.html">Forums</a></li>
         </ul>
     </nav>
 
@@ -452,31 +452,6 @@
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
-    <script>
-        document.getElementById('ngrok-link').addEventListener('click', function(event) {
-          event.preventDefault(); // Prevent the default link behavior
-    
-          // Create an XMLHttpRequest to include the custom header
-          var xhr = new XMLHttpRequest();
-          xhr.open('GET', 'https://reindeer-blessed-adversely.ngrok-free.app/', true);
-          xhr.setRequestHeader('ngrok-skip-browser-warning', '69420');
-    
-          xhr.onload = function() {
-            if (xhr.status === 200) {
-              // If the request is successful, redirect the browser to the Ngrok URL
-              window.location.href = 'https://reindeer-blessed-adversely.ngrok-free.app/';
-            } else {
-              console.error('Request failed with status:', xhr.status);
-            }
-          };
-    
-          xhr.onerror = function() {
-            console.error('Request failed');
-          };
-    
-          xhr.send();
-        });
-      </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
