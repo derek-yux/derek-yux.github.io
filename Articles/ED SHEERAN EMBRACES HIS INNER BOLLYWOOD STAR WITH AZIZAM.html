@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,11 +33,11 @@
     <meta name="description" content="You You News Trending Content">
     <meta name="author" content="Derek (Yue) Yu">
     <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>You You News - By You, For You!</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <title>You You News</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -60,12 +62,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -83,14 +113,16 @@
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -295,152 +327,115 @@
             <p>Your Ultimate Source for Trending Content</p>
         </div>
     </header>
-
     <nav>
         <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="tech">Tech</a></li>
-            <li><a href="sports">Sports</a></li>
-            <li><a href="tv">TV</a></li>
-            <li1><a href="music">Music</a></li1>
-            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>
-        </ul>
+            <li><a href="../index">Home</a></li>
+            <li><a href="../Pages/tech">Tech</a></li>
+            <li><a href="../Pages/sports">Sports</a></li>
+            <li><a href="../Pages/tv">TV</a></li>
+            <li1><a href="../Pages/music">Music</a></li1>
+            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections</h2>
-            <div class="section-grid">
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi2HghBgmhMOLPO0WbXQiI1qt5LM6ovsZDJg&s
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>ED SHEERAN EMBRACES HIS INNER BOLLYWOOD STAR WITH AZIZAM</h2>
-                            <p>In an unexpected twist that left fans wondering if he was auditioning for a...</p>
-                            <a href="/Articles/ED SHEERAN EMBRACES HIS INNER BOLLYWOOD STAR WITH AZIZAM.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1020x680/public/d8/images/canvas/2024/08/28/0f47f05e-d6b1-4c29-bea1-ae17a26971b6_dbec454f.jpg?itok=gxj4CTB1&v=1724821730
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>BIG OCEAN: THE HEAR-THROBBING K-POP SENSATION THAT CAN'T HEAR YOU SCREAM</h2>
-                            <p>In an unexpected twist to the K-pop saga, Big Ocean has shown that hearing...</p>
-                            <a href="/Articles/BIG OCEAN: THE HEAR-THROBBING K-POP SENSATION THAT CAN'T HEAR YOU SCREAM.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://assets.teenvogue.com/photos/673f1a29c4f19f93077998a2/16:9/w_2560%2Cc_limit/COACHELLA%25202026.jpg
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>Coachella 2025: A Beautiful Mess in the Desert</h2>
-                            <p>Coachella, the crown jewel of music festivals where stars shine and influencers flex, is...</p>
-                            <a href="/Articles/Coachella 2025: A Beautiful Mess in the Desert.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://i.cbc.ca/1.7513070.1744908779!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_1180/music-drake-kendrick-lamar.jpg?im=Resize%3D780
-            " alt="Music Blog">
-                <div class="section-content">
-                    <h2>Drake Expands Lawsuit Against Universal Music Over Kendrick Lamar's Super Bowl Performance</h2>
-                    <p>In a twist worthy of a dramatic rap feud, Drake has expanded his defamation...</p>
-                    <a href="/Articles/Drake Expands Lawsuit Against Universal Music Over Kendrick Lamar's Super Bowl Performance.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
+        <div class="shrinker">
+        <h2>ED SHEERAN EMBRACES HIS INNER BOLLYWOOD STAR WITH AZIZAM</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi2HghBgmhMOLPO0WbXQiI1qt5LM6ovsZDJg&s' alt="Cinque Terre" class="slider_image">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWb7KiawO-U8Qbe5_eAcDop3HGI2irm-TZzg&s' alt="Cinque Terre" class="slider_image">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUX65XIbi6pkOJ006SrHrtbV4NMEZDN8vsUw&s' alt="Cinque Terre" class="slider_image">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">In an unexpected twist that left fans wondering if he was auditioning for a Bollywood film, Ed Sheeran found himself cited by TIME magazine as one of the 100 most influential people—because, naturally, writing hit songs can't be the only qualification. Who knew wedding parties were training grounds for fame?</p></div><br><div data-aos="fade-up"><p class="p1">With his new single, “Azizam,” fresh out of the musical oven, Ed spun a tale of inspiration that sounds like a Netflix documentary. After a rooftop jam session in Old Delhi, it appears there’s nothing quite like a little Indian flair to shake off that sticky Western pop stagnation. Way to go, Ed!</p></div><br><div data-aos="fade-up"><p class="p1">During a sun-soaked recording session in Goa, Sheeran discovered that Indian music is like a breath of fresh air—or maybe just a really good chai. “It’s a wave of its own,” he mused, probably while sipping something delicious. Forget fitting in; he’s more about breaking molds and soaking up the vibes.</p></div><br><div data-aos="fade-up"><p class="p1">His journey seems straight out of a romantic comedy: from Elton John’s influence to Eminem’s grit, Ed is here, transcending genres like a skilled magician. As he continues to weave Indian influences into his work, we can only wonder: will his next album feature a sitar solo? Stay tuned!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
         </div>
-            </div>
-        </section>
         <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
