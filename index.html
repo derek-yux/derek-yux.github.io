@@ -454,27 +454,29 @@
     </footer>
     <script>
         document.getElementById('ngrok-link').addEventListener('click', function(event) {
-      event.preventDefault(); // Prevent default link behavior
-
-      fetch('https://reindeer-blessed-adversely.ngrok-free.app/', {
-        method: 'GET',
-        headers: {
-          'ngrok-skip-browser-warning': '69420'
-        }
-      })
-      .then(response => {
-        // If the response is OK, open the URL in a new tab (or modify as needed)
-        if (response.ok) {
-          window.open('https://reindeer-blessed-adversely.ngrok-free.app/', '_blank');
-        } else {
-          console.error('Failed to load Ngrok URL');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    });
-    </script>
+          event.preventDefault(); // Prevent the default link behavior
+    
+          // Create an XMLHttpRequest to include the custom header
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'https://reindeer-blessed-adversely.ngrok-free.app/', true);
+          xhr.setRequestHeader('ngrok-skip-browser-warning', '69420');
+    
+          xhr.onload = function() {
+            if (xhr.status === 200) {
+              // If the request is successful, redirect the browser to the Ngrok URL
+              window.location.href = 'https://reindeer-blessed-adversely.ngrok-free.app/';
+            } else {
+              console.error('Request failed with status:', xhr.status);
+            }
+          };
+    
+          xhr.onerror = function() {
+            console.error('Request failed');
+          };
+    
+          xhr.send();
+        });
+      </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
