@@ -12,18 +12,35 @@
 
     <script>
         function handleNgrokLink(event, url) {
-            event.preventDefault();
             fetch(url, {
-            method: "get",
-            headers: new Headers({
-                "ngrok-skip-browser-warning": "69420",
-            }),
+                method: "get",
+                headers: new Headers({
+                    "ngrok-skip-browser-warning": "69420",
+                }),
             })
             .then((response) => {
                 window.location.href = url;
             })
             .then((data) => console.log(data))
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                event.preventDefault();
+                fetch(url, {
+                    headers: {
+                        "ngrok-skip-browser-warning": "69420"
+                    },
+                    // Credentials needed if your site uses cookies/authentication
+                    credentials: "include"
+                })
+                .then(response => {
+                    // After successful fetch, redirect to the URL
+                    window.location.href = url;
+                })
+                .catch(error => {
+                    console.error("Error pre-fetching ngrok URL:", error);
+                    // Fallback to direct navigation if fetch fails
+                    window.location.href = url;
+                });
+            });
         }
     </script>
 
