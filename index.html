@@ -861,13 +861,20 @@
             const weeklyRewardsContainer = document.getElementById('weeklyRewards');
             weeklyRewardsContainer.innerHTML = '';
             
+            // Use a new variable for claimed days instead of login days
             const loginDays = parseInt(localStorage.getItem('loginDays') || '0');
+            const claimedDays = parseInt(localStorage.getItem('claimedDays') || '0');
             
             for (let i = 1; i <= 7; i++) {
                 const reward = getDailyReward(i);
                 const dayElement = document.createElement('div');
-                // Increased height to allow more space for the content
-                dayElement.style.cssText = 'width: 60px; height: 90px; margin: 5px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border-radius: 8px; background-color: ' + (i <= loginDays ? '#c8e6c9' : '#f4f4f8') + '; position: relative; padding: 5px 2px;';
+                // Use claimedDays for determining if checkmark should be shown
+                dayElement.style.cssText = 'width: 60px; height: 90px; margin: 5px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border-radius: 8px; background-color: ' + (i <= loginDays ? '#f4f4f8' : '#f4f4f8') + '; position: relative; padding: 5px 2px;';
+                
+                // Highlight current day
+                if (i === loginDays) {
+                    dayElement.style.border = '2px solid #3498db';
+                }
                 
                 const dayNumber = document.createElement('div');
                 dayNumber.style.cssText = 'width: 100%; text-align: left; font-size: 12px; font-weight: bold; margin-bottom: 5px;';
@@ -881,11 +888,15 @@
                 rewardName.style.cssText = 'width: 100%; font-size: 10px; text-align: center; padding: 0 2px; margin-top: 4px;';
                 rewardName.textContent = reward.name;
                 
-                if (i <= loginDays) {
+                // Only show checkmark for claimed days
+                if (i <= claimedDays) {
                     const checkmark = document.createElement('div');
                     checkmark.style.cssText = 'position: absolute; top: -5px; right: -5px; background-color: #4caf50; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px;';
                     checkmark.innerHTML = '✓';
                     dayElement.appendChild(checkmark);
+                    
+                    // Also change background to indicate claimed
+                    dayElement.style.backgroundColor = '#c8e6c9';
                 }
                 
                 dayElement.appendChild(dayNumber);
@@ -906,30 +917,34 @@
             
             // Manage weekly login days
             let loginDays = parseInt(localStorage.getItem('loginDays') || '0');
+            const claimedDays = parseInt(localStorage.getItem('claimedDays') || '0');
             const lastResetWeek = localStorage.getItem('lastResetWeek');
             const currentWeek = getWeekNumber(new Date());
             
-            // Reset week counter if it's a new week
+            // Reset counters if it's a new week
             if (lastResetWeek !== currentWeek) {
                 loginDays = 0;
+                localStorage.setItem('loginDays', '0');
+                localStorage.setItem('claimedDays', '0');
                 localStorage.setItem('lastResetWeek', currentWeek);
             }
             
             // Check if it's a new day for reward purposes
             const newDay = isNewDay();
             
-            // Only increment login days if it's a new day and we haven't hit 7 yet
-            // Don't update the lastLoginDate here - we'll do that when claiming the reward
+            // Increment login days if it's a new day and we haven't hit 7 yet
             if (newDay && loginDays < 7) {
-                loginDays++;
+                loginDays = Math.max(loginDays, claimedDays + 1);
                 localStorage.setItem('loginDays', loginDays.toString());
             }
             
             // Create weekly rewards display
             createWeeklyRewardsDisplay();
             
-            // Display today's reward
-            const todayReward = getDailyReward(loginDays);
+            // Display today's reward - show the next unclaimed reward
+            const nextDay = claimedDays + 1;
+            const todayReward = getDailyReward(nextDay);
+            
             document.getElementById('rewardMessage').textContent = newDay ? 
                 `Today's reward: ${todayReward.icon} ${todayReward.name}` : 
                 'You already claimed today\'s reward. Come back tomorrow!';
@@ -1197,8 +1212,12 @@
         // Claim reward button
         document.getElementById('claimReward').addEventListener('click', function() {
             if (isNewDay()) {
-                const loginDays = parseInt(localStorage.getItem('loginDays') || '1');
-                const reward = getDailyReward(loginDays);
+                // Get current claimed days and increment
+                let claimedDays = parseInt(localStorage.getItem('claimedDays') || '0');
+                claimedDays++;
+                
+                // Get the reward for the next unclaimed day
+                const reward = getDailyReward(claimedDays);
                 
                 // Handle different reward types
                 if (reward.type === 'theme' && reward.themeId) {
@@ -1213,6 +1232,9 @@
                     alert(`Congratulations! You've earned ${reward.name}! Your new total is ${currentPoints} points.`);
                 }
                 
+                // Save claimed days
+                localStorage.setItem('claimedDays', claimedDays.toString());
+                
                 // Mark as claimed for today
                 localStorage.setItem('lastLoginDate', new Date().toDateString());
                 
@@ -1220,6 +1242,9 @@
                 document.getElementById('rewardMessage').textContent = 'You already claimed today\'s reward. Come back tomorrow!';
                 this.disabled = true;
                 this.style.backgroundColor = '#cccccc';
+                
+                // Update the display to show the checkmark
+                createWeeklyRewardsDisplay();
             }
         });
         
