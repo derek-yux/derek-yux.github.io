@@ -1138,6 +1138,52 @@
             .points-increment {
                 animation: pointsIncrement 0.8s ease-out;
             }
+            .email-form {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .email-input {
+                padding: 10px 15px;
+                border-radius: 8px;
+                border: 1px solid var(--color-green);
+                font-family: inherit;
+                font-size: 14px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .submit-btn {
+                background-color: var(--color-yellow);
+                color: var(--color-brown);
+                border: 1px solid var(--color-green);
+                border-radius: 8px;
+                padding: 12px 20px;
+                font-family: inherit;
+                font-weight: bold;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: all 0.2s;
+                letter-spacing: 1px;
+            }
+            
+            .submit-btn:hover {
+                background-color: var(--color-green);
+                color: white;
+            }
+            
+            .success-message {
+                background-color: rgba(129, 199, 132, 0.2);
+                border: 1px solid var(--color-green);
+                color: var(--color-brown);
+                padding: 15px;
+                border-radius: 8px;
+                margin-top: 15px;
+                text-align: center;
+                display: none;
+            }
         `;
         
         // Add the elements to the document
@@ -1167,8 +1213,174 @@
                 updatePointsDisplay(parseInt(e.newValue || '0'));
             }
         });
-        
 
+        // Make points display clickable to show points info and email collection
+        pointsDisplay.addEventListener('click', function() {
+            showPointsEmailCollector();
+        });
+        
+        // Function to show points info and email collection modal
+    function showPointsEmailCollector() {
+        // Create modal if it doesn't exist
+        let pointsModal = document.getElementById('pointsDetailModal');
+        
+        if (!pointsModal) {
+            pointsModal = document.createElement('div');
+            pointsModal.id = 'pointsDetailModal';
+            pointsModal.className = 'modal';
+            pointsModal.style.cssText = `
+                display: none;
+                position: fixed;
+                z-index: 9999;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.7);
+                justify-content: center;
+                align-items: center;
+            `;
+            
+            const modalContent = document.createElement('div');
+            modalContent.className = 'modal-content notification-bubble';
+            modalContent.style.cssText = `
+                background-color: var(--color-beige);
+                border-radius: 11px;
+                padding: 25px;
+                width: 80%;
+                max-width: 500px;
+                border: 1px solid var(--color-green);
+                box-shadow: 20px 20px var(--color-blue);
+                position: relative;
+                animation: popIn 0.3s ease-out;
+            `;
+            
+            modalContent.innerHTML = `
+                <span class="reward-icon">✨</span>
+                <h2 style="color: var(--color-brown); margin-top: 5px; text-transform: uppercase; letter-spacing: 2px;">Coming Soon!</h2>
+                <div style="margin: 20px 0; text-align: center;">
+                    <p style="font-size: 16px; margin-bottom: 15px;">Forum Points will be part of an upcoming update! They'll allow you to:</p>
+                    <ul style="text-align: left; padding-left: 20px; margin-bottom: 20px;">
+                        <li>Upvote/downvote posts and comments</li>
+                        <li>Create custom profile badges</li>
+                        <li>Access exclusive forum sections</li>
+                        <li>Unlock special themes</li>
+                    </ul>
+                    <p style="font-size: 16px; margin-bottom: 10px;">Want to stay in the loop? Enter your email below for updates!</p>
+                </div>
+                
+                <form id="emailSignupForm" class="email-form">
+                    <input type="email" class="email-input" id="emailInput" placeholder="Your email address" required>
+                    <button type="submit" class="submit-btn">Stay Updated</button>
+                </form>
+                
+                <div id="successMessage" class="success-message">
+                    <p>Thank you! We'll keep you updated on all Forum Points news!</p>
+                </div>
+                
+                <button id="closePointsModal" class="close-notification" style="margin-top: 15px;">Close</button>
+            `;
+            
+            pointsModal.appendChild(modalContent);
+            document.body.appendChild(pointsModal);
+            
+            // Add close button functionality
+            document.getElementById('closePointsModal').addEventListener('click', function() {
+                pointsModal.style.display = 'none';
+            });
+            
+            // Add form submission handler
+            document.getElementById('emailSignupForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('emailInput').value;
+                if (email && validateEmail(email)) {
+                    // Store that this user has signed up
+                    localStorage.setItem('emailSignedUp', 'true');
+                    
+                    // Send email to site owner with the user's email
+                    sendEmailToSiteOwner(email);
+                    
+                    // Show success message
+                    document.getElementById('emailSignupForm').style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                }
+            });
+        }
+        
+        // Check if user already signed up
+        const alreadySignedUp = localStorage.getItem('emailSignedUp') === 'true';
+        if (alreadySignedUp) {
+            document.getElementById('emailSignupForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        } else {
+            document.getElementById('emailSignupForm').style.display = 'flex';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+        
+        // Show the modal
+        pointsModal.style.display = 'flex';
+    }
+    
+    // Email validation function
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+    
+    // Function to send email to site owner
+    function sendEmailToSiteOwner(userEmail) {
+        // Create a hidden form for submission
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/submit-email'; // Update this to your server endpoint
+        form.style.display = 'none';
+        
+        // Create an input for the email address
+        const emailInput = document.createElement('input');
+        emailInput.type = 'email';
+        emailInput.name = 'userEmail';
+        emailInput.value = userEmail;
+        
+        // Create hidden input for destination email
+        const destinationInput = document.createElement('input');
+        destinationInput.type = 'hidden';
+        destinationInput.name = 'destination';
+        destinationInput.value = 'youyounews.live@gmail.com';
+        
+        // Create hidden input for subject
+        const subjectInput = document.createElement('input');
+        subjectInput.type = 'hidden';
+        subjectInput.name = 'subject';
+        subjectInput.value = 'New Forum Points Update Subscriber';
+        
+        // Add all inputs to form
+        form.appendChild(emailInput);
+        form.appendChild(destinationInput);
+        form.appendChild(subjectInput);
+        
+        // Add form to document and submit
+        document.body.appendChild(form);
+        
+        // Submit using fetch API instead of form submission
+        fetch('/submit-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userEmail: userEmail,
+                destination: 'youyounews.live@gmail.com',
+                subject: 'New Forum Points Update Subscriber'
+            })
+        })
+        .catch(error => {
+            console.error('Error sending email signup:', error);
+        });
+        
+        // Remove form
+        document.body.removeChild(form);
+    }
         // Create weekly rewards display
         function createWeeklyRewardsDisplay() {
             const weeklyRewardsContainer = document.getElementById('weeklyRewards');
@@ -1521,9 +1733,10 @@
                 document.getElementById('themeModal').style.display = 'none';
             }
         });
-        const originalClaimRewardListener = document.getElementById('claimReward').onclick;
-        document.getElementById('claimReward').onclick = null; // Remove the original listener
-        // Claim reward button
+        const originalClaimReward = document.getElementById('claimReward').onclick;
+    if (document.getElementById('claimReward')) {
+        document.getElementById('claimReward').onclick = null; // Remove existing handler if any
+        
         document.getElementById('claimReward').addEventListener('click', function() {
             if (isNewDay()) {
                 // Get current claimed days and increment
@@ -1571,9 +1784,12 @@
                 this.style.backgroundColor = '#cccccc';
                 
                 // Update the weekly rewards display to show the checkmark
-                createWeeklyRewardsDisplay();
+                if (typeof createWeeklyRewardsDisplay === 'function') {
+                    createWeeklyRewardsDisplay();
+                }
             }
         });
+    }
         
         // Make points display clickable to show points history/details
         pointsDisplay.addEventListener('click', function() {
