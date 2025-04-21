@@ -1042,6 +1042,131 @@
             return rewards[dayNumber - 1];
         }
         
+        // Create the forum points display element
+        const pointsDisplay = document.createElement('div');
+        pointsDisplay.id = 'forumPointsDisplay';
+        pointsDisplay.className = 'forum-points-display';
+        
+        // Get current points or default to 0
+        const currentPoints = parseInt(localStorage.getItem('forumPoints') || '0');
+        
+        // Set initial HTML content
+        pointsDisplay.innerHTML = `
+            <div class="points-bubble">
+                <span class="points-icon">🏆</span>
+                <span class="points-value">${currentPoints}</span>
+                <span class="points-label">Points</span>
+            </div>
+        `;
+        
+        // Add styles
+        const pointsStyles = document.createElement('style');
+        pointsStyles.textContent = `
+            .forum-points-display {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+            }
+            
+            .points-bubble {
+                transform: translatey(0px);
+                animation: float 5s ease-in-out infinite;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 3px;
+                font-size: 15px;
+                color: var(--color-brown);
+                background-color: var(--color-beige);
+                padding: 15px 20px;
+                border-radius: 11px;
+                position: relative;
+                box-shadow: 10px 10px var(--color-blue);
+                font-family: "Baloo 2", cursive, sans-serif;
+                border: 1px solid var(--color-green);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                cursor: pointer;
+            }
+            
+            .points-bubble:after {
+                transform: translatey(0px);
+                animation: float2 5s ease-in-out infinite;
+                content: ".";
+                font-weight: bold;
+                -webkit-text-stroke: 0.5px var(--color-green);
+                -webkit-text-fill-color: var(--color-beige);
+                border: 1px solid var(--color-green);
+                text-shadow: 11px 11px var(--color-blue);
+                text-align: left;
+                font-size: 28px;
+                width: 28px;
+                height: 6px;
+                line-height: 30px;
+                border-radius: 11px;
+                background-color: var(--color-beige);
+                position: absolute;
+                display: block;
+                bottom: -15px;
+                left: 0;
+                box-shadow: 11px 11px var(--color-blue);
+                z-index: -2;
+            }
+            
+            .points-icon {
+                font-size: 18px;
+                margin-right: 2px;
+            }
+            
+            .points-value {
+                font-size: 18px;
+                margin-right: 4px;
+            }
+            
+            .points-label {
+                font-size: 12px;
+            }
+            
+            @keyframes pointsIncrement {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.5); color: #4caf50; }
+                100% { transform: scale(1); }
+            }
+            
+            .points-increment {
+                animation: pointsIncrement 0.8s ease-out;
+            }
+        `;
+        
+        // Add the elements to the document
+        document.head.appendChild(pointsStyles);
+        document.body.appendChild(pointsDisplay);
+        
+        // Function to update points display
+        window.updatePointsDisplay = function(newPoints) {
+            const pointsValueElement = document.querySelector('.points-value');
+            const oldPoints = parseInt(pointsValueElement.textContent);
+            
+            // Update the points display
+            pointsValueElement.textContent = newPoints;
+            
+            // Add animation class if points increased
+            if (newPoints > oldPoints) {
+                pointsValueElement.classList.add('points-increment');
+                setTimeout(() => {
+                    pointsValueElement.classList.remove('points-increment');
+                }, 800);
+            }
+        };
+        
+        // Listen for points changes in local storage
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'forumPoints') {
+                updatePointsDisplay(parseInt(e.newValue || '0'));
+            }
+        });
         
 
         // Create weekly rewards display
@@ -1412,7 +1537,6 @@
                 if (reward.type === 'theme' && reward.themeId) {
                     unlockTheme(reward.themeId);
                     
-                    // Show custom styled notification
                     showStyledNotification(
                         "Theme Unlocked!",
                         `You've unlocked the ${reward.name}! Go to Themes to apply it.`,
@@ -1425,7 +1549,9 @@
                     currentPoints += pointsToAdd;
                     localStorage.setItem('forumPoints', currentPoints.toString());
                     
-                    // Show custom styled notification
+                    // Update points display
+                    updatePointsDisplay(currentPoints);
+                    
                     showStyledNotification(
                         "Points Earned!",
                         `You've earned ${pointsToAdd} Forum Points! Your new total is ${currentPoints} points.`,
@@ -1447,6 +1573,11 @@
                 // Update the weekly rewards display to show the checkmark
                 createWeeklyRewardsDisplay();
             }
+        });
+        
+        // Make points display clickable to show points history/details
+        pointsDisplay.addEventListener('click', function() {
+            showPointsDetails();
         });
         
         // Check if we should show login rewards (only once per day)
@@ -1511,7 +1642,81 @@
                 showSlide(slideIndex);
             }, 5000); // Change slide every 5 seconds
         }
-        
+        function showPointsDetails() {
+            // Create modal if it doesn't exist
+            let pointsModal = document.getElementById('pointsDetailModal');
+            
+            if (!pointsModal) {
+                pointsModal = document.createElement('div');
+                pointsModal.id = 'pointsDetailModal';
+                pointsModal.className = 'modal';
+                pointsModal.style.cssText = `
+                    display: none;
+                    position: fixed;
+                    z-index: 9999;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.7);
+                    justify-content: center;
+                    align-items: center;
+                `;
+                
+                const modalContent = document.createElement('div');
+                modalContent.className = 'modal-content';
+                modalContent.style.cssText = `
+                    background-color: var(--color-beige);
+                    border-radius: 11px;
+                    padding: 20px;
+                    width: 80%;
+                    max-width: 500px;
+                    border: 1px solid var(--color-green);
+                    box-shadow: 20px 20px var(--color-blue);
+                    position: relative;
+                    animation: popIn 0.3s ease-out;
+                `;
+                
+                modalContent.innerHTML = `
+                    <h2 style="color: var(--color-brown); margin-top: 0;">Forum Points</h2>
+                    <div id="pointsHistory" style="margin: 20px 0;">
+                        <p>Your current points: <strong>${currentPoints}</strong></p>
+                        <h3>What can you do with points?</h3>
+                        <ul>
+                            <li>Upvote/downvote posts and comments</li>
+                            <li>Create custom profile badges</li>
+                            <li>Access exclusive forum sections</li>
+                            <li>Unlock special themes</li>
+                        </ul>
+                    </div>
+                    <button id="closePointsModal" style="
+                        background: var(--color-beige);
+                        border: 1px solid var(--color-green);
+                        color: var(--color-brown);
+                        padding: 8px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-family: inherit;
+                        font-weight: bold;
+                        transition: all 0.2s;
+                    ">Close</button>
+                `;
+                
+                pointsModal.appendChild(modalContent);
+                document.body.appendChild(pointsModal);
+                
+                // Add close button functionality
+                document.getElementById('closePointsModal').addEventListener('click', function() {
+                    pointsModal.style.display = 'none';
+                });
+            }
+            
+            // Update the points display in the modal
+            document.querySelector('#pointsHistory p strong').textContent = localStorage.getItem('forumPoints') || '0';
+            
+            // Show the modal
+            pointsModal.style.display = 'flex';
+        }
         // Function to show a specific slide
         function showSlide(n) {
             // Hide all slides
