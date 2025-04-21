@@ -1130,14 +1130,60 @@
                 font-size: 10px;
             }
 
+            /* Modal/popup container styles */
+            .modal-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2000;
+                overflow-y: auto; /* Enable vertical scrolling */
+                padding: 20px 0;
+            }
+
+            /* Modal content styles */
+            .modal-content {
+                background-color: var(--color-beige);
+                border-radius: 12px;
+                border: 1px solid var(--color-green);
+                box-shadow: 10px 10px var(--color-blue);
+                padding: 20px;
+                width: 90%;
+                max-width: 400px;
+                max-height: 80vh; /* Limit height on mobile */
+                overflow-y: auto; /* Make content scrollable */
+                position: relative;
+                margin: auto; /* Center in scrollable container */
+            }
+
+            /* Close button styles */
+            .close-btn {
+                position: sticky; /* Make the close button sticky */
+                top: 0;
+                right: 0;
+                float: right;
+                font-size: 20px;
+                font-weight: bold;
+                color: var(--color-brown);
+                cursor: pointer;
+                background: var(--color-beige);
+                padding: 5px 10px;
+                border-radius: 5px;
+                z-index: 10;
+            }
+
             /* Email form adjustments */
             .email-form {
                 margin-top: 15px;
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                max-width: 100%;
-                padding: 0 10px;
+                width: 100%;
                 box-sizing: border-box;
             }
 
@@ -1164,6 +1210,7 @@
                 transition: all 0.2s;
                 letter-spacing: 1px;
                 font-size: 13px;
+                margin-bottom: 15px; /* Add space above success message */
             }
 
             .success-message {
@@ -1207,6 +1254,17 @@
                 
                 .points-label {
                     font-size: 9px;
+                }
+                
+                .modal-content {
+                    padding: 15px;
+                    width: 85%;
+                    max-height: 75vh;
+                }
+                
+                .close-btn {
+                    padding: 3px 8px;
+                    font-size: 18px;
                 }
                 
                 .email-form {
