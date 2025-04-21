@@ -806,11 +806,8 @@
             const lastLogin = localStorage.getItem('lastLoginDate');
             const today = new Date().toDateString();
             
-            if (lastLogin !== today) {
-                localStorage.setItem('lastLoginDate', today);
-                return true;
-            }
-            return false;
+            // Return true if there's no last login or if it's different from today
+            return (lastLogin !== today);
         }
         
         // Function to update and get current streak
@@ -918,8 +915,12 @@
                 localStorage.setItem('lastResetWeek', currentWeek);
             }
             
-            // Increment login days if it's a new day and we haven't hit 7 yet
-            if (isNewDay() && loginDays < 7) {
+            // Check if it's a new day for reward purposes
+            const newDay = isNewDay();
+            
+            // Only increment login days if it's a new day and we haven't hit 7 yet
+            // Don't update the lastLoginDate here - we'll do that when claiming the reward
+            if (newDay && loginDays < 7) {
                 loginDays++;
                 localStorage.setItem('loginDays', loginDays.toString());
             }
@@ -929,14 +930,14 @@
             
             // Display today's reward
             const todayReward = getDailyReward(loginDays);
-            document.getElementById('rewardMessage').textContent = isNewDay() ? 
+            document.getElementById('rewardMessage').textContent = newDay ? 
                 `Today's reward: ${todayReward.icon} ${todayReward.name}` : 
                 'You already claimed today\'s reward. Come back tomorrow!';
             
             // Enable or disable claim button
             const claimButton = document.getElementById('claimReward');
-            claimButton.disabled = !isNewDay();
-            claimButton.style.backgroundColor = isNewDay() ? '#3498db' : '#cccccc';
+            claimButton.disabled = !newDay;
+            claimButton.style.backgroundColor = newDay ? '#3498db' : '#cccccc';
         }
         
         // Get week number of the year
@@ -1206,7 +1207,7 @@
                 } else if (reward.type === 'points') {
                     // Add points to user account
                     let currentPoints = parseInt(localStorage.getItem('forumPoints') || '0');
-                    const pointsToAdd = parseInt(reward.name);
+                    const pointsToAdd = parseInt(reward.name.match(/\d+/)[0]); // Extract number from reward name
                     currentPoints += pointsToAdd;
                     localStorage.setItem('forumPoints', currentPoints.toString());
                     alert(`Congratulations! You've earned ${reward.name}! Your new total is ${currentPoints} points.`);
