@@ -1062,35 +1062,36 @@
         // Add styles
         const pointsStyles = document.createElement('style');
         pointsStyles.textContent = `
+            /* Points counter adjustments for mobile */
             .forum-points-display {
                 position: fixed;
-                top: 20px;
-                right: 20px;
+                top: 10px;
+                left: 10px;
                 z-index: 1000;
             }
-            
+
             .points-bubble {
                 transform: translatey(0px);
                 animation: float 5s ease-in-out infinite;
                 text-align: center;
                 text-transform: uppercase;
                 font-weight: bold;
-                letter-spacing: 3px;
-                font-size: 15px;
+                letter-spacing: 2px;
+                font-size: 13px;
                 color: var(--color-brown);
                 background-color: var(--color-beige);
-                padding: 15px 20px;
-                border-radius: 11px;
+                padding: 8px 12px;
+                border-radius: 8px;
                 position: relative;
-                box-shadow: 10px 10px var(--color-blue);
+                box-shadow: 6px 6px var(--color-blue);
                 font-family: "Baloo 2", cursive, sans-serif;
                 border: 1px solid var(--color-green);
                 display: flex;
                 align-items: center;
-                gap: 8px;
+                gap: 6px;
                 cursor: pointer;
             }
-            
+
             .points-bubble:after {
                 transform: translatey(0px);
                 animation: float2 5s ease-in-out infinite;
@@ -1099,90 +1100,124 @@
                 -webkit-text-stroke: 0.5px var(--color-green);
                 -webkit-text-fill-color: var(--color-beige);
                 border: 1px solid var(--color-green);
-                text-shadow: 11px 11px var(--color-blue);
+                text-shadow: 6px 6px var(--color-blue);
                 text-align: left;
-                font-size: 28px;
-                width: 28px;
-                height: 6px;
-                line-height: 30px;
-                border-radius: 11px;
+                font-size: 18px;
+                width: 20px;
+                height: 4px;
+                line-height: 20px;
+                border-radius: 8px;
                 background-color: var(--color-beige);
                 position: absolute;
                 display: block;
-                bottom: -15px;
+                bottom: -10px;
                 left: 0;
-                box-shadow: 11px 11px var(--color-blue);
+                box-shadow: 6px 6px var(--color-blue);
                 z-index: -2;
             }
-            
+
             .points-icon {
-                font-size: 18px;
+                font-size: 14px;
                 margin-right: 2px;
             }
-            
+
             .points-value {
-                font-size: 18px;
-                margin-right: 4px;
+                font-size: 14px;
+                margin-right: 2px;
             }
-            
+
             .points-label {
-                font-size: 12px;
+                font-size: 10px;
             }
-            
-            @keyframes pointsIncrement {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.5); color: #4caf50; }
-                100% { transform: scale(1); }
-            }
-            
-            .points-increment {
-                animation: pointsIncrement 0.8s ease-out;
-            }
+
+            /* Email form adjustments */
             .email-form {
-                margin-top: 20px;
+                margin-top: 15px;
                 display: flex;
                 flex-direction: column;
-                gap: 15px;
+                gap: 10px;
+                max-width: 100%;
+                padding: 0 10px;
+                box-sizing: border-box;
             }
-            
+
             .email-input {
-                padding: 10px 15px;
-                border-radius: 8px;
+                padding: 8px 12px;
+                border-radius: 6px;
                 border: 1px solid var(--color-green);
                 font-family: inherit;
-                font-size: 14px;
+                font-size: 13px;
                 width: 100%;
                 box-sizing: border-box;
             }
-            
+
             .submit-btn {
                 background-color: var(--color-yellow);
                 color: var(--color-brown);
                 border: 1px solid var(--color-green);
-                border-radius: 8px;
-                padding: 12px 20px;
+                border-radius: 6px;
+                padding: 10px 15px;
                 font-family: inherit;
                 font-weight: bold;
                 text-transform: uppercase;
                 cursor: pointer;
                 transition: all 0.2s;
                 letter-spacing: 1px;
+                font-size: 13px;
             }
-            
-            .submit-btn:hover {
-                background-color: var(--color-green);
-                color: white;
-            }
-            
+
             .success-message {
                 background-color: rgba(129, 199, 132, 0.2);
                 border: 1px solid var(--color-green);
                 color: var(--color-brown);
-                padding: 15px;
-                border-radius: 8px;
-                margin-top: 15px;
+                padding: 12px;
+                border-radius: 6px;
+                margin-top: 12px;
                 text-align: center;
                 display: none;
+                font-size: 13px;
+            }
+
+            /* Media queries for responsive design */
+            @media screen and (max-width: 480px) {
+                .forum-points-display {
+                    top: 5px;
+                    left: 5px;
+                }
+                
+                .points-bubble {
+                    padding: 6px 10px;
+                    font-size: 11px;
+                    letter-spacing: 1px;
+                    box-shadow: 4px 4px var(--color-blue);
+                }
+                
+                .points-bubble:after {
+                    font-size: 16px;
+                    width: 16px;
+                    height: 3px;
+                    box-shadow: 4px 4px var(--color-blue);
+                    text-shadow: 4px 4px var(--color-blue);
+                    bottom: -8px;
+                }
+                
+                .points-icon, .points-value {
+                    font-size: 12px;
+                }
+                
+                .points-label {
+                    font-size: 9px;
+                }
+                
+                .email-form {
+                    margin-top: 10px;
+                    gap: 8px;
+                }
+                
+                .email-input, .submit-btn {
+                    padding: 8px 10px;
+                    font-size: 12px;
+                }
             }
         `;
         
