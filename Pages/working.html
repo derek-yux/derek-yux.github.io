@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4F7KKQ08M"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-B4F7KKQ08M');
+    </script>
+    <script type="text/javascript"> //<![CDATA[ 
+        var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+        document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+        //]]>
+    </script>
+    <script async type="application/javascript"
+            src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
+    <script>
+      (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
+        basicSubscriptions.init({
+          type: "NewsArticle",
+          isPartOfType: ["Product"],
+          isPartOfProductId: "CAow7-3aCw:openaccess",
+          clientOptions: { theme: "light", lang: "en" },
+        });
+      });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="You You News Trending Content">
+    <meta name="author" content="Derek (Yue) Yu">
+    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
+    <title>You You News - By You, For You!</title>
+    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-bg: #f4f4f8;
+            --text-color: #333;
+            --color-blue: #83af9b;
+            --color-green: #c8c8a9;
+            --color-brown: #774f38;
+            --color-beige: #ece5ce;
+            --color-yellow: #f9cdad;
+            --color-pink: #fe4365;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            font-family: 'Times New Roman', serif;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background:
+                /* top, transparent black, faked with gradient */ 
+                linear-gradient(
+                    rgba(0, 0, 0, 0.7), 
+                    rgba(0, 0, 0, 0.7)
+                ),
+                /* bottom, image */
+                url('../Assets/tvheader.png');
+            background-color: var(--primary-color);
+            background-position-y: 850px;
+            background-position-x: center;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Times New Roman', serif;
+        }
+        header h1 {
+            font-size: 2.5em;
+            letter-spacing: -1px;
+        }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 10px 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 min(15px, 1.4vw);
+            font-size: min(16px, 3vw);
+        }
+        nav ul li1 {
+            margin: 0 min(15px, 1.4vw);
+            font-size: min(16px, 3vw);
+        }
+        nav ul li1 a {
+            color: aquamarine;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        nav ul li1 a:hover {
+            color: white;
+        }
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .section-card:hover {
+            transform: scale(1.03);
+        }
+        .section-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .section-content {
+            padding: 15px;
+        }
+        .section-content h2 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+            color: var(--primary-color);
+        }
+        .section-content p {
+            color: #666;
+        }
+        .forum-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .forum-list {
+            list-style-type: none;
+        }
+        .forum-list li {
+            padding: 10px;
+            border-bottom: 1px solid #f1f1f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .forum-list li:last-child {
+            border-bottom: none;
+        }
+        .forum-list li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .forum-list li span {
+            color: #666;
+            font-size: 0.9em;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+        /* Style all font awesome icons */
+        .fa {
+        font-size: 30px;
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--color-pink);
+        background-position: center;
+        background-color: var(--color-blue);
+        border-radius: 50%;
+        }
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+        opacity: 0.7;
+        width: 80px;
+        background-color:#A6FFB9
+        }
+        .bbb {
+            height: 50vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            font: 2vw system-ui;
+            background-color: var(--color-yellow);
+        }
+
+        .bbb a {
+            transform: translatey(0px);
+            animation: float 5s ease-in-out infinite;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 15px;
+            color: var(--color-brown);
+            background-color: var(--color-beige);
+            padding: 50px;
+            border-radius: 11px;
+            position: relative;
+            box-shadow: 20px 20px var(--color-blue);
+            font-family: "Baloo 2", cursive;
+            border: 1px solid var(--color-green);
+        }
+        .bbb a:after {
+            transform: translatey(0px);
+            animation: float2 5s ease-in-out infinite;
+            content: ".";
+            font-weight: bold;
+            -webkit-text-stroke: 0.5px var(--color-green);
+            -webkit-text-fill-color: var(--color-beige);
+            border: 1px solid var(--color-green);
+            text-shadow: 22px 22px var(--color-blue);
+            text-align: left;
+            font-size: 55px;
+            width: 55px;
+            height: 11px;
+            line-height: 30px;
+            border-radius: 11px;
+            background-color: var(--color-beige);
+            position: absolute;
+            display: block;
+            bottom: -30px;
+            left: 0;
+            box-shadow: 22px 22px var(--color-blue);
+            z-index: -2;
+        }
+        @keyframes float {
+            0% {
+                transform: translatey(0px);
+            }
+            50% {
+                transform: translatey(-20px);
+            }
+            100% {
+                transform: translatey(0px);
+            }
+        }
+
+        @keyframes float2 {
+            0% {
+                line-height: 30px;
+                transform: translatey(0px);
+            }
+            55% {
+                transform: translatey(-20px);
+            }
+            60% {
+                line-height: 10px;
+            }
+            100% {
+                line-height: 30px;
+                transform: translatey(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>You You News</h1>
+            <p>Your Ultimate Source for Trending Content</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="tech">Tech</a></li>
+            <li><a href="sports">Sports</a></li>
+            <li1><a href="tv">TV</a></li1>
+            <li><a href="music">Music</a></li>
+            <li><a href="working">Forums</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 style="color: green">===Coming Soon in the Next Update!===</h2>
+        <img src="../Assets/builder.png" style="max-width: 50vw; max-height: 50vw; overflow:auto; align-content: center;">
+        <br>
+        <br>
+        <div class="bbb"><a href="working">Want to Join the Discussion?</a></div>
+        <section style="margin-top: 40px;">
+            <h2>Community Forums</h2>
+            <div class="section-grid">
+                <div class="forum-section">
+                    <h3>Tech Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="working">Jensen Huang</a>
+                            <span>245 discussions</span>
+                        </li>
+                        <li>
+                            <a href="working">deepseek vs openai</a>
+                            <span>189 discussions</span>
+                        </li>
+                        <li>
+                            <a href="working">Programming Help</a>
+                            <span>376 discussions</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="forum-section">
+                    <h3>Sports Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="working">March Madness</a>
+                            <span>512 discussions</span>
+                        </li>
+                        <li>
+                            <a href="working">Fantasy Football</a>
+                            <span>287 discussions</span>
+                        </li>
+                        <li>
+                            <a href="working">Canucks vs Devils</a>
+                            <span>203 discussions</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="forum-section">
+                    <h3>TV Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="working">Grant Ellis: The Bachelor</a>
+                            <span>421 discussions</span>
+                        </li>
+                        <li>
+                            <a href="working">Streaming Recommendations</a>
+                            <span>356 discussions</span>
+                        </li>
+                        <li>
+                            <a href="working">TV Show Theories</a>
+                            <span>278 discussions</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="forum-section">
+                    <h3>Music Forum</h3>
+                    <ul class="forum-list">
+                        <li>
+                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
+                            <span>332 discussions</span>
+                        </li>
+                        <li>
+                            <a href="working">Genre Discussions</a>
+                            <span>245 discussions</span>
+                        </li>
+                        <li>
+                            <a href="working">Concert Experiences</a>
+                            <span>167 discussions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 You You News. All Rights Reserved.</p>
+            <p>Connect with us on social media</p>
+            <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
+            <div id="footerlink">
+                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
+            </div>
+            <br>
+            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+        });
+    </script>
+</body>
+</html>
