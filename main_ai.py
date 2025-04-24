@@ -2692,7 +2692,7 @@ def main():
         // Function to trigger whale randomly
         function scheduleWhaleAppearance() {
         // Random time between 20 and 60 seconds
-        const nextAppearance = 25000 + Math.random() * 15000;
+        const nextAppearance = 20000 + Math.random() * 15000;
         
         setTimeout(() => {
             createSwimmingWhale();
