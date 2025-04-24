@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,12 +33,12 @@
     <meta name="description" content="You You News Trending Content">
     <meta name="author" content="Derek (Yue) Yu">
     <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>You You News - By You, For You!</title>
+    <title>You You News</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -61,12 +63,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -84,14 +114,16 @@
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -199,6 +231,23 @@
             padding: 20px 0;
             margin-top: 30px;
         }
+        .fa {
+        font-size: 30px;
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--color-pink);
+        background-position: center;
+        background-color: var(--color-blue);
+        border-radius: 50%;
+        }
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+        opacity: 0.7;
+        width: 80px;
+        background-color:#A6FFB9
+        }
         .cta-button {
             display: inline-block;
             background-color: var(--secondary-color);
@@ -219,24 +268,6 @@
             place-items: center;
             font: 2vw system-ui;
             background-color: var(--color-yellow);
-        }
-        /* Style all font awesome icons */
-        .fa {
-        font-size: 30px;
-        width: 60px;
-        text-align: center;
-        text-decoration: none;
-        color: var(--color-pink);
-        background-position: center;
-        background-color: var(--color-blue);
-        border-radius: 50%;
-        }
-
-        /* Add a hover effect if you want */
-        .fa:hover {
-        opacity: 0.7;
-        width: 80px;
-        background-color:#A6FFB9
         }
 
         .bbb a {
@@ -316,70 +347,29 @@
             <p>Your Ultimate Source for Trending Content</p>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="../">Home</a></li>
-            <li1><a href="tech">Tech</a></li1>
-            <li><a href="sports">Sports</a></li>
-            <li><a href="tv">TV</a></li>
-            <li><a href="music">Music</a></li>
-            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>
-        </ul>
+            <li1><a href="../Pages/tech">Tech</a></li1>
+            <li><a href="../Pages/sports">Sports</a></li>
+            <li><a href="../Pages/tv">TV</a></li>
+            <li><a href="../Pages/music">Music</a></li>
+            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections &#10629Assuming Cows are Uniform Spheres&#10630</h2>
-            <div class="section-grid">
-                <div class="section-grid">
-                    <div data-aos="fade-up">
-                        <article class="section-card">
-                            <img src="https://static-ca.gamestop.ca/images/products/799692/3max.jpg
-                " alt="Tech Blog">
-                    <div class="section-content">
-                        <h2>Gamestop Sells Out Nintendo Switch 2 Within Minutes</h2>
-                        <p>In a shocking display of “who saw this coming,” <b>Gamestop</b> launched preorders for the...</p>
-                        <a href="/Articles/Gamestop Sells Out Nintendo Switch 2 Within Minutes.html" class="cta-button">Read Now!</a>
-                    </div>
-                </article>
-            </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa1XcNgpHrkCMHwZos3b4QDg7w3q6Po8QUfg&s
-            " alt="Tech Blog">
-                <div class="section-content">
-                    <h2>Intel Announces Layoffs Aimed At Cost Reduction</h2>
-                    <p>In a shocking turn of events that not even a flip of a quarter...</p>
-                    <a href="/Articles/Intel Announces Layoffs Aimed At Cost Reduction**.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
+        <div class="shrinker">
+        <h2>Gamestop Sells Out Nintendo Switch 2 Within Minutes</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://static-ca.gamestop.ca/images/products/799692/3max.jpg' alt="Cinque Terre" class="slider_image">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSURxcgbCgVheeaqo1LfAFfmKabNMDNDiJtgA&s' alt="Cinque Terre" class="slider_image">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRljJpiVCFucb8konvYcz2PnkKz4wAGpDIHOA&s' alt="Cinque Terre" class="slider_image">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">In a shocking display of “who saw this coming,” <b>Gamestop</b> launched preorders for the <b>Nintendo Switch 2</b> at precisely 11 a.m. ET, just hours after the midnight frenzy. Surprise! Their website decided it was the perfect moment to crash like a bad sequel. Who needs functionality in 2023?</p></div><br><div data-aos="fade-up"><p class="p1">Meanwhile, other retailers like <b>Walmart</b>, <b>Best Buy</b>, and <b>Target</b> faced web meltdowns reminiscent of a blockbuster movie’s explosive climax. Midnight preorders turned into digital chaos, with downed sites sending shoppers into the kind of panic usually reserved for losing Wi-Fi during a boss fight.</p></div><br><div data-aos="fade-up"><p class="p1">Some <b>Walmart</b> customers were stuck in a digital queue longer than the line for a new iPhone, while <b>Target</b> users were graced with error screens more often than good intentions at a family reunion. Spoiler alert: No one was leaving with a <b>Switch 2</b> without a fight.</p></div><br><div data-aos="fade-up"><p class="p1">So, what’s the plan for savvy gamers left empty-handed? Keep notifying your social media feeds about restocks or prepare for the big day—preorders direct from <b>Nintendo</b> on May 8! Because why wouldn’t getting a gaming device be like a quest for lost treasure? Onward, brave souls!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
         </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAbSrM5tT60KIfUBz5XY7TXPt0wpXveA4NmA&s
-                        " alt="Tech Blog">
-                            <div class="section-content">
-                                <h2>Spotify Expands Global Reach with New Language Options</h2>
-                                <p>Spotify, the leading music streaming platform, has announced the introduction of new language options on its...</p>
-                                <a href="/Articles/Spotify Expands Global Reach with New Language Options.html" class="cta-button">Read Now!</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div data-aos="fade-up">
-                        <article class="section-card">
-                            <img src="https://www.uctoday.com/wp-content/uploads/2025/04/Zoom-Suffers-Major-Global-Outage-Has-Now-Recovered.jpg
-                            " alt="Tech Blog">
-                                <div class="section-content">
-                                    <h2>Zoom Outage Hits Thousands as Users Report Service Failures</h2>
-                                    <p>Zoom experienced a significant outage on April 16, 2025, affecting users worldwide as over 67,000 outage reports...</p>
-                                    <a href="/Articles/Zoom Outage Hits Thousands as Users Report Service Failures.html" class="cta-button">Read Now!</a>
-                                </div>
-                            </article>
-                        </div>
-            </div>
-        </section>
-        <section>
+         <section>
             <div class="section-grid">
                 <div data-aos="fade-up">
                 <article class="section-card" style="background: linear-gradient(90deg,rgba(91, 0, 227, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(106, 189, 212, 1) 100%);">
@@ -399,91 +389,94 @@
             </div>
         </section>
         <br>
-        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
+        <div class="bbb"><a href="/Pages/working">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
