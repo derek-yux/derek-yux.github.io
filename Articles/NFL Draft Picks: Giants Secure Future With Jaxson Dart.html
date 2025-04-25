@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,12 +33,12 @@
     <meta name="description" content="You You News Trending Content">
     <meta name="author" content="Derek (Yue) Yu">
     <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>You You News - By You, For You!</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <title>You You News</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -61,12 +63,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -84,14 +114,16 @@
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -199,20 +231,6 @@
             padding: 20px 0;
             margin-top: 30px;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #2980b9;
-        }
-        /* Style all font awesome icons */
         .fa {
         font-size: 30px;
         width: 60px;
@@ -229,6 +247,19 @@
         opacity: 0.7;
         width: 80px;
         background-color:#A6FFB9
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
         }
         .bbb {
             height: 50vh;
@@ -316,90 +347,29 @@
             <p>Your Ultimate Source for Trending Content</p>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="../">Home</a></li>
-            <li><a href="tech">Tech</a></li>
-            <li1><a href="sports">Sports</a></li1>
-            <li><a href="tv">TV</a></li>
-            <li><a href="music">Music</a></li>
-            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>
-        </ul>
+            <li><a href="../Pages/tech">Tech</a></li>
+            <li1><a href="../Pages/sports">Sports</a></li1>
+            <li><a href="../Pages/tv">TV</a></li>
+            <li><a href="../Pages/music">Music</a></li>
+            <li><a href="/Pages/working">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections</h2>
-            <div class="section-grid">
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://i.guim.co.uk/img/media/ea14f6a48de3868470e1aeea3b4b94de4849e7aa/0_53_1024_614/master/1024.jpg?width=465&dpr=1&s=none&crop=none
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>NFL Draft Picks: Giants Secure Future With Jaxson Dart</h2>
-                            <p>In a shocking turn of events that feels as predictable as a rainy day...</p>
-                            <a href="/Articles/NFL Draft Picks: Giants Secure Future With Jaxson Dart.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://gsp-image-cdn.wmsports.io/cms/prod/bleacher-report/getty_images/2210933425_large_image.jpg
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Lakers Narrowly Edge Timberwolves in Dramatic Game</h2>
-                            <p>In a heart-stopping affair, the Lakers outgunned the Timberwolves 94-85, narrowly escaping disaster as...</p>
-                            <a href="/Articles/lakers narrowly edge timberwolves in dramatic game**.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://s.yimg.com/ny/api/res/1.2/gFdxmAIXkL.J1cciubKulQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTE2MDA7aD05MDA7cT01MDtjZj13ZWJw/https://s.yimg.com/os/creatr-uploaded-images/2025-04/44b166f0-1b3c-11f0-abbf-ca67efc7b400
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>5 NBA PLAYOFF BRACKET: WHERE CHAOS MEETS CINDERELLA STORIES</h2>
-                            <p>The drumroll of anticipation has reached a crescendo as the 2025 NBA playoff bracket...</p>
-                            <a href="/Articles/5 NBA PLAYOFF BRACKET: WHERE CHAOS MEETS CINDERELLA STORIES.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZg4ZNIkH44UUNZ2hcpl2Db820tZ9nZmJfkQ&s
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>MITCHELL SAVES THE DAY WITH A GUSTO OF THREE-POINTERS</h2>
-                            <p>In a dramatic twist that could rival a Greek tragedy, the Miami Heat battled...</p>
-                            <a href="/Articles/MITCHELL SAVES THE DAY WITH A GUSTO OF THREE-POINTERS.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzagIs7GMCCe_qIy5ee4Fi5EOdU_ocjOLVyw&s
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Montreal Canadiens Clinch Playoff Spot with Victory over Carolina Hurricanes</h2>
-                            <p>The Montreal Canadiens have secured their place in the Stanley Cup Playoffs for the...</p>
-                            <a href="/Articles/Montreal Canadiens Clinch Playoff Spot with Victory over Carolina Hurricanes.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_903,h_507,x_110,y_0/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/si/01jr9vk74ycktapwm6mv.jpg" alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Gators Snatch Championship Trophy: They’re Back, Baby!</h2>
-                            <p>In a dramatic showdown that had more twists than a late-night soap opera, the Florida Gators...</p>
-                            <a href="/Articles/Gators Snatch Championship Trophy: They’re Back, Baby!.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-        <section>
+        <div class="shrinker">
+        <h2>NFL Draft Picks: Giants Secure Future With Jaxson Dart</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://i.guim.co.uk/img/media/ea14f6a48de3868470e1aeea3b4b94de4849e7aa/0_53_1024_614/master/1024.jpg?width=465&dpr=1&s=none&crop=none' alt="Cinque Terre" class="slider_image">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcDLc2aKxiLIjMY0IYLMabA8LPXGHMYay3TQ&s' alt="Cinque Terre" class="slider_image">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcTauWoRc5DQKhD5IxWfzrbLs0ydtLngcHJg&s' alt="Cinque Terre" class="slider_image">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">In a shocking turn of events that feels as predictable as a rainy day in Seattle, <b>Jaxson Dart</b>, the <b>21-year-old</b> Ole Miss sensation, is now envisioned as the Giants' QB of the future. But wait—will he even play in <b>2025</b>? The suspense builds!</p></div><br><div data-aos="fade-up"><p class="p1">As discussions swirl around how Dart fits into the master plan, one can’t help but wonder: Is this a brilliant strategy by GM <b>Joe Schoen</b> or just a last-ditch effort to impress Coach <b>Brian Daboll</b>? Grab your popcorn—the plot thickens!</p></div><br><div data-aos="fade-up"><p class="p1">With many fans dreaming of playoff glory based on a single draft pick, it’s essential to remember that a future QB might be more like a unicorn—magically elusive. Meanwhile, the Giants can only hope Dart’s future is brighter than a mid-season gloom!</p></div><br><div data-aos="fade-up"><p class="p1">So, as we count down to <b>2025</b>, will the Giants find themselves celebrating a future filled with wins or just another chapter of “How Did We Get Here?” Fans should clear their schedules for this impending rollercoaster ride. Buckle up, folks!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
+        </div>
+         <section>
             <div class="section-grid">
                 <div data-aos="fade-up">
                 <article class="section-card" style="background: linear-gradient(90deg,rgba(91, 0, 227, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(106, 189, 212, 1) 100%);">
@@ -419,91 +389,94 @@
             </div>
         </section>
         <br>
-        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
+        <div class="bbb"><a href="/Pages/working">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
