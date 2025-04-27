@@ -13,7 +13,7 @@ options.add_argument('--disable-blink-features=AutomationControlled')
 DB_FILE = 'db.json'
 trending_prompt = get_prompt()
 trending_url = get_article(trending_prompt)
-temp = combine(trending_prompt, trending_url)[:4090]
+temp = combine(trending_prompt, trending_url)[:4080]
 
 
 def main():
