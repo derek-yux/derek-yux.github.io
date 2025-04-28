@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,12 +33,12 @@
     <meta name="description" content="You You News Trending Content">
     <meta name="author" content="Derek (Yue) Yu">
     <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>You You News - By You, For You!</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <title>You You News</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -61,12 +63,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -77,21 +107,23 @@
                 /* bottom, image */
                 url('../Assets/musicheader.png');
             background-color: var(--primary-color);
-            background-position-y: center;
+            background-position-y: 670px;
             background-position-x: center;
             color: white;
             text-align: center;
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -199,20 +231,6 @@
             padding: 20px 0;
             margin-top: 30px;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #2980b9;
-        }
-        /* Style all font awesome icons */
         .fa {
         font-size: 30px;
         width: 60px;
@@ -229,6 +247,19 @@
         opacity: 0.7;
         width: 80px;
         background-color:#A6FFB9
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
         }
         .bbb {
             height: 50vh;
@@ -316,80 +347,29 @@
             <p>Your Ultimate Source for Trending Content</p>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="../">Home</a></li>
-            <li><a href="tech">Tech</a></li>
-            <li><a href="sports">Sports</a></li>
-            <li><a href="tv">TV</a></li>
-            <li1><a href="music">Music</a></li1>
-            <li><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Forums</a></li>
-        </ul>
+            <li><a href="../Pages/tech">Tech</a></li>
+            <li><a href="../Pages/sports">Sports</a></li>
+            <li><a href="../Pages/tv">TV</a></li>
+            <li1><a href="../Pages/music">Music</a></li1>
+            <li><a href="/Pages/working">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections</h2>
-            <div class="section-grid">
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://backstage.officialcharts.com/sites/default/files/legacy_images/media/663262/miley-vs-lana.jpg
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>Sneak Peek! 2026's Upcoming Album Releases</h2>
-                            <p>Miley Cyrus and Lana Del Rey are leading 2026's musical stampede, with...</p>
-                            <a href="/Articles/Sneak Peek! 2026's Upcoming Album Releases.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi2HghBgmhMOLPO0WbXQiI1qt5LM6ovsZDJg&s
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>ED SHEERAN EMBRACES HIS INNER BOLLYWOOD STAR WITH AZIZAM</h2>
-                            <p>In an unexpected twist that left fans wondering if he was auditioning for a...</p>
-                            <a href="/Articles/ED SHEERAN EMBRACES HIS INNER BOLLYWOOD STAR WITH AZIZAM.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1020x680/public/d8/images/canvas/2024/08/28/0f47f05e-d6b1-4c29-bea1-ae17a26971b6_dbec454f.jpg?itok=gxj4CTB1&v=1724821730
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>BIG OCEAN: THE HEAR-THROBBING K-POP SENSATION THAT CAN'T HEAR YOU SCREAM</h2>
-                            <p>In an unexpected twist to the K-pop saga, Big Ocean has shown that hearing...</p>
-                            <a href="/Articles/BIG OCEAN: THE HEAR-THROBBING K-POP SENSATION THAT CAN'T HEAR YOU SCREAM.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://assets.teenvogue.com/photos/673f1a29c4f19f93077998a2/16:9/w_2560%2Cc_limit/COACHELLA%25202026.jpg
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>Coachella 2025: A Beautiful Mess in the Desert</h2>
-                            <p>Coachella, the crown jewel of music festivals where stars shine and influencers flex, is...</p>
-                            <a href="https://www.youyounews.live/Articles/Coachella%202025_%20A%20Beautiful%20Mess%20in%20the%20Desert.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://i.cbc.ca/1.7513070.1744908779!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_1180/music-drake-kendrick-lamar.jpg?im=Resize%3D780
-            " alt="Music Blog">
-                <div class="section-content">
-                    <h2>Drake Expands Lawsuit Against Universal Music Over Kendrick Lamar's Super Bowl Performance</h2>
-                    <p>In a twist worthy of a dramatic rap feud, Drake has expanded his defamation...</p>
-                    <a href="/Articles/Drake Expands Lawsuit Against Universal Music Over Kendrick Lamar's Super Bowl Performance.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
+        <div class="shrinker">
+        <h2>Sneak Peek! 2026's Upcoming Album Releases</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://backstage.officialcharts.com/sites/default/files/legacy_images/media/663262/miley-vs-lana.jpg' alt="Cinque Terre" class="slider_image">
+            <img src='https://i.scdn.co/image/ab6761610000e5ebc1c08e541eae3cc82c6988c4' alt="Cinque Terre" class="slider_image">
+            <img src='https://i.redd.it/6c8pbqodujx41.jpg' alt="Cinque Terre" class="slider_image">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">Miley Cyrus and Lana Del Rey are leading 2026's musical stampede, with Miley's "experimental" album threatening to rewrite the laws of pop physics. Meanwhile, Lil Wayne and Arcade Fire sharpen their guitars for battle. Will fans survive the upcoming tidal wave of new tunes…?</p></div><br><div data-aos="fade-up"><p class="p1">Miley’s ninth album, allegedly <b>13</b> tracks long, drops May <b>30</b>, and promises to be her "most experimental yet"—which, given her past experiments, might involve llamas and glitter cannons. The bonus? A full psychedelic film in <b>June</b>. What could possibly go wrong with that combo…?</p></div><br><div data-aos="fade-up"><p class="p1">Lil Wayne’s long-rumored <b>Tha Carter VI</b> finally lands June <b>6</b> after approximately <b>400</b> years of teasing (give or take). He's throwing a concert at Madison Square Garden—because obviously <b>20,000</b> screaming fans is the quiet, low-key way to launch a comeback. But is the world ready…?</p></div><br><div data-aos="fade-up"><p class="p1">Meanwhile, Lana Del Rey just dropped a new single, <b>"Henry, Come On"</b>, ahead of her album <b>The Right Person Will Stay</b> on May <b>21</b>. In true Lana fashion, expect <b>85%</b> heartbreak, <b>10%</b> wistful sighing, and <b>5%</b> mystery horse references. Or maybe more horses this time…?</p></div><br><div data-aos="fade-up"><p class="p1">Not to be out-melodramatized, Arcade Fire returns May <b>9</b> with <b>Pink Elephant</b> — either a metaphor, a giant inflatable onstage, or both. Rico Nasty’s <b>Lethal</b> (May <b>16</b>) and Kali Uchis’s <b>Sincerely,</b> (May <b>9</b>) also line up for the battle. Who makes it through the music Hunger Games…?</p></div></p>
+        </pre>
         </div>
-            </div>
-        </section>
-        <section>
+         <section>
             <div class="section-grid">
                 <div data-aos="fade-up">
                 <article class="section-card" style="background: linear-gradient(90deg,rgba(91, 0, 227, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(106, 189, 212, 1) 100%);">
@@ -409,91 +389,94 @@
             </div>
         </section>
         <br>
-        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
+        <div class="bbb"><a href="/Pages/working">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
