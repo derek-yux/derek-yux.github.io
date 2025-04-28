@@ -73,6 +73,8 @@ def main():
     
     spliter = str(response)[2:].split('+++++')
     response_title = spliter[0].strip('*').strip('*').strip()
+    while response_title.startswith('<') or response_title.startswith('>') or response_title.startswith('/'):
+        response_title = response_title[1:]
     response_rest = str(" ".join(spliter[1:])).strip('**').strip()
     temp_repr = """"""
     temp_list = spliter[1:]
