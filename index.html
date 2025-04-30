@@ -393,6 +393,11 @@
   text-shadow: 0 0 3px #fff;
 }
 
+#closePopupButton:hover {
+  background-color: #ff9800;
+  color: white;
+  transform: scale(1.05);
+}
 
         @keyframes float {
             0% {
@@ -837,7 +842,12 @@ z-index: 1000;
         The more visits from your link, the more chances you have at our <b>$25 Gift Card Draw</b> 🎁 and an <b>Instagram feature</b>! 🌟
       </p>
       <p style="font-size:14px; color:#888;">You've shared this link <span id="shareCount">0</span> times!</p>
-      <button id="closePopupButton" style="margin-top:20px; background-color:#f9cdad; color:#5d4037; padding:10px 20px; border:none; border-radius:8px; font-weight:bold; font-family:'Baloo 2', cursive;">Got it!</button>
+      <div style="margin-top: 20px;">
+        <label style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555;">
+          <input type="checkbox" id="dontShowAgainCheckbox"> Don't Show This Again!
+        </label>
+        <button id="closePopupButton" style="margin-top:10px; background-color:#f9cdad; color:#5d4037; padding:10px 20px; border:none; border-radius:8px; font-weight:bold; font-family:'Baloo 2', cursive;">Got it!</button>
+      </div>      
     </div>
   </div>
   
@@ -882,7 +892,8 @@ z-index: 1000;
       const shareCountDisplay = document.getElementById('shareCount');
       const copyConfirm = document.getElementById('copyConfirm');
       const closeBtn = document.getElementById('closePopupButton');
-  
+      const dontShowAgain = localStorage.getItem('hideFunNewsPopup');
+      if (dontShowAgain === 'true') return;
       let refCode = referral;
       if (!refCode) {
         refCode = localStorage.getItem('user_ref_code');
@@ -914,8 +925,11 @@ z-index: 1000;
       });
   
       closeBtn.addEventListener('click', () => {
-        popup.style.display = 'none';
-      });
+    if (document.getElementById('dontShowAgainCheckbox').checked) {
+      localStorage.setItem('hideFunNewsPopup', 'true');
+    }
+    popup.style.display = 'none';
+  });
     });
   </script>
   
@@ -2153,55 +2167,6 @@ applyTheme(this.dataset.themeId);
         document.head.appendChild(style);
     });
 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let slideIndex = 0;
-        const slides = document.getElementsByClassName("trend-slide");
-        const dots = document.getElementsByClassName("dot");
-        
-        // Initialize active state for first slide/dot
-        slides[0].style.opacity = "1";
-        dots[0].style.backgroundColor = "var(--color-blue)";
-        dots[0].style.opacity = "1";
-        
-        // Set click handlers for dots
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].addEventListener('click', function() {
-                showSlide(i);
-            });
-        }
-        
-        // Start automatic slideshow
-        function startSlideshow() {
-            setInterval(function() {
-                slideIndex++;
-                if (slideIndex >= slides.length) {
-                    slideIndex = 0;
-                }
-                showSlide(slideIndex);
-            }, 5000); // Change slide every 5 seconds
-        }
-        
-        // Function to show a specific slide
-        function showSlide(n) {
-            // Hide all slides
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.opacity = "0";
-                dots[i].style.backgroundColor = "var(--color-brown)";
-                dots[i].style.opacity = "0.4";
-            }
-            
-            // Show selected slide
-            slides[n].style.opacity = "1";
-            dots[n].style.backgroundColor = "var(--color-blue)";
-            dots[n].style.opacity = "1";
-            slideIndex = n;
-        }
-        
-        // Start the slideshow
-        startSlideshow();
-    });
-    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
@@ -2300,7 +2265,7 @@ applyTheme(this.dataset.themeId);
         
         // Use an img element with the exact whale image
         whale.innerHTML = `
-            <img src="/Assets/whale.png" alt="Watercolor whale swimming" />
+            <img src="/Assets/${localStorage.getItem('swimmingAnimal') || 'whale.png'}" alt="Swimming creature" />
         `;
         
         // Randomize starting position (top position)
@@ -2876,6 +2841,13 @@ function updateReferralProgressBar() {
 
   // Define milestone targets
   const milestones = [1, 3, 5, 10, 20];
+  const rewards = {
+    1: '/Assets/whale.png',
+    3: '/Assets/capybara.png',
+    5: '/Assets/penguin.png',
+    10: '/Assets/octopus.png',
+    20: '/Assets/shark.png'
+  };
   const nextMilestone = milestones.find(m => m > count) || milestones[milestones.length - 1];
   const prevMilestone = milestones.slice().reverse().find(m => m <= count) || 0;
 
@@ -2885,22 +2857,13 @@ function updateReferralProgressBar() {
     progressBar.style.width = `${Math.min(percent, 100)}%`;
     progressBar.textContent = `${count} referrals`;
   }
+  // Change whale image if reward milestone reached
+  const avatarImg = document.querySelector('.swimming-whale img');
+  const available = milestones.slice().reverse().find(m => count >= m);
+  if (avatarImg && rewards[available]) {
+    avatarImg.src = rewards[available];
+  }
 }
-
-// Auto-update referral bar when page loads
-window.addEventListener('DOMContentLoaded', () => {
-  updateReferralProgressBar();
-});
-
-// 💡 Initialization
-window.addEventListener('DOMContentLoaded', () => {
-  updateStreak();
-  displayStreakBanner();
-  setupWhaleClicks();
-
-  const ref = new URLSearchParams(window.location.search).get('ref');
-  if (ref) updateReferralProgress(ref);
-});
         </script>
         <script>
             // ================================
@@ -2915,18 +2878,88 @@ function loadUserProfile() {
   const avatarImg = document.getElementById('userAvatar');
   const badgeSpan = document.getElementById('userBadge');
 
-  if (avatarImg) avatarImg.src = `/Assets/avatars/${avatar}`;
+  if (avatarImg) avatarImg.src = `/Assets/${avatar}`;
   if (badgeSpan) badgeSpan.textContent = badge ? `🏅 ${badge}` : '';
 }
 
 function setAvatar(avatarFile) {
   localStorage.setItem('userAvatar', avatarFile);
   loadUserProfile();
+
+  // Update swimming animal image for future whales
+  localStorage.setItem('swimmingAnimal', avatarFile);
 }
+
 
 function setBadge(badgeName) {
   localStorage.setItem('userBadge', badgeName);
   loadUserProfile();
+}
+const allAvatars = [
+  { id: 'whale.png', name: 'Whale', requiredReferrals: 0 },
+  { id: 'capybara.png', name: 'Capybara', requiredReferrals: 3 },
+  { id: 'penguin.png', name: 'Penguin', requiredReferrals: 5 },
+  { id: 'octopus.png', name: 'Octopus', requiredReferrals: 10 },
+  { id: 'shark.png', name: 'Shark', requiredReferrals: 20 }
+];
+
+document.getElementById('userAvatar').addEventListener('click', showAvatarSelector);
+
+function showAvatarSelector() {
+  const referralCount = parseInt(localStorage.getItem('referral_share_count_' + (localStorage.getItem('user_ref_code') || '')) || '0');
+  const currentAvatar = localStorage.getItem('userAvatar') || 'whale.png';
+  const grid = document.getElementById('avatarGrid');
+  grid.innerHTML = '';
+
+  allAvatars.forEach(avatar => {
+    const isUnlocked = referralCount >= avatar.requiredReferrals;
+
+    const card = document.createElement('div');
+    card.style = `
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      background: ${isUnlocked ? '#e0f7fa' : '#f8f8f8'};
+      border: 2px solid ${currentAvatar === avatar.id ? '#3498db' : '#ccc'};
+      opacity: ${isUnlocked ? '1' : '0.4'};
+      cursor: ${isUnlocked ? 'pointer' : 'not-allowed'};
+    `;
+
+    const img = document.createElement('img');
+    img.src = '/Assets/' + avatar.id;
+    img.style = 'width: 60px; height: 60px; border-radius: 50%; object-fit: cover;';
+
+    const name = document.createElement('div');
+    name.textContent = avatar.name;
+    name.style = 'margin-top: 6px; font-weight: bold; font-size: 14px;';
+
+    if (!isUnlocked) {
+      const lock = document.createElement('div');
+      lock.textContent = `🔒 ${avatar.requiredReferrals} referrals`;
+      lock.style = 'font-size: 12px; color: #888;';
+      card.appendChild(lock);
+    }
+
+    if (isUnlocked) {
+        card.addEventListener('click', () => {
+  setAvatar(avatar.id);
+  document.getElementById('avatarSelectModal').style.display = 'none';
+
+  // Remove all currently active whales
+  document.querySelectorAll('.swimming-whale').forEach(w => w.remove());
+
+  // Immediately spawn a new one with the selected avatar
+  createSwimmingWhale();
+});
+
+    }
+
+    card.appendChild(img);
+    card.appendChild(name);
+    grid.appendChild(card);
+  });
+
+  document.getElementById('avatarSelectModal').style.display = 'flex';
 }
 
 // 🏆 Leaderboard Generation
@@ -2978,14 +3011,123 @@ document.getElementById('userIdentityBox').addEventListener('click', () => {
     board.style.display = 'none';
   }
 });
-
-// 💡 Init Phase 2 Features
-window.addEventListener('DOMContentLoaded', () => {
-  mockLeaderboardData();
-  loadUserProfile();
-  generateLeaderboard('referrals');
-});
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Avatar click to open avatar selection modal
+      const avatarEl = document.getElementById("userAvatar");
+      if (avatarEl) {
+        avatarEl.addEventListener("click", showAvatarSelector);
+      }
+    
+      // Rewards glow logic
+      const rewardBtn = document.getElementById("rewardsButton");
+      const claimBtn = document.getElementById("claimReward");
+      const today = new Date().toDateString();
+    
+      function updateGlowState() {
+        const claimed = localStorage.getItem("dailyRewardClaimed");
+        if (claimed === today) {
+          rewardBtn?.classList.remove("glow-reward");
+        } else {
+          rewardBtn?.classList.add("glow-reward");
+        }
+      }
+    
+      updateGlowState();
+    
+      if (claimBtn) {
+        claimBtn.addEventListener("click", function () {
+          localStorage.setItem("dailyRewardClaimed", today);
+          updateGlowState();
+        });
+      }
+    
+      // Slideshow init
+      let slideIndex = 0;
+      const slides = document.getElementsByClassName("trend-slide");
+      const dots = document.getElementsByClassName("dot");
+    
+      if (slides.length > 0 && dots.length > 0) {
+        slides[0].style.opacity = "1";
+        dots[0].style.backgroundColor = "var(--color-blue)";
+        dots[0].style.opacity = "1";
+    
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].addEventListener("click", function () {
+            showSlide(i);
+          });
+        }
+    
+        function startSlideshow() {
+          setInterval(function () {
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+              slideIndex = 0;
+            }
+            showSlide(slideIndex);
+          }, 5000);
+        }
+    
+        function showSlide(n) {
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.opacity = "0";
+            dots[i].style.backgroundColor = "var(--color-brown)";
+            dots[i].style.opacity = "0.4";
+          }
+          slides[n].style.opacity = "1";
+          dots[n].style.backgroundColor = "var(--color-blue)";
+          dots[n].style.opacity = "1";
+          slideIndex = n;
+        }
+    
+        startSlideshow();
+      }
+    
+      // Referral update on query param
+      const ref = new URLSearchParams(window.location.search).get("ref");
+      if (ref) {
+        updateReferralProgress(ref);
+      }
+    
+      // Theme, points, whale, leaderboard, streak, avatars
+      loadUserProfile();
+      mockLeaderboardData();
+      generateLeaderboard("referrals");
+      updateReferralProgressBar();
+      updateStreak();
+      displayStreakBanner();
+    
+      const pointsDisplay = document.getElementById("forumPointsDisplay");
+      pointsDisplay?.addEventListener("click", showPointsDetails);
+    
+      const savedTheme = localStorage.getItem("currentTheme");
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      }
+    
+      // Resize bubble if whale is active
+      window.addEventListener("resize", () => {
+        const activeBubble = document.querySelector(".bbb");
+        if (activeBubble) {
+          const viewportWidth = window.innerWidth;
+          const bubbleWidth = Math.min(Math.max(viewportWidth * 0.15, 120), 200);
+          activeBubble.style.width = `${bubbleWidth}px`;
+    
+          const whale = document.querySelector(".swimming-whale");
+          if (whale) {
+            const whaleRect = whale.getBoundingClientRect();
+            activeBubble.style.left = `${whaleRect.left + whaleRect.width / 2 - bubbleWidth / 2}px`;
+          }
+        }
+      });
+    
+      // Whale spawn
+      setTimeout(createSwimmingWhale, 3000);
+      scheduleWhaleAppearance();
+    });
+    </script>
+    
 
 <div id="userIdentityBox" style="
 position: fixed;
@@ -3003,11 +3145,12 @@ z-index: 9999;
 max-width: 45vw;
 ">
 
-<img id="userAvatar" src="/Assets/avatars/default_avatar.png" style="
+<img id="userAvatar" src="/Assets/default_avatar.png" style="
   width: 36px;
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
+  cursor: pointer;
 ">
 
 <span id="userBadge" style="
@@ -3040,7 +3183,15 @@ max-width: 45vw;
   </ol>
 </div>
 
-
+<!-- 🎨 Avatar Selection Modal -->
+<div id="avatarSelectModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:white; max-width:500px; width:90%; padding:20px; border-radius:12px; max-height:80vh; overflow-y:auto;">
+      <h2 style="margin-top:0; font-family:'Baloo 2', cursive;">Choose Your Avatar</h2>
+      <div id="avatarGrid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(80px, 1fr)); gap:12px; margin-top:20px;"></div>
+      <button onclick="document.getElementById('avatarSelectModal').style.display='none'" style="margin-top:15px; padding:8px 16px; border:none; border-radius:8px; background:#f2c94c; font-weight:bold;">Close</button>
+    </div>
+  </div>
+  
 </body>
 </html>
             

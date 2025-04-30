@@ -480,6 +480,12 @@ def main():
   color: #d35400 !important;
   text-shadow: 0 0 3px #fff;
 }
+#closePopupButton:hover {
+  background-color: #ff9800;
+  color: white;
+  transform: scale(1.05);
+}
+
         @keyframes float {
             0% {
                 transform: translatey(0px);
