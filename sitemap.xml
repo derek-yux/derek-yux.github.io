@@ -1,86 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+
   <url>
-  <loc>https://www.youyounews.live/Articles/Michael%20B.%20Jordan%20Reflects%20on%20Sinners%20and%20Chadwick%20Carolina%20Boseman's%20Legacy.html</loc>
-  <news:news>
-    <news:publication>
-      <news:name>You You News</news:name>
-      <news:language>en</news:language>
-    </news:publication>
-    <news:publication_date>2025-04-17</news:publication_date>
-    <news:title>Michael B. Jordan Reflects on Sinners and Chadwick Boseman's Legacy</news:title>
-    <news:keywords>Michael B. Jordan, Sinners, Chadwick Boseman, movie, news, you, trending</news:keywords> 
-  </news:news>
-  <loc>https://www.youyounews.live/Articles/Montreal%20Canadiens%20Clinch%20Playoff%20Spot%20with%20Victory%20over%20Carolina%20Hurricanes.html</loc>
-  <news:news>
-    <news:publication>
-      <news:name>You You News</news:name>
-      <news:language>en</news:language>
-    </news:publication>
-    <news:publication_date>2025-04-17</news:publication_date>
-    <news:title>Montreal Canadiens Clinch Playoff Spot with Victory over Carolina Hurricanes</news:title>
-    <news:keywords>Canadiens, Hurricanes, Playoff, NHL, news, you, trending</news:keywords> 
-  </news:news>
-  <loc>https://www.youyounews.live/Articles/Montreal%20Canadiens%20Clinch%20Playoff%20Spot%20with%20Victory%20over%20Carolina%20Hurricanes.html</loc>
-  <news:news>
-    <news:publication>
-      <news:name>You You News</news:name>
-      <news:language>en</news:language>
-    </news:publication>
-    <news:publication_date>2025-04-17</news:publication_date>
-    <news:title>Montreal Canadiens Clinch Playoff Spot with Victory over Carolina Hurricanes</news:title>
-    <news:keywords>Canadiens, Hurricanes, Playoff, NHL, news, you, trending</news:keywords> 
-  </news:news>
-  <loc>https://www.youyounews.live/Articles/Zoom%20Outage%20Hits%20Thousands%20as%20Users%20Report%20Service%20Failures.html</loc>
-  <news:news>
-    <news:publication>
-      <news:name>You You News</news:name>
-      <news:language>en</news:language>
-    </news:publication>
-    <news:publication_date>2025-04-17</news:publication_date>
-    <news:title>Zoom Outage Hits Thousands as Users Report Service Failures</news:title>
-    <news:keywords>Zoom, outage, tech, news, you, trending</news:keywords> 
-  </news:news>
-  <loc>https://www.youyounews.live/Articles/Gators%20Snatch%20Championship%20Trophy:%20They%E2%80%99re%20Back,%20Baby!.html</loc>
-  <news:news>
-    <news:publication>
-      <news:name>You You News</news:name>
-      <news:language>en</news:language>
-    </news:publication>
-    <news:publication_date>2025-04-09</news:publication_date>
-    <news:title>March Madness Gators Win Championship Trophy</news:title>
-    <news:keywords>March Madness, Florida Gators, basketball, NCAA, news, you, trending</news:keywords> 
-  </news:news>
-  <loc>https://www.youyounews.live/Articles/BREAKING%20NEWS:%20Black%20Mirror%20Season%207%20Release.html</loc>
-  <news:news>
-    <news:publication>
-      <news:name>You You News</news:name>
-      <news:language>en</news:language>
-    </news:publication>
-    <news:publication_date>2025-04-10</news:publication_date>
-    <news:title>Black Mirror Season 7 Release</news:title>
-    <news:keywords>Black Mirror, TV, news, you, reality, trending</news:keywords> 
-  </news:news>
-  <loc>https://www.youyounews.live/Articles/Grizzlies%20Face%20Warriors%20in%20Critical%20Play-In%20Showdown.html</loc>
-  <news:news>
-    <news:publication>
-      <news:name>You You News</news:name>
-      <news:language>en</news:language>
-    </news:publication>
-    <news:publication_date>2025-04-16</news:publication_date>
-    <news:title>Grizzlies Face Warriors in Critical Play-In Showdown</news:title>
-    <news:keywords>NBA, news, you, grizzlies, warriors, basketball, playoffs, trending</news:keywords> 
-  </news:news>
-  <loc>https://www.youyounews.live/Articles/Spotify%20Expands%20Global%20Reach%20with%20New%20Language%20Options.html</loc>
-  <news:news>
-    <news:publication>
-      <news:name>You You News</news:name>
-      <news:language>en</news:language>
-    </news:publication>
-    <news:publication_date>2025-04-16</news:publication_date>
-    <news:title>Spotify Expands Global Reach with New Language Options</news:title>
-    <news:keywords>Spotify, news, you, music, language, trending</news:keywords> 
-  </news:news>
+    <loc>https://www.youyounews.live/Articles/Indiana's%20Overtime%20Victory%20Over%20Milwaukee%20Bucks%20The%20Craziest%20In%20NBA%20History.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-29</news:publication_date>
+      <news:title>Indiana's Overtime Victory Over Milwaukee Bucks: The Craziest in NBA History</news:title>
+      <news:keywords>NBA, Indiana Pacers, Milwaukee Bucks, overtime, basketball, news, trending</news:keywords>
+    </news:news>
   </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/Fossil%20Fuels%20and%20AI_Nvidia%20and%20Amazon%20Discuss%20Future.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-28</news:publication_date>
+      <news:title>Fossil Fuels and AI: Nvidia and Amazon Discuss the Future</news:title>
+      <news:keywords>AI, fossil fuels, Amazon, Nvidia, tech, energy, environment, news, trending</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/BC!%20Million%20Dollar%20Secret%20Unveils%20Hidden%20Fortunes%20and%20Twists%20in%20Kelowna.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-27</news:publication_date>
+      <news:title>BC! Million Dollar Secret Unveils Hidden Fortunes and Twists in Kelowna</news:title>
+      <news:keywords>British Columbia, Kelowna, real estate, mystery, news, you, trending</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/Sneak%20Peek!%202026's%20Upcoming%20Album%20Releases.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-27</news:publication_date>
+      <news:title>Sneak Peek! 2026's Upcoming Album Releases</news:title>
+      <news:keywords>music, 2026 albums, artists, pop culture, news, you, trending</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://www.youyounews.live/Articles/Michael%20B.%20Jordan%20Reflects%20on%20Sinners%20and%20Chadwick%20Carolina%20Boseman's%20Legacy.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-17</news:publication_date>
+      <news:title>Michael B. Jordan Reflects on Sinners and Chadwick Boseman's Legacy</news:title>
+      <news:keywords>Michael B. Jordan, Sinners, Chadwick Boseman, movie, news, you, trending</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/Montreal%20Canadiens%20Clinch%20Playoff%20Spot%20with%20Victory%20over%20Carolina%20Hurricanes.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-17</news:publication_date>
+      <news:title>Montreal Canadiens Clinch Playoff Spot with Victory over Carolina Hurricanes</news:title>
+      <news:keywords>Canadiens, Hurricanes, Playoff, NHL, news, you, trending</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/Zoom%20Outage%20Hits%20Thousands%20as%20Users%20Report%20Service%20Failures.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-17</news:publication_date>
+      <news:title>Zoom Outage Hits Thousands as Users Report Service Failures</news:title>
+      <news:keywords>Zoom, outage, tech, news, you, trending</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/Gators%20Snatch%20Championship%20Trophy:%20They%E2%80%99re%20Back,%20Baby!.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-09</news:publication_date>
+      <news:title>March Madness Gators Win Championship Trophy</news:title>
+      <news:keywords>March Madness, Florida Gators, basketball, NCAA, news, you, trending</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/BREAKING%20NEWS:%20Black%20Mirror%20Season%207%20Release.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-10</news:publication_date>
+      <news:title>Black Mirror Season 7 Release</news:title>
+      <news:keywords>Black Mirror, TV, news, you, reality, trending</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/Grizzlies%20Face%20Warriors%20in%20Critical%20Play-In%20Showdown.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-16</news:publication_date>
+      <news:title>Grizzlies Face Warriors in Critical Play-In Showdown</news:title>
+      <news:keywords>NBA, news, you, grizzlies, warriors, basketball, playoffs, trending</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/Spotify%20Expands%20Global%20Reach%20with%20New%20Language%20Options.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-16</news:publication_date>
+      <news:title>Spotify Expands Global Reach with New Language Options</news:title>
+      <news:keywords>Spotify, news, you, music, language, trending</news:keywords>
+    </news:news>
+  </url>
+
 </urlset>
