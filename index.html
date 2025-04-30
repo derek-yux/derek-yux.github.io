@@ -1930,6 +1930,11 @@
                             font-size: 12px;
                         `;
                         this.appendChild(selectedIndicator);
+                        document.querySelectorAll('.theme-card').forEach(card => {
+  card.classList.remove('selected-theme');
+});
+                        this.style.border = '3px solid #3498db';
+                        this.classList.add('selected-theme');
                     });
                 }
                 
@@ -1963,7 +1968,7 @@
         
         // Apply selected theme
         document.getElementById('applyTheme').addEventListener('click', function() {
-            const selectedTheme = document.querySelector('.theme-card[style*="3px solid #3498db"]');
+            const selectedTheme = document.querySelector('.theme-card.selected-theme');
             if (selectedTheme) {
                 const themeId = selectedTheme.dataset.themeId;
                 applyTheme(themeId);
