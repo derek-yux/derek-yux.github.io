@@ -563,15 +563,15 @@ def main():
                         <h3>Tech Forum</h3>
                         <ul class="forum-list">
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
+                                <a href="/Pages/working.html">Jensen Huang</a>
                                 <span>245 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
+                                <a href="/Pages/working.html">deepseek vs openai</a>
                                 <span>189 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
+                                <a href="/Pages/working.html">Programming Help</a>
                                 <span>376 discussions</span>
                             </li>
                         </ul>
@@ -582,15 +582,15 @@ def main():
                         <h3>Sports Forum</h3>
                         <ul class="forum-list">
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
+                                <a href="/Pages/working.html">March Madness</a>
                                 <span>512 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
+                                <a href="/Pages/working.html">Fantasy Football</a>
                                 <span>287 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
+                                <a href="/Pages/working.html">Canucks vs Devils</a>
                                 <span>203 discussions</span>
                             </li>
                         </ul>
@@ -601,15 +601,15 @@ def main():
                         <h3>TV Forum</h3>
                         <ul class="forum-list">
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
+                                <a href="/Pages/working.html">Grant Ellis: The Bachelor</a>
                                 <span>421 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
+                                <a href=/Pages/working.html">Streaming Recommendations</a>
                                 <span>356 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
+                                <a href="/Pages/working.html">TV Show Theories</a>
                                 <span>278 discussions</span>
                             </li>
                         </ul>
@@ -620,15 +620,15 @@ def main():
                         <h3>Music Forum</h3>
                         <ul class="forum-list">
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
+                                <a href="/Pages/working.html">New Releases</a>
                                 <span>332 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
+                                <a href="/Pages/working.html">Genre Discussions</a>
                                 <span>245 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
+                                <a href="/Pages/working.html">Concert Experiences</a>
                                 <span>167 discussions</span>
                             </li>
                         </ul>
@@ -1364,15 +1364,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         <h3>Tech Forum</h3>
                         <ul class="forum-list">
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
+                                <a href="/Pages/working.html">Jensen Huang</a>
                                 <span>245 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
+                                <a href="/Pages/working.html">deepseek vs openai</a>
                                 <span>189 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
+                                <a href="/Pages/working.html">Programming Help</a>
                                 <span>376 discussions</span>
                             </li>
                         </ul>
@@ -1383,15 +1383,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         <h3>Sports Forum</h3>
                         <ul class="forum-list">
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
+                                <a href="/Pages/working.html">March Madness</a>
                                 <span>512 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
+                                <a href="/Pages/working.html">Fantasy Football</a>
                                 <span>287 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
+                                <a href="/Pages/working.html">Canucks vs Devils</a>
                                 <span>203 discussions</span>
                             </li>
                         </ul>
@@ -1402,15 +1402,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         <h3>TV Forum</h3>
                         <ul class="forum-list">
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
+                                <a href="/Pages/working.html">Grant Ellis: The Bachelor</a>
                                 <span>421 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
+                                <a href="/Pages/working.html">Streaming Recommendations</a>
                                 <span>356 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
+                                <a href="/Pages/working.html">TV Show Theories</a>
                                 <span>278 discussions</span>
                             </li>
                         </ul>
@@ -1421,15 +1421,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         <h3>Music Forum</h3>
                         <ul class="forum-list">
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
+                                <a href="/Pages/working.html">New Releases</a>
                                 <span>332 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
+                                <a href="/Pages/working.html">Genre Discussions</a>
                                 <span>245 discussions</span>
                             </li>
                             <li>
-                                <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
+                                <a href="/Pages/working.html">Concert Experiences</a>
                                 <span>167 discussions</span>
                             </li>
                         </ul>
