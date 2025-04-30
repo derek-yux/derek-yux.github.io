@@ -398,6 +398,24 @@
   color: white;
   transform: scale(1.05);
 }
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-soft {
+  animation: subtlePulse 2.5s ease-in-out infinite;
+}
 
         @keyframes float {
             0% {
@@ -474,7 +492,7 @@ z-index: 1000;
       height: 22px;
       box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
     ">
-      <div id="refProgressBar" style="
+      <div id="refProgressBar" class="pulse-soft" style="
         width: 0%;
         height: 100%;
         background: linear-gradient(90deg, #f9cdad, #ff9800);
@@ -2845,8 +2863,8 @@ function updateReferralProgressBar() {
     1: '/Assets/whale.png',
     3: '/Assets/capybara.png',
     5: '/Assets/penguin.png',
-    10: '/Assets/octopus.png',
-    20: '/Assets/shark.png'
+    10: '/Assets/panda.png',
+    20: '/Assets/axolotl.png'
   };
   const nextMilestone = milestones.find(m => m > count) || milestones[milestones.length - 1];
   const prevMilestone = milestones.slice().reverse().find(m => m <= count) || 0;
@@ -2899,8 +2917,8 @@ const allAvatars = [
   { id: 'whale.png', name: 'Whale', requiredReferrals: 0 },
   { id: 'capybara.png', name: 'Capybara', requiredReferrals: 3 },
   { id: 'penguin.png', name: 'Penguin', requiredReferrals: 5 },
-  { id: 'octopus.png', name: 'Octopus', requiredReferrals: 10 },
-  { id: 'shark.png', name: 'Shark', requiredReferrals: 20 }
+  { id: 'panda.png', name: 'Panda', requiredReferrals: 10 },
+  { id: 'axolotl.png', name: 'Axolotl', requiredReferrals: 20 }
 ];
 
 document.getElementById('userAvatar').addEventListener('click', showAvatarSelector);
@@ -3145,7 +3163,7 @@ z-index: 9999;
 max-width: 45vw;
 ">
 
-<img id="userAvatar" src="/Assets/default_avatar.png" style="
+<img id="userAvatar" class="pulse-soft" src="/Assets/default_avatar.png" style="
   width: 36px;
   height: 36px;
   border-radius: 50%;

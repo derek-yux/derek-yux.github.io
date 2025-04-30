@@ -485,6 +485,24 @@ def main():
   color: white;
   transform: scale(1.05);
 }
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-soft {
+  animation: subtlePulse 2.5s ease-in-out infinite;
+}
 
         @keyframes float {
             0% {
