@@ -442,8 +442,53 @@
             <li><a href="/Pages/working">Forums</a></li>
         </ul>
     </nav>
+    <!-- 🔥 Daily Streak Banner -->
+<div id="streakBanner" style="
+display: none;
+background-color: #fff3cd;
+color: #856404;
+padding: 12px 20px;
+text-align: center;
+font-weight: bold;
+font-family: 'Baloo 2', cursive;
+border-bottom: 2px dashed #ffc107;
+font-size: 16px;
+z-index: 1000;
+">
+<!-- Text will be injected here -->
+</div>
+<div id="streakProgressContainer" style="display: flex; justify-content: center; margin-top: 15px;"></div>
+
 
     <div class="container">
+        <!-- 🚀 Referral Progress -->
+<div style="margin: 30px auto; max-width: 400px;">
+    <p style="font-family: 'Baloo 2', cursive; font-size: 16px; margin-bottom: 6px;">
+      🚀 Referral Progress Toward Your Next Reward:
+    </p>
+    <div style="
+      width: 100%;
+      background-color: #eee;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 22px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    ">
+      <div id="refProgressBar" style="
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #f9cdad, #ff9800);
+        color: #fff;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        transition: width 0.5s ease;
+      ">0 referrals</div>
+    </div>
+  </div>
+  
         <section>
             <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 15px;">
                 <h2 style="margin: 0;">Latest Blog Sections</h2>
@@ -2644,6 +2689,155 @@ applyTheme(this.dataset.themeId);
             }
         });
         </script>        
+        <script>
+// ================================
+// PHASE 1: Engagement Boosters
+// ================================
+
+// 🔥 Daily Streak Logic
+function updateStreak() {
+  const today = new Date().toDateString();
+  const lastClaimed = localStorage.getItem('lastRewardClaim') || '';
+  let currentStreak = parseInt(localStorage.getItem('rewardStreak') || '0');
+
+  if (today !== lastClaimed) {
+    const yesterday = new Date(Date.now() - 86400000).toDateString();
+    currentStreak = (lastClaimed === yesterday) ? currentStreak + 1 : 1;
+    localStorage.setItem('rewardStreak', currentStreak);
+    localStorage.setItem('lastRewardClaim', today);
+    localStorage.setItem('streakClaimedToday', 'true');
+    grantStreakReward(currentStreak);
+  }
+}
+
+function displayStreakBanner() {
+  const streak = parseInt(localStorage.getItem('rewardStreak') || '0');
+  const banner = document.getElementById('streakBanner');
+  if (banner) {
+    banner.textContent = `🔥 You're on a ${streak}-day streak! Keep it up!`;
+    banner.style.display = 'block';
+  }
+  updateStreakProgressBar(streak);
+}
+
+function grantStreakReward(streak) {
+  let reward = '';
+  if (streak === 7) {
+    reward = '🎉 Bonus Theme Unlocked!';
+    unlockTheme('midnight_whale');
+  } else {
+    reward = `+${10 * streak} stars added!`;
+  }
+
+  const rewardMessage = document.createElement('div');
+  rewardMessage.textContent = `✅ Daily Reward: ${reward}`;
+  rewardMessage.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f9cdad;
+    color: #5d4037;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 10000;
+    font-family: 'Baloo 2', cursive;
+  `;
+  document.body.appendChild(rewardMessage);
+
+  setTimeout(() => {
+    rewardMessage.remove();
+  }, 5000);
+
+  // Optional: increment points if you have a system
+  let stars = parseInt(localStorage.getItem('userStars') || '0');
+  stars += 10 * streak;
+  localStorage.setItem('userStars', stars);
+}
+
+function unlockTheme(themeId) {
+  const unlockedThemes = JSON.parse(localStorage.getItem('unlockedThemes') || '[]');
+  if (!unlockedThemes.includes(themeId)) {
+    unlockedThemes.push(themeId);
+    localStorage.setItem('unlockedThemes', JSON.stringify(unlockedThemes));
+  }
+}
+
+// 🌟 Streak Progress Bar Visual Update
+function updateStreakProgressBar(streak) {
+  const progressContainer = document.getElementById('streakProgressContainer');
+  if (!progressContainer) return;
+
+  progressContainer.innerHTML = '';
+  for (let i = 1; i <= 7; i++) {
+    const day = document.createElement('div');
+    day.className = 'streak-day';
+    day.textContent = `Day ${i}`;
+    day.style.cssText = `
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: ${i <= streak ? '#4caf50' : '#ccc'};
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      font-family: 'Baloo 2', cursive;
+    `;
+    progressContainer.appendChild(day);
+  }
+}
+
+// 🐳 Whale Easter Egg Click Tracker
+function setupWhaleClicks() {
+  const whale = document.querySelector('.swimming-whale img');
+  if (!whale) return;
+
+  let clicks = parseInt(localStorage.getItem('whaleClicks') || '0');
+
+  whale.addEventListener('click', () => {
+    clicks++;
+    localStorage.setItem('whaleClicks', clicks);
+
+    if (clicks === 10) {
+      alert("🎉 You've unlocked the 'Talking Roomba' Easter Egg!");
+      localStorage.setItem('unlockedBadge', 'Talking Roomba');
+      // you can add more visual effects or badge unlock logic here
+    }
+  });
+}
+
+// 🚀 Referral Progress Tracker
+function updateReferralProgress(refCode) {
+  const milestones = [1, 5, 10, 20];
+  const key = `referral_share_count_${refCode}`;
+  const progressBar = document.getElementById('refProgressBar');
+  const count = parseInt(localStorage.getItem(key) || '0');
+
+  const nextMilestone = milestones.find(m => m > count);
+  const currentMilestone = milestones.filter(m => m <= count).slice(-1)[0] || 0;
+
+  if (progressBar) {
+    const percent = nextMilestone ? ((count - currentMilestone) / (nextMilestone - currentMilestone)) * 100 : 100;
+    progressBar.style.width = `${percent}%`;
+    progressBar.textContent = `${count} referrals`;
+  }
+}
+
+// 💡 Initialization
+window.addEventListener('DOMContentLoaded', () => {
+  updateStreak();
+  displayStreakBanner();
+  setupWhaleClicks();
+
+  const ref = new URLSearchParams(window.location.search).get('ref');
+  if (ref) updateReferralProgress(ref);
+});
+        </script>
 </body>
 </html>
             
