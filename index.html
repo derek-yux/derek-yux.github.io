@@ -754,7 +754,86 @@
         </div>
     </div>
 </div>
-
+<!-- ✨ Fun News Popup (with click-to-copy referral link) -->
+<div id="funNewsPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background-color:white; border-radius:15px; padding:30px; max-width:500px; width:90%; box-shadow:0 10px 25px rgba(0,0,0,0.3); text-align:center; font-family:'Baloo 2', cursive;">
+      <h2 style="color:#774f38;">📣 NEWS SHOULD BE FUN!</h2>
+      <p style="color:#333; margin-bottom:20px; font-size:16px;">
+        We believe news should be like <b>playing a video game</b> or <b>watching your favourite K-drama</b> — not dull and boring like other sources!
+      </p>
+      <p style="color:#333; font-size:16px;">
+        If <b>you</b> think news should be fun too, share <b>YOUR SPECIAL LINK</b> (for you only!):
+      </p>
+      <div style="margin:15px 0;">
+        <input type="text" id="specialLinkInput" readonly value="" style="width:100%; padding:10px; font-size:14px; border:1px solid #ccc; border-radius:5px; text-align:center; cursor:pointer;">
+        <div id="copyConfirm" style="display:none; color:#4caf50; font-size:13px; margin-top:5px;">✅ Copied!</div>
+      </div>
+      <p style="color:#5d4037; font-size:15px;">
+        The more visits from your link, the more chances you have at our <b>$25 Gift Card Draw</b> 🎁 and an <b>Instagram feature</b>! 🌟
+      </p>
+      <p style="font-size:14px; color:#888;">You've shared this link <span id="shareCount">0</span> times!</p>
+      <button id="closePopupButton" style="margin-top:20px; background-color:#f9cdad; color:#5d4037; padding:10px 20px; border:none; border-radius:8px; font-weight:bold; font-family:'Baloo 2', cursive;">Got it!</button>
+    </div>
+  </div>
+  
+  <script>
+    function getReferralCode() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('ref') || null;
+    }
+  
+    function incrementShareCount(refCode) {
+      const key = `referral_share_count_${refCode}`;
+      let count = parseInt(localStorage.getItem(key)) || 0;
+      count += 1;
+      localStorage.setItem(key, count);
+      return count;
+    }
+  
+    window.addEventListener('load', () => {
+      const referral = getReferralCode();
+      const popup = document.getElementById('funNewsPopup');
+      const input = document.getElementById('specialLinkInput');
+      const shareCountDisplay = document.getElementById('shareCount');
+      const copyConfirm = document.getElementById('copyConfirm');
+      const closeBtn = document.getElementById('closePopupButton');
+  
+      let refCode = referral;
+      if (!refCode) {
+        refCode = localStorage.getItem('user_ref_code');
+        if (!refCode) {
+          refCode = Math.random().toString(36).substr(2, 6);
+          localStorage.setItem('user_ref_code', refCode);
+        }
+      }
+  
+      const shareLink = `https://youyounews.live/?ref=${refCode}`;
+      input.value = shareLink;
+  
+      const count = incrementShareCount(refCode);
+      shareCountDisplay.textContent = count;
+  
+      // Show popup after delay
+      setTimeout(() => {
+        popup.style.display = 'flex';
+      }, 6000);
+  
+      // Copy-to-clipboard interaction
+      input.addEventListener('click', () => {
+        navigator.clipboard.writeText(input.value).then(() => {
+          copyConfirm.style.display = 'block';
+          setTimeout(() => {
+            copyConfirm.style.display = 'none';
+          }, 2000);
+        });
+      });
+  
+      closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+      });
+    });
+  </script>
+  
 <!-- Add this to your existing JavaScript section or create a new <script> block -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
