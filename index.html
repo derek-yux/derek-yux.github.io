@@ -2901,6 +2901,14 @@ function mockLeaderboardData() {
   };
   localStorage.setItem('leaderboardData', JSON.stringify(data));
 }
+document.getElementById('userIdentityBox').addEventListener('click', () => {
+  const board = document.getElementById('leaderboard');
+  if (board.style.display === 'none' || board.style.display === '') {
+    board.style.display = 'block';
+  } else {
+    board.style.display = 'none';
+  }
+});
 
 // 💡 Init Phase 2 Features
 window.addEventListener('DOMContentLoaded', () => {
@@ -2910,6 +2918,57 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
         </script>
+        <!-- 🌟 Top-Right Avatar & Badge Display -->
+<div id="userIdentityBox" style="
+position: fixed;
+top: 12px;
+right: 12px;
+display: flex;
+align-items: center;
+gap: 10px;
+background-color: rgba(255, 255, 255, 0.9);
+padding: 6px 12px;
+border-radius: 30px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+font-family: 'Baloo 2', cursive;
+z-index: 9999;
+max-width: 45vw;
+">
+
+<img id="userAvatar" src="/Assets/avatars/default_avatar.png" style="
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+">
+
+<span id="userBadge" style="
+  font-weight: bold;
+  font-size: clamp(12px, 2vw, 16px);
+  color: #5d4037;
+  white-space: nowrap;
+"></span>
+
+</div>
+<!-- 🏆 Top-Right Leaderboard -->
+<div id="leaderboard" style="
+  position: fixed;
+  top: 60px;
+  right: 12px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 12px 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  max-width: 90vw;
+  width: 250px;
+  font-family: 'Baloo 2', cursive;
+  display: none; /* will toggle on click */
+  z-index: 9998;
+  font-size: clamp(12px, 1.8vw, 15px);
+">
+  <!-- JS populates content -->
+</div>
+
 </body>
 </html>
             
