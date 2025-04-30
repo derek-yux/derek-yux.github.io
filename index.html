@@ -2985,9 +2985,8 @@ window.addEventListener('DOMContentLoaded', () => {
   loadUserProfile();
   generateLeaderboard('referrals');
 });
+</script>
 
-        </script>
-        <!-- 🌟 Top-Right Avatar & Badge Display -->
 <div id="userIdentityBox" style="
 position: fixed;
 top: 12px;
@@ -3019,7 +3018,7 @@ max-width: 45vw;
 "></span>
 
 </div>
-<!-- 🏆 Top-Right Leaderboard -->
+<!-- 🏆 Leaderboard Container -->
 <div id="leaderboard" style="
   position: fixed;
   top: 60px;
@@ -3029,14 +3028,18 @@ max-width: 45vw;
   padding: 12px 18px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   max-width: 90vw;
-  width: 250px;
+  width: 260px;
   font-family: 'Baloo 2', cursive;
-  display: none; /* will toggle on click */
+  display: none;
   z-index: 9998;
   font-size: clamp(12px, 1.8vw, 15px);
 ">
-  <!-- JS populates content -->
+  <h3>🏆 Top Referrals</h3>
+  <ol id="leaderboardList">
+    <li>Loading leaderboard...</li>
+  </ol>
 </div>
+
 
 </body>
 </html>
