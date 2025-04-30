@@ -648,6 +648,478 @@ def main():
 
         });
     </script>
+    <script>
+        // Create an array of funny whale responses
+        const whaleResponses = [
+        "That tickles!",
+        "*Whale noise*",
+        "Oo...I like that :)",
+        "Wheee!",
+        "Hello human!",
+        "Need a ride?",
+        "vroom goes the roomba",
+        "What language do gnomes speak?",
+        "wtf is the uscmind challenge",
+        "Love LePookie",
+        "Gojo should have beat Sukuna",
+        "Which ninja turtle is Mbappé?",
+        "Moo",
+        "Why do dogs say 'bark?' that does not sound like 'bark' to me",
+        "I JUST WANT TO BE PART OF YOUR SYMPHONYYYYY",
+        "lalala :o",
+        "emotional damage",
+        "popular mmos' intro was so fire",
+        "shinra tensei",
+        "wheeeeeeeeeeeeeeeeeee",
+        "Shrek or Kung Fu Panda?",
+        "It's that me espresso >:)",
+        "Thanks for logging in!",
+        "Wow, thanks for using our website!",
+        "you're a champ! <3",
+        "*happy whale noises",
+        "i bet SGA is at the free throw line rn",
+        "Have a great day!!!",
+        "Manifesting good things for u",
+        "You're my super idol",
+        "**talk no jutsu",
+        "look at curry, so inspirational",
+        "biden on the epstein list??",
+        "You're the real MVP!",
+        "you are enough :)",
+        "this whale is here for u :>",
+        "alexa, how do i slide in dms?",
+        "...uh, fein, fein fein?",
+        "So 2 penguins walked into a bar...BANG",
+        "Could u beat Olaf in a fight?",
+        "LET IT GOOOO, LET IT GOOOOO",
+        "'how much do u bench bro' is crazy",
+        "yap yap yap",
+        "Toronto wind is CRAZY",
+        "Imagine ur in Cancun..ahhhh :>",
+        "Stay home, cook rice - Ryan Higa",
+        "I'm a fish (whatttttt)",
+        "Happy bday to uuuu",
+        "Hiii",
+        "netflix n chill?",
+        "You're awesome!",
+        "You're the best human i've met today",
+        "Does Trump have fanfic?!?",
+        "Jensen Huang is my goat",
+        "How is it like being human?",
+        "Read and read are different",
+        "You're getting into Harvard",
+        "BE CONFIDENT! If Benny Blanco can pull Selena Gomez, u can do anything",
+        "You warm my heart :>"
+        ];
+
+        // Create a function to add the whale to the page
+        function createSwimmingWhale() {
+        // Create the whale element
+        const whale = document.createElement('div');
+        whale.className = 'swimming-whale';
+        
+        // Use an img element with the exact whale image
+        whale.innerHTML = `
+            <img src="/Assets/whale.png" alt="Watercolor whale swimming" />
+        `;
+        
+        // Randomize starting position (top position)
+        const startingPosition = Math.random() * (window.innerHeight - 150);
+        
+        // Set styles for the whale
+        Object.assign(whale.style, {
+            position: 'fixed',
+            top: `${startingPosition}px`,
+            left: '-300px', // Start off-screen 
+            zIndex: '9999',
+            filter: 'drop-shadow(3px 5px 8px rgba(0,0,0,0.3))',
+            cursor: 'pointer' // Change cursor to indicate clickability
+        });
+        
+        // Randomly select one of five movement patterns
+        const patternNumber = Math.floor(Math.random() * 5) + 1;
+        whale.style.animation = `swim-pattern-${patternNumber} ${patternNumber <= 3 ? '8s' : '25s'} forwards`;
+        
+        // Store active speech bubble
+        let activeBubble = null;
+        let bubbleRemovalTimeout = null;
+        
+        // Add click event listener for funny responses
+        whale.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Remove existing bubble if there is one
+            if (activeBubble && document.body.contains(activeBubble)) {
+                document.body.removeChild(activeBubble);
+                clearTimeout(bubbleRemovalTimeout);
+            }
+            
+            // Create speech bubble container div with bbb class
+            const bubbleContainer = document.createElement('div');
+            bubbleContainer.className = 'bbb';
+            
+            // Create the actual bubble as an a element per your CSS
+            const bubble = document.createElement('a');
+            
+            // Select random response
+            const randomResponse = whaleResponses[Math.floor(Math.random() * whaleResponses.length)];
+            bubble.textContent = randomResponse;
+            
+            // Add bubble to container
+            bubbleContainer.appendChild(bubble);
+            
+            // Calculate responsive bubble size based on viewport width
+            const viewportWidth = window.innerWidth;
+            const bubbleWidth = Math.min(Math.max(viewportWidth * 0.15, 120), 200); // Between 120px and 200px
+            
+            // Position the bubble container near the whale
+            const whaleRect = whale.getBoundingClientRect();
+            
+            // Position directly above the whale with minimal gap
+            Object.assign(bubbleContainer.style, {
+                position: 'fixed',
+                left: `${whaleRect.left + (whaleRect.width / 2) - (bubbleWidth / 2)}px`,
+                top: `${whaleRect.top - 10}px`, // Positioned much closer to whale
+                height: 'auto',
+                width: `${bubbleWidth}px`,
+                margin: '0',
+                display: 'grid',
+                placeItems: 'center',
+                zIndex: '10000',
+                opacity: '1',
+                transition: 'opacity 0.3s ease',
+                pointerEvents: 'none'
+            });
+            
+            // Add to body
+            document.body.appendChild(bubbleContainer);
+            activeBubble = bubbleContainer;
+            
+            // Remove after animation - shortened to 3 seconds
+            bubbleRemovalTimeout = setTimeout(() => {
+                bubbleContainer.style.opacity = '0';
+                setTimeout(() => {
+                    if (document.body.contains(bubbleContainer)) {
+                    document.body.removeChild(bubbleContainer);
+                    activeBubble = null;
+                    }
+                }, 300); // Faster fade out
+            }, 3000); // Display time
+        });
+        
+        // Set up animation tracking to move the speech bubble with the whale
+        function updateBubblePosition() {
+            if (activeBubble && document.body.contains(activeBubble) && document.body.contains(whale)) {
+                const whaleRect = whale.getBoundingClientRect();
+                const bubbleWidth = parseFloat(activeBubble.style.width);
+                
+                Object.assign(activeBubble.style, {
+                    left: `${whaleRect.left + (whaleRect.width / 2) - (bubbleWidth / 2)}px`,
+                    top: `${whaleRect.top - 20}px` // Keep bubble close during animation
+                });
+                
+                requestAnimationFrame(updateBubblePosition);
+            }
+        }
+        
+        // Start tracking if needed
+        whale.addEventListener('click', function() {
+            if (activeBubble) {
+                requestAnimationFrame(updateBubblePosition);
+            }
+        });
+        
+        // Add whale to the body
+        document.body.appendChild(whale);
+        
+        // Remove the whale after animation completes
+        const animationDuration = patternNumber <= 3 ? 8000 : 25000;
+        setTimeout(() => {
+            if (document.body.contains(whale)) {
+                if (activeBubble && document.body.contains(activeBubble)) {
+                    document.body.removeChild(activeBubble);
+                }
+                document.body.removeChild(whale);
+            }
+        }, animationDuration + 500);
+        }
+
+        // Create CSS for the whale animation with multiple patterns
+        const style = document.createElement('style');
+        style.textContent = `
+        /* Pattern 1: Standard swim across - FAST */
+        @keyframes swim-pattern-1 {
+            0% {
+                left: -300px;
+                transform: scaleX(1) translateY(0px);
+            }
+            100% {
+                left: calc(100vw + 300px);
+                transform: scaleX(1) translateY(0px);
+            }
+        }
+        
+        /* Pattern 2: Swim with flip in the middle - FAST */
+        @keyframes swim-pattern-2 {
+            0% {
+                left: -300px;
+                transform: scaleX(1) translateY(0px) rotate(0deg);
+            }
+            20% {
+                left: calc(30vw);
+                transform: scaleX(1) translateY(0px) rotate(0deg);
+            }
+            30% {
+                left: calc(40vw);
+                transform: scaleX(1) translateY(0px) rotate(180deg);
+            }
+            40% {
+                left: calc(50vw);
+                transform: scaleX(1) translateY(0px) rotate(360deg);
+            }
+            100% {
+                left: calc(100vw + 300px);
+                transform: scaleX(1) translateY(0px) rotate(360deg);
+            }
+        }
+        
+        /* Pattern 3: Zigzag fast path - FAST */
+        @keyframes swim-pattern-3 {
+            0% {
+                left: -300px;
+                top: 50%;
+            }
+            20% {
+                left: calc(20vw);
+                top: 30%;
+            }
+            40% {
+                left: calc(40vw);
+                top: 70%;
+            }
+            60% {
+                left: calc(60vw);
+                top: 20%;
+            }
+            80% {
+                left: calc(80vw);
+                top: 60%;
+            }
+            100% {
+                left: calc(100vw + 300px);
+                top: 40%;
+            }
+        }
+        
+        /* Pattern 4: Lingering in the middle - SLOW */
+        @keyframes swim-pattern-4 {
+            0% {
+                left: -300px;
+                transform: scaleX(1) translateY(0px);
+            }
+            20% {
+                left: calc(40vw);
+                transform: scaleX(1) translateY(0px);
+            }
+            /* Linger in the center section */
+            25% {
+                left: calc(45vw);
+                transform: scaleX(1) translateY(20px);
+            }
+            30% {
+                left: calc(43vw);
+                transform: scaleX(1) translateY(-10px);
+            }
+            35% {
+                left: calc(47vw);
+                transform: scaleX(1) translateY(15px);
+            }
+            40% {
+                left: calc(42vw);
+                transform: scaleX(1) translateY(-5px);
+            }
+            45% {
+                left: calc(46vw);
+                transform: scaleX(1) translateY(10px);
+            }
+            50% {
+                left: calc(44vw);
+                transform: scaleX(1) translateY(0px);
+            }
+            /* Continue swimming */
+            55% {
+                left: calc(50vw);
+                transform: scaleX(1) translateY(0px);
+            }
+            90% {
+                left: calc(100vw + 100px);
+                transform: scaleX(1) translateY(10px);
+            }
+            100% {
+                left: calc(100vw + 300px);
+                transform: scaleX(1) translateY(0px);
+            }
+        }
+        
+        /* Pattern 5: Enter from top, exit from bottom - SLOW */
+        @keyframes swim-pattern-5 {
+            0% {
+                left: -300px;
+                top: 20%;
+                transform: scaleX(1) rotate(15deg);
+            }
+            10% {
+                left: calc(20vw);
+                top: 10%;
+                transform: scaleX(1) rotate(15deg);
+            }
+            50% {
+                left: calc(50vw);
+                top: 50%;
+                transform: scaleX(1) rotate(30deg);
+            }
+            90% {
+                left: calc(80vw);
+                top: 90%;
+                transform: scaleX(1) rotate(45deg);
+            }
+            100% {
+                left: calc(90vw);
+                top: 110%;
+                transform: scaleX(1) rotate(45deg);
+            }
+        }
+        
+        .swimming-whale {
+            will-change: transform;
+            pointer-events: auto;
+        }
+        
+        .swimming-whale img {
+            height: 150px;
+            width: auto;
+        }
+        
+        /* Updated bubble styles with responsive sizing and closer positioning */
+        .bbb {
+            height: auto;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            font: 1vw system-ui;
+            background-color: var(--color-yellow, transparent);
+        }
+
+        .bbb a {
+            transform: translatey(0px);
+            animation: float 5s ease-in-out infinite;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: clamp(10px, 1.2vw, 14px);
+            color: var(--color-brown, #5d4037);
+            background-color: var(--color-beige, #f5f5dc);
+            padding: clamp(6px, 1.5vw, 15px);
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 6px 6px var(--color-blue, #2196f3);
+            font-family: "Baloo 2", cursive;
+            border: 1px solid var(--color-green, #4caf50);
+            width: 100%;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            line-height: 1.3;
+        }
+        
+        .bbb a:after {
+            transform: translatey(0px);
+            animation: float2 5s ease-in-out infinite;
+            content: ".";
+            font-weight: bold;
+            -webkit-text-stroke: 0.5px var(--color-green, #4caf50);
+            -webkit-text-fill-color: var(--color-beige, #f5f5dc);
+            border: 1px solid var(--color-green, #4caf50);
+            text-shadow: 6px 6px var(--color-blue, #2196f3);
+            text-align: left;
+            font-size: clamp(18px, 2vw, 25px);
+            width: clamp(18px, 2vw, 25px);
+            height: 6px;
+            line-height: 15px;
+            border-radius: 6px;
+            background-color: var(--color-beige, #f5f5dc);
+            position: absolute;
+            display: block;
+            bottom: -15px;
+            left: 10%;
+            box-shadow: 6px 6px var(--color-blue, #2196f3);
+            z-index: -2;
+        }
+        
+        /* Adding the float animations that were referenced but missing */
+        @keyframes float {
+            0% {
+                transform: translatey(0px);
+            }
+            50% {
+                transform: translatey(-4px);
+            }
+            100% {
+                transform: translatey(0px);
+            }
+        }
+        
+        @keyframes float2 {
+            0% {
+                transform: translatey(0px);
+            }
+            50% {
+                transform: translatey(-2px);
+            }
+            100% {
+                transform: translatey(0px);
+            }
+        }
+        `;
+        document.head.appendChild(style);
+
+        // Function to trigger whale randomly
+        function scheduleWhaleAppearance() {
+        // Random time between 20 and 60 seconds
+        const nextAppearance = 20000 + Math.random() * 15000;
+        
+        setTimeout(() => {
+            createSwimmingWhale();
+            scheduleWhaleAppearance(); // Schedule next appearance
+        }, nextAppearance);
+        }
+
+        // Start the random whale appearances when the page loads
+        window.addEventListener('load', () => {
+        // Show one whale shortly after page load
+        setTimeout(createSwimmingWhale, 3000);
+        
+        // Schedule random appearances
+        scheduleWhaleAppearance();
+        });
+
+        // Add window resize handler to adjust bubble size if active
+        window.addEventListener('resize', () => {
+        const activeBubble = document.querySelector('.bbb');
+        if (activeBubble) {
+            const viewportWidth = window.innerWidth;
+            const bubbleWidth = Math.min(Math.max(viewportWidth * 0.15, 120), 200);
+            activeBubble.style.width = `${bubbleWidth}px`;
+            
+            // Adjust position if whale is still visible
+            const whale = document.querySelector('.swimming-whale');
+            if (whale) {
+            const whaleRect = whale.getBoundingClientRect();
+            activeBubble.style.left = `${whaleRect.left + (whaleRect.width / 2) - (bubbleWidth / 2)}px`;
+            }
+        }
+        });
+    </script>
 </body>
 </html>
 """)
