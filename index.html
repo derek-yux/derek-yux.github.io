@@ -2013,12 +2013,6 @@
             showPointsDetails();
         });
         
-        // Check if we should show login rewards (only once per day)
-        if (isNewDay()) {
-            // Small delay to ensure page is loaded first
-            setTimeout(showLoginRewards, 1000);
-        }
-        
         // Apply saved theme if any
         const savedTheme = localStorage.getItem('currentTheme');
         if (savedTheme) {
