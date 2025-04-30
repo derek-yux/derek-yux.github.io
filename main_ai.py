@@ -457,6 +457,29 @@ def main():
             box-shadow: 22px 22px var(--color-blue);
             z-index: -2;
         }
+        /* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px #ffcb6b, 0 0 50px #ffc107, 0 0 80px #ff5722;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+}
+
+.glow-reward {
+  animation: glow 1.2s ease-in-out infinite;
+  border: 2px solid #ffc107 !important;
+  background-color: #fff3cd !important;
+  color: #d35400 !important;
+  text-shadow: 0 0 3px #fff;
+}
         @keyframes float {
             0% {
                 transform: translatey(0px);
@@ -1120,6 +1143,33 @@ def main():
         }
         });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const rewardBtn = document.getElementById("rewardsButton");
+    const claimBtn = document.getElementById("claimReward");
+    const today = new Date().toDateString();
+
+    function updateGlowState() {
+        const claimed = localStorage.getItem("dailyRewardClaimed");
+        if (claimed === today) {
+            rewardBtn.classList.remove("glow-reward");
+        } else {
+            rewardBtn.classList.add("glow-reward");
+        }
+    }
+
+    // Always update on page load
+    updateGlowState();
+
+    // Attach glow removal after claim
+    if (claimBtn) {
+        claimBtn.addEventListener("click", function () {
+            localStorage.setItem("dailyRewardClaimed", today);
+            updateGlowState();
+        });
+    }
+});
+</script>
 </body>
 </html>
 """)
@@ -3200,6 +3250,33 @@ def main():
         }
         });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const rewardBtn = document.getElementById("rewardsButton");
+    const claimBtn = document.getElementById("claimReward");
+    const today = new Date().toDateString();
+
+    function updateGlowState() {
+        const claimed = localStorage.getItem("dailyRewardClaimed");
+        if (claimed === today) {
+            rewardBtn.classList.remove("glow-reward");
+        } else {
+            rewardBtn.classList.add("glow-reward");
+        }
+    }
+
+    // Always update on page load
+    updateGlowState();
+
+    // Attach glow removal after claim
+    if (claimBtn) {
+        claimBtn.addEventListener("click", function () {
+            localStorage.setItem("dailyRewardClaimed", today);
+            updateGlowState();
+        });
+    }
+});
+</script>
 </body>
 </html>
             """
