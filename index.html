@@ -1935,6 +1935,9 @@
 });
                         this.style.border = '3px solid #3498db';
                         this.classList.add('selected-theme');
+                        // Live preview the clicked theme
+applyTheme(this.dataset.themeId);
+
                     });
                 }
                 
