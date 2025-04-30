@@ -808,12 +808,32 @@
     }
   
     function incrementShareCount(refCode) {
-      const key = `referral_share_count_${refCode}`;
-      let count = parseInt(localStorage.getItem(key)) || 0;
-      count += 1;
-      localStorage.setItem(key, count);
-      return count;
-    }
+  const key = `referral_share_count_${refCode}`;
+  const visitedKey = 'referral_visited_codes';
+
+  // Skip incrementing if user is the one who owns this code
+  const selfRefCode = localStorage.getItem('user_ref_code');
+  if (refCode === selfRefCode) {
+    return parseInt(localStorage.getItem(key)) || 0;
+  }
+
+  // Check if already visited this referral code
+  let visited = JSON.parse(localStorage.getItem(visitedKey) || '[]');
+  if (visited.includes(refCode)) {
+    return parseInt(localStorage.getItem(key)) || 0;
+  }
+
+  // Mark as visited
+  visited.push(refCode);
+  localStorage.setItem(visitedKey, JSON.stringify(visited));
+
+  // Increment and store
+  let count = parseInt(localStorage.getItem(key)) || 0;
+  count += 1;
+  localStorage.setItem(key, count);
+  return count;
+}
+
   
     window.addEventListener('load', () => {
       const referral = getReferralCode();
