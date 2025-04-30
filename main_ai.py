@@ -521,6 +521,46 @@ def main():
         <ul>""" + edited_list +
         """</ul>
     </nav>
+    <div id="streakBanner" style="
+display: none;
+background-color: #fff3cd;
+color: #856404;
+padding: 12px 20px;
+text-align: center;
+font-weight: bold;
+font-family: 'Baloo 2', cursive;
+border-bottom: 2px dashed #ffc107;
+font-size: 16px;
+z-index: 1000;
+">
+<!-- Text will be injected here -->
+</div>
+<div style="margin: 30px auto; max-width: 400px;">
+    <p style="font-family: 'Baloo 2', cursive; font-size: 16px; margin-bottom: 6px;">
+      🚀 Referral Progress Toward Your Next Reward:
+    </p>
+    <div style="
+      width: 100%;
+      background-color: #eee;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 22px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    ">
+      <div id="refProgressBar" style="
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #f9cdad, #ff9800);
+        color: #fff;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        transition: width 0.5s ease;
+      "></div>
+    </div>
+  </div>
     <div class="container">
         <div class="shrinker">
         <h2>""" + str(response_title) + """</h2>

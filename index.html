@@ -457,11 +457,6 @@ z-index: 1000;
 ">
 <!-- Text will be injected here -->
 </div>
-<div id="streakProgressContainer" style="display: flex; justify-content: center; margin-top: 15px;"></div>
-
-
-    <div class="container">
-        <!-- 🚀 Referral Progress -->
 <div style="margin: 30px auto; max-width: 400px;">
     <p style="font-family: 'Baloo 2', cursive; font-size: 16px; margin-bottom: 6px;">
       🚀 Referral Progress Toward Your Next Reward:
@@ -478,17 +473,17 @@ z-index: 1000;
         width: 0%;
         height: 100%;
         background: linear-gradient(90deg, #f9cdad, #ff9800);
-        color: #fff;
+        color: var(--color-blue);
         font-weight: bold;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 13px;
         transition: width 0.5s ease;
-      ">0 referrals</div>
+      "></div>
     </div>
   </div>
-  
+    <div class="container">
         <section>
             <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 15px;">
                 <h2 style="margin: 0;">Latest Blog Sections</h2>
@@ -2837,6 +2832,83 @@ window.addEventListener('DOMContentLoaded', () => {
   const ref = new URLSearchParams(window.location.search).get('ref');
   if (ref) updateReferralProgress(ref);
 });
+        </script>
+        <script>
+            // ================================
+// PHASE 2: User Identity & Competition
+// ================================
+
+// 🎭 Avatar and Badge Selection
+function loadUserProfile() {
+  const avatar = localStorage.getItem('userAvatar') || 'default_avatar.png';
+  const badge = localStorage.getItem('userBadge') || '';
+
+  const avatarImg = document.getElementById('userAvatar');
+  const badgeSpan = document.getElementById('userBadge');
+
+  if (avatarImg) avatarImg.src = `/Assets/avatars/${avatar}`;
+  if (badgeSpan) badgeSpan.textContent = badge ? `🏅 ${badge}` : '';
+}
+
+function setAvatar(avatarFile) {
+  localStorage.setItem('userAvatar', avatarFile);
+  loadUserProfile();
+}
+
+function setBadge(badgeName) {
+  localStorage.setItem('userBadge', badgeName);
+  loadUserProfile();
+}
+
+// 🏆 Leaderboard Generation
+function generateLeaderboard(type = 'referrals') {
+  const leaderboardData = JSON.parse(localStorage.getItem('leaderboardData') || '{}');
+  const board = leaderboardData[type] || [];
+
+  const container = document.getElementById('leaderboard');
+  if (!container) return;
+
+  container.innerHTML = `<h3>🏆 Top ${type.charAt(0).toUpperCase() + type.slice(1)}</h3>`;
+
+  const list = document.createElement('ol');
+  board.slice(0, 10).forEach(entry => {
+    const item = document.createElement('li');
+    item.textContent = `${entry.name} - ${entry.count}`;
+    list.appendChild(item);
+  });
+
+  container.appendChild(list);
+}
+
+// 🧠 Store Fake Data for Testing
+function mockLeaderboardData() {
+  const data = {
+    referrals: [
+      { name: 'NewsNinja', count: 22 },
+      { name: 'WhaleWhisperer', count: 18 },
+      { name: 'CivicSleuth', count: 12 }
+    ],
+    comments: [
+      { name: 'SharpCommenter', count: 55 },
+      { name: 'BanterBoss', count: 48 },
+      { name: 'AnalysisAce', count: 37 }
+    ],
+    reads: [
+      { name: 'ArticleHunter', count: 90 },
+      { name: 'FastReader', count: 75 },
+      { name: 'HeadlineHero', count: 64 }
+    ]
+  };
+  localStorage.setItem('leaderboardData', JSON.stringify(data));
+}
+
+// 💡 Init Phase 2 Features
+window.addEventListener('DOMContentLoaded', () => {
+  mockLeaderboardData();
+  loadUserProfile();
+  generateLeaderboard('referrals');
+});
+
         </script>
 </body>
 </html>
