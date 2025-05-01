@@ -978,5 +978,158 @@
         }
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          // Sentence parts and game logic
+          const gameStates = [
+            {
+              selectorText: 'Miley\'s "experimental" album threatening to rewrite the laws of pop physics',
+              minigame: () => `
+                <div>
+                  <p><b>Miley's Chaos:</b> Drag the particles into orbit!</p>
+                  <canvas id="mileyOrbit" width="200" height="200" style="border-radius: 10px;"></canvas>
+                </div>
+              `,
+              init: () => {
+                const canvas = document.getElementById("mileyOrbit");
+                const ctx = canvas.getContext("2d");
+                let angle = 0, radius = 70, center = {x: 100, y: 100}, done = false;
+                function draw() {
+                  ctx.clearRect(0, 0, 200, 200);
+                  ctx.beginPath();
+                  ctx.arc(center.x, center.y, 5, 0, 2 * Math.PI);
+                  ctx.fillStyle = "#FF69B4";
+                  ctx.fill();
+                  let x = center.x + radius * Math.cos(angle);
+                  let y = center.y + radius * Math.sin(angle);
+                  ctx.beginPath();
+                  ctx.arc(x, y, 10, 0, 2 * Math.PI);
+                  ctx.fillStyle = "#3498db";
+                  ctx.fill();
+                  angle += 0.05;
+                  if (!done) requestAnimationFrame(draw);
+                }
+                draw();
+                setTimeout(() => successPopup(1), 4000);
+              }
+            },
+            {
+              selectorText: 'Lil Wayne’s long-rumored <b>Tha Carter VI</b>',
+              minigame: () => `
+                <div>
+                  <p><b>Tha Drop:</b> Click rapidly to hype up the crowd!</p>
+                  <button id="wayneBtn" style="padding:10px 20px; background:linear-gradient(to right,#f2709c,#ff9472);border:none;border-radius:10px;color:white;font-weight:bold;">HYPE!</button>
+                  <p id="wayneCount">0/15</p>
+                </div>
+              `,
+              init: () => {
+                let count = 0;
+                const btn = document.getElementById("wayneBtn");
+                const txt = document.getElementById("wayneCount");
+                btn.onclick = () => {
+                  count++;
+                  txt.innerText = `${count}/15`;
+                  if (count >= 15) successPopup(2);
+                };
+              }
+            },
+            {
+              selectorText: 'Arcade Fire returns May <b>9</b> with <b>Pink Elephant</b>',
+              minigame: () => `
+                <div>
+                  <p><b>Spot the Elephant:</b> Click the hidden pink elephant!</p>
+                  <div id="elephantZone" style="width:180px;height:120px;position:relative;background:#f9cdad;border-radius:10px;">
+                    <div id="elephant" style="position:absolute;width:30px;height:30px;border-radius:50%;background:pink;top:${Math.random()*90}px;left:${Math.random()*150}px;cursor:pointer;"></div>
+                  </div>
+                </div>
+              `,
+              init: () => {
+                document.getElementById("elephant").onclick = () => successPopup(3);
+              }
+            }
+          ];
+        
+          // Set up DOM
+          const panel = document.createElement("div");
+          panel.id = "game-panel";
+          Object.assign(panel.style, {
+            position: "fixed",
+            bottom: "10px",
+            right: "10px",
+            background: "linear-gradient(135deg, #fceabb 0%, #f8b500 100%)",
+            borderRadius: "15px",
+            padding: "10px",
+            zIndex: 9999,
+            maxWidth: "300px",
+            fontFamily: "'Baloo 2', cursive",
+            fontSize: "0.9em",
+            boxShadow: "0 0 15px rgba(0,0,0,0.2)",
+            transition: "all 0.3s ease-in-out"
+          });
+          panel.innerHTML = `<p style="text-align:center;margin:0;">Slowly Scroll Down!</p>`;
+          document.body.appendChild(panel);
+        
+          let current = -1;
+        
+          const sentenceParts = Array.from(document.querySelectorAll("p.p1"));
+          gameStates.forEach((state, i) => {
+            const target = sentenceParts.find(p => p.innerHTML.includes(state.selectorText));
+            if (!target) return;
+            const span = document.createElement("span");
+            span.classList.add("game-fragment");
+            span.dataset.index = i;
+            span.style.transition = "background 0.4s ease";
+            span.innerHTML = state.selectorText;
+            target.innerHTML = target.innerHTML.replace(state.selectorText, span.outerHTML);
+          });
+        
+          function highlight(index) {
+            document.querySelectorAll(".game-fragment").forEach(span => {
+              span.style.background = span.dataset.index == index ? "linear-gradient(to right, #ffe259, #ffa751)" : "transparent";
+            });
+          }
+        
+          function successPopup(index) {
+            panel.innerHTML = `<div style="text-align:center;">
+              <p style="margin:0;font-weight:bold;">🎉 You did it!</p>
+              ${index < 2 ? `<p style="margin:0;">Scroll down to continue...</p>` : `<button onclick="window.location.href='https://youyounews.live'" style="margin-top:10px;padding:8px 12px;background:#8E2DE2;background:linear-gradient(to right,#4A00E0,#8E2DE2);color:white;border:none;border-radius:10px;">Try another article!</button>`}
+            </div>`;
+          }
+        
+          function activateGame(index) {
+            if (index === current) return;
+            current = index;
+            const game = gameStates[index];
+            panel.innerHTML = game.minigame();
+            setTimeout(game.init, 100);
+            highlight(index);
+          }
+        
+          // Scroll-based activation
+          window.addEventListener("scroll", () => {
+            const bounds = sentenceParts.map((p, i) => {
+              const span = p.querySelector(".game-fragment");
+              if (!span) return null;
+              const rect = span.getBoundingClientRect();
+              return {
+                index: +span.dataset.index,
+                top: rect.top
+              };
+            }).filter(Boolean);
+        
+            const near = bounds.find(b => b.top > 0 && b.top < window.innerHeight * 0.6);
+            if (near) activateGame(near.index);
+          });
+        
+          // Responsive scaling
+          function scalePanel() {
+            const scale = Math.min(window.innerWidth / 400, 1);
+            panel.style.transform = `scale(${scale})`;
+            panel.style.transformOrigin = "bottom right";
+          }
+          window.addEventListener("resize", scalePanel);
+          scalePanel();
+        });
+        </script>        
 </body>
 </html>

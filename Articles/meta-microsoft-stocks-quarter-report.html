@@ -1141,161 +1141,170 @@
         }
         });
     </script>
-    <!-- === INTERACTIVE SCROLL GAME PANEL === -->
-<style>
-    #gamePanel {
-      position: fixed;
-      bottom: 5%;
-      right: 3%;
-      z-index: 999;
-      background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      padding: 20px;
-      width: clamp(200px, 25vw, 350px);
-      max-height: 60vh;
-      font-family: 'Baloo 2', cursive;
-      color: #333;
-      overflow-y: auto;
-      transition: all 0.3s ease-in-out;
-    }
-    #gamePanel.minimal {
-      padding: 10px;
-      font-size: 0.9em;
-      max-height: 80px;
-      text-align: center;
-    }
-    .game-highlight {
-      background-color: #fff89a;
-      font-weight: bold;
-      border-radius: 5px;
-      padding: 2px 5px;
-    }
-    .game-button {
-      padding: 8px 16px;
-      margin-top: 10px;
-      font-size: 1em;
-      border: none;
-      border-radius: 10px;
-      background: #ff9a9e;
-      color: white;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    .game-button:hover {
-      transform: scale(1.1);
-      background: #fad0c4;
-    }
-    .glow-popup {
-      margin-top: 10px;
-      padding: 12px;
-      background: #ffffcc;
-      border: 2px dashed #ff4081;
-      border-radius: 12px;
-      font-weight: bold;
-      animation: glowPop 1s ease-in-out infinite alternate;
-    }
-    @keyframes glowPop {
-      from { box-shadow: 0 0 10px #ffc107; }
-      to { box-shadow: 0 0 20px #ff9800; }
-    }
-  </style>
-  
-  <div id="gamePanel" class="minimal">Slowly Scroll Down!</div>
-  
-  <script>
-    const gamePanel = document.getElementById('gamePanel');
-  
-    const games = [
-      {
-        triggerText: 'Meta shares surged over 5%',
-        game: function () {
-          gamePanel.classList.remove('minimal');
-          gamePanel.innerHTML = 
-            '<h3>Price Prediction!</h3>' +
-            '<p>Guess how high Meta’s price surged.</p>' +
-            '<input type="range" min="1" max="10" value="5" id="rangeGame" />' +
-            '<button class="game-button" onclick="checkGame1()">Lock In</button>';
+    <style>
+        #gamePanel {
+          position: fixed;
+          bottom: 3%;
+          right: 2%;
+          width: clamp(200px, 25vw, 340px);
+          background: linear-gradient(135deg, #ffd3a5, #fd6585);
+          border-radius: 15px;
+          padding: 16px;
+          color: #333;
+          font-family: 'Baloo 2', cursive, sans-serif;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+          z-index: 9999;
+          transition: all 0.4s ease;
+          overflow-y: auto;
+          max-height: 60vh;
         }
-      },
-      {
-        triggerText: 'revenue shot up to $42.31 billion',
-        game: function () {
-          gamePanel.classList.remove('minimal');
-          gamePanel.innerHTML = 
-            '<h3>Stack the Revenue!</h3>' +
-            '<p>Balance blocks to reach $42B!</p>' +
-            '<button class="game-button" onclick="stackBlocks()">Drop a Block</button>';
+        #gamePanel.minimal {
+          padding: 12px;
+          font-size: 0.95em;
+          max-height: 80px;
+          text-align: center;
         }
-      },
-      {
-        triggerText: '3.43 billion daily active users',
-        game: function () {
-          gamePanel.classList.remove('minimal');
-          gamePanel.innerHTML = 
-            '<h3>User Surge!</h3>' +
-            '<p>Let just enough users in to hit the mark!</p>' +
-            '<button class="game-button" onclick="releaseUsers()">Release!</button>';
+        .game-highlight {
+          background: #fffaa1;
+          padding: 2px 5px;
+          border-radius: 4px;
+          font-weight: bold;
         }
-      }
-    ];
-  
-    function checkGame1() {
-      const val = document.getElementById('rangeGame').value;
-      if (val >= 4 && val <= 6) {
-        rewardPopup('Bullseye! You nailed the surge 🎯');
-      } else {
-        rewardPopup('Try again! Stock guesses are tough.');
-      }
-    }
-  
-    function stackBlocks() {
-      rewardPopup('You dropped a block! This game is a work in progress.');
-    }
-  
-    function releaseUsers() {
-      rewardPopup('Users surged in! You\'re scaling up 🌍');
-    }
-  
-    function rewardPopup(msg) {
-      const msgBox = document.createElement('div');
-      msgBox.className = 'glow-popup';
-      msgBox.textContent = msg;
-      gamePanel.appendChild(msgBox);
-      setTimeout(() => {
-        if (msgBox && msgBox.remove) msgBox.remove();
-      }, 4000);
-    }
-  
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const text = entry.target.innerText;
-          for (let g of games) {
-            if (text.includes(g.triggerText)) {
-              highlightText(entry.target, g.triggerText);
-              g.game();
-              break;
+        .game-button {
+          background: #ff758c;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          padding: 8px 14px;
+          margin-top: 12px;
+          font-size: 1em;
+          cursor: pointer;
+        }
+        .game-button:hover {
+          background: #ff8fa3;
+        }
+        .reward-popup {
+          margin-top: 10px;
+          background: #ffffcc;
+          padding: 12px;
+          border-radius: 8px;
+          animation: pulsePopup 1s ease-in-out infinite alternate;
+        }
+        @keyframes pulsePopup {
+          from { box-shadow: 0 0 8px #ffc107; }
+          to { box-shadow: 0 0 20px #ff9800; }
+        }
+      </style>
+      
+      <div id="gamePanel" class="minimal">Slowly Scroll Down!</div>
+      
+      <script>
+        var gamePanel = document.getElementById('gamePanel');
+        var games = [
+          {
+            trigger: 'Meta shares surged over 5%',
+            render: function () {
+              gamePanel.classList.remove('minimal');
+              gamePanel.innerHTML =
+                '<h3>Price Prediction</h3>' +
+                '<p>How high did Meta go?</p>' +
+                '<input type="range" min="1" max="10" value="5" id="range1">' +
+                '<button class="game-button" onclick="checkGame1()">Lock In</button>';
+            }
+          },
+          {
+            trigger: 'revenue shot up to $42.31 billion',
+            render: function () {
+              gamePanel.classList.remove('minimal');
+              gamePanel.innerHTML =
+                '<h3>Stack Revenue Blocks</h3>' +
+                '<p>Drop blocks toward $42B.</p>' +
+                '<button class="game-button" onclick="stackGame()">Drop Block</button>';
+            }
+          },
+          {
+            trigger: '3.43 billion daily active users',
+            render: function () {
+              gamePanel.classList.remove('minimal');
+              gamePanel.innerHTML =
+                '<h3>User Surge</h3>' +
+                '<p>Let in just the right number of users!</p>' +
+                '<button class="game-button" onclick="surgeGame()">Release Users</button>';
             }
           }
+        ];
+      
+        function checkGame1() {
+          var val = document.getElementById('range1').value;
+          if (val >= 4 && val <= 6) {
+            showReward('🎯 You nailed the prediction!');
+          } else {
+            showReward('Oops! Try another estimate.');
+          }
         }
-      });
-    }, { threshold: 0.5 });
-  
-    function highlightText(elem, phrase) {
-      const clean = elem.innerHTML.replace(/<span class="game-highlight">(.*?)<\/span>/g, '$1');
-      elem.innerHTML = clean.replace(phrase, '<span class="game-highlight">' + phrase + '</span>');
-    }
-  
-    window.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('p').forEach(function (p) {
-        if (games.some(g => p.innerText.includes(g.triggerText))) {
-          observer.observe(p);
+      
+        function stackGame() {
+          showReward('🧱 Block dropped! Revenue’s rising!');
         }
-      });
-    });
-  </script>
-  <!-- === END GAME PANEL === -->
-  
+      
+        function surgeGame() {
+          showReward('📈 Surge complete! Users let in!');
+        }
+      
+        function showReward(text) {
+          var reward = document.createElement('div');
+          reward.className = 'reward-popup';
+          reward.innerText = text;
+          gamePanel.appendChild(reward);
+          setTimeout(function () {
+            reward.remove();
+          }, 4000);
+        }
+      
+        function clearHighlights() {
+          var spans = document.querySelectorAll('.game-highlight');
+          for (var i = 0; i < spans.length; i++) {
+            var span = spans[i];
+            span.outerHTML = span.innerHTML;
+          }
+        }
+      
+        function highlightMatch(p, phrase) {
+          clearHighlights();
+          var raw = p.innerHTML;
+          var safePhrase = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          var regex = new RegExp(safePhrase);
+          p.innerHTML = raw.replace(regex, '<span class="game-highlight">' + phrase + '</span>');
+        }
+      
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var p = entry.target;
+              var content = p.textContent || p.innerText;
+              for (var i = 0; i < games.length; i++) {
+                if (content.indexOf(games[i].trigger) !== -1) {
+                  highlightMatch(p, games[i].trigger);
+                  games[i].render();
+                  return;
+                }
+              }
+            }
+          });
+        }, { threshold: 0.5 });
+      
+        window.addEventListener('DOMContentLoaded', function () {
+          var paragraphs = document.querySelectorAll('p');
+          for (var i = 0; i < paragraphs.length; i++) {
+            var text = paragraphs[i].textContent || paragraphs[i].innerText;
+            for (var j = 0; j < games.length; j++) {
+              if (text.indexOf(games[j].trigger) !== -1) {
+                observer.observe(paragraphs[i]);
+              }
+            }
+          }
+        });
+      </script>
+      
 </body>
 </html>
