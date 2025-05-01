@@ -978,120 +978,145 @@
         }
         });
     </script>
-    <script>
-        // Define sentence fragments and associated game states
-        const gameStates = [
-          {
-            triggerText: "Gary Trent Jr. suddenly decided the ball was a hot potato",
-            content: `
-              <h3>Game State 1: Turnover Trouble</h3>
-              <p>Who caused the turnover with 10 seconds left in OT?</p>
-              <button onclick="checkAnswer(0, 'Gary Trent Jr.')">Gary Trent Jr.</button>
-              <button onclick="checkAnswer(0, 'Tyrese Haliburton')">Tyrese Haliburton</button>
-            `,
-            correctAnswer: "Gary Trent Jr."
-          },
-          {
-            triggerText: "Andrew Nembhard to cut the Bucks' lead to 4 points",
-            content: `
-              <h3>Game State 2: Comeback Shot</h3>
-              <p>What type of shot did Nembhard make?</p>
-              <button onclick="checkAnswer(1, 'Layup')">Layup</button>
-              <button onclick="checkAnswer(1, '3-pointer')">3-pointer</button>
-            `,
-            correctAnswer: "3-pointer"
-          },
-          {
-            triggerText: "Tyrese Haliburton briefly putting the Pacers in the lead at 106-103",
-            content: `
-              <h3>Game State 3: Clutch Moment</h3>
-              <p>What was the score after Haliburton's key basket?</p>
-              <button onclick="checkAnswer(2, '106-103')">106-103</button>
-              <button onclick="checkAnswer(2, '119-118')">119-118</button>
-            `,
-            correctAnswer: "106-103"
-          }
-        ];
-        
-        let activeStateIndex = -1;
-        
-        function checkAnswer(index, answer) {
-          const isCorrect = gameStates[index].correctAnswer === answer;
-          const panel = document.getElementById('game-panel');
-          panel.innerHTML = isCorrect
-            ? `<h3>✅ Correct!</h3><p>${index < gameStates.length - 1 ? 'Scroll to continue...' : 'You completed the game! 🎉 Check out other articles for more games!'}</p>`
-            : `<h3>❌ Wrong!</h3><p>Try again!</p>` + gameStates[index].content;
+    <!-- START OF INTERACTIVE GAME PANEL -->
+<style>
+    .game-panel {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      width: clamp(220px, 20vw, 300px);
+      height: clamp(220px, 30vh, 400px);
+      background: linear-gradient(135deg, #fe4365, #f9cdad);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      font-family: 'Baloo 2', cursive;
+      color: white;
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+    .highlighted {
+      background-color: yellow;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .game-popup {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      color: #333;
+      font-size: 1em;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      margin-top: 10px;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+  <div class="game-panel" id="gamePanel">Slowly Scroll Down!</div>
+  <script>
+  const gameStates = [
+    {
+      triggerText: "Gary Trent Jr.",
+      minigame: () => `
+        <div class='game-popup'>
+          <p><b>Minigame 1:</b> Panic Pass!</p>
+          <p>Quick! Type <code>pass</code> and hit Enter before Gary drops the ball!</p>
+          <input type='text' id='minigame1input' placeholder='Type here...'>
+        </div>
+      `,
+      checkWin: () => document.getElementById('minigame1input')?.value.trim().toLowerCase() === 'pass',
+    },
+    {
+      triggerText: "Andrew Nembhard",
+      minigame: () => `
+        <div class='game-popup'>
+          <p><b>Minigame 2:</b> Launch the 3!</p>
+          <button onclick='launchThree()'>Shoot</button>
+          <div id='minigame2result'></div>
+        </div>
+      `,
+      checkWin: () => document.getElementById('minigame2result')?.innerText.includes("Swish")
+    },
+    {
+      triggerText: "12-7",
+      minigame: () => `
+        <div class='game-popup'>
+          <p><b>Minigame 3:</b> Time Crisis!</p>
+          <p>Click the countdown to survive overtime!</p>
+          <button id='timerBtn' onclick='startTimer()'>Start</button>
+          <span id='timer'></span>
+        </div>
+      `,
+      checkWin: () => document.getElementById('timer')?.innerText === '0'
+    }
+  ];
+  
+  let currentIndex = -1;
+  const panel = document.getElementById('gamePanel');
+  const triggerEls = [];
+  
+  document.querySelectorAll('p').forEach(p => {
+    gameStates.forEach((state, i) => {
+      if (p.innerHTML.includes(state.triggerText)) {
+        const marked = `<span class="game-highlight" data-gs="${i}">${state.triggerText}</span>`;
+        p.innerHTML = p.innerHTML.replace(state.triggerText, marked);
+      }
+    });
+  });
+  
+  function updateGameState() {
+    const highlights = document.querySelectorAll('.game-highlight');
+    for (let i = 0; i < highlights.length; i++) {
+      const el = highlights[i];
+      const rect = el.getBoundingClientRect();
+      if (rect.top >= 100 && rect.top <= 300) {
+        if (currentIndex !== i) {
+          document.querySelectorAll('.game-highlight').forEach(el => el.classList.remove('highlighted'));
+          el.classList.add('highlighted');
+          currentIndex = i;
+          panel.innerHTML = gameStates[i].minigame();
         }
-        
-        function updateGameState() {
-          const panel = document.getElementById('game-panel');
-          let newIndex = -1;
-        
-          gameStates.forEach((state, idx) => {
-            const el = document.querySelector(`[data-trigger-index="${idx}"]`);
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight / 2 && rect.bottom > 0) {
-              newIndex = idx;
-            }
-          });
-        
-          if (newIndex !== activeStateIndex) {
-            if (activeStateIndex >= 0) {
-              document.querySelector(`[data-trigger-index="${activeStateIndex}"]`).classList.remove('highlighted-text');
-            }
-            if (newIndex >= 0) {
-              document.querySelector(`[data-trigger-index="${newIndex}"]`).classList.add('highlighted-text');
-              panel.innerHTML = gameStates[newIndex].content;
-            }
-            activeStateIndex = newIndex;
-          }
-        }
-        
-        window.addEventListener('scroll', updateGameState);
-        window.addEventListener('load', updateGameState);
-        </script>
-        
-        <style>
-        #game-panel {
-          position: fixed;
-          top: 100px;
-          right: 20px;
-          background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-          padding: 15px;
-          width: clamp(250px, 25vw, 350px);
-          max-width: 90vw;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-          z-index: 999;
-          font-family: 'Baloo 2', sans-serif;
-          transition: all 0.3s ease;
-        }
-        .highlighted-text {
-          background-color: #fff176;
-          transition: background-color 0.3s ease;
-        }
-        @media (max-width: 768px) {
-          #game-panel {
-            top: auto;
-            bottom: 10px;
-            right: 10px;
-            left: 10px;
-            width: auto;
-          }
-        }
-        </style>
-        
-        <div id="game-panel"></div>
-        
-        <script>
-        document.querySelectorAll('p.p1').forEach(p => {
-          gameStates.forEach((state, i) => {
-            if (p.innerText.includes(state.triggerText)) {
-              const highlightedHTML = p.innerHTML.replace(state.triggerText, `<span data-trigger-index="${i}" class="highlight-frag">${state.triggerText}</span>`);
-              p.innerHTML = highlightedHTML;
-            }
-          });
-        });
-        </script>        
+        return;
+      }
+    }
+  }
+  
+  window.addEventListener('scroll', updateGameState);
+  
+  function launchThree() {
+    const result = Math.random() > 0.5 ? "Swish! You scored!" : "Clang! Missed.";
+    document.getElementById('minigame2result').innerText = result;
+  }
+  
+  function startTimer() {
+    let time = 3;
+    const span = document.getElementById('timer');
+    const interval = setInterval(() => {
+      span.innerText = time;
+      time--;
+      if (time < 0) {
+        clearInterval(interval);
+        span.innerText = '0';
+      }
+    }, 1000);
+  }
+  
+  setInterval(() => {
+    if (currentIndex !== -1 && gameStates[currentIndex].checkWin()) {
+      panel.innerHTML = `
+        <div class='game-popup'>
+          <p><b>You did it!</b></p>
+          <p>${currentIndex === gameStates.length - 1
+            ? "You've completed all games! <a href='https://www.youyounews.live'>Play more!</a>"
+            : "Scroll down for the next challenge!"}</p>
+        </div>`;
+    }
+  }, 500);
+  </script>
+  <!-- END OF INTERACTIVE GAME PANEL -->
 </body>
 </html>
