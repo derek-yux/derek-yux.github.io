@@ -3,6 +3,32 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://www.youyounews.live/Articles/lakers-nba-playoffs-timberwolves-eliminated.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-01</news:publication_date>
+      <news:title>Lakers Buzzer Beater Turns Into Buzzer Defeat In Playoffs</news:title>
+      <news:keywords>Lakers, Timberwolves, NBA, playoffs, sports, basketball, buzzer, news, trending</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/may-day-trump-protests.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-01</news:publication_date>
+      <news:title>May Day Trump Protests Making Waves Across America</news:title>
+      <news:keywords>May, Trump, protests, politics, day, news, trending</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://www.youyounews.live/Articles/meta-microsoft-stocks-quarter-report.html</loc>
     <news:news>
       <news:publication>
@@ -12,32 +38,6 @@
       <news:publication_date>2025-04-30</news:publication_date>
       <news:title>Meta And Microsoft Stocks Soaring This Quarter</news:title>
       <news:keywords>Meta, Microsoft, stocks, tech, quarter, AI, trump, news, trending</news:keywords>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/nba-indiana-pacers-milwaukee-bucks-overtime-2025.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-04-29</news:publication_date>
-      <news:title>Indiana's Overtime Victory Over Milwaukee Bucks: The Craziest in NBA History</news:title>
-      <news:keywords>NBA, Indiana Pacers, Milwaukee Bucks, overtime, basketball, news, trending</news:keywords>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/Fossil%20Fuels%20and%20AI_Nvidia%20and%20Amazon%20Discuss%20Future.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-04-28</news:publication_date>
-      <news:title>Fossil Fuels and AI: Nvidia and Amazon Discuss the Future</news:title>
-      <news:keywords>AI, fossil fuels, Amazon, Nvidia, tech, energy, environment, news, trending</news:keywords>
     </news:news>
   </url>
 
