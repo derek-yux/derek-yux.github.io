@@ -871,7 +871,8 @@ def main():
         "Read and read are different",
         "You're getting into Harvard",
         "BE CONFIDENT! If Benny Blanco can pull Selena Gomez, u can do anything",
-        "You warm my heart :>"
+        "You warm my heart :>",
+        "By referring friends, you can change my avatar (top-right)!"
         ];
 
         // Create a function to add the whale to the page
