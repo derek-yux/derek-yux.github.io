@@ -3664,7 +3664,6 @@ function updateReferralProgress(refCode) {
   if (progressBar) {
     const percent = nextMilestone ? ((count - currentMilestone) / (nextMilestone - currentMilestone)) * 100 : 100;
     progressBar.style.width = `${percent}%`;
-    progressBar.textContent = `${count} referrals`;
   }
 }
 // ✅ Self-Updating Referral Progress Bar
@@ -3692,7 +3691,6 @@ function updateReferralProgressBar() {
 
   if (progressBar) {
     progressBar.style.width = `${Math.min(percent, 100)}%`;
-    progressBar.textContent = `${count} referrals`;
   }
   // Change whale image if reward milestone reached
   const avatarImg = document.querySelector('.swimming-whale img');
