@@ -269,7 +269,46 @@
             font: 2vw system-ui;
             background-color: var(--color-yellow);
         }
+        .game-panel {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    max-width: 300px;
+    z-index: 9999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-family: 'Baloo 2', sans-serif;
+    transition: opacity 0.4s ease;
+  }
+  .game-popup {
+    margin-top: 10px;
+    background-color: #f9cdad;
+    color: #333;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 0.9em;
+    display: block;
+  }
+  .hidden {
+    display: none;
+  }
+  mark.game-highlight {
+    background-color: yellow;
+    font-weight: bold;
+  }
 
+  @media screen and (max-width: 768px) {
+    .game-panel {
+      position: static;
+      margin: 20px auto;
+      display: block;
+      max-width: 90%;
+    }
+  }
         .bbb a {
             transform: translatey(0px);
             animation: float 5s ease-in-out infinite;
@@ -338,23 +377,6 @@
                 transform: translatey(0px);
             }
         }
-        .game-panel {
-    position: fixed;
-    top: 20%;
-    right: 0;
-    width: 300px;
-    max-width: 90vw;
-    padding: 20px;
-    background: #f0f0f8;
-    border-left: 3px solid #3498db;
-    box-shadow: -2px 0 6px rgba(0,0,0,0.2);
-    z-index: 1000;
-    transition: opacity 0.3s ease;
-  }
-  .game-highlight {
-    background: yellow;
-    transition: background 0.3s ease;
-  }
     </style>
 </head>
 <body>
@@ -995,104 +1017,109 @@
         }
         });
     </script>
-    <div id="gamePanel" class="game-panel">Loading game...</div>
-
-    <script>
-      const states = [
-        {
-          triggerText: "Gary Trent Jr. suddenly decided the ball was a hot potato",
-          highlightText: "Gary Trent Jr. suddenly decided the ball was a hot potato",
-          render: () => {
-            return `<b>Turnover Challenge:</b><br>Gary panicked! What should he have done?<br>
-            <button onclick="alert('Correct! Pass it to Haliburton.')">Pass</button>
-            <button onclick="alert('Incorrect. He panicked instead.')">Panic</button>`;
+    <div id="gamePanel" class="game-panel">
+        <h3 id="gameTitle">🏀 Game On!</h3>
+        <div id="gameContent"></div>
+        <div id="gamePopup" class="game-popup hidden"></div>
+      </div>
+      <script>
+        const gameStates = [
+          {
+            trigger: "Giannis missing a game-winner",
+            question: "Who missed the game-winner?",
+            options: ["Lillard", "Giannis", "Haliburton"],
+            correct: "Giannis"
+          },
+          {
+            trigger: "Tyrese Haliburton swiped in with a layup",
+            question: "Who scored the game-winning layup?",
+            options: ["Gary Trent Jr.", "Tyrese Haliburton", "Andrew Nembhard"],
+            correct: "Tyrese Haliburton"
+          },
+          {
+            trigger: "miraculous 3-pointer from Andrew Nembhard",
+            question: "Who hit the crucial 3-pointer?",
+            options: ["Giannis", "Nembhard", "Haliburton"],
+            correct: "Nembhard"
           }
-        },
-        {
-          triggerText: "Tyrese Haliburton swiped in with a layup just as the clock ticked down to 1 second",
-          highlightText: "layup just as the clock ticked down to 1 second",
-          render: () => {
-            return `<b>Timing Game:</b><br>Click the button exactly when the timer hits <b>1 second</b>!<br>
-            <button onclick="startTimingGame()">Start</button><div id='timer'></div>`;
-          }
-        },
-        {
-          triggerText: "Andrew Nembhard to cut the Bucks' lead to 4 points",
-          highlightText: "cut the Bucks' lead to 4 points",
-          render: () => {
-            return `<b>3-Point Strategy:</b><br>Can you simulate Nembhard's shot?<br>
-            <button onclick="alert('Swish! You cut the lead.')">Shoot 3</button>
-            <button onclick="alert('Missed! Try again.')">Layup</button>`;
+        ];
+      
+        let currentStateIndex = -1;
+      
+        function renderGame(state) {
+          const container = document.getElementById("gameContent");
+          const popup = document.getElementById("gamePopup");
+          container.innerHTML = `<p>${state.question}</p>`;
+          state.options.forEach(opt => {
+            const btn = document.createElement("button");
+            btn.textContent = opt;
+            btn.style.margin = "5px";
+            btn.onclick = () => {
+              if (opt === state.correct) {
+                popup.textContent = "✅ Correct!";
+                popup.classList.remove("hidden");
+                setTimeout(() => {
+                  popup.classList.add("hidden");
+                  currentStateIndex++;
+                  if (currentStateIndex < gameStates.length) {
+                    highlightText(null); // clear previous
+                    renderGame(gameStates[currentStateIndex]);
+                    highlightText(gameStates[currentStateIndex].trigger);
+                  } else {
+                    showVictory();
+                  }
+                }, 1000);
+              } else {
+                popup.textContent = "❌ Try again!";
+                popup.classList.remove("hidden");
+              }
+            };
+            container.appendChild(btn);
+          });
+        }
+      
+        function highlightText(trigger) {
+          document.querySelectorAll("mark.game-highlight").forEach(m => {
+            m.outerHTML = m.innerText; // remove old highlights
+          });
+          if (!trigger) return;
+          const all = document.querySelectorAll(".p1");
+          all.forEach(p => {
+            if (p.innerHTML.includes(trigger)) {
+              p.innerHTML = p.innerHTML.replace(trigger, `<mark class="game-highlight">${trigger}</mark>`);
+            }
+          });
+        }
+      
+        function showVictory() {
+          const container = document.getElementById("gameContent");
+          container.innerHTML = `
+            <p>🏆 You've completed all game states!</p>
+            <a href="/Articles" class="cta-button">Play More Games →</a>
+          `;
+          document.getElementById("gamePopup").classList.add("hidden");
+          highlightText(null);
+        }
+      
+        function checkScrollTrigger() {
+          const scrollY = window.scrollY;
+          const triggerPoints = [
+            { index: 0, top: 200 },
+            { index: 1, top: 700 },
+            { index: 2, top: 1200 }
+          ];
+          const trigger = triggerPoints.find(p => scrollY >= p.top && currentStateIndex < p.index);
+          if (trigger) {
+            currentStateIndex = trigger.index;
+            highlightText(null); // clear previous
+            renderGame(gameStates[currentStateIndex]);
+            highlightText(gameStates[currentStateIndex].trigger);
           }
         }
-      ];
-    
-      function highlightTextFragment(fragment) {
-        document.querySelectorAll(".game-highlight").forEach(el => {
-          el.outerHTML = el.innerHTML;
-        });
-    
-        document.querySelectorAll("p").forEach(p => {
-          if (p.innerText.includes(fragment)) {
-            const html = p.innerHTML.replace(fragment, `<span class='game-highlight'>${fragment}</span>`);
-            p.innerHTML = html;
-          }
-        });
-      }
-    
-      function clearHighlights() {
-        document.querySelectorAll(".game-highlight").forEach(el => {
-          el.outerHTML = el.innerHTML;
-        });
-      }
-    
-      function getCurrentGameState() {
-        const triggerIndex = states.findIndex((state, i) => {
-          const el = Array.from(document.querySelectorAll("p")).find(p => p.innerText.includes(state.triggerText));
-          if (!el) return false;
-          const rect = el.getBoundingClientRect();
-          return rect.top >= 0 && rect.top <= window.innerHeight * 0.6;
-        });
-    
-        return triggerIndex;
-      }
-    
-      function renderGame() {
-        const panel = document.getElementById("gamePanel");
-        const stateIndex = getCurrentGameState();
-    
-        if (stateIndex === -1) {
-          panel.innerHTML = "Scroll to play the game!";
-          clearHighlights();
-          return;
-        }
-    
-        const state = states[stateIndex];
-        highlightTextFragment(state.highlightText);
-        panel.innerHTML = state.render();
-      }
-    
-      function startTimingGame() {
-        const timerEl = document.getElementById("timer");
-        let time = 3.0;
-        timerEl.textContent = time.toFixed(1) + "s";
-    
-        const interval = setInterval(() => {
-          time -= 0.1;
-          timerEl.textContent = time.toFixed(1) + "s";
-          if (time <= 1.0 && time > 0.9) {
-            timerEl.innerHTML += "<br><b>Perfect timing!</b>";
-            clearInterval(interval);
-          }
-          if (time <= 0) {
-            timerEl.innerHTML += "<br><i>Too slow!</i>";
-            clearInterval(interval);
-          }
-        }, 100);
-      }
-    
-      window.addEventListener("scroll", renderGame);
-      window.addEventListener("load", renderGame);
-    </script>    
+      
+        window.addEventListener("scroll", checkScrollTrigger);
+        window.addEventListener("DOMContentLoaded", checkScrollTrigger);
+      </script>
+      
 </body>
 </html>
