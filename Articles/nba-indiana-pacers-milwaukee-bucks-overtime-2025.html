@@ -338,6 +338,23 @@
                 transform: translatey(0px);
             }
         }
+        .game-panel {
+    position: fixed;
+    top: 20%;
+    right: 0;
+    width: 300px;
+    max-width: 90vw;
+    padding: 20px;
+    background: #f0f0f8;
+    border-left: 3px solid #3498db;
+    box-shadow: -2px 0 6px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+  }
+  .game-highlight {
+    background: yellow;
+    transition: background 0.3s ease;
+  }
     </style>
 </head>
 <body>
@@ -369,16 +386,6 @@
         <p class="p1"><div data-aos="fade-up"><p class="p1">In an epic showdown of skill and chaos, the <b>Indiana Pacers</b> clinched a jaw-dropping <b>119-118</b> victory over the <b>Milwaukee Bucks</b> in overtime, proving that anything can happen when you least expect it—like Giannis missing a game-winner. The Pacers now advance to face the <b>Cleveland Cavaliers</b> in the second round, rubbing it in Milwaukee's face without their star, <b>Damian Lillard</b>.</p></div><br><div data-aos="fade-up"><p class="p1">With <b>10 seconds</b> left in OT, chaos ensued when <b>Gary Trent Jr.</b> suddenly decided the ball was a hot potato and turned it over. In a moment of pure playoff drama, <b>Tyrese Haliburton</b> swiped in with a layup just as the clock ticked down to <b>1 second</b>. And like that, the Pacers snagged the win.</p></div><br><div data-aos="fade-up"><p class="p1">Regaining sanity after the tornado of plays, the Pacers found themselves down by <b>1 point</b>. With just <b>17 seconds</b> remaining in the first OT, Haliburton's layup and a galactic free throw put Indiana back in range. It’s the kind of comeback story we only see in movies—or perhaps, just this game.</p></div><br><div data-aos="fade-up"><p class="p1">The Pacers' nail-biting journey included a miraculous <b>3-pointer</b> from <b>Andrew Nembhard</b> to cut the Bucks' lead to <b>4 points</b>, pulling them back from the edge of defeat. The Bucks, meanwhile, were busy logging their own drama, with Trent Jr. scoring yet another extravagant <b>3-pointer</b>. Memo to Trent: when’s the last time you had a balanced breakfast, or are you just fueled by pure adrenaline?</p></div><br><div data-aos="fade-up"><p class="p1">The game swung like a pendulum—back and forth, with <b>Tyrese Haliburton</b> briefly putting the Pacers in the lead at <b>106-103</b>. But Trent’s unrelenting barrage of 3-pointers had the Bucks back at <b>119</b> faster than you can say “overdramatized buzzer beater.” Seriously, he might as well carry a launchpad around.</p></div><br><div data-aos="fade-up"><p class="p1">As the clock ran down and sanity slipped away, both teams dug in their heels. A furious fourth quarter had the arena electrified with the Pacers scoring <b>12-7</b>. And while fans were left breathless, wondering if their team could master this rollercoaster, it was only just the beginning of the madness. You know, just another day in the NBA.</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
         </pre>
         </div>
-        <div id="haliburton-game" style="margin-top: 60px; display: none;">
-            <h2 style="text-align: center;">🎯 Can You Make the Game-Winner?</h2>
-            <div id="game-container" style="position: relative; height: 300px; background-color: #eef; border: 2px solid #333; margin: 20px auto; width: 300px; border-radius: 10px;">
-              <div id="hoop" style="position: absolute; top: 20px; left: 120px; width: 60px; height: 10px; background-color: red; border-radius: 5px;"></div>
-              <div id="ball" style="position: absolute; bottom: 20px; left: 140px; width: 20px; height: 20px; background-color: orange; border-radius: 50%;"></div>
-              <button id="shoot-btn" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); padding: 8px 16px; font-weight: bold; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">Shoot</button>
-            </div>
-            <p id="result-text" style="text-align: center; font-weight: bold; font-size: 1.2em;"></p>
-          </div>
-          
          <section>
             <div class="section-grid">
                 <div data-aos="fade-up">
@@ -987,43 +994,105 @@
             }
         }
         });
-        // Show game on scroll to key moment
-window.addEventListener('scroll', () => {
-  const gameTrigger = document.querySelector('p.p1:contains("Haliburton swiped in with a layup")');
-  const gameElement = document.getElementById('haliburton-game');
-  if (gameTrigger && gameElement) {
-    const rect = gameTrigger.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom >= 0) {
-      gameElement.style.display = 'block';
-    }
-  }
-});
-
-// Game Logic
-const shootBtn = document.getElementById("shoot-btn");
-const ball = document.getElementById("ball");
-const resultText = document.getElementById("result-text");
-
-shootBtn.addEventListener("click", () => {
-  shootBtn.disabled = true;
-  ball.style.transition = "bottom 0.7s ease-out, left 0.7s ease-out";
-  ball.style.bottom = "250px";
-  ball.style.left = "130px";
-
-  setTimeout(() => {
-    const success = Math.random() < 0.5; // 50% chance
-    resultText.textContent = success ? "🏀 HALIBURTON WINS IT!" : "❌ Off the rim… try again?";
-    resultText.style.color = success ? "green" : "red";
-    // Reset
-    setTimeout(() => {
-      ball.style.bottom = "20px";
-      ball.style.left = "140px";
-      shootBtn.disabled = false;
-      resultText.textContent = "";
-    }, 2000);
-  }, 700);
-});
-
     </script>
+    <div id="gamePanel" class="game-panel">Loading game...</div>
+
+    <script>
+      const states = [
+        {
+          triggerText: "Gary Trent Jr. suddenly decided the ball was a hot potato",
+          highlightText: "Gary Trent Jr. suddenly decided the ball was a hot potato",
+          render: () => {
+            return `<b>Turnover Challenge:</b><br>Gary panicked! What should he have done?<br>
+            <button onclick="alert('Correct! Pass it to Haliburton.')">Pass</button>
+            <button onclick="alert('Incorrect. He panicked instead.')">Panic</button>`;
+          }
+        },
+        {
+          triggerText: "Tyrese Haliburton swiped in with a layup just as the clock ticked down to 1 second",
+          highlightText: "layup just as the clock ticked down to 1 second",
+          render: () => {
+            return `<b>Timing Game:</b><br>Click the button exactly when the timer hits <b>1 second</b>!<br>
+            <button onclick="startTimingGame()">Start</button><div id='timer'></div>`;
+          }
+        },
+        {
+          triggerText: "Andrew Nembhard to cut the Bucks' lead to 4 points",
+          highlightText: "cut the Bucks' lead to 4 points",
+          render: () => {
+            return `<b>3-Point Strategy:</b><br>Can you simulate Nembhard's shot?<br>
+            <button onclick="alert('Swish! You cut the lead.')">Shoot 3</button>
+            <button onclick="alert('Missed! Try again.')">Layup</button>`;
+          }
+        }
+      ];
+    
+      function highlightTextFragment(fragment) {
+        document.querySelectorAll(".game-highlight").forEach(el => {
+          el.outerHTML = el.innerHTML;
+        });
+    
+        document.querySelectorAll("p").forEach(p => {
+          if (p.innerText.includes(fragment)) {
+            const html = p.innerHTML.replace(fragment, `<span class='game-highlight'>${fragment}</span>`);
+            p.innerHTML = html;
+          }
+        });
+      }
+    
+      function clearHighlights() {
+        document.querySelectorAll(".game-highlight").forEach(el => {
+          el.outerHTML = el.innerHTML;
+        });
+      }
+    
+      function getCurrentGameState() {
+        const triggerIndex = states.findIndex((state, i) => {
+          const el = Array.from(document.querySelectorAll("p")).find(p => p.innerText.includes(state.triggerText));
+          if (!el) return false;
+          const rect = el.getBoundingClientRect();
+          return rect.top >= 0 && rect.top <= window.innerHeight * 0.6;
+        });
+    
+        return triggerIndex;
+      }
+    
+      function renderGame() {
+        const panel = document.getElementById("gamePanel");
+        const stateIndex = getCurrentGameState();
+    
+        if (stateIndex === -1) {
+          panel.innerHTML = "Scroll to play the game!";
+          clearHighlights();
+          return;
+        }
+    
+        const state = states[stateIndex];
+        highlightTextFragment(state.highlightText);
+        panel.innerHTML = state.render();
+      }
+    
+      function startTimingGame() {
+        const timerEl = document.getElementById("timer");
+        let time = 3.0;
+        timerEl.textContent = time.toFixed(1) + "s";
+    
+        const interval = setInterval(() => {
+          time -= 0.1;
+          timerEl.textContent = time.toFixed(1) + "s";
+          if (time <= 1.0 && time > 0.9) {
+            timerEl.innerHTML += "<br><b>Perfect timing!</b>";
+            clearInterval(interval);
+          }
+          if (time <= 0) {
+            timerEl.innerHTML += "<br><i>Too slow!</i>";
+            clearInterval(interval);
+          }
+        }, 100);
+      }
+    
+      window.addEventListener("scroll", renderGame);
+      window.addEventListener("load", renderGame);
+    </script>    
 </body>
 </html>
