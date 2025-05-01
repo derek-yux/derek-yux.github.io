@@ -3145,7 +3145,39 @@ document.getElementById('userIdentityBox').addEventListener('click', () => {
       scheduleWhaleAppearance();
     });
     </script>
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const cards = document.querySelectorAll(".section-grid > div > article.section-card");
+          let direction = 1;
+          let index = 0;
+      
+          function cycleGlow() {
+            // Remove glow from all with fade-out effect
+            cards.forEach((card, i) => {
+              if (card.classList.contains("glow-reward")) {
+                card.classList.remove("glow-reward");
+              }
+            });
+      
+            // Add glow with a slight delay to let removal settle
+            setTimeout(() => {
+              cards[index].classList.add("glow-reward");
+            }, 100); // small delay to allow transition smoothing
+      
+            // Move index
+            index += direction;
+            if (index >= cards.length) {
+              direction = -1;
+              index = cards.length - 2;
+            } else if (index < 0) {
+              direction = 1;
+              index = 1;
+            }
+          }
+      
+          setInterval(cycleGlow, 1800); // slightly slower for smoothness
+        });
+      </script>      
 
 <div id="userIdentityBox" style="
 position: fixed;
