@@ -978,187 +978,173 @@
         }
         });
     </script>
-    <!-- INSERT INTO <body> AFTER THE ARTICLE TEXT CONTAINER -->
-<div id="interactiveGamePanel" class="game-panel">
-    <div id="gameMessage" class="game-message">Slowly Scroll Down!</div>
-    <div id="gameStateContainer" class="game-state"></div>
-  </div>
-  
-  <style>
-  .game-panel {
-    position: fixed;
-    bottom: 2vh;
-    right: 2vw;
-    background: linear-gradient(to bottom right, #fefcea, #f1da36);
-    border: 3px solid #774f38;
-    border-radius: 18px;
-    padding: 12px;
-    z-index: 999;
-    font-family: 'Baloo 2', cursive;
-    color: #333;
-    box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
-    transition: width 0.3s ease, height 0.3s ease;
-    width: 320px;
-    max-width: 80vw;
-    min-height: 50px;
-  }
-  .game-message {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  .game-state {
-    display: none;
-    margin-top: 8px;
-  }
-  .highlighted {
-    background-color: #fe4365;
-    color: white;
-    font-weight: bold;
-    padding: 2px 4px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  }
-  .success-popup {
-    background-color: #A6FFB9;
-    padding: 12px;
-    border-radius: 10px;
-    font-size: 1.1em;
-    text-align: center;
-    color: #333;
-    box-shadow: 0 0 10px #774f38;
-    margin-top: 10px;
-  }
-  @media (max-width: 768px) {
+    <!-- Game System Injection -->
+<style>
     .game-panel {
-      width: 80vw;
-      font-size: 0.9rem;
+      position: fixed;
+      bottom: 5vh;
+      right: 5vw;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      border-radius: 15px;
+      padding: 15px;
+      z-index: 999;
+      max-width: 320px;
+      width: 30vw;
+      font-size: 1em;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
     }
-  }
+    .game-panel.minimal {
+      width: auto;
+      height: auto;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+    .game-panel h3 {
+      margin-top: 0;
+      font-size: 1.1em;
+      color: #2c3e50;
+    }
+    .highlight-active {
+      background-color: yellow;
+      font-weight: bold;
+    }
+    .game-button {
+      background: linear-gradient(to right, #83a4d4, #b6fbff);
+      border: none;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .game-button:hover {
+      background: linear-gradient(to right, #b6fbff, #83a4d4);
+    }
   </style>
+  
+  <div id="gamePanel" class="game-panel minimal">Slowly Scroll Down!</div>
   
   <script>
   const gameStates = [
     {
-      sentenceSelector: ".p1:nth-of-type(1)",
-      triggerText: "119-118",
+      triggerText: "<b>Gary Trent Jr.</b> suddenly decided the ball was a hot potato",
       render: (container) => {
         container.innerHTML = `
-          <p>Guess the last scoring player before OT ended:</p>
-          <input type="text" id="game1Input" placeholder="Type a name...">
-          <button onclick="submitGame1()">Submit</button>
+          <h3>Hot Potato Panic!</h3>
+          <p>Click the button to toss the hot potato before it burns you!</p>
+          <button class="game-button" onclick="handlePotatoToss(this)">Toss it!</button>
         `;
-      },
-      checkWin: () => {
-        const input = document.getElementById("game1Input").value.toLowerCase();
-        return input.includes("haliburton") || input.includes("tyrese");
       }
     },
     {
-      sentenceSelector: ".p1:nth-of-type(3)",
-      triggerText: "1 point",
+      triggerText: "<b>Andrew Nembhard</b> to cut the Bucks' lead",
       render: (container) => {
         container.innerHTML = `
-          <p>Slide the bar to simulate Haliburton’s comeback drive:</p>
-          <input type="range" id="game2Slider" min="0" max="100" oninput="checkGame2()">
+          <h3>Clutch 3-Pointer</h3>
+          <p>Click only when the angle hits the green zone!</p>
+          <input type="range" min="0" max="100" value="50" id="shootSlider">
+          <button class="game-button" onclick="shootThree()">Shoot!</button>
         `;
-      },
-      checkWin: () => {
-        const value = document.getElementById("game2Slider").value;
-        return value >= 90;
       }
     },
     {
-      sentenceSelector: ".p1:nth-of-type(5)",
-      triggerText: "119",
+      triggerText: "<b>Tyrese Haliburton</b> briefly putting the Pacers in the lead",
       render: (container) => {
         container.innerHTML = `
-          <p>Click quickly to catch up! Click the ball 10 times:</p>
-          <button id="game3Btn" onclick="clickGame3()">🏀</button>
-          <div id="game3Counter">0 / 10</div>
+          <h3>Lead the Charge</h3>
+          <p>Hold down to charge up power. Release to score!</p>
+          <button class="game-button" onmousedown="chargeStart()" onmouseup="chargeRelease()">Charge & Shoot</button>
         `;
-        window.game3Clicks = 0;
-      },
-      checkWin: () => window.game3Clicks >= 10
+      }
     }
   ];
   
-  function highlightSentence(selector, keyword) {
-    const el = document.querySelector(selector);
-    if (!el) return;
-    const regex = new RegExp(`(${keyword})`, "i");
-    el.innerHTML = el.innerHTML.replace(regex, '<span class="highlighted">$1</span>');
-  }
+  const highlights = document.querySelectorAll('.p1');
+  const panel = document.getElementById('gamePanel');
+  let activeIndex = -1;
+  let charging = false;
+  let chargeStartTime;
   
-  function removeHighlights() {
-    document.querySelectorAll(".highlighted").forEach(el => {
-      el.outerHTML = el.innerHTML;
+  function resetHighlights() {
+    highlights.forEach(p => {
+      gameStates.forEach(state => {
+        if (p.innerHTML.includes(state.triggerText)) {
+          p.innerHTML = p.innerHTML.replace(`<span class=\"highlight-active\">${state.triggerText}</span>`, state.triggerText);
+        }
+      });
     });
   }
   
-  function displayMessage(msg) {
-    document.getElementById("gameMessage").innerText = msg;
-    document.getElementById("gameStateContainer").style.display = "none";
+  function activateGameState(index) {
+    if (index !== activeIndex) {
+      activeIndex = index;
+      resetHighlights();
+      panel.classList.remove('minimal');
+      const container = document.getElementById('gamePanel');
+      gameStates[index].render(container);
+      // Highlight the trigger text
+      highlights.forEach(p => {
+        if (p.innerHTML.includes(gameStates[index].triggerText)) {
+          p.innerHTML = p.innerHTML.replace(gameStates[index].triggerText, `<span class='highlight-active'>${gameStates[index].triggerText}</span>`);
+        }
+      });
+    }
   }
   
-  function displayGameState(state) {
-    const msg = document.getElementById("gameMessage");
-    msg.innerText = "";
-    const container = document.getElementById("gameStateContainer");
-    container.style.display = "block";
-    container.innerHTML = "";
-    state.render(container);
+  function checkScrollTrigger() {
+    let found = false;
+    gameStates.forEach((state, index) => {
+      const match = Array.from(highlights).find(p => p.innerHTML.includes(state.triggerText));
+      if (match) {
+        const rect = match.getBoundingClientRect();
+        if (rect.top > 0 && rect.top < window.innerHeight / 2) {
+          activateGameState(index);
+          found = true;
+        }
+      }
+    });
+    if (!found) {
+      activeIndex = -1;
+      resetHighlights();
+      panel.classList.add('minimal');
+      panel.innerText = 'Slowly Scroll Down!';
+    }
   }
   
-  function handleScroll() {
-    const scrollY = window.scrollY;
-    const triggerStates = gameStates.map((state, index) => {
-      const el = document.querySelector(state.sentenceSelector);
-      if (!el) return null;
-      const rect = el.getBoundingClientRect();
-      const elY = rect.top + window.scrollY;
-      return {
-        index,
-        state,
-        distance: Math.abs(scrollY - elY)
-      };
-    }).filter(Boolean);
+  // Game mechanics
+  function handlePotatoToss(btn) {
+    btn.disabled = true;
+    panel.innerHTML = `<h3>You Survived!</h3><p>Quick reflexes! Scroll to the next highlight.</p>`;
+  }
   
-    const closest = triggerStates.reduce((a, b) => a.distance < b.distance ? a : b, {distance: Infinity});
-    if (closest.distance < 400) {
-      removeHighlights();
-      highlightSentence(closest.state.sentenceSelector, closest.state.triggerText);
-      displayGameState(closest.state);
-      window.activeGameIndex = closest.index;
+  function shootThree() {
+    const val = document.getElementById('shootSlider').value;
+    if (val >= 40 && val <= 60) {
+      panel.innerHTML = `<h3>Buzzer Beater!</h3><p>You nailed it! Keep going!</p>`;
     } else {
-      removeHighlights();
-      displayMessage("Slowly Scroll Down!");
+      panel.innerHTML += `<p style='color:red;'>Miss! Try scrolling again to retry.</p>`;
     }
   }
   
-  function submitGame1() {
-    if (gameStates[0].checkWin()) {
-      document.getElementById("gameStateContainer").innerHTML = `<div class='success-popup'>You nailed it! Scroll for more!</div>`;
-    } else {
-      alert("Try again!");
+  function chargeStart() {
+    charging = true;
+    chargeStartTime = Date.now();
+  }
+  function chargeRelease() {
+    if (charging) {
+      charging = false;
+      const chargeTime = (Date.now() - chargeStartTime) / 1000;
+      if (chargeTime > 1.5) {
+        panel.innerHTML = `<h3>Lead Secured!</h3><p>You powered through! Great job!</p><p><a href='https://www.youyounews.live' style='color:#2980b9;'>Try another game!</a></p>`;
+      } else {
+        panel.innerHTML += `<p style='color:red;'>Too weak! Scroll up and try again!</p>`;
+      }
     }
   }
   
-  function checkGame2() {
-    if (gameStates[1].checkWin()) {
-      document.getElementById("gameStateContainer").innerHTML = `<div class='success-popup'>He scores! Scroll to the finale!</div>`;
-    }
-  }
-  
-  function clickGame3() {
-    window.game3Clicks++;
-    document.getElementById("game3Counter").innerText = `${window.game3Clicks} / 10`;
-    if (gameStates[2].checkWin()) {
-      document.getElementById("gameStateContainer").innerHTML = `<div class='success-popup'>Victory! <a href='https://www.youyounews.live' style='color:blue;text-decoration:underline;'>Try more games!</a></div>`;
-    }
-  }
-  
-  window.addEventListener("scroll", handleScroll);
+  window.addEventListener('scroll', checkScrollTrigger);
   </script>
-  
 </body>
 </html>
