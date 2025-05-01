@@ -978,145 +978,187 @@
         }
         });
     </script>
-    <!-- START OF INTERACTIVE GAME PANEL -->
-<style>
+    <!-- INSERT INTO <body> AFTER THE ARTICLE TEXT CONTAINER -->
+<div id="interactiveGamePanel" class="game-panel">
+    <div id="gameMessage" class="game-message">Slowly Scroll Down!</div>
+    <div id="gameStateContainer" class="game-state"></div>
+  </div>
+  
+  <style>
+  .game-panel {
+    position: fixed;
+    bottom: 2vh;
+    right: 2vw;
+    background: linear-gradient(to bottom right, #fefcea, #f1da36);
+    border: 3px solid #774f38;
+    border-radius: 18px;
+    padding: 12px;
+    z-index: 999;
+    font-family: 'Baloo 2', cursive;
+    color: #333;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+    transition: width 0.3s ease, height 0.3s ease;
+    width: 320px;
+    max-width: 80vw;
+    min-height: 50px;
+  }
+  .game-message {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .game-state {
+    display: none;
+    margin-top: 8px;
+  }
+  .highlighted {
+    background-color: #fe4365;
+    color: white;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  .success-popup {
+    background-color: #A6FFB9;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 0 10px #774f38;
+    margin-top: 10px;
+  }
+  @media (max-width: 768px) {
     .game-panel {
-      position: fixed;
-      top: 80px;
-      right: 20px;
-      width: clamp(220px, 20vw, 300px);
-      height: clamp(220px, 30vh, 400px);
-      background: linear-gradient(135deg, #fe4365, #f9cdad);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      font-family: 'Baloo 2', cursive;
-      color: white;
-      z-index: 999;
-      transition: all 0.3s ease;
+      width: 80vw;
+      font-size: 0.9rem;
     }
-    .highlighted {
-      background-color: yellow;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .game-popup {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 15px;
-      color: #333;
-      font-size: 1em;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      margin-top: 10px;
-      animation: pulse 1s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
+  }
   </style>
-  <div class="game-panel" id="gamePanel">Slowly Scroll Down!</div>
+  
   <script>
   const gameStates = [
     {
-      triggerText: "Gary Trent Jr.",
-      minigame: () => `
-        <div class='game-popup'>
-          <p><b>Minigame 1:</b> Panic Pass!</p>
-          <p>Quick! Type <code>pass</code> and hit Enter before Gary drops the ball!</p>
-          <input type='text' id='minigame1input' placeholder='Type here...'>
-        </div>
-      `,
-      checkWin: () => document.getElementById('minigame1input')?.value.trim().toLowerCase() === 'pass',
+      sentenceSelector: ".p1:nth-of-type(1)",
+      triggerText: "119-118",
+      render: (container) => {
+        container.innerHTML = `
+          <p>Guess the last scoring player before OT ended:</p>
+          <input type="text" id="game1Input" placeholder="Type a name...">
+          <button onclick="submitGame1()">Submit</button>
+        `;
+      },
+      checkWin: () => {
+        const input = document.getElementById("game1Input").value.toLowerCase();
+        return input.includes("haliburton") || input.includes("tyrese");
+      }
     },
     {
-      triggerText: "Andrew Nembhard",
-      minigame: () => `
-        <div class='game-popup'>
-          <p><b>Minigame 2:</b> Launch the 3!</p>
-          <button onclick='launchThree()'>Shoot</button>
-          <div id='minigame2result'></div>
-        </div>
-      `,
-      checkWin: () => document.getElementById('minigame2result')?.innerText.includes("Swish")
+      sentenceSelector: ".p1:nth-of-type(3)",
+      triggerText: "1 point",
+      render: (container) => {
+        container.innerHTML = `
+          <p>Slide the bar to simulate Haliburton’s comeback drive:</p>
+          <input type="range" id="game2Slider" min="0" max="100" oninput="checkGame2()">
+        `;
+      },
+      checkWin: () => {
+        const value = document.getElementById("game2Slider").value;
+        return value >= 90;
+      }
     },
     {
-      triggerText: "12-7",
-      minigame: () => `
-        <div class='game-popup'>
-          <p><b>Minigame 3:</b> Time Crisis!</p>
-          <p>Click the countdown to survive overtime!</p>
-          <button id='timerBtn' onclick='startTimer()'>Start</button>
-          <span id='timer'></span>
-        </div>
-      `,
-      checkWin: () => document.getElementById('timer')?.innerText === '0'
+      sentenceSelector: ".p1:nth-of-type(5)",
+      triggerText: "119",
+      render: (container) => {
+        container.innerHTML = `
+          <p>Click quickly to catch up! Click the ball 10 times:</p>
+          <button id="game3Btn" onclick="clickGame3()">🏀</button>
+          <div id="game3Counter">0 / 10</div>
+        `;
+        window.game3Clicks = 0;
+      },
+      checkWin: () => window.game3Clicks >= 10
     }
   ];
   
-  let currentIndex = -1;
-  const panel = document.getElementById('gamePanel');
-  const triggerEls = [];
+  function highlightSentence(selector, keyword) {
+    const el = document.querySelector(selector);
+    if (!el) return;
+    const regex = new RegExp(`(${keyword})`, "i");
+    el.innerHTML = el.innerHTML.replace(regex, '<span class="highlighted">$1</span>');
+  }
   
-  document.querySelectorAll('p').forEach(p => {
-    gameStates.forEach((state, i) => {
-      if (p.innerHTML.includes(state.triggerText)) {
-        const marked = `<span class="game-highlight" data-gs="${i}">${state.triggerText}</span>`;
-        p.innerHTML = p.innerHTML.replace(state.triggerText, marked);
-      }
+  function removeHighlights() {
+    document.querySelectorAll(".highlighted").forEach(el => {
+      el.outerHTML = el.innerHTML;
     });
-  });
+  }
   
-  function updateGameState() {
-    const highlights = document.querySelectorAll('.game-highlight');
-    for (let i = 0; i < highlights.length; i++) {
-      const el = highlights[i];
+  function displayMessage(msg) {
+    document.getElementById("gameMessage").innerText = msg;
+    document.getElementById("gameStateContainer").style.display = "none";
+  }
+  
+  function displayGameState(state) {
+    const msg = document.getElementById("gameMessage");
+    msg.innerText = "";
+    const container = document.getElementById("gameStateContainer");
+    container.style.display = "block";
+    container.innerHTML = "";
+    state.render(container);
+  }
+  
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    const triggerStates = gameStates.map((state, index) => {
+      const el = document.querySelector(state.sentenceSelector);
+      if (!el) return null;
       const rect = el.getBoundingClientRect();
-      if (rect.top >= 100 && rect.top <= 300) {
-        if (currentIndex !== i) {
-          document.querySelectorAll('.game-highlight').forEach(el => el.classList.remove('highlighted'));
-          el.classList.add('highlighted');
-          currentIndex = i;
-          panel.innerHTML = gameStates[i].minigame();
-        }
-        return;
-      }
+      const elY = rect.top + window.scrollY;
+      return {
+        index,
+        state,
+        distance: Math.abs(scrollY - elY)
+      };
+    }).filter(Boolean);
+  
+    const closest = triggerStates.reduce((a, b) => a.distance < b.distance ? a : b, {distance: Infinity});
+    if (closest.distance < 400) {
+      removeHighlights();
+      highlightSentence(closest.state.sentenceSelector, closest.state.triggerText);
+      displayGameState(closest.state);
+      window.activeGameIndex = closest.index;
+    } else {
+      removeHighlights();
+      displayMessage("Slowly Scroll Down!");
     }
   }
   
-  window.addEventListener('scroll', updateGameState);
-  
-  function launchThree() {
-    const result = Math.random() > 0.5 ? "Swish! You scored!" : "Clang! Missed.";
-    document.getElementById('minigame2result').innerText = result;
-  }
-  
-  function startTimer() {
-    let time = 3;
-    const span = document.getElementById('timer');
-    const interval = setInterval(() => {
-      span.innerText = time;
-      time--;
-      if (time < 0) {
-        clearInterval(interval);
-        span.innerText = '0';
-      }
-    }, 1000);
-  }
-  
-  setInterval(() => {
-    if (currentIndex !== -1 && gameStates[currentIndex].checkWin()) {
-      panel.innerHTML = `
-        <div class='game-popup'>
-          <p><b>You did it!</b></p>
-          <p>${currentIndex === gameStates.length - 1
-            ? "You've completed all games! <a href='https://www.youyounews.live'>Play more!</a>"
-            : "Scroll down for the next challenge!"}</p>
-        </div>`;
+  function submitGame1() {
+    if (gameStates[0].checkWin()) {
+      document.getElementById("gameStateContainer").innerHTML = `<div class='success-popup'>You nailed it! Scroll for more!</div>`;
+    } else {
+      alert("Try again!");
     }
-  }, 500);
+  }
+  
+  function checkGame2() {
+    if (gameStates[1].checkWin()) {
+      document.getElementById("gameStateContainer").innerHTML = `<div class='success-popup'>He scores! Scroll to the finale!</div>`;
+    }
+  }
+  
+  function clickGame3() {
+    window.game3Clicks++;
+    document.getElementById("game3Counter").innerText = `${window.game3Clicks} / 10`;
+    if (gameStates[2].checkWin()) {
+      document.getElementById("gameStateContainer").innerHTML = `<div class='success-popup'>Victory! <a href='https://www.youyounews.live' style='color:blue;text-decoration:underline;'>Try more games!</a></div>`;
+    }
+  }
+  
+  window.addEventListener("scroll", handleScroll);
   </script>
-  <!-- END OF INTERACTIVE GAME PANEL -->
+  
 </body>
 </html>
