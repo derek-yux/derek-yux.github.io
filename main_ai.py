@@ -142,7 +142,7 @@ def main():
             <li1><a href="../Pages/music">Music</a></li1>
             <li><a href="/Pages/working">Forums</a></li>"""
 
-    final_html = "Articles/"
+    final_html = "/Articles/"
     final_html += f"{response_title.strip('%20 ')}.html"
     Func = open(final_html, "w")
     Func.write("""

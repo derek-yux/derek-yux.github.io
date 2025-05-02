@@ -3,6 +3,58 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://www.youyounews.live/Articles/ascap-pop-music-awards-2025-winners.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-02</news:publication_date>
+      <news:title>ASCAP Pop Music Awards 2025 Crown New Kings of the Charts</news:title>
+      <news:keywords>News, You You, ASCAP, Pop, Awards, Music, Teddy Swims, Discussion</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/meta-llama-ai-conference.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-02</news:publication_date>
+      <news:title>Meta Llama Conference Unveils AI Shenanigans and Llama Drama</news:title>
+      <news:keywords>News, You You, Tech, Meta, AI, Llama, Conference, Discussion</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/oilers-nhl-playoffs-advance-kings.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-02</news:publication_date>
+      <news:title>Oilers Advance By Pummeling Kings In Wild Playoff Victory</news:title>
+      <news:keywords>NHL, News, Playoffs, Sports, Oilers, Kings, Edmonton, Discussion</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.youyounews.live/Articles/thunderbolts-movie-release-marvel.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-02</news:publication_date>
+      <news:title>Thunderbolts: Marvel's Delightful Mess of Misfits</news:title>
+      <news:keywords>News, You You, Marvel, Thunderbolts, TV, Movie, Release, Discussion</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://www.youyounews.live/Articles/lakers-nba-playoffs-timberwolves-eliminated.html</loc>
     <news:news>
       <news:publication>
@@ -25,19 +77,6 @@
       <news:publication_date>2025-05-01</news:publication_date>
       <news:title>May Day Trump Protests Making Waves Across America</news:title>
       <news:keywords>May, Trump, protests, politics, day, news, trending</news:keywords>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/meta-microsoft-stocks-quarter-report.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-04-30</news:publication_date>
-      <news:title>Meta And Microsoft Stocks Soaring This Quarter</news:title>
-      <news:keywords>Meta, Microsoft, stocks, tech, quarter, AI, trump, news, trending</news:keywords>
     </news:news>
   </url>
 
