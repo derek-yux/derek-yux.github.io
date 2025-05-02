@@ -1141,5 +1141,251 @@
         }
         });
     </script>
+    <!-- 1. GAME PANEL HTML -->
+<div id="game-panel" class="game-panel">
+    <div id="game-content">Slowly Scroll Down!</div>
+  </div>
+  
+  <!-- 2. GAME PANEL STYLE -->
+  <style>
+    .game-panel {
+      position: fixed;
+      bottom: 5vh;
+      right: 3vw;
+      width: clamp(180px, 22vw, 300px);
+      min-height: clamp(60px, 12vh, 180px);
+      background: linear-gradient(135deg, #83af9b, #c8c8a9);
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      padding: 15px;
+      font-family: 'Baloo 2', cursive, sans-serif;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 999;
+      transition: all 0.4s ease;
+    }
+    .highlighted {
+      background: linear-gradient(90deg, #f9cdad 0%, #fe4365 100%);
+      padding: 2px 4px;
+      border-radius: 6px;
+    }
+    .game-button {
+      background: linear-gradient(45deg, #ff7e5f, #feb47b);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+    .game-button:hover {
+      background: linear-gradient(45deg, #feb47b, #ff7e5f);
+    }
+    .popup {
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      font-family: 'Baloo 2', cursive;
+      color: #333;
+      z-index: 1000;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      animation: pop 0.6s ease;
+    }
+    @keyframes pop {
+      0% { transform: scale(0.7) translate(-50%, -30%); }
+      50% { transform: scale(1.05) translate(-50%, -30%); }
+      100% { transform: scale(1) translate(-50%, -30%); }
+    }
+  </style>
+  
+  <!-- 3. GAME LOGIC SCRIPT -->
+  <!-- 3. UPGRADED GAME LOGIC SCRIPT -->
+<script>
+    const gameStates = [
+      {
+        triggerText: '6-4 victory',
+        game: quickReactionGame
+      },
+      {
+        triggerText: 'four straight',
+        game: memoryGame
+      },
+      {
+        triggerText: '23 saves',
+        game: dodgeBombGame
+      }
+    ];
+    
+    let activeIndex = -1;
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const allParagraphs = document.querySelectorAll('.p1');
+    
+      gameStates.forEach((state, idx) => {
+        allParagraphs.forEach(p => {
+          if (p.innerHTML.includes(state.triggerText)) {
+            const regex = new RegExp(`(${state.triggerText})`);
+            p.innerHTML = p.innerHTML.replace(regex, `<span class="game-trigger" data-idx="${idx}">$1</span>`);
+          }
+        });
+      });
+    
+      const triggers = document.querySelectorAll('.game-trigger');
+    
+      window.addEventListener('scroll', () => {
+        triggers.forEach(trigger => {
+          const rect = trigger.getBoundingClientRect();
+          if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            const idx = trigger.getAttribute('data-idx');
+            if (activeIndex !== idx) {
+              loadGameState(idx);
+              activeIndex = idx;
+            }
+            trigger.classList.add('highlighted');
+          } else {
+            trigger.classList.remove('highlighted');
+          }
+        });
+      });
+    });
+    
+    function loadGameState(idx) {
+      const panel = document.getElementById('game-content');
+      panel.innerHTML = '';
+      gameStates[idx].game(panel);
+    }
+    
+    function quickReactionGame(panel) {
+      panel.innerHTML = '<p>Tap when you see GO!</p>';
+      const btn = document.createElement('button');
+      btn.className = 'game-button';
+      btn.innerText = 'WAIT...';
+      panel.appendChild(btn);
+    
+      let startTime;
+      setTimeout(() => {
+        btn.innerText = 'GO!';
+        startTime = Date.now();
+        btn.onclick = () => {
+          const reactionTime = Date.now() - startTime;
+          if (reactionTime < 500) {
+            showPopup('Lightning Fast! ⚡ (' + reactionTime + 'ms)');
+          } else {
+            showPopup('Too slow! 🐌 (' + reactionTime + 'ms)');
+          }
+        };
+      }, 2000 + Math.random() * 2000);
+    }
+    
+    function memoryGame(panel) {
+      panel.innerHTML = '<p>Find the hidden pair!</p>';
+      const emojis = ['🍎', '🍌', '🍎', '🍌'];
+      emojis.sort(() => 0.5 - Math.random()); // shuffle
+    
+      const buttons = emojis.map(emoji => {
+        const btn = document.createElement('button');
+        btn.className = 'game-button';
+        btn.innerText = '?';
+        btn.dataset.value = emoji;
+        panel.appendChild(btn);
+        return btn;
+      });
+    
+      let firstPick = null;
+    
+      buttons.forEach(btn => {
+        btn.onclick = () => {
+          btn.innerText = btn.dataset.value;
+          if (!firstPick) {
+            firstPick = btn;
+          } else {
+            if (firstPick.dataset.value === btn.dataset.value && firstPick !== btn) {
+              showPopup('Match Found! 🎯');
+            } else {
+              setTimeout(() => {
+                firstPick.innerText = '?';
+                btn.innerText = '?';
+                firstPick = null;
+              }, 700);
+            }
+          }
+        };
+      });
+    }
+    
+    function dodgeBombGame(panel) {
+      panel.innerHTML = '<p>Move to dodge the bomb!</p>';
+      const bomb = document.createElement('div');
+      bomb.style.width = '30px';
+      bomb.style.height = '30px';
+      bomb.style.background = 'red';
+      bomb.style.borderRadius = '50%';
+      bomb.style.position = 'absolute';
+      bomb.style.top = '10px';
+      bomb.style.left = Math.random() < 0.5 ? '30%' : '70%';
+      bomb.style.transition = 'top 2s linear';
+      panel.appendChild(bomb);
+    
+      const btnLeft = document.createElement('button');
+      const btnRight = document.createElement('button');
+      btnLeft.className = btnRight.className = 'game-button';
+      btnLeft.innerText = '⬅️';
+      btnRight.innerText = '➡️';
+      panel.appendChild(btnLeft);
+      panel.appendChild(btnRight);
+    
+      let playerPos = 50; // start center
+    
+      btnLeft.onclick = () => { playerPos = 30; };
+      btnRight.onclick = () => { playerPos = 70; };
+    
+      setTimeout(() => {
+        bomb.style.top = '90%'; // start falling
+      }, 100);
+    
+      setTimeout(() => {
+        if (Math.abs(playerPos - parseInt(bomb.style.left)) < 20) {
+          showPopup('Boom! 💥');
+        } else {
+          showPopup('You dodged it! 🛡️');
+        }
+      }, 2100);
+    }
+    
+    function showPopup(text) {
+      const popup = document.createElement('div');
+      popup.className = 'popup';
+      popup.innerHTML = `<p>${text}</p>`;
+      document.body.appendChild(popup);
+    
+      setTimeout(() => {
+        popup.remove();
+        if (parseInt(activeIndex) === gameStates.length - 1) {
+          finalWin();
+        }
+      }, 2000);
+    }
+    
+    function finalWin() {
+      setTimeout(() => {
+        const popup = document.createElement('div');
+        popup.className = 'popup';
+        popup.innerHTML = `<h2>You crushed it! 🎉</h2><p>Discover more games?</p><button class='game-button' onclick="window.location.href='https://www.youyounews.live'">Explore!</button>`;
+        document.body.appendChild(popup);
+      }, 1000);
+    }
+    </script>    
 </body>
 </html>

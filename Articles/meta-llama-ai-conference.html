@@ -1141,5 +1141,201 @@
         }
         });
     </script>
+    <script>
+        // ========== CONFIGURATION ==========
+        // Sentences to link minigames to (use exact matching or slight matching keywords)
+        const gameTriggers = [
+          { keyword: "LlamaCon", gameType: "reaction" },  // Reaction click game
+          { keyword: "Chris Cox", gameType: "drag" },      // Drag-and-drop mini puzzle
+          { keyword: "Satya Nadella", gameType: "math" }   // Quick math click game
+        ];
+        
+        // ========== STYLE SETUP ==========
+        // Inject the Game Panel
+        const gamePanel = document.createElement('div');
+        gamePanel.id = 'gamePanel';
+        gamePanel.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 250px;
+          height: 150px;
+          background: linear-gradient(135deg, #83af9b, #fe4365);
+          color: white;
+          font-family: 'Baloo 2', cursive, sans-serif;
+          border-radius: 12px;
+          box-shadow: 0 0 15px rgba(0,0,0,0.2);
+          padding: 15px;
+          font-size: 1em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          z-index: 9999;
+          transition: all 0.5s ease;
+        `;
+        gamePanel.innerHTML = `<div id="gameContent" style="width: 100%; height: 100%;">Slowly Scroll Down!</div>`;
+        document.body.appendChild(gamePanel);
+        
+        // Highlight styles
+        const highlightStyle = `
+        .highlighted {
+          background: linear-gradient(90deg, #ffe57f, #ffd740);
+          padding: 0 5px;
+          border-radius: 4px;
+        }
+        .popup {
+          position: fixed;
+          top: 20%;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #fff3cd;
+          color: #d35400;
+          padding: 20px 30px;
+          border-radius: 15px;
+          box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+          font-size: 1.2em;
+          font-family: 'Baloo 2', cursive, sans-serif;
+          z-index: 99999;
+          animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+          0% { transform: translateX(-50%) scale(1); }
+          50% { transform: translateX(-50%) scale(1.05); }
+          100% { transform: translateX(-50%) scale(1); }
+        }
+        .button {
+          margin-top: 15px;
+          padding: 10px 20px;
+          background: #3498db;
+          border: none;
+          border-radius: 8px;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+        .button:hover {
+          background: #2980b9;
+        }
+        `;
+        const styleTag = document.createElement('style');
+        styleTag.textContent = highlightStyle;
+        document.head.appendChild(styleTag);
+        
+        // ========== GAME LOGIC ==========
+        let completedGames = 0;
+        
+        function showPopup(message, final = false) {
+          const popup = document.createElement('div');
+          popup.className = 'popup';
+          popup.innerHTML = `<div>${message}</div>`;
+        
+          if (final) {
+            const btn = document.createElement('button');
+            btn.className = 'button';
+            btn.textContent = "Play More!";
+            btn.onclick = () => window.location.href = "https://www.youyounews.live";
+            popup.appendChild(btn);
+          }
+        
+          document.body.appendChild(popup);
+          setTimeout(() => {
+            popup.remove();
+          }, final ? 8000 : 3000);
+        }
+        
+        // Minigames
+        function launchGame(type) {
+          if (type === "reaction") {
+            gamePanel.style.height = "200px";
+            gamePanel.innerHTML = `
+              <div id="gameContent" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <p>Wait for Green!</p>
+                <button id="reactionBtn" class="button" disabled>...</button>
+              </div>`;
+            const btn = document.getElementById('reactionBtn');
+            setTimeout(() => {
+              btn.textContent = "CLICK NOW!";
+              btn.disabled = false;
+              btn.onclick = () => {
+                winGame();
+              };
+            }, Math.random() * 3000 + 2000);
+          }
+        
+          if (type === "drag") {
+            gamePanel.style.height = "200px";
+            gamePanel.innerHTML = `
+              <div id="gameContent" style="display: flex; flex-direction: column; align-items: center;">
+                <p>Drag into Circle</p>
+                <div id="dragZone" style="margin-top:10px; width:80px; height:80px; background:white; border-radius:50%;"></div>
+                <div id="dragItem" style="width:40px; height:40px; background:orange; border-radius:50%; margin-top:15px; cursor:grab;"></div>
+              </div>`;
+            const dragItem = document.getElementById('dragItem');
+            const dragZone = document.getElementById('dragZone');
+        
+            dragItem.draggable = true;
+            dragZone.ondragover = (e) => e.preventDefault();
+            dragZone.ondrop = (e) => {
+              e.preventDefault();
+              winGame();
+            };
+          }
+        
+          if (type === "math") {
+            const correctAnswer = Math.floor(Math.random() * 10) + 10;
+            const wrongAnswer = correctAnswer + Math.floor(Math.random() * 3) + 1;
+            const answers = [correctAnswer, wrongAnswer].sort(() => 0.5 - Math.random());
+            gamePanel.style.height = "200px";
+            gamePanel.innerHTML = `
+              <div id="gameContent" style="display: flex; flex-direction: column; align-items: center;">
+                <p>Find ${correctAnswer}</p>
+                ${answers.map(ans => `<button class="button" onclick="${ans === correctAnswer ? 'winGame()' : 'this.disabled=true;this.style.opacity=0.5;'}">${ans}</button>`).join('')}
+              </div>`;
+          }
+        }
+        
+        function winGame() {
+          completedGames++;
+          showPopup("Reward Unlocked! 🎉");
+          if (completedGames >= gameTriggers.length) {
+            showPopup("All Games Completed!", true);
+          }
+          gamePanel.innerHTML = `<div id="gameContent">Scroll for more!</div>`;
+          gamePanel.style.height = "150px";
+        }
+        
+        // Highlight Tracking
+        const paragraphs = Array.from(document.querySelectorAll('div[data-aos="fade-up"] p'));
+        let activeTriggerIndex = -1;
+        
+        window.addEventListener('scroll', () => {
+          let found = false;
+          for (let i = 0; i < gameTriggers.length; i++) {
+            const { keyword, gameType } = gameTriggers[i];
+            const para = paragraphs.find(p => p.innerHTML.includes(keyword));
+            if (para) {
+              const rect = para.getBoundingClientRect();
+              if (rect.top >= 0 && rect.top <= window.innerHeight * 0.5) {
+                if (activeTriggerIndex !== i) {
+                  paragraphs.forEach(p => p.classList.remove('highlighted'));
+                  para.classList.add('highlighted');
+                  launchGame(gameType);
+                  activeTriggerIndex = i;
+                }
+                found = true;
+                break;
+              }
+            }
+          }
+          if (!found) {
+            paragraphs.forEach(p => p.classList.remove('highlighted'));
+            activeTriggerIndex = -1;
+            gamePanel.innerHTML = `<div id="gameContent">Slowly Scroll Down!</div>`;
+            gamePanel.style.height = "150px";
+          }
+        });
+        </script>        
 </body>
 </html>

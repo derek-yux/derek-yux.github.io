@@ -508,6 +508,9 @@
                 <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
                 <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
             </div>
+            <div id="game-panel" class="game-panel">
+                <div id="game-content">Slowly Scroll Down!</div>
+              </div>
         </div>
     </section>
          <section>
@@ -1141,5 +1144,178 @@
         }
         });
     </script>
+    <style>
+        .game-panel {
+          position: fixed;
+          bottom: 5vh;
+          right: 3vw;
+          width: clamp(180px, 22vw, 300px);
+          min-height: clamp(60px, 12vh, 180px);
+          background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+          border-radius: 20px;
+          box-shadow: 0 4px 25px rgba(0,0,0,0.25);
+          padding: 15px;
+          font-family: 'Baloo 2', cursive, sans-serif;
+          color: #333;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          z-index: 999;
+          transition: all 0.4s ease;
+        }
+        .highlighted {
+          background: linear-gradient(90deg, #f9cdad, #fe4365);
+          padding: 2px 4px;
+          border-radius: 6px;
+        }
+        .game-button {
+          background: linear-gradient(45deg, #ff6b6b, #f7d794);
+          border: none;
+          padding: 10px 20px;
+          border-radius: 12px;
+          font-weight: bold;
+          color: white;
+          font-size: 1em;
+          cursor: pointer;
+          margin-top: 15px;
+          transition: background 0.3s ease;
+        }
+        .game-button:hover {
+          background: linear-gradient(45deg, #f7d794, #ff6b6b);
+        }
+        .popup {
+          position: fixed;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -30%);
+          background: #fff3cd;
+          border: 2px solid #ffc107;
+          padding: 20px;
+          border-radius: 12px;
+          text-align: center;
+          font-family: 'Baloo 2', cursive;
+          color: #333;
+          z-index: 1000;
+          box-shadow: 0 0 20px rgba(0,0,0,0.3);
+          animation: pop 0.6s ease;
+        }
+        @keyframes pop {
+          0% { transform: scale(0.7) translate(-50%, -30%); }
+          50% { transform: scale(1.05) translate(-50%, -30%); }
+          100% { transform: scale(1) translate(-50%, -30%); }
+        }
+      </style>
+      
+      <!-- 3. GAME SCRIPT -->
+      <script>
+      const gameStates = [
+        { triggerText: 'Lose Control', game: rhythmGame },
+        { triggerText: '58 weeks', game: memoryFlipGame },
+        { triggerText: 'Sony Music Publishing', game: reactionClickGame }
+      ];
+      
+      let activeIndex = -1;
+      
+      window.addEventListener('DOMContentLoaded', () => {
+        const paras = document.querySelectorAll('.p1');
+      
+        gameStates.forEach((state, idx) => {
+          paras.forEach(p => {
+            if (p.innerHTML.includes(state.triggerText)) {
+              const reg = new RegExp(`(${state.triggerText})`, 'g');
+              p.innerHTML = p.innerHTML.replace(reg, `<span class="game-trigger" data-idx="${idx}">$1</span>`);
+            }
+          });
+        });
+      
+        const triggers = document.querySelectorAll('.game-trigger');
+      
+        window.addEventListener('scroll', () => {
+          triggers.forEach(trigger => {
+            const rect = trigger.getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+              const idx = trigger.getAttribute('data-idx');
+              if (activeIndex != idx) {
+                loadGameState(idx);
+                activeIndex = idx;
+              }
+              trigger.classList.add('highlighted');
+            } else {
+              trigger.classList.remove('highlighted');
+            }
+          });
+        });
+      });
+      
+      function loadGameState(idx) {
+        const panel = document.getElementById('game-content');
+        panel.innerHTML = '';
+        gameStates[idx].game(panel);
+      }
+      
+      function rhythmGame(panel) {
+        panel.innerHTML = '<p>Tap when the beat hits! 🎵</p>';
+        const btn = document.createElement('button');
+        btn.className = 'game-button';
+        btn.innerText = 'WAIT...';
+        panel.appendChild(btn);
+        setTimeout(() => {
+          btn.innerText = 'TAP NOW!';
+          btn.onclick = () => showPopup('You Rock! 🎸');
+        }, 3000 + Math.random() * 2000);
+      }
+      
+      function memoryFlipGame(panel) {
+        panel.innerHTML = '<p>Memorize & Match! 🔮</p>';
+        const symbols = ['🎶', '🎵'];
+        const chosen = symbols[Math.floor(Math.random() * symbols.length)];
+        const btn1 = document.createElement('button');
+        const btn2 = document.createElement('button');
+        btn1.className = btn2.className = 'game-button';
+        btn1.innerText = '❓';
+        btn2.innerText = '❓';
+        btn1.onclick = btn2.onclick = () => {
+          btn1.innerText = btn2.innerText = chosen;
+          showPopup('Memory Master! 🧠');
+        };
+        panel.appendChild(btn1);
+        panel.appendChild(btn2);
+      }
+      
+      function reactionClickGame(panel) {
+        panel.innerHTML = '<p>Click FAST! 🚀</p>';
+        const btn = document.createElement('button');
+        btn.className = 'game-button';
+        btn.innerText = 'WAIT...';
+        panel.appendChild(btn);
+        setTimeout(() => {
+          btn.innerText = 'CLICK NOW!';
+          btn.onclick = () => showPopup('Chart-Topper! 🏆');
+        }, 2500 + Math.random() * 3000);
+      }
+      
+      function showPopup(text) {
+        const popup = document.createElement('div');
+        popup.className = 'popup';
+        popup.innerHTML = `<p>${text}</p>`;
+        document.body.appendChild(popup);
+        setTimeout(() => {
+          popup.remove();
+          if (parseInt(activeIndex) === gameStates.length - 1) {
+            finalWin();
+          }
+        }, 2000);
+      }
+      
+      function finalWin() {
+        setTimeout(() => {
+          const popup = document.createElement('div');
+          popup.className = 'popup';
+          popup.innerHTML = `<h2>You Crushed It! 🎉</h2><p>Play more games?</p><button class='game-button' onclick="window.location.href='https://www.youyounews.live'">Explore!</button>`;
+          document.body.appendChild(popup);
+        }, 500);
+      }
+      </script>      
 </body>
 </html>
