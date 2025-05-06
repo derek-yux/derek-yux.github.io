@@ -3,80 +3,28 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
-    <loc>https://www.youyounews.live/Articles/ascap-pop-music-awards-2025-winners.html</loc>
+    <loc>https://www.youyounews.live/Articles/cinco-de-mayo-essential-playlist.html</loc>
     <news:news>
       <news:publication>
         <news:name>You You News</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2025-05-02</news:publication_date>
-      <news:title>ASCAP Pop Music Awards 2025 Crown New Kings of the Charts</news:title>
-      <news:keywords>News, You You, ASCAP, Pop, Awards, Music, Teddy Swims, Discussion</news:keywords>
+      <news:publication_date>2025-05-05</news:publication_date>
+      <news:title>The Cinco De Mayo Essential Playlist</news:title>
+      <news:keywords>Cinco de mayo, Music, Mexican, Mexico, Celebration, Playlist, Songs</news:keywords>
     </news:news>
   </url>
 
   <url>
-    <loc>https://www.youyounews.live/Articles/meta-llama-ai-conference.html</loc>
+    <loc>https://www.youyounews.live/Articles/met-gala-2025-fashion-celebrities-art-extravagance.html</loc>
     <news:news>
       <news:publication>
         <news:name>You You News</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2025-05-02</news:publication_date>
-      <news:title>Meta Llama Conference Unveils AI Shenanigans and Llama Drama</news:title>
-      <news:keywords>News, You You, Tech, Meta, AI, Llama, Conference, Discussion</news:keywords>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/oilers-nhl-playoffs-advance-kings.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-02</news:publication_date>
-      <news:title>Oilers Advance By Pummeling Kings In Wild Playoff Victory</news:title>
-      <news:keywords>NHL, News, Playoffs, Sports, Oilers, Kings, Edmonton, Discussion</news:keywords>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/thunderbolts-movie-release-marvel.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-02</news:publication_date>
-      <news:title>Thunderbolts: Marvel's Delightful Mess of Misfits</news:title>
-      <news:keywords>News, You You, Marvel, Thunderbolts, TV, Movie, Release, Discussion</news:keywords>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/lakers-nba-playoffs-timberwolves-eliminated.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-01</news:publication_date>
-      <news:title>Lakers Buzzer Beater Turns Into Buzzer Defeat In Playoffs</news:title>
-      <news:keywords>Lakers, Timberwolves, NBA, playoffs, sports, basketball, buzzer, news, trending</news:keywords>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/may-day-trump-protests.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-01</news:publication_date>
-      <news:title>May Day Trump Protests Making Waves Across America</news:title>
-      <news:keywords>May, Trump, protests, politics, day, news, trending</news:keywords>
+      <news:publication_date>2025-05-05</news:publication_date>
+      <news:title>Met Gala 2025 Fashion Showdown Refines the Art of Extravagance</news:title>
+      <news:keywords>Met gala, 2025, Celebrities, Fashion, Art, Showdown, Extravagance, News</news:keywords>
     </news:news>
   </url>
 
