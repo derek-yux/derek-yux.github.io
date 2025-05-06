@@ -1141,5 +1141,220 @@
         }
         });
     </script>
+    <!-- === Start of Interactive Game Panel Injection === -->
+<style>
+    #gamePanel {
+      position: fixed;
+      bottom: 2%;
+      right: 2%;
+      background: linear-gradient(135deg, #83af9b, #c8c8a9);
+      border: 3px solid #774f38;
+      border-radius: 20px;
+      padding: 15px;
+      z-index: 9999;
+      width: 280px;
+      max-width: 80vw;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+      font-family: 'Baloo 2', cursive;
+      transition: all 0.5s ease;
+      overflow: hidden;
+      text-align: center;
+    }
+    #gameContent {
+      font-size: min(4vw, 18px);
+      color: #333;
+      padding: 10px 0;
+    }
+    .highlighted {
+      background: linear-gradient(90deg, #f9cdad, #fe4365);
+      padding: 3px 5px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .gameButton {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      background: linear-gradient(135deg, #774f38, #f9cdad);
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .gameButton:hover {
+      background: linear-gradient(135deg, #f9cdad, #774f38);
+      transform: scale(1.05);
+    }
+    .small-popup {
+      position: fixed;
+      bottom: 10%;
+      right: 5%;
+      background: linear-gradient(135deg, #ffe29f, #ffa99f);
+      border: 2px solid #ff7e5f;
+      padding: 15px 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+      font-weight: bold;
+      animation: fadeOut 3s forwards;
+      z-index: 99999;
+    }
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      70% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(20px); }
+    }
+    .drop-zone {
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+      background: #d3ffd3;
+      border: 2px dashed #77dd77;
+      border-radius: 12px;
+    }
+  </style>
+  
+  <div id="gamePanel">
+    <div id="gameContent">Slowly Scroll Down!</div>
+  </div>
+  
+  <script>
+  const triggers = [
+    { keyword: "730", game: "tapGame" },
+    { keyword: "2:00", game: "typingGame" },
+    { keyword: "10", game: "dragGame" }
+  ];
+  let currentGameIndex = -1;
+  let completedGames = 0;
+  
+  function clearHighlights() {
+    document.querySelectorAll('.highlighted').forEach(el => el.classList.remove('highlighted'));
+  }
+  
+  function showPopup(message, final=false) {
+    const popup = document.createElement('div');
+    popup.className = 'small-popup';
+    popup.textContent = message;
+    document.body.appendChild(popup);
+    setTimeout(() => {
+      popup.remove();
+      if (final) window.location.href = 'https://www.youyounews.live';
+    }, final ? 3000 : 2000);
+  }
+  
+  function activateGame(index) {
+    if (currentGameIndex === index) return;
+    currentGameIndex = index;
+    clearHighlights();
+    const keyword = triggers[index].keyword;
+    const bolds = document.querySelectorAll('b');
+    bolds.forEach(b => {
+      if (b.textContent.includes(keyword)) {
+        b.classList.add('highlighted');
+      }
+    });
+    const panel = document.getElementById('gameContent');
+    const game = triggers[index].game;
+  
+    if (game === "tapGame") {
+      panel.innerHTML = `<div>Tap <b>5 times</b> fast!</div><button class='gameButton' onclick='tapHandler()'>TAP!</button>`;
+      window.tapCount = 0;
+      window.lastTap = Date.now();
+    } else if (game === "typingGame") {
+      panel.innerHTML = `<div>Type \"Freedom\" fast!</div><input id='typingInput' style='margin-top:10px; border-radius:6px; padding:5px; width:70%;'><button class='gameButton' onclick='checkTyping()'>Submit</button>`;
+    } else if (game === "dragGame") {
+      panel.innerHTML = `<div>Drag the box into the green zone!</div><div id='dropZone' class='drop-zone'></div><div id='dragBox' style='margin:10px auto;width:50px;height:50px;background:#fe4365;border-radius:8px;' draggable='true'></div>`;
+      setupDragDrop();
+    }
+  }
+  
+  function tapHandler() {
+    if (Date.now() - window.lastTap > 1000) window.tapCount = 0;
+    window.lastTap = Date.now();
+    window.tapCount++;
+    if (window.tapCount >= 5) completeGame();
+  }
+  
+  function checkTyping() {
+    const input = document.getElementById('typingInput').value.trim().toLowerCase();
+    if (input === "freedom") completeGame();
+  }
+  
+  function setupDragDrop() {
+  const dragBox = document.getElementById('dragBox');
+  const dropZone = document.getElementById('dropZone');
+
+  let isDragging = false;
+
+  dragBox.addEventListener('mousedown', startDrag);
+  dragBox.addEventListener('touchstart', startDrag);
+
+  document.addEventListener('mousemove', onDrag);
+  document.addEventListener('touchmove', onDrag);
+
+  document.addEventListener('mouseup', endDrag);
+  document.addEventListener('touchend', endDrag);
+
+  function startDrag(e) {
+    isDragging = true;
+    e.preventDefault();
+  }
+
+  function onDrag(e) {
+    if (!isDragging) return;
+    let clientX = e.clientX || (e.touches && e.touches[0].clientX);
+    let clientY = e.clientY || (e.touches && e.touches[0].clientY);
+    dragBox.style.position = 'fixed';
+    dragBox.style.left = (clientX - 25) + 'px'; // center drag
+    dragBox.style.top = (clientY - 25) + 'px';
+  }
+
+  function endDrag(e) {
+    if (!isDragging) return;
+    isDragging = false;
+    const dragRect = dragBox.getBoundingClientRect();
+    const dropRect = dropZone.getBoundingClientRect();
+
+    if (
+      dragRect.left < dropRect.right &&
+      dragRect.right > dropRect.left &&
+      dragRect.top < dropRect.bottom &&
+      dragRect.bottom > dropRect.top
+    ) {
+      completeGame();
+    }
+  }
+}
+
+  
+  function completeGame() {
+    completedGames++;
+    if (completedGames >= 3) {
+      showPopup('All games complete! Redirecting...', true);
+    } else {
+      showPopup('You Won This Round! Scroll down!');
+      document.getElementById('gameContent').innerText = 'Slowly Scroll Down!';
+    }
+  }
+  
+  window.addEventListener('scroll', () => {
+    const bolds = document.querySelectorAll('b');
+    for (let i = 0; i < triggers.length; i++) {
+      const keyword = triggers[i].keyword;
+      for (let b of bolds) {
+        if (b.textContent.includes(keyword)) {
+          const rect = b.getBoundingClientRect();
+          if (rect.top < window.innerHeight/2 && rect.bottom > 0) {
+            activateGame(i);
+            return;
+          }
+        }
+      }
+    }
+  });
+  </script>
+  <!-- === End of Interactive Game Panel Injection === -->
 </body>
 </html>

@@ -405,6 +405,7 @@
     </nav>
     <div class="container">
         <div class="shrinker">
+            <div id="gamePanelContainer"></div>
         <h2>US Teacher Appreciation Day 2025 Delivers Deals With A Side Of Surprises</h2>
         <br>
         <div class="scroll-container">
@@ -413,7 +414,7 @@
             <img src='https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Google_NTOY2025_Still_011.width-1300.png' alt="Cinque Terre" class="slider_image">
           </div>
         <pre>
-        <p class="p1"><div data-aos="fade-up"><p class="p1">On May 6, 2025, teachers enjoyed <b>free</b> food and <b>discounts</b> from their favorite restaurants, because who doesn’t love a side of <b>free fries</b> with their appreciation? It’s like being rewarded for surviving yet another year in the classroom jungle!</p></div><br><div data-aos="fade-up"><p class="p1">In the spirit of generous appreciation, Chick-fil-A offered a <b>20% discount</b> and a <b>free 5-piece</b> of wings, perfect for a celebratory feast—dine-in only, of course; those wings won’t fly themselves! Meanwhile, McDonald’s promised <b>free desserts</b> all week long, because nothing says “thanks for teaching our kids” like a good ol’ <b>happy meal</b>.</p></div><br><div data-aos="fade-up"><p class="p1">Retail deals weren’t left out either! Samsung and Stitch Fix threw in their own <b>special discounts</b>, just in case teachers wanted to upgrade their classroom tech or wardrobe from “distracted art teacher” to “chic educator.” Remember, a valid <b>school ID</b> and a dream of being stylish is all you need!</p></div><br><div data-aos="fade-up"><p class="p1">Not to be outdone, various eateries offered wacky prizes like a chance for a <b>$1,000 classroom makeover</b>, because what’s better than having students learn in a room that no longer resembles a post-apocalyptic wasteland? Plus, teachers could also snag <b>free donuts</b>, making Monday mornings slightly more bearable!</p></div><br><div data-aos="fade-up"><p class="p1">So, mark your calendars for May 5-9, 2025! Enjoy your week of appreciation, discounts, and indulge in <b>free meals</b> while basking in the glory of shaping young minds—after all, you’ve earned the <b>privilege</b>, one <b>customer complaint</b> at a time!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">On May 6, 2025, teachers enjoyed <b>free</b> food and <b>discounts</b> from their favorite restaurants, because who doesn’t love a side of <b><span class="game-trigger" data-game-index="0">free fries</span></b> with their appreciation? It’s like being rewarded for surviving yet another year in the classroom jungle!</p></div><br><div data-aos="fade-up"><p class="p1">In the spirit of generous appreciation, Chick-fil-A offered a <b>20% discount</b> and a <b>free 5-piece</b> of wings, perfect for a celebratory feast—dine-in only, of course; those wings won’t fly themselves! Meanwhile, McDonald’s promised <b>free desserts</b> all week long, because nothing says “thanks for teaching our kids” like a good ol’ <b><span class="game-trigger" data-game-index="1">happy meal</span></b>.</p></div><br><div data-aos="fade-up"><p class="p1">Retail deals weren’t left out either! Samsung and Stitch Fix threw in their own <b>special discounts</b>, just in case teachers wanted to upgrade their classroom tech or wardrobe from “distracted art teacher” to “chic educator.” Remember, a valid <b>school ID</b> and a dream of being stylish is all you need!</p></div><br><div data-aos="fade-up"><p class="p1">Not to be outdone, various eateries offered wacky prizes like a chance for a <b><span class="game-trigger" data-game-index="2">$1,000 classroom makeover</span></b>, because what’s better than having students learn in a room that no longer resembles a post-apocalyptic wasteland? Plus, teachers could also snag <b>free donuts</b>, making Monday mornings slightly more bearable!</p></div><br><div data-aos="fade-up"><p class="p1">So, mark your calendars for May 5-9, 2025! Enjoy your week of appreciation, discounts, and indulge in <b>free meals</b> while basking in the glory of shaping young minds—after all, you’ve earned the <b>privilege</b>, one <b>customer complaint</b> at a time!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
         </pre>
         </div>
         <section style="margin-top: 40px;">
@@ -1140,6 +1141,229 @@
             }
         }
         });
+    </script>
+    <script>
+// === teacher-appreciation-game.js ===
+
+const gameStates = [
+  { triggerText: "free fries", gameFunction: reactionGame },
+  { triggerText: "happy meal", gameFunction: timingGame },
+  { triggerText: "$1,000 classroom makeover", gameFunction: memoryGame }
+];
+
+let activeGameIndex = -1;
+let hasWon = [false, false, false];
+let gamePanel, messageDiv, gameContentDiv;
+
+window.addEventListener('DOMContentLoaded', setupGamePanel);
+
+// Setup the fixed game panel
+function setupGamePanel() {
+  gamePanel = document.createElement('div');
+  gamePanel.style.position = 'fixed';
+  gamePanel.style.bottom = '20px';
+  gamePanel.style.right = '20px';
+  gamePanel.style.zIndex = '9999';
+  gamePanel.style.background = 'linear-gradient(135deg, #f9cdad, #fe4365)';
+  gamePanel.style.borderRadius = '12px';
+  gamePanel.style.padding = '10px';
+  gamePanel.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+  gamePanel.style.display = 'flex';
+  gamePanel.style.flexDirection = 'column';
+  gamePanel.style.alignItems = 'center';
+  gamePanel.style.justifyContent = 'center';
+  gamePanel.style.transition = 'all 0.5s ease';
+  gamePanel.style.width = '200px';
+  gamePanel.style.height = '80px';
+
+  messageDiv = document.createElement('div');
+  messageDiv.innerText = 'Slowly Scroll Down!';
+  messageDiv.style.fontSize = 'clamp(12px, 2vw, 18px)';
+  messageDiv.style.color = '#fff';
+  messageDiv.style.textAlign = 'center';
+  messageDiv.style.fontWeight = 'bold';
+
+  gameContentDiv = document.createElement('div');
+  gameContentDiv.style.display = 'none';
+  gameContentDiv.style.flexDirection = 'column';
+  gameContentDiv.style.alignItems = 'center';
+  gameContentDiv.style.gap = '10px';
+  gameContentDiv.style.width = '100%';
+
+  gamePanel.appendChild(messageDiv);
+  gamePanel.appendChild(gameContentDiv);
+
+  document.getElementById('gamePanelContainer').appendChild(gamePanel);
+
+  setupScrollObserver();
+}
+
+// Highlight and activate the correct game
+function setupScrollObserver() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        activateGame(entry.target);
+      }
+    });
+  }, { threshold: 1.0 });
+
+  document.querySelectorAll('.game-trigger').forEach(el => {
+    observer.observe(el);
+  });
+}
+
+function activateGame(triggerElement) {
+  const index = parseInt(triggerElement.getAttribute('data-game-index'));
+  if (index !== activeGameIndex) {
+    if (activeGameIndex !== -1) unhighlightSentence(activeGameIndex);
+    highlightSentence(index);
+    activeGameIndex = index;
+    loadGame(index);
+  }
+}
+
+function highlightSentence(index) {
+  document.querySelectorAll(`.game-trigger[data-game-index="${index}"]`).forEach(el => {
+    el.style.background = 'linear-gradient(90deg, #ffefba, #ffffff)';
+    el.style.borderRadius = '6px';
+    el.style.padding = '2px 4px';
+  });
+}
+
+function unhighlightSentence(index) {
+  document.querySelectorAll(`.game-trigger[data-game-index="${index}"]`).forEach(el => {
+    el.style.background = 'transparent';
+    el.style.padding = '0';
+  });
+}
+
+function loadGame(index) {
+  gameContentDiv.innerHTML = '';
+  gameContentDiv.style.display = 'flex';
+  messageDiv.style.display = 'none';
+  gamePanel.style.width = '300px';
+  gamePanel.style.height = '300px';
+  gameStates[index].gameFunction(index);
+}
+
+// === Minigames ===
+
+function reactionGame(index) {
+  const button = createButton('Wait...');
+  gameContentDiv.appendChild(button);
+
+  let ready = false;
+
+  button.onclick = () => {
+    if (ready) {
+      winMinigame(index);
+    }
+  };
+
+  setTimeout(() => {
+    button.innerText = 'Tap!';
+    ready = true;
+  }, Math.random() * 3000 + 1500);
+}
+
+
+function timingGame(index) {
+  const ball = document.createElement('div');
+  ball.style.width = '30px';
+  ball.style.height = '30px';
+  ball.style.borderRadius = '50%';
+  ball.style.background = '#fe4365';
+  ball.style.animation = 'bounce 2s infinite';
+  ball.style.position = 'relative';
+  ball.style.top = '0px';
+
+  const catchBtn = createButton('Catch!');
+  catchBtn.onclick = () => winMinigame(index);
+
+  gameContentDiv.appendChild(ball);
+  gameContentDiv.appendChild(catchBtn);
+
+  const style = document.createElement('style');
+  style.innerHTML = `
+  @keyframes bounce {
+    0% { top: 0px; }
+    50% { top: 100px; }
+    100% { top: 0px; }
+  }`;
+  document.head.appendChild(style);
+}
+
+function memoryGame(index) {
+  const emojis = ['🍎', '🍎', '🍌', '🍌'];
+  shuffle(emojis);
+
+  let revealed = [];
+  emojis.forEach(e => {
+    const btn = createButton('?');
+    btn.dataset.emoji = e;
+    btn.onclick = () => {
+      btn.innerText = btn.dataset.emoji;
+      revealed.push(btn);
+      if (revealed.length === 2) {
+        if (revealed[0].dataset.emoji === revealed[1].dataset.emoji) {
+          winMinigame(index);
+        } else {
+          setTimeout(() => {
+            revealed.forEach(b => b.innerText = '?');
+            revealed = [];
+          }, 800);
+        }
+      }
+    };
+    gameContentDiv.appendChild(btn);
+  });
+}
+
+function winMinigame(index) {
+  if (hasWon[index]) return;
+  hasWon[index] = true;
+  gameContentDiv.innerHTML = '<div style="font-weight:bold;color:white;">🎉 You Won! 🎉</div>';
+
+  setTimeout(() => {
+    messageDiv.innerText = 'Scroll Down for More!';
+    messageDiv.style.display = 'block';
+    gameContentDiv.style.display = 'none';
+    gamePanel.style.width = '200px';
+    gamePanel.style.height = '80px';
+
+    if (hasWon.every(w => w)) {
+      setTimeout(() => {
+        window.location.href = "https://www.youyounews.live";
+      }, 2000);
+    }
+  }, 1200);
+}
+
+// === Utility ===
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+function createButton(label) {
+  const button = document.createElement('button');
+  button.innerText = label;
+  button.style.padding = '10px';
+  button.style.borderRadius = '8px';
+  button.style.border = 'none';
+  button.style.background = 'linear-gradient(135deg, #83af9b, #c8c8a9)';
+  button.style.color = 'white';
+  button.style.fontWeight = 'bold';
+  button.style.cursor = 'pointer';
+  button.style.margin = '5px';
+  return button;
+}
+
+
     </script>
 </body>
 </html>
