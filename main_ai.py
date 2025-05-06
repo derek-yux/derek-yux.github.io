@@ -142,7 +142,7 @@ def main():
             <li1><a href="../Pages/music">Music</a></li1>
             <li><a href="/Pages/working">Forums</a></li>"""
 
-    final_html = "/Articles/"
+    final_html = "Articles/"
     final_html += f"{response_title.strip('%20 ')}.html"
     Func = open(final_html, "w")
     Func.write("""
@@ -1788,7 +1788,7 @@ def main():
                 description: 'Easy on the eyes',
                 background: '#121212',
                 textColor: '#ffffff',
-                headerBackground: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(\'/Assets/header.png\')',
+                headerBackground: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/Assets/header.png")',
                 unlocked: false 
             },
             { 
@@ -1804,7 +1804,7 @@ def main():
                 name: 'Sunset Vibes',
                 description: 'Warm orange glow',
                 background: 'linear-gradient(to bottom right, #ff7e5f, #feb47b)',
-                headerBackground: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\'/Assets/header.png\')',
+                headerBackground: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/Assets/header.png")',
                 unlocked: false 
             },
             { 
@@ -1814,7 +1814,7 @@ def main():
                 background: '#0f0f2d',
                 textColor: '#ffffff',
                 accentColor: '#f638dc',
-                headerBackground: 'linear-gradient(rgba(10, 10, 45, 0.8), rgba(10, 10, 45, 0.8)), url(\'/Assets/header.png\')',
+                headerBackground: 'linear-gradient(rgba(10, 10, 45, 0.8), rgba(10, 10, 45, 0.8)), url("/Assets/header.png")',
                 unlocked: false 
             },
             { 
@@ -1822,7 +1822,7 @@ def main():
                 name: 'Forest',
                 description: 'Natural green paradise',
                 background: 'linear-gradient(to bottom, #dcedc8, #aed581)',
-                headerBackground: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(\'/Assets/header.png\')',
+                headerBackground: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/Assets/header.png")',
                 unlocked: false 
             },
             { 
@@ -1831,7 +1831,7 @@ def main():
                 description: 'Space explorer theme',
                 background: 'linear-gradient(to bottom, #141e30, #243b55)',
                 textColor: '#ffffff',
-                headerBackground: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(\'/Assets/header.png\')',
+                headerBackground: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/Assets/header.png")',
                 unlocked: false 
             }
         ];
@@ -2643,7 +2643,7 @@ window.addEventListener('DOMContentLoaded', () => {
             
             document.getElementById('rewardMessage').textContent = newDay ? 
                 `Today's reward: ${todayReward.icon} ${todayReward.name}` : 
-                'You already claimed today\'s reward. Come back tomorrow!';
+                "You already claimed today\'s reward. Come back tomorrow!";
             
             // Enable or disable claim button
             const claimButton = document.getElementById('claimReward');
@@ -2958,7 +2958,7 @@ applyTheme(this.dataset.themeId);
                 localStorage.setItem('lastLoginDate', new Date().toDateString());
                 
                 // Update UI
-                document.getElementById('rewardMessage').textContent = 'You already claimed today\'s reward. Come back tomorrow!';
+                document.getElementById('rewardMessage').textContent = "You already claimed today\'s reward. Come back tomorrow!";
                 this.disabled = true;
                 this.style.backgroundColor = '#cccccc';
                 
