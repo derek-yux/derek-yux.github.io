@@ -180,7 +180,7 @@ def main():
     <meta name="description" content="You You News Trending Content">
     <meta name="author" content="Derek (Yue) Yu">
     <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>You You News</title>
+    <title>""" + str(response_title) + """ - You You News</title>
     <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
