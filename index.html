@@ -61,6 +61,7 @@
         });
       });
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="You You News Trending Content">
@@ -129,9 +130,16 @@
             letter-spacing: -1px;
         }
         nav {
-            background-color: #34495e;
+            background: linear-gradient(270deg, #34495e, #83af9b, #2980b9);
+            background-size: 800% 800%;
+            animation: navGradientFlow 30s ease infinite;
             padding: 10px 0;
         }
+        @keyframes navGradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
         nav ul {
             display: flex;
             justify-content: center;
@@ -461,6 +469,28 @@
                 transform: translatey(0px);
             }
         }
+        .input-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  background: linear-gradient(to bottom, #ff4ec9, navy, #ffeb3b);
+  background-size: 100% 300%;
+  animation: blink 1s infinite, gradientShift 3s ease-in-out infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
     </style>
 </head>
 <body>
@@ -496,9 +526,11 @@ z-index: 1000;
 ">
 <!-- Text will be injected here -->
 </div>
-<div style="margin: 30px auto; max-width: 400px;">
+<div style="margin: 30px auto; max-width: 400px;" class="typing-container">
     <p style="font-family: 'Baloo 2', cursive; font-size: 16px; margin-bottom: 6px;">
-      🚀 Points to Next REWARD! (hint: top-right is glowing!):
+      <span id="sentence" class="sentence">🚀 Points to Next REWARD! </span>
+      <span id="feature-text"></span>
+      <span class="input-cursor"></span>
     </p>
     <div style="
       width: 100%;
@@ -3209,7 +3241,60 @@ max-width: 45vw;
             document.onmouseup = closeDragElement;
             document.onmousemove = elementDrag;
         }
-    
+        const carouselText = [
+  {text: "Is that a...whale? Fun!🤩", color: "navy"},
+  {text: "Dude...VeRY cOoL!😎", color: "green"},
+  {text: "HINT: 🤫Click on the top right!", color: "gold"},
+  {text: "Unexpected??😱", color: "orange"},
+  {text: "So Aesthetic🎨", color: "purple"},
+]
+
+$( document ).ready(async function() {
+  carousel(carouselText, "#feature-text")
+});
+
+async function typeSentence(sentence, eleRef, delay = 100) {
+  const letters = sentence.split("");
+  let i = 0;
+  while(i < letters.length) {
+    await waitForMs(delay);
+    $(eleRef).append(letters[i]);
+    i++
+  }
+  return;
+}
+
+async function deleteSentence(eleRef) {
+  const sentence = $(eleRef).html();
+  const letters = sentence.split("");
+  let i = 0;
+  while(letters.length > 0) {
+    await waitForMs(100);
+    letters.pop();
+    $(eleRef).html(letters.join(""));
+  }
+}
+
+async function carousel(carouselList, eleRef) {
+    var i = 0;
+    while(true) {
+      updateFontColor(eleRef, carouselList[i].color)
+      await typeSentence(carouselList[i].text, eleRef);
+      await waitForMs(1500);
+      await deleteSentence(eleRef);
+      await waitForMs(500);
+      i++
+      if(i >= carouselList.length) {i = 0;}
+    }
+}
+
+function updateFontColor(eleRef, color) {
+  $(eleRef).css('color', color);
+}
+
+function waitForMs(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
         function elementDrag(e) {
             e = e || window.event;
             e.preventDefault();
