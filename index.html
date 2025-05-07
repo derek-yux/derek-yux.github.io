@@ -1473,31 +1473,6 @@ z-index: 1000;
             
             // Update the points display
             pointsValueElement.textContent = newPoints;
-            const milestones = [0, 10, 20, 30, 50]; // your milestone thresholds
-            const allAvatars = [
-  { id: 'whale.png', name: 'LeWhale', requiredPoints: 0, description: '"LeGlorious LeWhale👑"' },
-  { id: 'capybara.png', name: 'Capycapy', requiredPoints: 10, description: '"phD in CAP & YAP🤓"' },
-  { id: 'penguin.png', name: 'Pengo', requiredPoints: 20, description: '"Pengo enjoys arson and identity theft🥹"' },
-  { id: 'axolotl.png', name: 'Alex', requiredPoints: 30, description: '"Alex is just a girl💅"' },
-  { id: 'panda.png', name: "Moomoo", requiredPoints: 50, description: '"EVERYBODY IS KUNG FU FIGHTINGGG🎤"' }
-];
-const alreadyUnlocked = JSON.parse(localStorage.getItem('milestoneUnlocks') || '{}');
-
-milestones.forEach(milestone => {
-  if (newPoints >= milestone && !alreadyUnlocked[milestone]) {
-    const avatar = allAvatars.find(a => a.requiredPoints === milestone);
-    if (avatar) {
-      showStyledNotification(
-        "🎉 Avatar Unlocked!",
-        `You unlocked <b>${avatar.name}</b>! ${avatar.description}<br><br><img src="/Assets/Avatars/${avatar.id}" style="width: 120px; height: 120px; border-radius: 12px; margin-top: 10px;">`,
-        "🌟"
-      );
-    }
-    alreadyUnlocked[milestone] = true;
-    localStorage.setItem('milestoneUnlocks', JSON.stringify(alreadyUnlocked));
-  }
-});
-
             
             // Add animation class if points increased
             if (newPoints > oldPoints) {
@@ -2140,7 +2115,7 @@ applyTheme(this.dataset.themeId);
                 
                 // Get the reward for the next unclaimed day
                 const reward = getDailyReward(claimedDays);
-                
+                document.getElementById('claimReward').classList.remove('glow-reward');
                 // Handle different reward types
                 if (reward.type === 'theme' && reward.themeId) {
                     unlockTheme(reward.themeId);
@@ -2177,7 +2152,7 @@ applyTheme(this.dataset.themeId);
                 document.getElementById('rewardMessage').textContent = "You already claimed today's reward. Come back tomorrow!";
                 this.disabled = true;
                 this.style.backgroundColor = '#cccccc';
-                claimButton.classList.remove('glow-reward');
+                
                 // Update the weekly rewards display to show the checkmark
                 if (typeof createWeeklyRewardsDisplay === 'function') {
                     createWeeklyRewardsDisplay();
