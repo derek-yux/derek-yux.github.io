@@ -1649,114 +1649,6 @@ def main():
         </div>
     </div>
 </div>
-<!-- ✨ Fun News Popup (with click-to-copy referral link) -->
-<div id="funNewsPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center; overflow-y: auto; padding: 20px;">
-    <div style="background-color:white; border-radius:15px; padding:30px; max-width:500px; width:90%; box-shadow:0 10px 25px rgba(0,0,0,0.3); text-align:center; font-family:'Baloo 2', cursive; max-height: 90vh; overflow-y: auto;">
-      <h2 style="color:#774f38;">📣 NEWS SHOULD BE FUN!</h2>
-      <p style="color:#333; margin-bottom:20px; font-size:16px;">
-        We believe news should be like <b>playing a video game</b> or <b>watching your favourite K-drama</b> — not dull and boring like other sources!
-      </p>
-      <p style="color:#333; font-size:16px;">
-        If <b>you</b> think news should be fun too, share <b>YOUR SPECIAL LINK</b> (for you only!):
-      </p>
-      <div style="margin:15px 0;">
-        <input type="text" id="specialLinkInput" readonly value="" style="width:100%; padding:10px; font-size:14px; border:1px solid #ccc; border-radius:5px; text-align:center; cursor:pointer;">
-        <div id="copyConfirm" style="display:none; color:#4caf50; font-size:13px; margin-top:5px;">✅ Copied!</div>
-      </div>
-      <p style="color:#5d4037; font-size:15px;">
-        The more visits from your link, the more chances you have at our <b>$25 Gift Card Draw</b> 🎁 and an <b>Instagram feature</b>! 🌟
-      </p>
-      <p style="font-size:14px; color:#888;">You've shared this link <span id="shareCount">0</span> times!</p>
-      <div style="margin-top: 20px;">
-        <label style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555;">
-          <input type="checkbox" id="dontShowAgainCheckbox"> Don't Show This Again!
-        </label>
-        <button id="closePopupButton" style="margin-top:10px; background-color:#f9cdad; color:#5d4037; padding:10px 20px; border:none; border-radius:8px; font-weight:bold; font-family:'Baloo 2', cursive;">Got it!</button>
-      </div>      
-    </div>
-  </div>
-  
-  <script>
-    function getReferralCode() {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get('ref') || null;
-    }
-  
-    function incrementShareCount(refCode) {
-  const key = `referral_share_count_${refCode}`;
-  const visitedKey = 'referral_visited_codes';
-
-  // Skip incrementing if user is the one who owns this code
-  const selfRefCode = localStorage.getItem('user_ref_code');
-  if (refCode === selfRefCode) {
-    return parseInt(localStorage.getItem(key)) || 0;
-  }
-
-  // Check if already visited this referral code
-  let visited = JSON.parse(localStorage.getItem(visitedKey) || '[]');
-  if (visited.includes(refCode)) {
-    return parseInt(localStorage.getItem(key)) || 0;
-  }
-
-  // Mark as visited
-  visited.push(refCode);
-  localStorage.setItem(visitedKey, JSON.stringify(visited));
-
-  // Increment and store
-  let count = parseInt(localStorage.getItem(key)) || 0;
-  count += 1;
-  localStorage.setItem(key, count);
-  return count;
-}
-
-  
-    window.addEventListener('load', () => {
-      const referral = getReferralCode();
-      const popup = document.getElementById('funNewsPopup');
-      const input = document.getElementById('specialLinkInput');
-      const shareCountDisplay = document.getElementById('shareCount');
-      const copyConfirm = document.getElementById('copyConfirm');
-      const closeBtn = document.getElementById('closePopupButton');
-      const dontShowAgain = localStorage.getItem('hideFunNewsPopup');
-      if (dontShowAgain === 'true') return;
-      let refCode = referral;
-      if (!refCode) {
-        refCode = localStorage.getItem('user_ref_code');
-        if (!refCode) {
-          refCode = Math.random().toString(36).substr(2, 6);
-          localStorage.setItem('user_ref_code', refCode);
-        }
-      }
-  
-      const shareLink = `https://youyounews.live/?ref=${refCode}`;
-      input.value = shareLink;
-  
-      const count = incrementShareCount(refCode);
-      shareCountDisplay.textContent = count;
-  
-      // Show popup after delay
-      setTimeout(() => {
-        popup.style.display = 'flex';
-      }, 3000);
-  
-      // Copy-to-clipboard interaction
-      input.addEventListener('click', () => {
-        navigator.clipboard.writeText(input.value).then(() => {
-          copyConfirm.style.display = 'block';
-          setTimeout(() => {
-            copyConfirm.style.display = 'none';
-          }, 2000);
-        });
-      });
-  
-      closeBtn.addEventListener('click', () => {
-    if (document.getElementById('dontShowAgainCheckbox').checked) {
-      localStorage.setItem('hideFunNewsPopup', 'true');
-    }
-    popup.style.display = 'none';
-  });
-    });
-  </script>
   
 <!-- Add this to your existing JavaScript section or create a new <script> block -->
 <script>
@@ -1820,6 +1712,26 @@ def main():
                 background: 'linear-gradient(to bottom, #141e30, #243b55)',
                 textColor: '#ffffff',
                 headerBackground: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/Assets/header.png")',
+                unlocked: false 
+            },
+            { 
+                id: 'crazy', 
+                name: 'CRAZY Theme',
+                description: 'Wild colors and wild energy! Only for the bold.',
+                background: 'linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0)',
+                textColor: '#ffffff',
+                headerBackground: 'linear-gradient(rgba(255, 0, 128, 0.7), rgba(255, 140, 0, 0.7)), url("/Assets/header.png")',
+                navBackground: '#ff0080',
+                unlocked: false 
+            },
+            { 
+                id: 'beluga', 
+                name: 'Beluga Theme',
+                description: 'A cheerful oceanic vibe featuring playful blues and whites',
+                background: 'linear-gradient(to bottom right, #d0f0fd, #ffffff)',
+                navBackground: '#7ec8e3',
+                textColor: '#003366',
+                headerBackground: 'linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url("/Assets/header.png")',
                 unlocked: false 
             }
         ];
@@ -2056,10 +1968,27 @@ def main():
                 { day: 1, name: "10 Forum Points", icon: "🎁", type: "points" },
                 { day: 2, name: "Dark Mode Theme", icon: "🌙", type: "theme", themeId: "dark" },
                 { day: 3, name: "15 Forum Points", icon: "🎁", type: "points" },
-                { day: 4, name: "Ocean Theme", icon: "🌊", type: "theme", themeId: "ocean" },
+                { day: 4, name: "CRAZY Theme", icon: "🎉", type: "theme", themeId: "crazy" },
                 { day: 5, name: "20 Forum Points", icon: "🎁", type: "points" },
-                { day: 6, name: "Sunset Theme", icon: "🌅", type: "theme", themeId: "sunset" },
-                { day: 7, name: "Cosmic Theme", icon: "✨", type: "theme", themeId: "cosmic" }
+                { day: 6, name: "Secret Reward", icon: "✨", type: "secret" },
+                { day: 7, name: "25 Forum Points", icon: "🎁", type: "points" },
+                { day: 8, name: "Sunset Theme", icon: "🌇", type: "theme", themeId: "sunset" },
+                { day: 9, name: "30 Forum Points", icon: "🎁", type: "points" },
+                { day: 10, name: "Cyberpunk Theme", icon: "💾", type: "theme", themeId: "cyberpunk" },
+                { day: 11, name: "35 Forum Points", icon: "🎁", type: "points" },
+                { day: 12, name: "MYSTERY Chest", icon: "🧰", type: "secret" },  // 🌟 Epic reward!
+                { day: 13, name: "40 Forum Points", icon: "🎁", type: "points" },
+                { day: 14, name: "Forest Theme", icon: "🌲", type: "theme", themeId: "forest" },
+                { day: 15, name: "45 Forum Points", icon: "🎁", type: "points" },
+                { day: 16, name: "NEW! Beluga Theme", icon: "🐳", type: "theme", themeId: "beluga" }, // New fake theme if you want
+                { day: 17, name: "50 Forum Points", icon: "🎁", type: "points" },
+                { day: 18, name: "Golden Reward", icon: "🏆", type: "secret" }, // 🌟 Epic reward!
+                { day: 19, name: "55 Forum Points", icon: "🎁", type: "points" },
+                { day: 20, name: "Cosmic Theme", icon: "✨", type: "theme", themeId: "cosmic" },
+                { day: 21, name: "60 Forum Points", icon: "🎁", type: "points" },
+                { day: 22, name: "Ocean Waves Theme", icon: "🌊", type: "theme", themeId: "ocean" },
+                { day: 23, name: "65 Forum Points", icon: "🎁", type: "points" },
+                { day: 24, name: "Legendary Surprise", icon: "🌟", type: "secret" }, // 🌟 Epic reward!
             ];
             
             return rewards[dayNumber - 1];
@@ -2544,22 +2473,55 @@ window.addEventListener('DOMContentLoaded', () => {
         function createWeeklyRewardsDisplay() {
             const weeklyRewardsContainer = document.getElementById('weeklyRewards');
             weeklyRewardsContainer.innerHTML = '';
-            
+            const existingPrompt = document.getElementById('improvementPrompt');
+            if (existingPrompt) existingPrompt.remove();
+
+            // Create and insert improvement prompt floating under the X button
+            const improvementPrompt = document.createElement('div');
+            improvementPrompt.id = 'improvementPrompt';
+            improvementPrompt.textContent = "What's For Next Week?!🤫";
+            improvementPrompt.style.cssText = `
+                position: absolute;
+                top: 55px; /* Below the X */
+                right: 20px;
+                background-color: #9b59b6;
+                color: white;
+                padding: 4px 8px;
+                font-size: 11px;
+                border-radius: 8px;
+                font-family: 'Baloo 2', cursive, sans-serif;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                animation: subtlePulse 2.5s ease-in-out infinite;
+                z-index: 1001;
+            `;
+            improvementPrompt.classList.add('glow-reward');
+
+            const rewardsModalContent = document.querySelector('#loginRewardsModal > div');
+            if (rewardsModalContent) {
+                rewardsModalContent.appendChild(improvementPrompt);
+            }
             // Use a new variable for claimed days instead of login days
             const loginDays = parseInt(localStorage.getItem('loginDays') || '0');
             const claimedDays = parseInt(localStorage.getItem('claimedDays') || '0');
             
-            for (let i = 1; i <= 7; i++) {
+            const currentWeek = Math.floor((loginDays) / 6); // 0-based index
+            const startDay = currentWeek * 6 + 1; // Start day number
+            const endDay = startDay + 5;           // End day number
+
+            for (let i = startDay; i <= endDay; i++) {
                 const reward = getDailyReward(i);
+                if (!reward) {
+                    // No reward defined for this day (future week not designed yet), skip
+                    continue;
+                }
                 const dayElement = document.createElement('div');
                 // Use claimedDays for determining if checkmark should be shown
                 dayElement.style.cssText = 'width: 60px; height: 90px; margin: 5px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border-radius: 8px; background-color: ' + (i <= loginDays ? '#f4f4f8' : '#f4f4f8') + '; position: relative; padding: 5px 2px;';
-                
-                // Highlight current day
-                if (i === loginDays) {
-                    dayElement.style.border = '2px solid #3498db';
+
+                if (i % 6 === 0) {
+                    dayElement.classList.add('epic-reward');
                 }
-                
+
                 const dayNumber = document.createElement('div');
                 dayNumber.style.cssText = 'width: 100%; text-align: left; font-size: 12px; font-weight: bold; margin-bottom: 5px;';
                 dayNumber.textContent = 'Day ' + i;
@@ -2631,12 +2593,15 @@ window.addEventListener('DOMContentLoaded', () => {
             
             document.getElementById('rewardMessage').textContent = newDay ? 
                 `Today's reward: ${todayReward.icon} ${todayReward.name}` : 
-                "You already claimed today\'s reward. Come back tomorrow!";
+                "You already claimed today's reward. Come back tomorrow!";
             
             // Enable or disable claim button
             const claimButton = document.getElementById('claimReward');
             claimButton.disabled = !newDay;
             claimButton.style.backgroundColor = newDay ? '#3498db' : '#cccccc';
+            if (newDay) {
+                claimButton.classList.add('glow-reward');
+            }
         }
         
         // Get week number of the year
@@ -2682,25 +2647,32 @@ window.addEventListener('DOMContentLoaded', () => {
             let css = '';
             
             if (theme.background) {
-                css += `body { background: ${theme.background}; }\n`;
+                css += `body { background: ${theme.background}; }
+`;
             }
             
             if (theme.textColor) {
-                css += `body { color: ${theme.textColor}; }\n`;
-                css += `.section-content p { color: ${theme.textColor}; }\n`;
+                css += `body { color: ${theme.textColor}; }
+`;
+                css += `.section-content p { color: ${theme.textColor}; }
+`;
             }
             
             if (theme.headerBackground) {
-                css += `header { background: ${theme.headerBackground}; }\n`;
+                css += `header { background: ${theme.headerBackground}; }
+`;
             }
             
             if (theme.navBackground) {
-                css += `nav { background-color: ${theme.navBackground}; }\n`;
+                css += `nav { background-color: ${theme.navBackground}; }
+`;
             }
             
             if (theme.accentColor) {
-                css += `.cta-button { background-color: ${theme.accentColor}; }\n`;
-                css += `.cta-button:hover { background-color: ${theme.accentColor}cc; }\n`;
+                css += `.cta-button { background-color: ${theme.accentColor}; }
+`;
+                css += `.cta-button:hover { background-color: ${theme.accentColor}cc; }
+`;
             }
             
             // Apply styles
@@ -2912,7 +2884,7 @@ applyTheme(this.dataset.themeId);
                 
                 // Get the reward for the next unclaimed day
                 const reward = getDailyReward(claimedDays);
-                
+                document.getElementById('claimReward').classList.remove('glow-reward');
                 // Handle different reward types
                 if (reward.type === 'theme' && reward.themeId) {
                     unlockTheme(reward.themeId);
@@ -2946,13 +2918,38 @@ applyTheme(this.dataset.themeId);
                 localStorage.setItem('lastLoginDate', new Date().toDateString());
                 
                 // Update UI
-                document.getElementById('rewardMessage').textContent = "You already claimed today\'s reward. Come back tomorrow!";
+                document.getElementById('rewardMessage').textContent = "You already claimed today's reward. Come back tomorrow!";
                 this.disabled = true;
                 this.style.backgroundColor = '#cccccc';
                 
                 // Update the weekly rewards display to show the checkmark
                 if (typeof createWeeklyRewardsDisplay === 'function') {
                     createWeeklyRewardsDisplay();
+                }
+
+                const milestones = [10, 20, 30, 50];
+                const rewards = {
+                    10: '/Assets/capybara.png',
+                    20: '/Assets/penguin.png',
+                    30: '/Assets/axolotl.png',
+                    50: '/Assets/panda.png'
+                };
+                const reward_names = {
+                    10: 'Capycapy',
+                    20: 'Pengo',
+                    30: 'Alex',
+                    50: 'Moomoo'
+                };
+                const currentPoints = parseInt(localStorage.getItem('forumPoints') || '0');
+                const nextMilestone = milestones.find(m => m > count) || milestones[milestones.length - 1];
+                if (currentPoints >= nextMilestone) {
+                    showStyledNotification(
+                        "New Avatar Unlocked!",
+                        `Wow! You Rescued ${reward_names[nextMilestone]}!`,
+                        `<img src="${rewards[nextMilestone]}">`,
+                        `Go to the top-right icon to see `,
+                        reward.icon
+                    );
                 }
             }
         });
@@ -3639,38 +3636,19 @@ function setupWhaleClicks() {
   });
 }
 
-// 🚀 Referral Progress Tracker
-function updateReferralProgress(refCode) {
-  const milestones = [1, 5, 10, 20];
-  const key = `referral_share_count_${refCode}`;
-  const progressBar = document.getElementById('refProgressBar');
-  const count = parseInt(localStorage.getItem(key) || '0');
-
-  const nextMilestone = milestones.find(m => m > count);
-  const currentMilestone = milestones.filter(m => m <= count).slice(-1)[0] || 0;
-
-  if (progressBar) {
-    const percent = nextMilestone ? ((count - currentMilestone) / (nextMilestone - currentMilestone)) * 100 : 100;
-    progressBar.style.width = `${percent}%`;
-  }
-}
 // ✅ Self-Updating Referral Progress Bar
 function updateReferralProgressBar() {
-  const refCode = localStorage.getItem('user_ref_code');
-  if (!refCode) return;
-
-  const key = `referral_share_count_${refCode}`;
   const progressBar = document.getElementById('refProgressBar');
-  const count = parseInt(localStorage.getItem(key) || '0');
+  const currentPoints = parseInt(localStorage.getItem('forumPoints') || '0');
 
   // Define milestone targets
-  const milestones = [1, 3, 5, 10, 20];
+  const milestones = [0, 10, 20, 30, 50];
   const rewards = {
-    1: '/Assets/whale.png',
-    3: '/Assets/capybara.png',
-    5: '/Assets/penguin.png',
-    10: '/Assets/panda.png',
-    20: '/Assets/axolotl.png'
+    0: '/Assets/whale.png',
+    10: '/Assets/capybara.png',
+    20: '/Assets/penguin.png',
+    30: '/Assets/axolotl.png',
+    50: '/Assets/panda.png'
   };
   const nextMilestone = milestones.find(m => m > count) || milestones[milestones.length - 1];
   const prevMilestone = milestones.slice().reverse().find(m => m <= count) || 0;
@@ -3719,23 +3697,23 @@ function setBadge(badgeName) {
   loadUserProfile();
 }
 const allAvatars = [
-  { id: 'whale.png', name: 'Whale', requiredReferrals: 0 },
-  { id: 'capybara.png', name: 'Capybara', requiredReferrals: 3 },
-  { id: 'penguin.png', name: 'Penguin', requiredReferrals: 5 },
-  { id: 'panda.png', name: 'Panda', requiredReferrals: 10 },
-  { id: 'axolotl.png', name: 'Axolotl', requiredReferrals: 20 }
+  { id: 'whale.png', name: 'LeWhale', requiredPoints: 0, description: '"LeGlorious LeWhale👑"' },
+  { id: 'capybara.png', name: 'Capycapy', requiredPoints: 10, description: '"phD in CAP & YAP🤓"' },
+  { id: 'penguin.png', name: 'Pengo', requiredPoints: 20, description: '"Pengo enjoys arson and identity theft🥹"' },
+  { id: 'axolotl.png', name: 'Alex', requiredPoints: 30, description: '"Alex is just a girl💅"' },
+  { id: 'panda.png', name: "Moomoo", requiredPoints: 50, description: '"EVERYBODY IS KUNG FU FIGHTINGGG🎤"' }
 ];
 
 document.getElementById('userAvatar').addEventListener('click', showAvatarSelector);
 
 function showAvatarSelector() {
-  const referralCount = parseInt(localStorage.getItem('referral_share_count_' + (localStorage.getItem('user_ref_code') || '')) || '0');
   const currentAvatar = localStorage.getItem('userAvatar') || 'whale.png';
   const grid = document.getElementById('avatarGrid');
   grid.innerHTML = '';
 
   allAvatars.forEach(avatar => {
-    const isUnlocked = referralCount >= avatar.requiredReferrals;
+    const currentPoints = parseInt(localStorage.getItem('forumPoints') || '0');
+    const isUnlocked = currentPoints >= avatar.requiredPoints;
 
     const card = document.createElement('div');
     card.style = `
@@ -3758,7 +3736,7 @@ function showAvatarSelector() {
 
     if (!isUnlocked) {
       const lock = document.createElement('div');
-      lock.textContent = `🔒 ${avatar.requiredReferrals} referrals`;
+      lock.textContent = `🔒 ${avatar.requiredPoints} points`;
       lock.style = 'font-size: 12px; color: #888;';
       card.appendChild(lock);
     }
@@ -3779,61 +3757,17 @@ function showAvatarSelector() {
 
     card.appendChild(img);
     card.appendChild(name);
+    if (isUnlocked) {
+        const descrip = document.createElement('div');
+        descrip.textContent = `${avatar.description}`;
+        descrip.style.cssText = `font-size: 10px;`;
+        card.appendChild(descrip);
+    }
     grid.appendChild(card);
   });
 
   document.getElementById('avatarSelectModal').style.display = 'flex';
 }
-
-// 🏆 Leaderboard Generation
-function generateLeaderboard(type = 'referrals') {
-  const leaderboardData = JSON.parse(localStorage.getItem('leaderboardData') || '{}');
-  const board = leaderboardData[type] || [];
-
-  const container = document.getElementById('leaderboard');
-  if (!container) return;
-
-  container.innerHTML = `<h3>🏆 Top ${type.charAt(0).toUpperCase() + type.slice(1)}</h3>`;
-
-  const list = document.createElement('ol');
-  board.slice(0, 10).forEach(entry => {
-    const item = document.createElement('li');
-    item.textContent = `${entry.name} - ${entry.count}`;
-    list.appendChild(item);
-  });
-
-  container.appendChild(list);
-}
-
-// 🧠 Store Fake Data for Testing
-function mockLeaderboardData() {
-  const data = {
-    referrals: [
-      { name: 'NewsNinja', count: 22 },
-      { name: 'WhaleWhisperer', count: 18 },
-      { name: 'CivicSleuth', count: 12 }
-    ],
-    comments: [
-      { name: 'SharpCommenter', count: 55 },
-      { name: 'BanterBoss', count: 48 },
-      { name: 'AnalysisAce', count: 37 }
-    ],
-    reads: [
-      { name: 'ArticleHunter', count: 90 },
-      { name: 'FastReader', count: 75 },
-      { name: 'HeadlineHero', count: 64 }
-    ]
-  };
-  localStorage.setItem('leaderboardData', JSON.stringify(data));
-}
-document.getElementById('userIdentityBox').addEventListener('click', () => {
-  const board = document.getElementById('leaderboard');
-  if (board.style.display === 'none' || board.style.display === '') {
-    board.style.display = 'block';
-  } else {
-    board.style.display = 'none';
-  }
-});
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -3907,16 +3841,8 @@ document.getElementById('userIdentityBox').addEventListener('click', () => {
         startSlideshow();
       }
     
-      // Referral update on query param
-      const ref = new URLSearchParams(window.location.search).get("ref");
-      if (ref) {
-        updateReferralProgress(ref);
-      }
-    
       // Theme, points, whale, leaderboard, streak, avatars
       loadUserProfile();
-      mockLeaderboardData();
-      generateLeaderboard("referrals");
       updateReferralProgressBar();
       updateStreak();
       displayStreakBanner();
@@ -4017,27 +3943,6 @@ max-width: 45vw;
 "></span>
 
 </div>
-<!-- 🏆 Leaderboard Container -->
-<div id="leaderboard" style="
-  position: fixed;
-  top: 60px;
-  right: 12px;
-  background-color: white;
-  border-radius: 12px;
-  padding: 12px 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  max-width: 90vw;
-  width: 260px;
-  font-family: 'Baloo 2', cursive;
-  display: none;
-  z-index: 9998;
-  font-size: clamp(12px, 1.8vw, 15px);
-">
-  <h3>🏆 Top Referrals</h3>
-  <ol id="leaderboardList">
-    <li>Loading leaderboard...</li>
-  </ol>
-</div>
 
 <!-- 🎨 Avatar Selection Modal -->
 <div id="avatarSelectModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
@@ -4047,7 +3952,111 @@ max-width: 45vw;
       <button onclick="document.getElementById('avatarSelectModal').style.display='none'" style="margin-top:15px; padding:8px 16px; border:none; border-radius:8px; background:#f2c94c; font-weight:bold;">Close</button>
     </div>
   </div>
-  
+  <script>
+    function makeElementDraggable(elmnt) {
+        let initialMouseX = 0, initialMouseY = 0, offsetX = 0, offsetY = 0;
+        let originalWidth, originalHeight;
+    
+        elmnt.onmousedown = dragMouseDown;
+    
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+    
+            // LOCK the size when drag starts
+            originalWidth = elmnt.offsetWidth;
+            originalHeight = elmnt.offsetHeight;
+            elmnt.style.width = originalWidth + 'px';
+            elmnt.style.height = originalHeight + 'px';
+            elmnt.style.maxWidth = 'unset'; // Remove max-width constraint
+            elmnt.style.flexWrap = 'nowrap'; // Prevent flex weirdness
+    
+            // Get mouse position relative to element
+            offsetX = e.clientX - elmnt.getBoundingClientRect().left;
+            offsetY = e.clientY - elmnt.getBoundingClientRect().top;
+    
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+        const carouselText = [
+  {text: "Is that a...whale? Fun!🤩", color: "navy"},
+  {text: "Dude...VeRY cOoL!😎", color: "green"},
+  {text: "HINT: 🤫Click on the top right!", color: "gold"},
+  {text: "Unexpected??😱", color: "orange"},
+  {text: "So Aesthetic🎨", color: "purple"},
+]
+
+$( document ).ready(async function() {
+  carousel(carouselText, "#feature-text")
+});
+
+async function typeSentence(sentence, eleRef, delay = 100) {
+  const letters = sentence.split("");
+  let i = 0;
+  while(i < letters.length) {
+    await waitForMs(delay);
+    $(eleRef).append(letters[i]);
+    i++
+  }
+  return;
+}
+
+async function deleteSentence(eleRef) {
+  const sentence = $(eleRef).html();
+  const letters = sentence.split("");
+  let i = 0;
+  while(letters.length > 0) {
+    await waitForMs(100);
+    letters.pop();
+    $(eleRef).html(letters.join(""));
+  }
+}
+
+async function carousel(carouselList, eleRef) {
+    var i = 0;
+    while(true) {
+      updateFontColor(eleRef, carouselList[i].color)
+      await typeSentence(carouselList[i].text, eleRef);
+      await waitForMs(1500);
+      await deleteSentence(eleRef);
+      await waitForMs(500);
+      i++
+      if(i >= carouselList.length) {i = 0;}
+    }
+}
+
+function updateFontColor(eleRef, color) {
+  $(eleRef).css('color', color);
+}
+
+function waitForMs(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+    
+            // Move the element
+            elmnt.style.top = (e.clientY - offsetY) + "px";
+            elmnt.style.left = (e.clientX - offsetX) + "px";
+            elmnt.style.position = "fixed";
+            elmnt.style.zIndex = 2000;
+        }
+    
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const avatarBox = document.getElementById('userIdentityBox');
+        if (avatarBox) {
+            makeElementDraggable(avatarBox);
+        }
+    });
+    </script>
+    
 </body>
 </html>"""
         else:
