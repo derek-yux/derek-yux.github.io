@@ -1571,18 +1571,6 @@ def main():
             </button>
         </div>
     </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 You You News. All Rights Reserved.</p>
-            <p>Connect with us on social media</p>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
-            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
-        </div>
-    </footer>
     <!-- Add this to your existing HTML before the closing </body> tag -->
 
 <!-- Login Rewards Modal -->
