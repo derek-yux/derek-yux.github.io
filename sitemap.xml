@@ -3,6 +3,19 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
 <url>
+    <loc>https://www.youyounews.live/Articles/netflix-ai-overhaul-user-interface.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-07</news:publication_date>
+      <news:title>Netflix Rolls Out AI Overhaul That Will Make You Question Your Taste In Movies</news:title>
+      <news:keywords>Netflix, AI, Movies, Interface, Update, News, You, Discussions</news:keywords>
+    </news:news>
+  </url>
+
+<url>
     <loc>https://www.youyounews.live/Articles/teacher-appreciation-day-us-2025.html</loc>
     <news:news>
       <news:publication>
@@ -25,32 +38,6 @@
       <news:publication_date>2025-05-06</news:publication_date>
       <news:title>GTA 6: The Most Anticipated Video Game EVER</news:title>
       <news:keywords>GTA, GTA6, Video, Games, News, Trailer, May, Discussion</news:keywords>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/cinco-de-mayo-essential-playlist.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-05</news:publication_date>
-      <news:title>The Cinco De Mayo Essential Playlist</news:title>
-      <news:keywords>Cinco de mayo, Music, Mexican, Mexico, Celebration, Playlist, Songs</news:keywords>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/met-gala-2025-fashion-celebrities-art-extravagance.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-05</news:publication_date>
-      <news:title>Met Gala 2025 Fashion Showdown Refines the Art of Extravagance</news:title>
-      <news:keywords>Met gala, 2025, Celebrities, Fashion, Art, Showdown, Extravagance, News</news:keywords>
     </news:news>
   </url>
 

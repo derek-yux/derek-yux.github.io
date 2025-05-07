@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +30,15 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tech breaking news in AI from Nvidia, Amazon, and Google">
+    <meta name="description" content="Netflix rolls out AI overhaul for its user interface and movies">
     <meta name="author" content="Derek (Yue) Yu">
-    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>Tech, AI, Amazon, Google, Nvidia, and More - You You News</title>
+    <meta name="keywords" content="Netflix, AI, Movies, Interface, Update, News, You, Discussions">
+    <title>Netflix Rolls Out AI Overhaul That Will Make You Question Your Taste In Movies</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -61,12 +63,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -84,14 +114,16 @@
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -199,6 +231,23 @@
             padding: 20px 0;
             margin-top: 30px;
         }
+        .fa {
+        font-size: 30px;
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--color-pink);
+        background-position: center;
+        background-color: var(--color-blue);
+        border-radius: 50%;
+        }
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+        opacity: 0.7;
+        width: 80px;
+        background-color:#A6FFB9
+        }
         .cta-button {
             display: inline-block;
             background-color: var(--secondary-color);
@@ -219,24 +268,6 @@
             place-items: center;
             font: 2vw system-ui;
             background-color: var(--color-yellow);
-        }
-        /* Style all font awesome icons */
-        .fa {
-        font-size: 30px;
-        width: 60px;
-        text-align: center;
-        text-decoration: none;
-        color: var(--color-pink);
-        background-position: center;
-        background-color: var(--color-blue);
-        border-radius: 50%;
-        }
-
-        /* Add a hover effect if you want */
-        .fa:hover {
-        opacity: 0.7;
-        width: 80px;
-        background-color:#A6FFB9
         }
 
         .bbb a {
@@ -279,6 +310,53 @@
             box-shadow: 22px 22px var(--color-blue);
             z-index: -2;
         }
+        /* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px #ffcb6b, 0 0 50px #ffc107, 0 0 80px #ff5722;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+}
+
+.glow-reward {
+  animation: glow 1.2s ease-in-out infinite;
+  border: 2px solid #ffc107 !important;
+  background-color: #fff3cd !important;
+  color: #d35400 !important;
+  text-shadow: 0 0 3px #fff;
+}
+#closePopupButton:hover {
+  background-color: #ff9800;
+  color: white;
+  transform: scale(1.05);
+}
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-soft {
+  animation: subtlePulse 2.5s ease-in-out infinite;
+}
+
         @keyframes float {
             0% {
                 transform: translatey(0px);
@@ -316,124 +394,123 @@
             <p>Making News Fun 4 U!</p>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="../">Home</a></li>
-            <li1><a href="tech">Tech</a></li1>
-            <li><a href="sports">Sports</a></li>
-            <li><a href="tv">TV</a></li>
-            <li><a href="music">Music</a></li>
-            <li><a href="working">Forums</a></li>
-        </ul>
+            <li1><a href="../Pages/tech">Tech</a></li1>
+            <li><a href="../Pages/sports">Sports</a></li>
+            <li><a href="../Pages/tv">TV</a></li>
+            <li><a href="../Pages/music">Music</a></li>
+            <li><a href="/Pages/working">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections &#10629Assuming Cows are Uniform Spheres&#10630</h2>
-            <div class="section-grid">
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://aiexpert.network/wp-content/uploads/2023/11/How-Netflix-is-Leveraging-AI-to-Transform-Streaming.jpg
-            " alt="Tech Blog">
-                <div class="section-content">
-                    <h2>Netflix Rolls Out AI Overhaul That Will Make You Question Your Taste In Movies</h2>
-                    <p>Netflix is introducing a <b>beta</b> version of its user interface, incorporating <b>generative AI</b> tools...</p>
-                    <a href="/Articles/netflix-ai-overhaul-user-interface.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
+        <div class="shrinker">
+        <h2>Netflix Rolls Out AI Overhaul That Will Make You Question Your Taste In Movies</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://aiexpert.network/wp-content/uploads/2023/11/How-Netflix-is-Leveraging-AI-to-Transform-Streaming.jpg' alt="Cinque Terre" class="slider_image">
+            <img src='https://static1.srcdn.com/wordpress/wp-content/uploads/wm/2024/08/imagery-from-the-netflix-tv-show.jpg' alt="Cinque Terre" class="slider_image">
+            <img src='https://s.yimg.com/ny/api/res/1.2/AjPk3IR8rFl7SL3wspblEw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTcyMA--/https://media.zenfs.com/en/futurism_981/e2efa1c007d83839cdf80a4ba8b321c2' alt="Cinque Terre" class="slider_image">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">Netflix is introducing a <b>beta</b> version of its user interface, incorporating <b>generative AI</b> tools to optimize programming recommendations for its <b>over 230 million</b> subscribers. Changes will be phased in globally, raising the question: can AI really understand your questionable taste in films?</p></div><br><div data-aos="fade-up"><p class="p1">In a virtual revelation, Chief Product Officer <b>Eunice Kim</b> flaunted the new Netflix experience, proclaiming it’s “still the one you know and love – just better.” So, exactly how much better? Well, brace yourself for more info on individual titles, like “<b>Emmy Award winner</b>” or “<b>No. 1 in TV Shows</b>,” guaranteed to impress your friends at parties.</p></div><br><div data-aos="fade-up"><p class="p1">If you’re wondering about search functionality, the AI will now let you make requests like “give me a scary movie – but not too scary” or "I want something that’s funny and upbeat." Because asking your streaming service for specific vibes is surely the next leap in <b>human interaction</b>. Who needs a personalized therapist, right?</p></div><br><div data-aos="fade-up"><p class="p1">Moreover, the mobile app is testing a <b>vertical feed</b> where subscribers can tap to watch shows or add them to lists—ideal for those who can’t decide what to binge next. Now you can scroll endlessly through options, giving you all the decision fatigue you ever wanted! And yes, you can still share with friends, because misery loves company.</p></div><br><div data-aos="fade-up"><p class="p1">With user experience in mind, Netflix is moving vital shortcuts like “<b>Search</b>” and “<b>My List</b>” to the top of the page. Goodbye, hidden gems! Apparently, these shortcuts were located on the left where *literally no one* could find them. Such a mystery! Will this actually help you find the movies you’re “just not that into”?</p></div><br><div data-aos="fade-up"><p class="p1">Finally, recommendations will now respond more to *your* moods, reflecting an “elevated design.” Background colors for show tiles will even match the key art. Because nothing says “I’m emotionally stable” quite like a perfectly matched interface while you procrastinate on finishing that report for work. What will they think of next?</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
         </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://images.ladbible.com/resize?type=webp&quality=70&width=3840&fit=contain&gravity=auto&url=https://images.ladbiblegroup.com/v3/assets/bltb5d92757ac1ee045/blt349441f9dbf32f5a/679cf9d1fbdd01aade09b78c/gta-6-issue-upcoming.png%3Fcrop%3D675%2C675%2Cx256%2Cy0
-            " alt="Tech Blog">
-                <div class="section-content">
-                    <h2>GTA 6: The Most Anticipated Video Game EVER</h2>
-                    <p>Gamers, brace yourselves: you'll need to wait until <b>May 26, 2026</b> for "GTA 6," but...</p>
-                    <a href="/Articles/gta-6-the-most-anticipated-video-game-ever.html" class="cta-button">Read Now!</a>
+        <section style="margin-top: 40px;">
+        <h2 style="color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif; letter-spacing: 1px;">Yesterday's Top Google Trends</h2>
+        <div class="slideshow-container" style="background-color: var(--color-beige); border-radius: 11px; padding: 20px; box-shadow: 10px 10px var(--color-blue); position: relative; height: 400px; overflow: hidden; border: 1px solid var(--color-green);">
+            <!-- Slides -->
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 1; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">1. Coachella Livestream</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,250 L100,200 L200,220 L300,150 L400,180 L500,100 L600,50 L700,20 L800,10 L900,5 L1000,0" stroke="var(--color-blue)" stroke-width="3" fill="none" />
+                            <path d="M0,250 L100,200 L200,220 L300,150 L400,180 L500,100 L600,50 L700,20 L800,10 L900,5 L1000,0 L1000,250 L0,250" fill="var(--color-blue)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Interest spiked yesterday as fans searched for ways to watch performances live online</p>
                 </div>
-            </article>
+            </div>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">2. NBA Playoffs</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,100 L100,120 L200,110 L300,130 L400,150 L500,140 L600,150 L700,120 L800,50 L900,20 L1000,0" stroke="var(--color-green)" stroke-width="3" fill="none" />
+                            <path d="M0,100 L100,120 L200,110 L300,130 L400,150 L500,140 L600,150 L700,120 L800,50 L900,20 L1000,0 L1000,250 L0,250" fill="var(--color-green)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Search interest surged after yesterday's key matchups and upsets</p>
+                </div>
+            </div>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">3. Spotify New Features</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,220 L100,230 L200,220 L300,210 L400,200 L500,180 L600,150 L700,100 L800,50 L900,30 L1000,20" stroke="var(--color-yellow)" stroke-width="3" fill="none" />
+                            <path d="M0,220 L100,230 L200,220 L300,210 L400,200 L500,180 L600,150 L700,100 L800,50 L900,30 L1000,20 L1000,250 L0,250" fill="var(--color-yellow)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Users searching for information about Spotify's latest language options announcement</p>
+                </div>
+            </div>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">4. Ryan Gosling Star Wars</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,200 L100,190 L200,195 L300,170 L400,150 L500,100 L600,80 L700,40 L800,20 L900,30 L1000,10" stroke="var(--color-green)" stroke-width="3" fill="none" />
+                            <path d="M0,200 L100,190 L200,195 L300,170 L400,150 L500,100 L600,80 L700,40 L800,20 L900,30 L1000,10 L1000,250 L0,250" fill="var(--color-green)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Fans searching for details about Ryan Gosling joining the Star Wars franchise</p>
+                </div>
+            </div>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">5. Climate Change Reports</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,150 L100,160 L200,170 L300,180 L400,200 L500,190 L600,180 L700,140 L800,100 L900,40 L1000,20" stroke="var(--color-yellow)" stroke-width="3" fill="none" />
+                            <path d="M0,150 L100,160 L200,170 L300,180 L400,200 L500,190 L600,180 L700,140 L800,100 L900,40 L1000,20 L1000,250 L0,250" fill="var(--color-yellow)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Recent environmental reports triggered increased searches about climate change</p>
+                </div>
+            </div>
+    
+            <!-- Navigation dots -->
+            <div style="text-align: center; position: absolute; bottom: 15px; width: 100%;">
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+            </div>
         </div>
-                    <div data-aos="fade-up">
-                        <article class="section-card">
-                            <img src="https://cdn.prod.website-files.com/65a7d326e810bc36dae1978f/67b5b6fe971376c623ca522a_meta_unveils_llamacon_its_first_developer_conference_on_generative_ai.webp
-                " alt="Tech Blog">
-                    <div class="section-content">
-                        <h2>Meta Llama Conference Unveils AI Shenanigans and Llama Drama</h2>
-                        <p>Meta has officially launched its flashy new generative AI conference called <b>LlamaCon</b> on April...</p>
-                        <a href="/Articles/meta-llama-ai-conference.html" class="cta-button">Read Now!</a>
-                    </div>
-                </article>
-            </div>
-                    <div data-aos="fade-up">
-                        <article class="section-card">
-                            <img src="https://barchart-news-media-prod.aws.barchart.com/SYNDSRC/9404e2dca4817ba762a635c7590c2ad3/102050.jpg%3Fv%3D430052789
-                " alt="Tech Blog">
-                    <div class="section-content">
-                        <h2>Meta And Microsoft Stocks Soaring This Quarter</h2>
-                        <p>In a dazzling display that would make even the stock market gods nod in...</p>
-                        <a href="/Articles/meta-microsoft-stocks-quarter-report.html" class="cta-button">Read Now!</a>
-                    </div>
-                </article>
-            </div>
-                        <div data-aos="fade-up">
-                            <article class="section-card">
-                                <img src="https://assets.entrepreneur.com/content/3x2/2000/1716929631-andyjassycopy.jpg
-                    " alt="Tech Blog">
-                        <div class="section-content">
-                            <h2>Fossil Fuels and AI: Nvidia and Amazon Discuss the Future</h2>
-                            <p>Nvidia and Amazon declared <b>100%</b> of energy sources – from solar prophets to coal...</p>
-                            <a href="/Articles/Fossil Fuels and AI_Nvidia and Amazon Discuss Future.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                    <div data-aos="fade-up">
-                        <article class="section-card">
-                            <img src="https://static-ca.gamestop.ca/images/products/799692/3max.jpg
-                " alt="Tech Blog">
-                    <div class="section-content">
-                        <h2>Gamestop Sells Out Nintendo Switch 2 Within Minutes</h2>
-                        <p>In a shocking display of “who saw this coming,” <b>Gamestop</b> launched preorders for the...</p>
-                        <a href="/Articles/Gamestop Sells Out Nintendo Switch 2 Within Minutes.html" class="cta-button">Read Now!</a>
-                    </div>
-                </article>
-            </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa1XcNgpHrkCMHwZos3b4QDg7w3q6Po8QUfg&s
-            " alt="Tech Blog">
-                <div class="section-content">
-                    <h2>Intel Announces Layoffs Aimed At Cost Reduction</h2>
-                    <p>In a shocking turn of events that not even a flip of a quarter...</p>
-                    <a href="/Articles/Intel Announces Layoffs Aimed At Cost Reduction**.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAbSrM5tT60KIfUBz5XY7TXPt0wpXveA4NmA&s
-                        " alt="Tech Blog">
-                            <div class="section-content">
-                                <h2>Spotify Expands Global Reach with New Language Options</h2>
-                                <p>Spotify, the leading music streaming platform, has announced the introduction of new language options on its...</p>
-                                <a href="/Articles/Spotify Expands Global Reach with New Language Options.html" class="cta-button">Read Now!</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div data-aos="fade-up">
-                        <article class="section-card">
-                            <img src="https://www.uctoday.com/wp-content/uploads/2025/04/Zoom-Suffers-Major-Global-Outage-Has-Now-Recovered.jpg
-                            " alt="Tech Blog">
-                                <div class="section-content">
-                                    <h2>Zoom Outage Hits Thousands as Users Report Service Failures</h2>
-                                    <p>Zoom experienced a significant outage on April 16, 2025, affecting users worldwide as over 67,000 outage reports...</p>
-                                    <a href="/Articles/Zoom Outage Hits Thousands as Users Report Service Failures.html" class="cta-button">Read Now!</a>
-                                </div>
-                            </article>
-                        </div>
-            </div>
-        </section>
-        <section>
+    </section>
+         <section>
             <div class="section-grid">
                 <div data-aos="fade-up">
                 <article class="section-card" style="background: linear-gradient(90deg,rgba(91, 0, 227, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(106, 189, 212, 1) 100%);">
@@ -453,80 +530,108 @@
             </div>
         </section>
         <br>
-        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
+        <div class="bbb"><a href="/Pages/working">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href=/Pages/working.html">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
+    </div>
+    <!-- Login Rewards Modal -->
+    <div id="loginRewardsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
+            <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666;">&times;</span>
+            <h2 style="color: #2c3e50; margin-bottom: 15px;">Welcome Back!</h2>
+            <div id="streakCounter" style="font-size: 18px; color: #3498db; margin-bottom: 20px;">
+                <span>Your login streak: <strong id="currentStreak">0</strong> days</span>
+            </div>
+            
+            <div id="weeklyRewards" style="display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap;">
+                <!-- Days will be generated by JavaScript -->
+            </div>
+            
+            <div id="rewardMessage" style="margin: 20px 0; padding: 15px; border-radius: 8px; background-color: #f4f4f8; font-weight: bold;"></div>
+            
+            <button id="claimReward" style="background-color: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+                Claim Daily Reward
+            </button>
+        </div>
     </div>
 
     <footer>
@@ -534,10 +639,6 @@
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
@@ -628,7 +729,8 @@
         "Read and read are different",
         "You're getting into Harvard",
         "BE CONFIDENT! If Benny Blanco can pull Selena Gomez, u can do anything",
-        "You warm my heart :>"
+        "You warm my heart :>",
+        "By referring friends, you can change my avatar (top-right)!"
         ];
 
         // Create a function to add the whale to the page
