@@ -1830,6 +1830,9 @@ window.addEventListener('DOMContentLoaded', () => {
             const claimButton = document.getElementById('claimReward');
             claimButton.disabled = !newDay;
             claimButton.style.backgroundColor = newDay ? '#3498db' : '#cccccc';
+            if (newDay) {
+                claimButton.classList.add('glow-reward');
+            }
         }
         
         // Get week number of the year
