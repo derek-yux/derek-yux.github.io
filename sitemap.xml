@@ -3,6 +3,19 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+      <loc>https://www.youyounews.live/Articles/celtics-defeat-knicks-nba-playoffs-may-10.html</loc>
+      <news:news>
+        <news:publication>
+          <news:name>You You News</news:name>
+          <news:language>en</news:language>
+        </news:publication>
+        <news:publication_date>2025-05-10</news:publication_date>
+        <news:title>Celtics Defeat Knicks in NBA Playoffs Today...But What Happens If They Can't Keep Up - You You News</news:title>
+        <news:keywords>Celtics, Knicks, NBA, Playoffs, Boston, New York, News, Game, You You News</news:keywords>
+      </news:news>
+  </url>
+
+  <url>
       <loc>https://www.youyounews.live/Articles/robert-prevost-pope-leo-xiv-american.html</loc>
       <news:news>
         <news:publication>
