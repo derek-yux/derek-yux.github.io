@@ -3,6 +3,32 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+      <loc>https://www.youyounews.live/Articles/american-idol-top-five-singers-mothers-day.html</loc>
+      <news:news>
+        <news:publication>
+          <news:name>You You News</news:name>
+          <news:language>en</news:language>
+        </news:publication>
+        <news:publication_date>2025-05-12</news:publication_date>
+        <news:title>American Idol Has Narrowed The Competition Down To The Top 5 Contestants, But Not Without A Dramatic Two-Episode Disney Night - You You News</news:title>
+        <news:keywords>American, Idol, Singer, Mother, Competition, Reality, TV, Music, News, You You News</news:keywords>
+      </news:news>
+  </url>
+
+  <url>
+      <loc>https://www.youyounews.live/Articles/nasdaq-us-china-deal-trump-tech-stocks.html</loc>
+      <news:news>
+        <news:publication>
+          <news:name>You You News</news:name>
+          <news:language>en</news:language>
+        </news:publication>
+        <news:publication_date>2025-05-12</news:publication_date>
+        <news:title>NASDAQ Soars As US China Deal Temporarily Slashes Tariffs But What Happens Next - You You News</news:title>
+        <news:keywords>NASDAQ, China, US, Trump, Tariffs, Stocks, Deal, Market, News, You You News</news:keywords>
+      </news:news>
+  </url>
+
+  <url>
       <loc>https://www.youyounews.live/Articles/celtics-defeat-knicks-nba-playoffs-may-10.html</loc>
       <news:news>
         <news:publication>
@@ -13,71 +39,6 @@
         <news:title>Celtics Defeat Knicks in NBA Playoffs Today...But What Happens If They Can't Keep Up - You You News</news:title>
         <news:keywords>Celtics, Knicks, NBA, Playoffs, Boston, New York, News, Game, You You News</news:keywords>
       </news:news>
-  </url>
-
-  <url>
-      <loc>https://www.youyounews.live/Articles/robert-prevost-pope-leo-xiv-american.html</loc>
-      <news:news>
-        <news:publication>
-          <news:name>You You News</news:name>
-          <news:language>en</news:language>
-        </news:publication>
-        <news:publication_date>2025-05-08</news:publication_date>
-        <news:title>Robert Prevost Becomes Pope Leo XIV, The First American In The Holy Seat</news:title>
-        <news:keywords>Pope, Prevost, Leo, XIV, American, Holy, Cardinal, Rome, News, You, Robert Prevost</news:keywords>
-      </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/shazam-launches-viral-charts-music.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-07</news:publication_date>
-      <news:title>Shazam Launches Viral Charts Because We All Need Another Way To Judge Our Music Taste</news:title>
-      <news:keywords>Shazam, You You, Music, News, Viral, Charts, New, Tunes</news:keywords>
-    </news:news>
-  </url>
-  
-  <url>
-    <loc>https://www.youyounews.live/Articles/netflix-ai-overhaul-user-interface.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-07</news:publication_date>
-      <news:title>Netflix Rolls Out AI Overhaul That Will Make You Question Your Taste In Movies</news:title>
-      <news:keywords>Netflix, AI, Movies, Interface, Update, News, You, Discussions</news:keywords>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/teacher-appreciation-day-us-2025.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-06</news:publication_date>
-      <news:title>US Teacher Appreciation Day 2025 Delivers Deals With A Side Of Surprises</news:title>
-      <news:keywords>Teacher, Celebration, Day, 2025, News, US, Surprise, Discussion</news:keywords>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/gta-6-the-most-anticipated-video-game-ever.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-06</news:publication_date>
-      <news:title>GTA 6: The Most Anticipated Video Game EVER</news:title>
-      <news:keywords>GTA, GTA6, Video, Games, News, Trailer, May, Discussion</news:keywords>
-    </news:news>
   </url>
 
 </urlset>
