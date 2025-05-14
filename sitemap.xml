@@ -3,41 +3,41 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
-      <loc>https://www.youyounews.live/Articles/american-idol-top-five-singers-mothers-day.html</loc>
+      <loc>https://www.youyounews.live/Articles/maple-leafs-game-5-nfl-playoffs-coach-guessing-game.html</loc>
       <news:news>
         <news:publication>
           <news:name>You You News</news:name>
           <news:language>en</news:language>
         </news:publication>
-        <news:publication_date>2025-05-12</news:publication_date>
-        <news:title>American Idol Has Narrowed The Competition Down To The Top 5 Contestants, But Not Without A Dramatic Two-Episode Disney Night - You You News</news:title>
-        <news:keywords>American, Idol, Singer, Mother, Competition, Reality, TV, Music, News, You You News</news:keywords>
+        <news:publication_date>2025-05-14</news:publication_date>
+        <news:title>Game 5 Showdown: Maple Leafs Coach Plays Guessing Game - You You News</news:title>
+        <news:keywords>NFL, Playoffs, Maple Leafs, Coach, Game 5, Sports, Hockey, Canada, News, You You News</news:keywords>
       </news:news>
   </url>
 
   <url>
-      <loc>https://www.youyounews.live/Articles/nasdaq-us-china-deal-trump-tech-stocks.html</loc>
+      <loc>https://www.youyounews.live/Articles/rihanna-smurfs-new-song-album-movie.html</loc>
       <news:news>
         <news:publication>
           <news:name>You You News</news:name>
           <news:language>en</news:language>
         </news:publication>
-        <news:publication_date>2025-05-12</news:publication_date>
-        <news:title>NASDAQ Soars As US China Deal Temporarily Slashes Tariffs But What Happens Next - You You News</news:title>
-        <news:keywords>NASDAQ, China, US, Trump, Tariffs, Stocks, Deal, Market, News, You You News</news:keywords>
+        <news:publication_date>2025-05-14</news:publication_date>
+        <news:title>Rihanna Teases New Song While Album Wait Continues - You You News</news:title>
+        <news:keywords>Rihanna, Smurfs, Song, Release, Movie, Album, Music, News, You You News</news:keywords>
       </news:news>
   </url>
 
   <url>
-      <loc>https://www.youyounews.live/Articles/celtics-defeat-knicks-nba-playoffs-may-10.html</loc>
+      <loc>https://www.youyounews.live/Articles/trump-saudi-arabia-tech-ai-meeting.html</loc>
       <news:news>
         <news:publication>
           <news:name>You You News</news:name>
           <news:language>en</news:language>
         </news:publication>
-        <news:publication_date>2025-05-10</news:publication_date>
-        <news:title>Celtics Defeat Knicks in NBA Playoffs Today...But What Happens If They Can't Keep Up - You You News</news:title>
-        <news:keywords>Celtics, Knicks, NBA, Playoffs, Boston, New York, News, Game, You You News</news:keywords>
+        <news:publication_date>2025-05-14</news:publication_date>
+        <news:title>Trump Takes Tech Titans To Saudi Arabia For AI Boom - You You News</news:title>
+        <news:keywords>Trump, Saudi, Tech, Arabia, OpenAI, Tesla, Amazon, News, You You News</news:keywords>
       </news:news>
   </url>
 
