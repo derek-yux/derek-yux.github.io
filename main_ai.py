@@ -177,9 +177,9 @@ def main():
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="You You News Trending Content">
-    <meta name="author" content="Derek (Yue) Yu">
-    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
+    <meta name="description" content="You You News: Your go-to source for fun news, trending stories, tech updates, sports highlights, TV buzz, music news, and engaging forum discussions. Stay informed with You You News!">
+    <meta name="author" content="You You News">
+    <meta name="keywords" content="News, You You News, You You, Fun News, Fun Stories, Tech News, Sports News, TV News, Music News, Forum, Discussion, Trending News">
     <title>""" + str(response_title) + """ - You You News</title>
     <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
