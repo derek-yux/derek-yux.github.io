@@ -3,6 +3,32 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+      <loc>https://www.youyounews.live/Articles/coco-gauff-italian-open-comdy-gold-tennis.html</loc>
+      <news:news>
+        <news:publication>
+          <news:name>You You News</news:name>
+          <news:language>en</news:language>
+        </news:publication>
+        <news:publication_date>2025-05-15</news:publication_date>
+        <news:title>Coco Gauff Delivers Tennis Comedy Gold At Italian Open - You You News</news:title>
+        <news:keywords>Tennis, Coco Gauff, Italian Open, Comedy, Match, Opponent, News, Sports, You You News</news:keywords>
+      </news:news>
+  </url>
+
+  <url>
+      <loc>https://www.youyounews.live/Articles/congress-takes-a-nap-trump-midnight.html</loc>
+      <news:news>
+        <news:publication>
+          <news:name>You You News</news:name>
+          <news:language>en</news:language>
+        </news:publication>
+        <news:publication_date>2025-05-15</news:publication_date>
+        <news:title>Congress Takes A Nap: The Hilarious Midnight Session - You You News</news:title>
+        <news:keywords>Congress, Trump, Nap, Sleep, Speech, America, Midnight, Politics, News, You You News</news:keywords>
+      </news:news>
+  </url>
+  
+  <url>
       <loc>https://www.youyounews.live/Articles/maple-leafs-game-5-nfl-playoffs-coach-guessing-game.html</loc>
       <news:news>
         <news:publication>

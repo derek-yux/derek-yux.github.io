@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +30,15 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sports coverage and game analysis, basketball, soccer, more">
+    <meta name="description" content="Congress Takes A Nap During Trump's Speech">
     <meta name="author" content="Derek (Yue) Yu">
-    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>Sports Coverage, NBA, NHL, MLS, NFL, Playoffs - You You News</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <meta name="keywords" content="Congress, Trump, Nap, Sleep, Speech, America, Midnight, Politics, News, You You News">
+    <title>Congress Takes A Nap: The Hilarious Midnight Session - You You News</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -61,12 +63,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -75,23 +105,25 @@
                     rgba(0, 0, 0, 0.7)
                 ),
                 /* bottom, image */
-                url('../Assets/sportsheader.png');
+                url('../Assets/tvheader.png');
             background-color: var(--primary-color);
-            background-position-y: 670px;
+            background-position-y: 850px;
             background-position-x: center;
             color: white;
             text-align: center;
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -199,20 +231,6 @@
             padding: 20px 0;
             margin-top: 30px;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #2980b9;
-        }
-        /* Style all font awesome icons */
         .fa {
         font-size: 30px;
         width: 60px;
@@ -229,6 +247,19 @@
         opacity: 0.7;
         width: 80px;
         background-color:#A6FFB9
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
         }
         .bbb {
             height: 50vh;
@@ -279,6 +310,53 @@
             box-shadow: 22px 22px var(--color-blue);
             z-index: -2;
         }
+        /* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px #ffcb6b, 0 0 50px #ffc107, 0 0 80px #ff5722;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+}
+
+.glow-reward {
+  animation: glow 1.2s ease-in-out infinite;
+  border: 2px solid #ffc107 !important;
+  background-color: #fff3cd !important;
+  color: #d35400 !important;
+  text-shadow: 0 0 3px #fff;
+}
+#closePopupButton:hover {
+  background-color: #ff9800;
+  color: white;
+  transform: scale(1.05);
+}
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-soft {
+  animation: subtlePulse 2.5s ease-in-out infinite;
+}
+
         @keyframes float {
             0% {
                 transform: translatey(0px);
@@ -316,167 +394,123 @@
             <p>Making News Fun 4 U!</p>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="../">Home</a></li>
-            <li><a href="tech">Tech</a></li>
-            <li1><a href="sports">Sports</a></li1>
-            <li><a href="tv">TV</a></li>
-            <li><a href="music">Music</a></li>
-            <li><a href="working">Forums</a></li>
-        </ul>
+            <li><a href="../Pages/tech">Tech</a></li>
+            <li><a href="../Pages/sports">Sports</a></li>
+            <li1><a href="../Pages/tv">TV</a></li1>
+            <li><a href="../Pages/music">Music</a></li>
+            <li><a href="/Pages/working">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections</h2>
-            <div class="section-grid">
-                 <div data-aos="fade-up">
-            <article class="section-card">
-                <img src="https://i.ytimg.com/vi/t6zMF1gi_Hw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDKJng0WN_ZAa4XrcfS31RLNhNUsg
-            " alt="Sports Blog">
-                <div class="section-content">
-                    <h2>Coco Gauff Delivers Tennis Comedy Gold At Italian Open</h2>
-                    <p>In A Semifinal Match That Was More Grit Than Glitter, Coco Gauff Provided The...</p>
-                    <a href="/Articles/coco-gauff-italian-open-comdy-gold-tennis.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
+        <div class="shrinker">
+        <h2>Congress Takes A Nap: The Hilarious Midnight Session</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://i2-prod.irishstar.com/article35227833.ece/ALTERNATES/s615/0_SDC_MDG_-_10717JPG.jpg' alt="Cinque Terre" class="slider_image">
+            <img src='https://people.com/thmb/PYDh0C2eCT7kSOEf5_zOiIt7MQA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(745x382:747x384)/Blake-Moore-Utah-representative-051525-tout-31ae9c57c26f48a2bc3ed8b70084b96b.jpg' alt="Cinque Terre" class="slider_image">
+            <img src='https://preview.redd.it/our-law-makers-sleeping-v0-bvk9klwjrtuc1.jpg?width=600&format=pjpg&auto=webp&s=99783ccd7dc4c284936b7c0fba153164aa11ba89' alt="Cinque Terre" class="slider_image">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">In A Daring Display Of Endurance, Three Members Of Congress Managed To Doze Off During A Lengthy Overnight Session. As The Rest Of Us Snooze In Our Comfy Beds, They Were Battling Z’s While Debating President Trump’s “Big Beautiful Bill” Starting At 10 p.m.—Sounds Like A Dream Job!</p></div><br><div data-aos="fade-up"><p class="p1">Rep. Blake Moore Was The First Victim Of Drowsiness, Caught Slumped Over In His Chair At The Ways And Means Committee. When Voting Finally Rolled Around Just Before <b>5 A.M.</b>, He Needed A Gentle Nudge From Rep. Michelle Fischbach—Talk About An Alarm Clock With Fewer Bells And More Snickers!</p></div><br><div data-aos="fade-up"><p class="p1">In Another Room, Reps. Jan Schakowsky And Debbie Dingell Were Also Caught Napping Like They Were At A Spa Retreat. Dingell, Who Had Been Awake For A Staggering <b>31</b> Hours, Defended Herself By Firing Back At Critics: “I Was Just Imagining A World Without Sleep-Deprived Politics—What A Concept!”</p></div><br><div data-aos="fade-up"><p class="p1">Republican Leadership Hopes To Get The “Big Beautiful Bill” To Trump By July 4, So More Late-Night Sessions Might Be On The Horizon. Will Congress Start Serving Coffee By The Gallons Or Will They Just Settle For Nap Pods? Either Way, They’ve Got Some Big Decisions To Wake Up For!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
         </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-                <img src="https://pbs.twimg.com/media/DbLzZsWV4AEEOzt.jpg
-            " alt="Sports Blog">
-                <div class="section-content">
-                    <h2>Game 5 Showdown: Maple Leafs Coach Plays Guessing Game</h2>
-                    <p>Toronto Maple Leafs Coach Craig Berube Is Keeping His Lineup Secrets Tighter Than A...</p>
-                    <a href="/Articles/maple-leafs-game-5-nfl-playoffs-coach-guessing-game.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-                <img src="https://www.amny.com/wp-content/uploads/2025/05/2025-05-08T013816Z_1668008990_MT1USATODAY26117977_RTRMADP_3_NBA-PLAYOFFS-NEW-YORK-KNICKS-AT-BOSTON-CELTICS.jpg?quality=51
-            " alt="Sports Blog">
-                <div class="section-content">
-                    <h2>Celtics Defeat Knicks in NBA Playoffs Today...But What Happens If They Can't Keep Up</h2>
-                    <p>The Boston Celtics snagged a win against the Knicks on May 10, but with...</p>
-                    <a href="/Articles/celtics-defeat-knicks-nba-playoffs-may-10.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://edmonton.citynews.ca/wp-content/blogs.dir/sites/15/CP174485396-1024x669.jpg
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Oilers Advance By Pummeling Kings In Wild Playoff Victory</h2>
-                            <p>In an electrifying showdown, the <b>Edmonton Oilers</b> triumphed over the <b>Los Angeles Kings</b> with...</p>
-                            <a href="/Articles/oilers-nhl-playoffs-advance-kings.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://www.usatoday.com/gcdn/authoring/authoring-images/2025/05/01/USAT/83381891007-gty-2212827699.jpg?crop=3070,1727,x0,y158&width=660&height=371&format=pjpg&auto=webp
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Lakers Buzzer Beater Turns Into Buzzer Defeat In Playoffs</h2>
-                            <p>In a shocking twist worthy of an epic saga, the <b>Los Angeles Lakers</b> made...</p>
-                            <a href="/Articles/lakers-nba-playoffs-timberwolves-eliminated.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5ZnQxwLnyVac8CoFwVurfqGJXeGx8w_O0nw&s
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Indiana's Comeback Overtime Victory Over Milwaukee Bucks Among The Craziest In NBA History</h2>
-                            <p>In an epic showdown of skill and chaos, the <b>Indiana Pacers</b> clinched a jaw-dropping...</p>
-                            <a href="/Articles/nba-indiana-pacers-milwaukee-bucks-overtime-2025.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://img.iol.pt/image/id/680d6cecd34e3f0bae9d6de9/1024
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>El Clásico: The Endless Rivalry Between Barcelona And Real Madrid</h2>
-                            <p>In a football saga that unfolds like a soap opera, <b>El Clásico</b> showcases the...</p>
-                            <a href="/Articles/El Clásico: The Endless Rivalry Between Barcelona And Real Madrid.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://i.guim.co.uk/img/media/ea14f6a48de3868470e1aeea3b4b94de4849e7aa/0_53_1024_614/master/1024.jpg?width=465&dpr=1&s=none&crop=none
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>NFL Draft Picks: Giants Secure Future With Jaxson Dart</h2>
-                            <p>In a shocking turn of events that feels as predictable as a rainy day...</p>
-                            <a href="/Articles/NFL Draft Picks: Giants Secure Future With Jaxson Dart.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://gsp-image-cdn.wmsports.io/cms/prod/bleacher-report/getty_images/2210933425_large_image.jpg
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Lakers Narrowly Edge Timberwolves in Dramatic Game</h2>
-                            <p>In a heart-stopping affair, the Lakers outgunned the Timberwolves 94-85, narrowly escaping disaster as...</p>
-                            <a href="/Articles/lakers narrowly edge timberwolves in dramatic game**.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://s.yimg.com/ny/api/res/1.2/gFdxmAIXkL.J1cciubKulQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTE2MDA7aD05MDA7cT01MDtjZj13ZWJw/https://s.yimg.com/os/creatr-uploaded-images/2025-04/44b166f0-1b3c-11f0-abbf-ca67efc7b400
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>5 NBA PLAYOFF BRACKET: WHERE CHAOS MEETS CINDERELLA STORIES</h2>
-                            <p>The drumroll of anticipation has reached a crescendo as the 2025 NBA playoff bracket...</p>
-                            <a href="/Articles/5 NBA PLAYOFF BRACKET: WHERE CHAOS MEETS CINDERELLA STORIES.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZg4ZNIkH44UUNZ2hcpl2Db820tZ9nZmJfkQ&s
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>MITCHELL SAVES THE DAY WITH A GUSTO OF THREE-POINTERS</h2>
-                            <p>In a dramatic twist that could rival a Greek tragedy, the Miami Heat battled...</p>
-                            <a href="/Articles/MITCHELL SAVES THE DAY WITH A GUSTO OF THREE-POINTERS.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzagIs7GMCCe_qIy5ee4Fi5EOdU_ocjOLVyw&s
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Montreal Canadiens Clinch Playoff Spot with Victory over Carolina Hurricanes</h2>
-                            <p>The Montreal Canadiens have secured their place in the Stanley Cup Playoffs for the...</p>
-                            <a href="/Articles/Montreal Canadiens Clinch Playoff Spot with Victory over Carolina Hurricanes.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_903,h_507,x_110,y_0/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/si/01jr9vk74ycktapwm6mv.jpg" alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Gators Snatch Championship Trophy: They’re Back, Baby!</h2>
-                            <p>In a dramatic showdown that had more twists than a late-night soap opera, the Florida Gators...</p>
-                            <a href="/Articles/Gators Snatch Championship Trophy: They’re Back, Baby!.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
+        <section style="margin-top: 40px;">
+        <h2 style="color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif; letter-spacing: 1px;">Yesterday's Top Google Trends</h2>
+        <div class="slideshow-container" style="background-color: var(--color-beige); border-radius: 11px; padding: 20px; box-shadow: 10px 10px var(--color-blue); position: relative; height: 400px; overflow: hidden; border: 1px solid var(--color-green);">
+            <!-- Slides -->
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 1; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">1. Coachella Livestream</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,250 L100,200 L200,220 L300,150 L400,180 L500,100 L600,50 L700,20 L800,10 L900,5 L1000,0" stroke="var(--color-blue)" stroke-width="3" fill="none" />
+                            <path d="M0,250 L100,200 L200,220 L300,150 L400,180 L500,100 L600,50 L700,20 L800,10 L900,5 L1000,0 L1000,250 L0,250" fill="var(--color-blue)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Interest spiked yesterday as fans searched for ways to watch performances live online</p>
                 </div>
             </div>
-        </section>
-        <section>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">2. NBA Playoffs</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,100 L100,120 L200,110 L300,130 L400,150 L500,140 L600,150 L700,120 L800,50 L900,20 L1000,0" stroke="var(--color-green)" stroke-width="3" fill="none" />
+                            <path d="M0,100 L100,120 L200,110 L300,130 L400,150 L500,140 L600,150 L700,120 L800,50 L900,20 L1000,0 L1000,250 L0,250" fill="var(--color-green)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Search interest surged after yesterday's key matchups and upsets</p>
+                </div>
+            </div>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">3. Spotify New Features</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,220 L100,230 L200,220 L300,210 L400,200 L500,180 L600,150 L700,100 L800,50 L900,30 L1000,20" stroke="var(--color-yellow)" stroke-width="3" fill="none" />
+                            <path d="M0,220 L100,230 L200,220 L300,210 L400,200 L500,180 L600,150 L700,100 L800,50 L900,30 L1000,20 L1000,250 L0,250" fill="var(--color-yellow)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Users searching for information about Spotify's latest language options announcement</p>
+                </div>
+            </div>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">4. Ryan Gosling Star Wars</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,200 L100,190 L200,195 L300,170 L400,150 L500,100 L600,80 L700,40 L800,20 L900,30 L1000,10" stroke="var(--color-green)" stroke-width="3" fill="none" />
+                            <path d="M0,200 L100,190 L200,195 L300,170 L400,150 L500,100 L600,80 L700,40 L800,20 L900,30 L1000,10 L1000,250 L0,250" fill="var(--color-green)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Fans searching for details about Ryan Gosling joining the Star Wars franchise</p>
+                </div>
+            </div>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">5. Climate Change Reports</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,150 L100,160 L200,170 L300,180 L400,200 L500,190 L600,180 L700,140 L800,100 L900,40 L1000,20" stroke="var(--color-yellow)" stroke-width="3" fill="none" />
+                            <path d="M0,150 L100,160 L200,170 L300,180 L400,200 L500,190 L600,180 L700,140 L800,100 L900,40 L1000,20 L1000,250 L0,250" fill="var(--color-yellow)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Recent environmental reports triggered increased searches about climate change</p>
+                </div>
+            </div>
+    
+            <!-- Navigation dots -->
+            <div style="text-align: center; position: absolute; bottom: 15px; width: 100%;">
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+            </div>
+        </div>
+    </section>
+         <section>
             <div class="section-grid">
                 <div data-aos="fade-up">
                 <article class="section-card" style="background: linear-gradient(90deg,rgba(91, 0, 227, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(106, 189, 212, 1) 100%);">
@@ -496,80 +530,108 @@
             </div>
         </section>
         <br>
-        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
+        <div class="bbb"><a href="/Pages/working">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href=/Pages/working.html">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
+    </div>
+    <!-- Login Rewards Modal -->
+    <div id="loginRewardsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
+            <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666;">&times;</span>
+            <h2 style="color: #2c3e50; margin-bottom: 15px;">Welcome Back!</h2>
+            <div id="streakCounter" style="font-size: 18px; color: #3498db; margin-bottom: 20px;">
+                <span>Your login streak: <strong id="currentStreak">0</strong> days</span>
+            </div>
+            
+            <div id="weeklyRewards" style="display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap;">
+                <!-- Days will be generated by JavaScript -->
+            </div>
+            
+            <div id="rewardMessage" style="margin: 20px 0; padding: 15px; border-radius: 8px; background-color: #f4f4f8; font-weight: bold;"></div>
+            
+            <button id="claimReward" style="background-color: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+                Claim Daily Reward
+            </button>
+        </div>
     </div>
 
     <footer>
@@ -577,10 +639,6 @@
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
@@ -671,7 +729,8 @@
         "Read and read are different",
         "You're getting into Harvard",
         "BE CONFIDENT! If Benny Blanco can pull Selena Gomez, u can do anything",
-        "You warm my heart :>"
+        "You warm my heart :>",
+        "By referring friends, you can change my avatar (top-right)!"
         ];
 
         // Create a function to add the whale to the page
@@ -1082,5 +1141,171 @@
         }
         });
     </script>
+    <!-- Injected interactive game script for "Congress Takes A Nap" article -->
+<script>
+// ================== CONFIG ===================
+const gameStates = [
+  {
+    triggerText: '“Big Beautiful Bill” Starting At 10 p.m.—Sounds Like A Dream Job!',
+    gameHTML: `
+      <div class="minigame">
+        <h3>Catch the Zzz's!</h3>
+        <p>Click the falling Zzz's before they hit the ground!</p>
+        <div id="zzz-container" style="position: relative; width: 100%; height: 150px; background: #ecf0f1; overflow: hidden;"></div>
+      </div>`,
+    init: () => {
+      let container = document.getElementById("zzz-container");
+      let score = 0;
+      const spawnZzz = () => {
+        let z = document.createElement('div');
+        z.textContent = '💤';
+        z.style.position = 'absolute';
+        z.style.left = Math.random() * 90 + '%';
+        z.style.top = '-30px';
+        z.style.fontSize = '24px';
+        z.style.transition = 'top 2s linear';
+        z.classList.add('pulse-soft');
+        container.appendChild(z);
+        setTimeout(() => {
+          z.style.top = '150px';
+        }, 10);
+        z.onclick = () => {
+          score++;
+          z.remove();
+          if (score >= 5) successReward("You caught all the Zzzs!");
+        };
+        setTimeout(() => {
+          if (z.parentElement) z.remove();
+        }, 2000);
+      };
+      for (let i = 0; i < 10; i++) {
+        setTimeout(spawnZzz, i * 400);
+      }
+    }
+  },
+  {
+    triggerText: 'Just Before <b>5 A.M.</b>',
+    gameHTML: `
+      <div class="minigame">
+        <h3>Wake Him Up!</h3>
+        <p>Click the snooze button fast enough to keep Blake Moore awake!</p>
+        <button id="wake-btn" style="padding: 10px; font-size: 1em; background: linear-gradient(45deg, #ff6b6b, #ffa07a); border: none; border-radius: 8px; color: white;">Snooze!</button>
+      </div>`,
+    init: () => {
+      let btn = document.getElementById('wake-btn');
+      let clicks = 0;
+      btn.onclick = () => {
+        clicks++;
+        if (clicks >= 8) successReward("Blake is fully awake!");
+      }
+    }
+  },
+  {
+    triggerText: 'Awake For A Staggering <b>31</b> Hours',
+    gameHTML: `
+      <div class="minigame">
+        <h3>No Doze Defense</h3>
+        <p>Quick! Block the pillows flying in with your mouse!</p>
+        <canvas id="pillow-game" width="250" height="150" style="border: 1px solid #ccc; background: #fefbd8;"></canvas>
+      </div>`,
+    init: () => {
+      const canvas = document.getElementById("pillow-game");
+      const ctx = canvas.getContext("2d");
+      let pillows = [], score = 0, mouseX = 125;
+      canvas.addEventListener("mousemove", e => mouseX = e.offsetX);
+      const draw = () => {
+        ctx.clearRect(0, 0, 250, 150);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(mouseX - 25, 130, 50, 10); // blocker
+        for (let p of pillows) {
+          ctx.fillStyle = "pink";
+          ctx.fillRect(p.x, p.y, 10, 10);
+          p.y += 2;
+          if (p.y >= 130 && p.x >= mouseX - 25 && p.x <= mouseX + 25) {
+            score++;
+            p.hit = true;
+            if (score >= 5) successReward("You blocked all the pillows!");
+          }
+        }
+        pillows = pillows.filter(p => !p.hit && p.y < 150);
+        requestAnimationFrame(draw);
+      };
+      setInterval(() => pillows.push({x: Math.random()*240, y: 0}), 500);
+      draw();
+    }
+  }
+];
+
+// =============== UTILITIES =====================
+function successReward(message) {
+  const panel = document.getElementById('game-panel');
+  panel.innerHTML = `<div class='glow-reward pulse-soft' style='padding: 10px; border-radius: 12px; background: #fef9e7;'>🎉 ${message} 🎉<br><button onclick="nextGame()" style='margin-top: 10px; background: linear-gradient(135deg, #16a085, #f4d03f); border: none; color: white; border-radius: 5px; padding: 5px 10px;'>Next</button></div>`;
+}
+
+function nextGame() {
+  currentState++;
+  showGameState(currentState);
+}
+
+function showGameState(index) {
+  if (index >= gameStates.length) {
+    document.getElementById('game-panel').innerHTML = `<div class='glow-reward pulse-soft' style='padding: 15px;'>🔥 You finished all games! Check out more fun at <a href='https://www.youyounews.live' style='color: #e74c3c;'>You You News</a>! 🔥</div>`;
+    return;
+  }
+  const game = gameStates[index];
+  document.getElementById('game-panel').innerHTML = game.gameHTML;
+  game.init();
+  highlightText(game.triggerText);
+}
+
+function highlightText(text) {
+  document.querySelectorAll('.p1').forEach(p => {
+    if (p.innerHTML.includes(text)) {
+      p.style.backgroundColor = '#fff9c4';
+    } else {
+      p.style.backgroundColor = '';
+    }
+  });
+}
+
+let currentState = -1;
+
+function checkScrollTrigger() {
+  const scrollY = window.scrollY;
+  document.querySelectorAll('.p1').forEach((p, i) => {
+    const rect = p.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.5 && rect.bottom > window.innerHeight * 0.3) {
+      if (gameStates[i] && currentState !== i) {
+        currentState = i;
+        showGameState(i);
+      }
+    }
+  });
+}
+
+window.addEventListener('scroll', checkScrollTrigger);
+window.addEventListener('load', () => {
+  const panel = document.createElement('div');
+  panel.id = 'game-panel';
+  panel.style.position = 'fixed';
+  panel.style.bottom = '10px';
+  panel.style.right = '10px';
+  panel.style.zIndex = '9999';
+  panel.style.maxWidth = '300px';
+  panel.style.background = 'linear-gradient(to bottom right, #f9f9f9, #e0f7fa)';
+  panel.style.borderRadius = '12px';
+  panel.style.boxShadow = '0 0 10px rgba(0,0,0,0.2)';
+  panel.style.padding = '10px';
+  panel.style.fontSize = '14px';
+  panel.style.transition = 'all 0.3s ease';
+  panel.innerHTML = '<div style="text-align:center">👀 Slowly Scroll Down!</div>';
+  document.body.appendChild(panel);
+});
+</script>
+<style>
+.minigame h3 { margin-bottom: 5px; color: #2c3e50; }
+.minigame p { margin: 5px 0 10px; font-size: 14px; }
+</style>
+
 </body>
 </html>
