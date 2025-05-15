@@ -9,45 +9,17 @@
 
     gtag('config', 'G-B4F7KKQ08M');
     </script>
-
-    <script>
-        function handleNgrokLink(event, url) {
-            fetch(url, {
-                method: "get",
-                headers: new Headers({
-                    "ngrok-skip-browser-warning": "69420",
-                }),
-            })
-            .then((response) => {
-                window.location.href = url;
-            })
-            .then((data) => console.log(data))
-            .catch((err) => {
-                event.preventDefault();
-                fetch(url, {
-                    headers: {
-                        "ngrok-skip-browser-warning": "69420"
-                    },
-                    // Credentials needed if your site uses cookies/authentication
-                    credentials: "include"
-                })
-                .then(response => {
-                    // After successful fetch, redirect to the URL
-                    window.location.href = url;
-                })
-                .catch(error => {
-                    console.error("Error pre-fetching ngrok URL:", error);
-                    // Fallback to direct navigation if fetch fails
-                    window.location.href = url;
-                });
-            });
-        }
-    </script>
-
     <script type="text/javascript"> //<![CDATA[ 
-        var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
-        document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
-        //]]>
+        function loadTrustLogo() {
+            const isHttps = window.location.protocol === "https:";
+            const tlJsHost = isHttps ? "https://secure.trust-provider.com/" : "https://www.trustlogo.com/"; // Enforce HTTPS if possible
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = tlJsHost + "trustlogo/javascript/trustlogo.js";
+            document.head.appendChild(script); // Or document.body, depending on where you want it
+        }
+
+        window.addEventListener('load', loadTrustLogo); // Load after the page loads
     </script>
     <script async type="application/javascript"
             src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
@@ -208,6 +180,99 @@
         .section-content p {
             color: #666;
         }
+        /* Moved from inline styles in index.html */
+
+/* Typing Container */
+.typing-container {
+  margin: 30px auto;
+  max-width: 400px;
+}
+
+.typing-container p {
+  font-family: 'Baloo 2', cursive;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+/* Progress Bar Container */
+.progress-bar-container {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 22px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Progress Bar */
+#refProgressBar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #f9cdad, #ff9800);
+  color: var(--color-blue);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: width 0.5s ease;
+}
+
+/* Blog section header with buttons */
+.blog-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Game section header */
+.game-section-header {
+  color: var(--color-brown);
+  font-family: 'Baloo 2', cursive, sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Trend container */
+.trend-container {
+  background-color: var(--color-beige);
+  border-radius: 11px;
+  padding: 20px;
+  box-shadow: 10px 10px var(--color-blue);
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  border: 1px solid var(--color-green);
+}
+
+/* Trend content */
+.trend-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trend-content p {
+  text-align: center;
+  color: var(--color-brown);
+  font-family: 'Baloo 2', cursive, sans-serif;
+}
+
+/* Navigation dots */
+.trend-dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: var(--color-brown);
+  opacity: 0.4;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--color-green);
+}
+
         .forum-section {
             background-color: white;
             border-radius: 8px;
@@ -837,27 +902,6 @@ z-index: 1000;
     </div>
     <!-- Add this to your existing HTML before the closing </body> tag -->
 
-<!-- Login Rewards Modal -->
-    <div id="loginRewardsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
-        <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
-            <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666;">&times;</span>
-            <h2 style="color: #2c3e50; margin-bottom: 15px;">Welcome Back!</h2>
-            <div id="streakCounter" style="font-size: 18px; color: #3498db; margin-bottom: 20px;">
-                <span>Your login streak: <strong id="currentStreak">0</strong> days</span>
-            </div>
-            
-            <div id="weeklyRewards" style="display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap;">
-                <!-- Days will be generated by JavaScript -->
-            </div>
-            
-            <div id="rewardMessage" style="margin: 20px 0; padding: 15px; border-radius: 8px; background-color: #f4f4f8; font-weight: bold;"></div>
-            
-            <button id="claimReward" style="background-color: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
-                Claim Daily Reward
-            </button>
-        </div>
-    </div>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
@@ -870,29 +914,6 @@ z-index: 1000;
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
-    <!-- Add this to your existing HTML before the closing </body> tag -->
-
-<!-- Login Rewards Modal -->
-<div id="loginRewardsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
-        <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666;">&times;</span>
-        <h2 style="color: #2c3e50; margin-bottom: 15px;">Welcome Back!</h2>
-        <div id="streakCounter" style="font-size: 18px; color: #3498db; margin-bottom: 20px;">
-            <span>Your login streak: <strong id="currentStreak">0</strong> days</span>
-        </div>
-        
-        <div id="weeklyRewards" style="display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap;">
-            <!-- Days will be generated by JavaScript -->
-        </div>
-        
-        <div id="rewardMessage" style="margin: 20px 0; padding: 15px; border-radius: 8px; background-color: #f4f4f8; font-weight: bold;"></div>
-        
-        <button id="claimReward" style="background-color: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
-            Claim Daily Reward
-        </button>
-    </div>
-</div>
-
 <!-- Theme Selector Modal -->
 <div id="themeModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 600px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
