@@ -1846,11 +1846,11 @@ window.addEventListener('DOMContentLoaded', () => {
             
             // Update streak counter
             const streak = updateStreak();
-            document.getElementById('currentStreak').textContent = streak;
+            const claimedDays = parseInt(localStorage.getItem('claimedDays') || '0');
+            document.getElementById('currentStreak').textContent = claimedDays;
             
             // Manage weekly login days
             let loginDays = parseInt(localStorage.getItem('loginDays') || '0');
-            const claimedDays = parseInt(localStorage.getItem('claimedDays') || '0');
             const lastResetWeek = localStorage.getItem('lastResetWeek');
             const currentWeek = getWeekNumber(new Date());
             
@@ -2210,9 +2210,14 @@ applyTheme(this.dataset.themeId);
                 this.style.backgroundColor = '#cccccc';
                 
                 // Update the weekly rewards display to show the checkmark
+                // Force recalculation of current week and then redraw
                 if (typeof createWeeklyRewardsDisplay === 'function') {
+                    // Temporarily update loginDays to ensure the correct week is drawn
+                    const updatedLoginDays = parseInt(localStorage.getItem('claimedDays') || '0');
+                    localStorage.setItem('loginDays', updatedLoginDays.toString()); 
                     createWeeklyRewardsDisplay();
                 }
+
 
                 const milestones = [10, 20, 30, 50];
                 const rewards = {
