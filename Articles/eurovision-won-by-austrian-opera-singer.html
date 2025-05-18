@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +30,16 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TV and reality TV breaking news and drama">
-    <meta name="author" content="Derek (Yue) Yu">
-    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>TV and Reality TV - You You News</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <meta name="description" content="Austrian Opera-Pop Singer JJ Wins Eurovision 2025 - You You News">
+    <meta name="author" content="You You News">
+    <meta name="keywords" content="Austria, Eurovision, Singer, Music, Opera, Pop, Vocals, News, You You News, You You, Fun News, Fun Stories, Music News, Forum, Discussion, Trending News">
+    <title>Austrian Opera Singer Wins Eurovision With Epic Vocals - You You News</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+    <link rel="canonical" href="https://www.youyounews.live">
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -61,12 +64,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -75,23 +106,25 @@
                     rgba(0, 0, 0, 0.7)
                 ),
                 /* bottom, image */
-                url('../Assets/tvheader.png');
+                url('../Assets/musicheader.png');
             background-color: var(--primary-color);
-            background-position-y: 850px;
+            background-position-y: center;
             background-position-x: center;
             color: white;
             text-align: center;
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -199,20 +232,6 @@
             padding: 20px 0;
             margin-top: 30px;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #2980b9;
-        }
-        /* Style all font awesome icons */
         .fa {
         font-size: 30px;
         width: 60px;
@@ -229,6 +248,19 @@
         opacity: 0.7;
         width: 80px;
         background-color:#A6FFB9
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
         }
         .bbb {
             height: 50vh;
@@ -279,6 +311,53 @@
             box-shadow: 22px 22px var(--color-blue);
             z-index: -2;
         }
+        /* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px #ffcb6b, 0 0 50px #ffc107, 0 0 80px #ff5722;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+}
+
+.glow-reward {
+  animation: glow 1.2s ease-in-out infinite;
+  border: 2px solid #ffc107 !important;
+  background-color: #fff3cd !important;
+  color: #d35400 !important;
+  text-shadow: 0 0 3px #fff;
+}
+#closePopupButton:hover {
+  background-color: #ff9800;
+  color: white;
+  transform: scale(1.05);
+}
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-soft {
+  animation: subtlePulse 2.5s ease-in-out infinite;
+}
+
         @keyframes float {
             0% {
                 transform: translatey(0px);
@@ -316,178 +395,123 @@
             <p>Making News Fun 4 U!</p>
         </div>
     </header>
-
     <nav>
         <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="tech">Tech</a></li>
-            <li><a href="sports">Sports</a></li>
-            <li1><a href="tv">TV</a></li1>
-            <li><a href="music">Music</a></li>
-            <li><a href="working">Forums</a></li>
-        </ul>
+            <li><a href="../index">Home</a></li>
+            <li><a href="../Pages/tech">Tech</a></li>
+            <li><a href="../Pages/sports">Sports</a></li>
+            <li><a href="../Pages/tv">TV</a></li>
+            <li1><a href="../Pages/music">Music</a></li1>
+            <li><a href="/Pages/working">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections</h2>
-            <div class="section-grid">
-                <div data-aos="fade-up">
-            <article class="section-card">
-                <img src="https://i.guim.co.uk/img/media/d756e383c65eb94909c5b7eb87366251c7291ae1/250_68_2415_1932/master/2415.jpg?width=465&dpr=1&s=none&crop=none
-            " alt="TV Blog">
-                <div class="section-content">
-                    <h2>Scarlett Johansson Steals Spotlight In SNL Season Finale</h2>
-                    <p>The Finale Of Saturday Night Live’s 50th Season Kicked Off With Donald Trump (James...</p>
-                    <a href="/Articles/scarlett-johansson-steals-saturday-night-live-snl-finale" class="cta-button">Read Now!</a>
-                </div>
-            </article>
+        <div class="shrinker">
+        <h2>Austrian Opera Singer Wins Eurovision With Epic Vocals</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://i.cbc.ca/1.7538159.1747526194!/cpImage/httpImage/image.jpg_gen/derivatives/16x9_1180/aptopix-switzerland-eurovision-song-contest.jpg?im=Resize%3D780' alt="Cinque Terre" class="slider_image">
+            <img src='https://images-r2-1.thebrag.com/rs/uploads/2025/05/250517_Corinne-Cumming_EBU_04444-Enhanced-NR-small.jpg' alt="Cinque Terre" class="slider_image">
+            <img src='https://static.independent.co.uk/2025/04/28/16/GettyImages-2210120531.jpg' alt="Cinque Terre" class="slider_image">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">JJ, A Classically Trained Countertenor From Austria, Stole The Show At The 69th Eurovision Song Contest By Winning With His Dramatic Anthem "Wasted Love." This Vocal Powerhouse Proved That Mixes Of Operatic Excellence And Techno Beats Can Bring Home Glory, And We Love A Good Plot Twist!</p></div><br><div data-aos="fade-up"><p class="p1">Finishing Nearly As Close As A Stubborn Chef To A Sizzling Pan, Israeli Performer Yuval Raphael Came In Second With "New Day Will Rise." Meanwhile, Pro-Palestinian Demonstrators Ruffled Some Feather boas About Israel’s Participation—Because Nothing Says Celebration Like A Dash Of Controversy! Who Doesn’t Love A Good Protest?</p></div><br><div data-aos="fade-up"><p class="p1">JJ Became Austria's First Winner Since Conchita Wurst's Iconic Victory In <b>2014</b>. Holding A Microphone-Shaped Trophy That’s Probably The Newest Must-Have in Home Decor, JJ Declared, “This Is Beyond My Wildest Dreams.” What’s Next? A Sculpture Made Of Pasta? Let’s Pray!</p></div><br><div data-aos="fade-up"><p class="p1">With <b>26</b> Countries Battling It Out For Musical Supremacy And A Massive Audience Of About <b>160 Million</b> Viewers, The Event Was A Spectacle Of Flash, Fun, And A Whole Lot Of Glitter. Whether It Was Grunge Rock From Lithuania Or Rapped Rowing Tales From Iceland, Europe Seriously Knows How To Throw A Party—And We’re Just Here For The Glee!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
         </div>
-                 <div data-aos="fade-up">
-            <article class="section-card">
-                <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2022/08/Reservoir-Dogs-Quentin-Tarantino-and-cast.jpg?q=70&fit=contain&w=1200&h=628&dpr=1
-            " alt="TV Blog">
-                <div class="section-content">
-                    <h2>Tarantino’s Heist Film Influences: The Killing vs. Reservoir Dogs</h2>
-                    <p>Quentin Tarantino's Directorial Debut, Reservoir Dogs, Is Not Just A Masterclass In Dialogue And...</p>
-                    <a href="/Articles/tarantino-heist-film-reservoir-dogs-movie.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-                <img src="https://i2-prod.irishstar.com/article35227833.ece/ALTERNATES/s615/0_SDC_MDG_-_10717JPG.jpg
-            " alt="TV Blog">
-                <div class="section-content">
-                    <h2>Congress Takes A Nap: The Hilarious Midnight Session</h2>
-                    <p>In A Daring Display Of Endurance, Three Members Of Congress Managed To Doze Off...</p>
-                    <a href="Articles/congress-takes-a-nap-trump-midnight.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://www.thedailybeast.com/resizer/v2/J46KV6HFLBE5DIFYXKWWCTBCQE.jpg?smart=true&auth=b1797bd8ad2d5faaea43b4f7dc0ac171dc2512353f4f07e0d27b7b54fe094c51&width=1600&height=900
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>Robert Prevost Becomes Pope Leo XIV, The First American In The Holy Seat</h2>
-                            <p>Crowds below St. Peter's Basilica erupted in chants of “<b>Viva il Papa</b>” even before...</p>
-                            <a href="/Articles/robert-prevost-pope-leo-xiv-american.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://www.google.com/logos/doodles/2025/us-teacher-appreciation-day-2025-6753651837110735.2-2x.png
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>US Teacher Appreciation Day 2025 Delivers Deals With A Side Of Surprises</h2>
-                            <p>On May 6, 2025, teachers enjoyed <b>free</b> food and <b>discounts</b> from their favorite restaurants,...</p>
-                            <a href="/Articles/teacher-appreciation-day-us-2025.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://ca-times.brightspotcdn.com/dims4/default/105e635/2147483647/strip/true/crop/7698x4970+0+0/resize/1200x775!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F92%2Fba%2F63d7f48c472193868fe9e618e54e%2Fgettyimages-1487186346.jpg
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>Met Gala 2025 Fashion Showdown Refines the Art of Extravagance</h2>
-                            <p>The 2025 <b>Met Gala</b> set the stage for a veritable Olympic event of haute...</p>
-                            <a href="/Articles/met-gala-2025-fashion-celebrities-art-extravagance.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://lumiere-a.akamaihd.net/v1/images/teaser_1sht_-_rgb_for_online_use_only_6b92ba3f.jpeg
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>Thunderbolts: Marvel's Delightful Mess of Misfits</h2>
-                            <p>The latest Marvel flick, **Thunderbolts**, has burst onto the scene, proving that sometimes being...</p>
-                            <a href="/Articles/thunderbolts-movie-release-marvel.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://i.guim.co.uk/img/media/49ef60657ca270f8fd24159c921e8a6a5e14ed2d/0_169_3333_2000/master/3333.jpg?width=700&quality=85&auto=format&fit=max&s=477ad1bbb34cd52a4e3a3e9e601bfe9e
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>May Day Trump Protests Making Waves Across America</h2>
-                            <p>On May Day, the “<b>50501</b>” movement—short for <b>50 protests</b>, <b>50 states</b>, and <b>1 movement</b>—is...</p>
-                            <a href="/Articles/may-day-trump-protests.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://dpdajlq3ew794.cloudfront.net/20250425122256/Netflix-.jpg?format=auto&width=2048
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>BC! Million Dollar Secret Unveils Hidden Fortunes and Twists in Kelowna</h2>
-                            <p>Beautiful British Columbia! Rejoice; Netflix's latest reality sensation, Million Dollar Secret...</p>
-                            <a href="/Articles/BC! Million Dollar Secret Unveils Hidden Fortunes and Twists in Kelowna.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://variety.com/wp-content/uploads/2025/04/SUNRISECASTING.png?w=1000&h=666&crop=1
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>Hunger Games: Sunrise On The Reaping Unveils Teen Haymitch</h2>
-                            <p>In a plot twist that even the odds of the <b>Hunger Games</b> would find...</p>
-                            <a href="/Articles/Hunger Games: Sunrise On The Reaping Unveils Teen Haymitch.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://s.yimg.com/ny/api/res/1.2/oviVQc_Z.KfEwnDisuK4iw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTY0MA--/https://media.zenfs.com/en/people_218/29810ca02a8dbbfe45729b8256986899
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>HAILEE STEINFELD SPINS WEBS AND VOICES GWEN STACY AGAIN</h2>
-                            <p>Hold onto your spidey suits! Hailee Steinfeld is swinging back into action as Gwen...</p>
-                            <a href="/Articles/HAILEE STEINFELD SPINS WEBS AND VOICES GWEN STACY AGAIN.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://www.joblo.com/wp-content/uploads/2025/01/ryan-gosling-star-wars-movie.jpg
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>Ryan Gosling Joins the Star Wars Universe as Starfighter</h2>
-                            <p>In news that might make even the stoic Jedi smile, Ryan Gosling is set...</p>
-                            <a href="/Articles/Ryan Gosling Joins the Star Wars Universe as Starfighter.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDZ35ZtMalXPpw-jD69t4BHLI3YEIFZglkyw&s
-                    " alt="TV Blog">
-                        <div class="section-content">
-                            <h2>Michael B. Jordan Reflects on Sinners and Chadwick Boseman's Legacy</h2>
-                            <p>In a recent interview about his new film *Sinners*, Michael B. Jordan shared insights...</p>
-                            <a href="/Articles/Michael B. Jordan Reflects on Sinners and Chadwick Boseman's Legacy.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                <article class="section-card">
-                    <img src="https://imageio.forbes.com/specials-images/imageserve/67f55d7d8be5f6f4ad6b55bb/-Black-Mirror--Season-7/0x0.jpg?format=jpg&crop=1048,698,x71,y0,safe&width=960" alt="TV Blog">
-                    <div class="section-content">
-                        <h2>Black Mirror Season 7 Release</h2>
-                        <p>Well, folks, grab your tinfoil hats and prepare for another season of Black Mirror, the show that...</p>
-                        <a href="../Articles/BREAKING NEWS: Black Mirror Season 7 Release.html" class="cta-button">Read Now!</a>
+        <section style="margin-top: 40px;">
+        <h2 style="color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif; letter-spacing: 1px;">Yesterday's Top Google Trends</h2>
+        <div class="slideshow-container" style="background-color: var(--color-beige); border-radius: 11px; padding: 20px; box-shadow: 10px 10px var(--color-blue); position: relative; height: 400px; overflow: hidden; border: 1px solid var(--color-green);">
+            <!-- Slides -->
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 1; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">1. Coachella Livestream</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,250 L100,200 L200,220 L300,150 L400,180 L500,100 L600,50 L700,20 L800,10 L900,5 L1000,0" stroke="var(--color-blue)" stroke-width="3" fill="none" />
+                            <path d="M0,250 L100,200 L200,220 L300,150 L400,180 L500,100 L600,50 L700,20 L800,10 L900,5 L1000,0 L1000,250 L0,250" fill="var(--color-blue)" fill-opacity="0.1" />
+                        </svg>
                     </div>
-                </article>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Interest spiked yesterday as fans searched for ways to watch performances live online</p>
                 </div>
             </div>
-        </section>
-        <section>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">2. NBA Playoffs</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,100 L100,120 L200,110 L300,130 L400,150 L500,140 L600,150 L700,120 L800,50 L900,20 L1000,0" stroke="var(--color-green)" stroke-width="3" fill="none" />
+                            <path d="M0,100 L100,120 L200,110 L300,130 L400,150 L500,140 L600,150 L700,120 L800,50 L900,20 L1000,0 L1000,250 L0,250" fill="var(--color-green)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Search interest surged after yesterday's key matchups and upsets</p>
+                </div>
+            </div>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">3. Spotify New Features</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,220 L100,230 L200,220 L300,210 L400,200 L500,180 L600,150 L700,100 L800,50 L900,30 L1000,20" stroke="var(--color-yellow)" stroke-width="3" fill="none" />
+                            <path d="M0,220 L100,230 L200,220 L300,210 L400,200 L500,180 L600,150 L700,100 L800,50 L900,30 L1000,20 L1000,250 L0,250" fill="var(--color-yellow)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Users searching for information about Spotify's latest language options announcement</p>
+                </div>
+            </div>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">4. Ryan Gosling Star Wars</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,200 L100,190 L200,195 L300,170 L400,150 L500,100 L600,80 L700,40 L800,20 L900,30 L1000,10" stroke="var(--color-green)" stroke-width="3" fill="none" />
+                            <path d="M0,200 L100,190 L200,195 L300,170 L400,150 L500,100 L600,80 L700,40 L800,20 L900,30 L1000,10 L1000,250 L0,250" fill="var(--color-green)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Fans searching for details about Ryan Gosling joining the Star Wars franchise</p>
+                </div>
+            </div>
+    
+            <div class="trend-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out;">
+                <h3 style="color: var(--color-brown); margin-bottom: 15px; font-family: 'Baloo 2', cursive, sans-serif;">5. Climate Change Reports</h3>
+                <div class="trend-content" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="trend-graph" style="width: 90%; height: 250px; margin-bottom: 15px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <div style="position: absolute; left: 0; bottom: 0; width: 1px; height: 100%; background-color: var(--color-green); opacity: 0.3;"></div>
+                        <!-- Graph line -->
+                        <svg width="100%" height="100%" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                            <path d="M0,150 L100,160 L200,170 L300,180 L400,200 L500,190 L600,180 L700,140 L800,100 L900,40 L1000,20" stroke="var(--color-yellow)" stroke-width="3" fill="none" />
+                            <path d="M0,150 L100,160 L200,170 L300,180 L400,200 L500,190 L600,180 L700,140 L800,100 L900,40 L1000,20 L1000,250 L0,250" fill="var(--color-yellow)" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <p style="text-align: center; color: var(--color-brown); font-family: 'Baloo 2', cursive, sans-serif;">Recent environmental reports triggered increased searches about climate change</p>
+                </div>
+            </div>
+    
+            <!-- Navigation dots -->
+            <div style="text-align: center; position: absolute; bottom: 15px; width: 100%;">
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+                <span class="dot" style="height: 12px; width: 12px; margin: 0 4px; background-color: var(--color-brown); opacity: 0.4; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; cursor: pointer; border: 1px solid var(--color-green);"></span>
+            </div>
+        </div>
+    </section>
+         <section>
             <div class="section-grid">
                 <div data-aos="fade-up">
                 <article class="section-card" style="background: linear-gradient(90deg,rgba(91, 0, 227, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(106, 189, 212, 1) 100%);">
@@ -507,80 +531,108 @@
             </div>
         </section>
         <br>
-        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
+        <div class="bbb"><a href="/Pages/working">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href=/Pages/working.html">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
+    </div>
+    <!-- Login Rewards Modal -->
+    <div id="loginRewardsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
+            <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666;">&times;</span>
+            <h2 style="color: #2c3e50; margin-bottom: 15px;">Welcome Back!</h2>
+            <div id="streakCounter" style="font-size: 18px; color: #3498db; margin-bottom: 20px;">
+                <span>Your login streak: <strong id="currentStreak">0</strong> days</span>
+            </div>
+            
+            <div id="weeklyRewards" style="display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap;">
+                <!-- Days will be generated by JavaScript -->
+            </div>
+            
+            <div id="rewardMessage" style="margin: 20px 0; padding: 15px; border-radius: 8px; background-color: #f4f4f8; font-weight: bold;"></div>
+            
+            <button id="claimReward" style="background-color: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+                Claim Daily Reward
+            </button>
+        </div>
     </div>
 
     <footer>
@@ -588,10 +640,6 @@
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
         </div>
     </footer>
@@ -682,7 +730,8 @@
         "Read and read are different",
         "You're getting into Harvard",
         "BE CONFIDENT! If Benny Blanco can pull Selena Gomez, u can do anything",
-        "You warm my heart :>"
+        "You warm my heart :>",
+        "By referring friends, you can change my avatar (top-right)!"
         ];
 
         // Create a function to add the whale to the page
@@ -1093,5 +1142,77 @@
         }
         });
     </script>
+    <!-- Inject this just before </body> tag -->
+
+<!-- Highlighted game triggers -->
+<style>
+  .highlighted-sentence-part {
+    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 4px;
+    padding: 2px 4px;
+    transition: background 0.3s ease;
+  }
+</style>
+
+<div id="gamePanel" style="position:fixed; bottom:20px; right:20px; width:260px; max-width:80vw; z-index:9999; font-family:'Baloo 2', cursive; font-size:1rem; background:linear-gradient(to right,#83af9b,#c8c8a9); color:#333; border-radius:15px; box-shadow:0 0 12px rgba(0,0,0,0.2); padding:15px; display:flex; align-items:center; justify-content:center; text-align:center;">
+  <div id="gameContent">Slowly Scroll Down!</div>
+</div>
+
+<script>
+  const sentenceParts = [
+    {
+      selector: ".p1:nth-of-type(1)",
+      game: () => `Memory Game: <br><button onclick=\"this.nextElementSibling.style.display='block';this.style.display='none'\">Start</button><div style='display:none'><p>JJ's song is...</p><input id='guess1'><button onclick=\"if(document.getElementById('guess1').value.toLowerCase().includes('wasted')){reward()}else{fail(this)}\">Submit</button></div>`
+    },
+    {
+      selector: ".p1:nth-of-type(2)",
+      game: () => `Emoji Math: <br> 🎤 + 🇦🇹 = ? <input id='guess2'><button onclick=\"if(document.getElementById('guess2').value.toLowerCase().includes('jj')){reward()}else{fail(this)}\">Go!</button>`
+    },
+    {
+      selector: ".p1:nth-of-type(3)",
+      game: () => `Choose JJ's Trophy: <br><button onclick=\"reward()\">🎙️</button><button onclick=\"fail(this)\">🥇</button><button onclick=\"fail(this)\">🧀</button>`
+    }
+  ];
+
+  const panel = document.getElementById('gamePanel');
+  const content = document.getElementById('gameContent');
+  let currentIndex = -1;
+
+  function reward() {
+    content.innerHTML = `<div class='glow-reward pulse-soft'>✅ YOU WIN! <br><button onclick=\"panel.style.display='none'\">Dismiss</button>${currentIndex===2 ? '<br><a href=\"https://www.youyounews.live\" style=\"display:inline-block;margin-top:8px;background:#fe4365;color:white;padding:5px 10px;border-radius:8px;text-decoration:none\">Play More!</a>' : ''}</div>`;
+  }
+
+  function fail(btn) {
+    btn.textContent = "❌ Try Again!";
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = "Go!"; btn.disabled = false; }, 1000);
+  }
+
+  function highlight(index) {
+    sentenceParts.forEach((p, i) => {
+      const el = document.querySelector(p.selector);
+      if (el) el.classList.toggle('highlighted-sentence-part', i === index);
+    });
+  }
+
+  function updateGame() {
+    for (let i = 0; i < sentenceParts.length; i++) {
+      const el = document.querySelector(sentenceParts[i].selector);
+      const rect = el.getBoundingClientRect();
+      if (rect.top > 50 && rect.top < window.innerHeight / 1.5) {
+        if (i !== currentIndex) {
+          currentIndex = i;
+          content.innerHTML = sentenceParts[i].game();
+          highlight(i);
+        }
+        return;
+      }
+    }
+  }
+
+  window.addEventListener('scroll', updateGame);
+  window.addEventListener('load', updateGame);
+</script>
+
 </body>
 </html>

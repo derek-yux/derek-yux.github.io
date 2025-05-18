@@ -3,68 +3,29 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
-      <loc>https://www.youyounews.live/Articles/coco-gauff-italian-open-comdy-gold-tennis.html</loc>
+      <loc>https://www.youyounews.live/Articles/eurovision-won-by-austrian-opera-singer.html</loc>
       <news:news>
         <news:publication>
           <news:name>You You News</news:name>
           <news:language>en</news:language>
         </news:publication>
-        <news:publication_date>2025-05-15</news:publication_date>
-        <news:title>Coco Gauff Delivers Tennis Comedy Gold At Italian Open - You You News</news:title>
-        <news:keywords>Tennis, Coco Gauff, Italian Open, Comedy, Match, Opponent, News, Sports, You You News</news:keywords>
+        <news:publication_date>2025-05-18</news:publication_date>
+        <news:title>Austrian Opera Singer Wins Eurovision With Epic Vocals - You You News</news:title>
+        <news:keywords>Austria, Eurovision, Singer, Music, Opera, Pop, Vocals, News, You You News, You You, Fun News, Fun Stories, Music News, Forum, Discussion, Trending News</news:keywords>
       </news:news>
   </url>
 
   <url>
-      <loc>https://www.youyounews.live/Articles/congress-takes-a-nap-trump-midnight.html</loc>
+      <loc>https://www.youyounews.live/Articles/scarlett-johansson-steals-saturday-night-live-snl-finale</loc>
       <news:news>
         <news:publication>
           <news:name>You You News</news:name>
           <news:language>en</news:language>
         </news:publication>
-        <news:publication_date>2025-05-15</news:publication_date>
-        <news:title>Congress Takes A Nap: The Hilarious Midnight Session - You You News</news:title>
-        <news:keywords>Congress, Trump, Nap, Sleep, Speech, America, Midnight, Politics, News, You You News</news:keywords>
+        <news:publication_date>2025-05-18</news:publication_date>
+        <news:title>Scarlett Johansson Steals Spotlight In SNL Season Finale - You You News</news:title>
+        <news:keywords>Scarlett Johnasson, Saturday Night Live, SNL, Season Finale, News, You You News, You You, Fun News, Fun Stories, Tech News, Sports News, TV News, Music News, Forum, Discussion, Trending New</news:keywords>
       </news:news>
   </url>
   
-  <url>
-      <loc>https://www.youyounews.live/Articles/maple-leafs-game-5-nfl-playoffs-coach-guessing-game.html</loc>
-      <news:news>
-        <news:publication>
-          <news:name>You You News</news:name>
-          <news:language>en</news:language>
-        </news:publication>
-        <news:publication_date>2025-05-14</news:publication_date>
-        <news:title>Game 5 Showdown: Maple Leafs Coach Plays Guessing Game - You You News</news:title>
-        <news:keywords>NFL, Playoffs, Maple Leafs, Coach, Game 5, Sports, Hockey, Canada, News, You You News</news:keywords>
-      </news:news>
-  </url>
-
-  <url>
-      <loc>https://www.youyounews.live/Articles/rihanna-smurfs-new-song-album-movie.html</loc>
-      <news:news>
-        <news:publication>
-          <news:name>You You News</news:name>
-          <news:language>en</news:language>
-        </news:publication>
-        <news:publication_date>2025-05-14</news:publication_date>
-        <news:title>Rihanna Teases New Song While Album Wait Continues - You You News</news:title>
-        <news:keywords>Rihanna, Smurfs, Song, Release, Movie, Album, Music, News, You You News</news:keywords>
-      </news:news>
-  </url>
-
-  <url>
-      <loc>https://www.youyounews.live/Articles/trump-saudi-arabia-tech-ai-meeting.html</loc>
-      <news:news>
-        <news:publication>
-          <news:name>You You News</news:name>
-          <news:language>en</news:language>
-        </news:publication>
-        <news:publication_date>2025-05-14</news:publication_date>
-        <news:title>Trump Takes Tech Titans To Saudi Arabia For AI Boom - You You News</news:title>
-        <news:keywords>Trump, Saudi, Tech, Arabia, OpenAI, Tesla, Amazon, News, You You News</news:keywords>
-      </news:news>
-  </url>
-
 </urlset>
