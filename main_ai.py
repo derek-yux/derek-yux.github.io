@@ -2460,7 +2460,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 rewardsModalContent.appendChild(improvementPrompt);
             }
             // Use a new variable for claimed days instead of login days
-            const loginDays = parseInt(localStorage.getItem('loginDays') || '0');
+            const loginDays = parseInt(localStorage.getItem('loginStreak') || '0');
             const claimedDays = parseInt(localStorage.getItem('claimedDays') || '0');
             
             const currentWeek = Math.floor((loginDays) / 6); // 0-based index
