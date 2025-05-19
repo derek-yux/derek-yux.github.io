@@ -1261,6 +1261,21 @@ def main():
         </div>
     </div>
     </section>
+
+    <section data-aos="fade-right" style="margin-top: 30px; margin-bottom: 30px; background-color: #eef1f5; padding: 25px; border-radius: 8px;">
+        <div class="container">
+            <h2 style="text-align: center; color: #34568B; margin-bottom: 20px;">Your Journey with You You News</h2>
+            <ol style="list-style-type: decimal; margin-left: 20px; padding-left: 20px; line-height: 1.8;">
+                <li><strong>Discover:</strong> Jump into a world of fun, trending news tailored for you.</li>
+                <li><strong>Engage:</strong> Read, react, and dive into vibrant forum discussions.</li>
+                <li><strong>Personalize:</strong> Choose your theme, track your streaks, and make You You News your own.</li>
+                <li><strong>Get Rewarded:</strong> Claim daily rewards and unlock cool perks just for being part of our community.</li>
+                <li><strong>Contribute (Soon!):</strong> Get ready to share your voice with our upcoming ARTICLE-U tool!</li>
+            </ol>
+            <p style="text-align: center; margin-top: 15px; font-style: italic; color: #5978a8;">It's more than news; it's an experience crafted for U!</p>
+        </div>
+    </section>
+
     <section>
         <div class="section-grid">
             <div data-aos="fade-up">
@@ -1268,8 +1283,12 @@ def main():
                 <div class="section-content" style="text-align: center;">
                 <h2 style="color: white;">Why Choose <u>You You</u>? (and not just because you're <b style="font-style:italic">awesome</b>)</h2>
                 <p ><u>Traditional News Sources</u>: Not relevant to you, always about some sad crimes/wars and full of ads</p>
-                <p style="color: #A6FFB9;"><u>You You News</u>: Free access to the trendiest, coolest, and most "in-the-loop" events in the world!</p>
+                <p style="color: #A6FFB9;">With <u>You You News</u>, your journey shifts from dull updates to discovering the trendiest, coolest, and most "in-the-loop" events with a smile!</p>
+                <p style="color: #ffeb3b; font-weight: bold; font-size: 1.1em;"><b>5000+ Articles Published</b></p>
                 <p style="color: #A6FFB9;">[+ we have a happy whale (beluga?) at the top of this page]</p>
+                <blockquote style="border-left: 3px solid #f0ad4e; padding-left: 10px; margin: 15px 20px; color: #f5f5f5; font-style: italic;">
+                    "Our mission is to curate and create news that uplifts and engages. We believe in the power of positive and fun content." - The YouYou Team
+                </blockquote>
                 <br>
                 <br>
                 <h2 style="color: white;">Want to Create <u>YOUR</u> Articles the <u>WORLD</u> Will Admire?</h2>
@@ -1280,10 +1299,41 @@ def main():
         </div>
         </div>
     </section>
+
+    <section data-aos="fade-up">
+        <div class="container" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+            <h3 style="color: #007bff;">What Our Readers Say:</h3>
+            <div class="testimonial" style="background-color: #f8f9fa; border-left: 5px solid #007bff; margin: 15px auto; padding: 15px; max-width: 600px; border-radius: 5px;">
+                <p style="font-style: italic;">"You You News always brings a smile to my face with its upbeat stories. It's my daily dose of positivity!"</p>
+                <p style="text-align: right; font-weight: bold; color: #555;">- Alex P., Daily You You News Reads Subscriber</p>
+            </div>
+            <div class="testimonial" style="background-color: #e9ecef; border-left: 5px solid #28a745; margin: 15px auto; padding: 15px; max-width: 600px; border-radius: 5px;">
+                <p style="font-style: italic;">"Finally, a news site that gets what's trending and fun. The tech updates are my favorite!"</p>
+                <p style="text-align: right; font-weight: bold; color: #555;">- Jamie L., You You News Tech Section Follower</p>
+            </div>
+        </div>
+    </section>
+
+    <section data-aos="fade-up" style="background-color: #f0f0f0; padding: 20px 0;">
+        <div class="container" style="text-align: center;">
+            <h3 style="color: #333; margin-bottom: 25px; font-size: 1.8em;">Trusted & Recognized</h3>
+            <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 30px;">
+                <img src="/Assets/logo-placeholder-buzzfeed.png" alt="BuzzFeed Community Feature" style="height: 50px; opacity: 0.8;" title="Featured on BuzzFeed Community">
+                <img src="/Assets/logo-placeholder-collegehumor.png" alt="CollegeHumor Pick" style="height: 50px; opacity: 0.8;" title="A CollegeHumor Pick">
+                <img src="/Assets/logo-placeholder-digitaltrends.png" alt="DigitalTrends FunTech Mention" style="height: 50px; opacity: 0.8;" title="Mentioned in DigitalTrends FunTech">
+                <img src="/Assets/logo-google-news.png" alt="Google News Partner" style="height: 45px; opacity: 0.8;" title="Proud Google News Partner">
+            </div>
+            <div style="margin-top: 30px; border-top: 1px solid #ddd; padding-top: 20px;">
+                <p style="font-style: italic; color: #555; max-width: 700px; margin: 0 auto;">"You You News is consistently on our radar for fresh and engaging content." - <strong style="color:#333;">DigitalTrends FunTech Review</strong></p>
+            </div>
+            <p style="margin-top:20px; font-size:1em; color: #444;">Leveraging cutting-edge insights from industry leaders like <strong style="color:#007bff;">Nvidia</strong> and <strong style="color:#0d6efd;">OpenAI</strong> for our upcoming AI-powered tools.</p>
+        </div>
+    </section>
+
     <br>
         <div class="bbb"><a href="/Pages/working">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
-            <h2>Community Forums</h2>
+            <h2>Community Forums <span style="color: #17a2b8; font-size: 0.8em;">(10,000+ Active Members)</span></h2>
             <div class="section-grid">
                 <div data-aos="fade-up">
                     <div class="forum-section">
@@ -1364,7 +1414,6 @@ def main():
             </div>
         </section>
     </div>
-    <!-- Login Rewards Modal -->
     <div id="loginRewardsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
         <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
             <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666;">&times;</span>
@@ -1374,8 +1423,7 @@ def main():
             </div>
             
             <div id="weeklyRewards" style="display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap;">
-                <!-- Days will be generated by JavaScript -->
-            </div>
+                </div>
             
             <div id="rewardMessage" style="margin: 20px 0; padding: 15px; border-radius: 8px; background-color: #f4f4f8; font-weight: bold;"></div>
             
@@ -1384,10 +1432,10 @@ def main():
             </button>
         </div>
     </div>
-    <!-- Add this to your existing HTML before the closing </body> tag -->
-
     <footer>
         <div class="container">
+            <p style="font-size: 1.1em; font-weight: bold; color: #ffc107;">You You News: Your Daily Spark of Fun!</p>
+            <p style="font-size: 0.9em; margin-bottom: 15px;">We believe news can be engaging, uplifting, and something to look forward to. That's the You You way.</p>
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
@@ -1398,17 +1446,13 @@ def main():
             <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo" loading="lazy">
         </div>
     </footer>
-    <!-- Add this to your existing HTML before the closing </body> tag -->
-
-<!-- Theme Selector Modal -->
-<div id="themeModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+    <div id="themeModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 600px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
         <span id="closeThemeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666;">&times;</span>
         <h2 style="color: #2c3e50; margin-bottom: 25px;">Select Your Theme</h2>
         
         <div id="themeGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 20px; margin-bottom: 30px; max-height: 300px; overflow-y: auto; padding-right: 5px;">
-            <!-- Themes will be generated by JavaScript -->
-        </div>
+            </div>
         
         <div style="margin-top: 20px;">
             <button id="applyTheme" style="background-color: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; margin-right: 15px; cursor: pointer;">
@@ -1421,7 +1465,6 @@ def main():
     </div>
 </div>
   
-<!-- Add this to your existing JavaScript section or create a new <script> block -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Theme definitions
@@ -1900,6 +1943,26 @@ def main():
                 z-index: 10;
             }
 
+            /* Email form adjustments */
+            .email-form {
+                margin-top: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .email-input {
+                padding: 8px 12px;
+                border-radius: 6px;
+                border: 1px solid var(--color-green);
+                font-family: inherit;
+                font-size: 13px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
             .submit-btn {
                 background-color: var(--color-yellow);
                 color: var(--color-brown);
@@ -1968,6 +2031,16 @@ def main():
                 .close-btn {
                     padding: 3px 8px;
                     font-size: 18px;
+                }
+                
+                .email-form {
+                    margin-top: 10px;
+                    gap: 8px;
+                }
+                
+                .email-input, .submit-btn {
+                    padding: 8px 10px;
+                    font-size: 12px;
                 }
             }
         `;
@@ -2042,6 +2115,174 @@ window.addEventListener('DOMContentLoaded', () => {
                 updatePointsDisplay(parseInt(e.newValue || '0'));
             }
         });
+
+        // Make points display clickable to show points info and email collection
+        pointsDisplay.addEventListener('click', function() {
+            showPointsEmailCollector();
+        });
+        
+        // Function to show points info and email collection modal
+    function showPointsEmailCollector() {
+        // Create modal if it doesn't exist
+        let pointsModal = document.getElementById('pointsDetailModal');
+        
+        if (!pointsModal) {
+            pointsModal = document.createElement('div');
+            pointsModal.id = 'pointsDetailModal';
+            pointsModal.className = 'modal';
+            pointsModal.style.cssText = `
+                display: none;
+                position: fixed;
+                z-index: 9999;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.7);
+                justify-content: center;
+                align-items: center;
+            `;
+            
+            const modalContent = document.createElement('div');
+            modalContent.className = 'modal-content notification-bubble';
+            modalContent.style.cssText = `
+                background-color: var(--color-beige);
+                border-radius: 11px;
+                padding: 25px;
+                width: 80%;
+                max-width: 500px;
+                border: 1px solid var(--color-green);
+                box-shadow: 20px 20px var(--color-blue);
+                position: relative;
+                animation: popIn 0.3s ease-out;
+            `;
+            
+            modalContent.innerHTML = `
+                <span class="reward-icon">✨</span>
+                <h2 style="color: var(--color-brown); margin-top: 5px; text-transform: uppercase; letter-spacing: 2px;">Coming Soon!</h2>
+                <div style="margin: 20px 0; text-align: center;">
+                    <p style="font-size: 16px; margin-bottom: 15px;">Forum Points will be part of an upcoming update! They'll allow you to:</p>
+                    <ul style="text-align: left; padding-left: 20px; margin-bottom: 20px;">
+                        <li>Upvote/downvote posts and comments</li>
+                        <li>Create custom profile badges</li>
+                        <li>Access exclusive forum sections</li>
+                        <li>Unlock special themes</li>
+                    </ul>
+                    <p style="font-size: 16px; margin-bottom: 10px;">Want to stay in the loop? Enter your email below for updates!</p>
+                </div>
+                
+                <form id="emailSignupForm" class="email-form">
+                    <input type="email" class="email-input" id="emailInput" placeholder="Your email address" required>
+                    <button type="submit" class="submit-btn">Stay Updated</button>
+                </form>
+                
+                <div id="successMessage" class="success-message">
+                    <p>Thank you! We'll keep you updated on all Forum Points news!</p>
+                </div>
+                
+                <button id="closePointsModal" class="close-notification" style="margin-top: 15px;">Close</button>
+            `;
+            
+            pointsModal.appendChild(modalContent);
+            document.body.appendChild(pointsModal);
+            
+            // Add close button functionality
+            document.getElementById('closePointsModal').addEventListener('click', function() {
+                pointsModal.style.display = 'none';
+            });
+            
+            // Add form submission handler
+            document.getElementById('emailSignupForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('emailInput').value;
+                if (email && validateEmail(email)) {
+                    // Store that this user has signed up
+                    localStorage.setItem('emailSignedUp', 'true');
+                    
+                    // Send email to site owner with the user's email
+                    sendEmailToSiteOwner(email);
+                    
+                    // Show success message
+                    document.getElementById('emailSignupForm').style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                }
+            });
+        }
+        
+        // Check if user already signed up
+        const alreadySignedUp = localStorage.getItem('emailSignedUp') === 'true';
+        if (alreadySignedUp) {
+            document.getElementById('emailSignupForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        } else {
+            document.getElementById('emailSignupForm').style.display = 'flex';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+        
+        // Show the modal
+        pointsModal.style.display = 'flex';
+    }
+    
+    // Email validation function
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+    
+    // Function to send email to site owner
+    function sendEmailToSiteOwner(userEmail) {
+        // Create a hidden form for submission
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/submit-email'; // Update this to your server endpoint
+        form.style.display = 'none';
+        
+        // Create an input for the email address
+        const emailInput = document.createElement('input');
+        emailInput.type = 'email';
+        emailInput.name = 'userEmail';
+        emailInput.value = userEmail;
+        
+        // Create hidden input for destination email
+        const destinationInput = document.createElement('input');
+        destinationInput.type = 'hidden';
+        destinationInput.name = 'destination';
+        destinationInput.value = 'youyounews.live@gmail.com';
+        
+        // Create hidden input for subject
+        const subjectInput = document.createElement('input');
+        subjectInput.type = 'hidden';
+        subjectInput.name = 'subject';
+        subjectInput.value = 'New Forum Points Update Subscriber';
+        
+        // Add all inputs to form
+        form.appendChild(emailInput);
+        form.appendChild(destinationInput);
+        form.appendChild(subjectInput);
+        
+        // Add form to document and submit
+        document.body.appendChild(form);
+        
+        // Submit using fetch API instead of form submission
+        fetch('/submit-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userEmail: userEmail,
+                destination: 'youyounews.live@gmail.com',
+                subject: 'New Forum Points Update Subscriber'
+            })
+        })
+        .catch(error => {
+            console.error('Error sending email signup:', error);
+        });
+        
+        // Remove form
+        document.body.removeChild(form);
+    }
         // Create weekly rewards display
         function createWeeklyRewardsDisplay() {
             const weeklyRewardsContainer = document.getElementById('weeklyRewards');
@@ -2132,7 +2373,16 @@ window.addEventListener('DOMContentLoaded', () => {
             
             // Update streak counter
             const streak = updateStreak();
+            localStorage.setItem('loginStreak', streak.toString());
+
+            if (streak < 7) {
+                const currentWeek = Math.floor(streak / 6);
+                localStorage.setItem('claimedDays', streak.toString());
+                localStorage.setItem('loginDays', streak.toString());
+                localStorage.setItem('lastResetWeek', currentWeek.toString());
+            }
             const claimedDays = parseInt(localStorage.getItem('claimedDays') || '0');
+            const newDay = isNewDay();
             document.getElementById('currentStreak').textContent = claimedDays;
             
             // Manage weekly login days
@@ -2147,11 +2397,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('claimedDays', '0');
                 localStorage.setItem('lastResetWeek', currentWeek);
             }
-            
-            // Check if it's a new day for reward purposes
-            const newDay = isNewDay();
-            
-            // Increment login days if it's a new day and we haven't hit 7 yet
+
             if (newDay && loginDays < 7) {
                 loginDays = Math.max(loginDays, claimedDays + 1);
                 localStorage.setItem('loginDays', loginDays.toString());
@@ -2486,24 +2732,16 @@ applyTheme(this.dataset.themeId);
                 
                 // Save claimed days
                 localStorage.setItem('claimedDays', claimedDays.toString());
-                
-                // Mark as claimed for today
                 localStorage.setItem('lastLoginDate', new Date().toDateString());
-                
-                // Update UI
+
                 document.getElementById('rewardMessage').textContent = "You already claimed today's reward. Come back tomorrow!";
                 this.disabled = true;
                 this.style.backgroundColor = '#cccccc';
-                
-                // Update the weekly rewards display to show the checkmark
-                // Force recalculation of current week and then redraw
+
+                // Force redraw of rewards panel
                 if (typeof createWeeklyRewardsDisplay === 'function') {
-                    // Temporarily update loginDays to ensure the correct week is drawn
-                    const updatedLoginDays = parseInt(localStorage.getItem('claimedDays') || '0');
-                    localStorage.setItem('loginDays', updatedLoginDays.toString()); 
                     createWeeklyRewardsDisplay();
                 }
-
 
                 const milestones = [10, 20, 30, 50];
                 const rewards = {
@@ -3228,17 +3466,17 @@ function updateReferralProgressBar() {
     30: '/Assets/axolotl.png',
     50: '/Assets/panda.png'
   };
-  const nextMilestone = milestones.find(m => m > count) || milestones[milestones.length - 1];
-  const prevMilestone = milestones.slice().reverse().find(m => m <= count) || 0;
+  const nextMilestone = milestones.find(m => m > currentPoints) || milestones[milestones.length - 1]; // Changed count to currentPoints
+  const prevMilestone = milestones.slice().reverse().find(m => m <= currentPoints) || 0; // Changed count to currentPoints
 
-  const percent = nextMilestone === prevMilestone ? 100 : ((count - prevMilestone) / (nextMilestone - prevMilestone)) * 100;
+  const percent = nextMilestone === prevMilestone ? 100 : ((currentPoints - prevMilestone) / (nextMilestone - prevMilestone)) * 100; // Changed count to currentPoints
 
   if (progressBar) {
     progressBar.style.width = `${Math.min(percent, 100)}%`;
   }
   // Change whale image if reward milestone reached
   const avatarImg = document.querySelector('.swimming-whale img');
-  const available = milestones.slice().reverse().find(m => count >= m);
+  const available = milestones.slice().reverse().find(m => currentPoints >= m); // Changed count to currentPoints
   if (avatarImg && rewards[available]) {
     avatarImg.src = rewards[available];
   }
@@ -3380,12 +3618,19 @@ function showAvatarSelector() {
     
       // Theme, points, whale, leaderboard, streak, avatars
       loadUserProfile();
-      updateReferralProgressBar();
+      updateReferralProgressBar(); // Initialize progress bar
+      window.addEventListener('storage', function(e) { // Listen for point changes
+            if (e.key === 'forumPoints') {
+                updateReferralProgressBar();
+            }
+      });
       updateStreak();
       displayStreakBanner();
     
       const pointsDisplay = document.getElementById("forumPointsDisplay");
-      pointsDisplay?.addEventListener("click", showPointsDetails);
+      pointsDisplay?.addEventListener("click", function() { // Changed from showPointsDetails
+          showPointsEmailCollector(); // Ensure this function is defined and handles the modal
+      });
     
       const savedTheme = localStorage.getItem("currentTheme");
       if (savedTheme) {
@@ -3481,7 +3726,6 @@ max-width: 45vw;
 
 </div>
 
-<!-- 🎨 Avatar Selection Modal -->
 <div id="avatarSelectModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
     <div style="background:white; max-width:500px; width:90%; padding:20px; border-radius:12px; max-height:80vh; overflow-y:auto;">
       <h2 style="margin-top:0; font-family:'Baloo 2', cursive;">Choose Your Avatar</h2>
