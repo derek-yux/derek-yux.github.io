@@ -2494,7 +2494,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 rewardName.textContent = reward.name;
                 
                 // Only show checkmark for claimed days
-                if (i <= claimedDays) {
+                if (i <= parseInt(localStorage.getItem('claimedDays') || '0')) {
                     const checkmark = document.createElement('div');
                     checkmark.style.cssText = 'position: absolute; top: -5px; right: -5px; background-color: #4caf50; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px;';
                     checkmark.innerHTML = '✓';
