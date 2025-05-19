@@ -551,9 +551,9 @@ def main():
         <h2>""" + str(response_title) + """</h2>
         <br>
         <div class="scroll-container">
-            <img src='""" + str(images[0]) + """' alt="Cinque Terre" class="slider_image">
-            <img src='""" + str(images[1]) + """' alt="Cinque Terre" class="slider_image">
-            <img src='""" + str(images[2]) + """' alt="Cinque Terre" class="slider_image">
+            <img src='""" + str(images[0]) + """' alt="Cinque Terre" class="slider_image" loading="lazy">
+            <img src='""" + str(images[1]) + """' alt="Cinque Terre" class="slider_image" loading="lazy">
+            <img src='""" + str(images[2]) + """' alt="Cinque Terre" class="slider_image" loading="lazy">
           </div>
         <pre>
         <p class="p1">""" + str(temp_repr) + """</p>
@@ -782,7 +782,7 @@ def main():
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
-            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo" loading="lazy">
         </div>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -884,7 +884,7 @@ def main():
         
         // Use an img element with the exact whale image
         whale.innerHTML = `
-            <img src="/Assets/whale.png" alt="Watercolor whale swimming" />
+            <img src="/Assets/whale.png" alt="Watercolor whale swimming" loading="lazy" />
         `;
         
         // Randomize starting position (top position)
@@ -1303,7 +1303,7 @@ def main():
             final += '"'
             final += str(images[0])
             final += """
-            " alt="TV Blog">
+            " alt="TV Blog" loading="lazy">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
                     <p>""" + str(" ".join(response_rest.split(" ")[:14])) + "..." + """</p>
@@ -1324,7 +1324,7 @@ def main():
             final += '"'
             final += str(images[0])
             final += """
-            " alt="Sports Blog">
+            " alt="Sports Blog" loading="lazy">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
                     <p>""" + str(" ".join(response_rest.split(" ")[:14])) + "..." + """</p>
@@ -1345,7 +1345,7 @@ def main():
             final += '"'
             final += str(images[0])
             final += """
-            " alt="Music Blog">
+            " alt="Music Blog" loading="lazy">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
                     <p>""" + str(" ".join(response_rest.split(" ")[:14])) + "..." + """</p>
@@ -1583,7 +1583,7 @@ def main():
                 <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
             </div>
             <br>
-            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo" loading="lazy">
         </div>
     </footer>
     <!-- Add this to your existing HTML before the closing </body> tag -->
@@ -2910,7 +2910,7 @@ applyTheme(this.dataset.themeId);
                     showStyledNotification(
                         "New Avatar Unlocked!",
                         `Wow! You Rescued ${reward_names[nextMilestone]}!`,
-                        `<img src="${rewards[nextMilestone]}">`,
+                        `<img src="${rewards[nextMilestone]}" loading="lazy">`,
                         `Go to the top-right icon to see `,
                         reward.icon
                     );
@@ -3051,7 +3051,7 @@ applyTheme(this.dataset.themeId);
         
         // Use an img element with the exact whale image
         whale.innerHTML = `
-            <img src="/Assets/${localStorage.getItem('swimmingAnimal') || 'whale.png'}" alt="Swimming creature" />
+            <img src="/Assets/${localStorage.getItem('swimmingAnimal') || 'whale.png'}" alt="Swimming creature" loading="lazy" />
         `;
         
         // Randomize starting position (top position)
@@ -4030,7 +4030,7 @@ function waitForMs(ms) {
             final += '"'
             final += str(images[0])
             final += """
-            " alt="Tech Blog">
+            " alt="Tech Blog" loading="lazy">
                 <div class="section-content">
                     <h2>""" + str(response_title).strip("%20") + """</h2>
                     <p>""" + str(" ".join(response_rest.split(" ")[:14])) + "..." + """</p>
