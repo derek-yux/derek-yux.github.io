@@ -1846,7 +1846,16 @@ window.addEventListener('DOMContentLoaded', () => {
             
             // Update streak counter
             const streak = updateStreak();
+            localStorage.setItem('loginStreak', streak.toString());
+
+            if (streak < 7) {
+                const currentWeek = Math.floor(streak / 6);
+                localStorage.setItem('claimedDays', streak.toString());
+                localStorage.setItem('loginDays', streak.toString());
+                localStorage.setItem('lastResetWeek', currentWeek.toString());
+            }
             const claimedDays = parseInt(localStorage.getItem('claimedDays') || '0');
+            const newDay = isNewDay();
             document.getElementById('currentStreak').textContent = claimedDays;
             
             // Manage weekly login days
@@ -1861,11 +1870,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('claimedDays', '0');
                 localStorage.setItem('lastResetWeek', currentWeek);
             }
-            
-            // Check if it's a new day for reward purposes
-            const newDay = isNewDay();
-            
-            // Increment login days if it's a new day and we haven't hit 7 yet
+
             if (newDay && loginDays < 7) {
                 loginDays = Math.max(loginDays, claimedDays + 1);
                 localStorage.setItem('loginDays', loginDays.toString());
@@ -2200,24 +2205,16 @@ applyTheme(this.dataset.themeId);
                 
                 // Save claimed days
                 localStorage.setItem('claimedDays', claimedDays.toString());
-                
-                // Mark as claimed for today
                 localStorage.setItem('lastLoginDate', new Date().toDateString());
-                
-                // Update UI
+
                 document.getElementById('rewardMessage').textContent = "You already claimed today's reward. Come back tomorrow!";
                 this.disabled = true;
                 this.style.backgroundColor = '#cccccc';
-                
-                // Update the weekly rewards display to show the checkmark
-                // Force recalculation of current week and then redraw
+
+                // Force redraw of rewards panel
                 if (typeof createWeeklyRewardsDisplay === 'function') {
-                    // Temporarily update loginDays to ensure the correct week is drawn
-                    const updatedLoginDays = parseInt(localStorage.getItem('claimedDays') || '0');
-                    localStorage.setItem('loginDays', updatedLoginDays.toString()); 
                     createWeeklyRewardsDisplay();
                 }
-
 
                 const milestones = [10, 20, 30, 50];
                 const rewards = {
