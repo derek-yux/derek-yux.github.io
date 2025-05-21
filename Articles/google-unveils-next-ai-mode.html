@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +30,16 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sports coverage and game analysis, basketball, soccer, more">
-    <meta name="author" content="Derek (Yue) Yu">
-    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>Sports Coverage, NBA, NHL, MLS, NFL, Playoffs - You You News</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <meta name="description" content="Google Unveils Next AI Mode for North American audience. You You News: Your go-to source for fun news, trending stories, tech updates, and engaging forum discussions. Stay informed with You You News!">
+    <meta name="author" content="You You News">
+    <meta name="keywords" content="Google, AI Mode, Search Engine, News, You You News, You You, Fun News, Fun Stories, Tech News, Forum, Discussion, Trending News">
+    <title>Google Unveils Next AI Mode: What Could Go Wrong? - You You News</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+    <link rel="canonical" href="https://www.youyounews.live">
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -61,12 +64,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -75,23 +106,25 @@
                     rgba(0, 0, 0, 0.7)
                 ),
                 /* bottom, image */
-                url('../Assets/sportsheader.png');
+                url('../Assets/techheader.png');
             background-color: var(--primary-color);
-            background-position-y: 670px;
+            background-position-y: center;
             background-position-x: center;
             color: white;
             text-align: center;
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -199,20 +232,6 @@
             padding: 20px 0;
             margin-top: 30px;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #2980b9;
-        }
-        /* Style all font awesome icons */
         .fa {
         font-size: 30px;
         width: 60px;
@@ -229,6 +248,19 @@
         opacity: 0.7;
         width: 80px;
         background-color:#A6FFB9
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
         }
         .bbb {
             height: 50vh;
@@ -279,6 +311,53 @@
             box-shadow: 22px 22px var(--color-blue);
             z-index: -2;
         }
+        /* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px #ffcb6b, 0 0 50px #ffc107, 0 0 80px #ff5722;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+}
+
+.glow-reward {
+  animation: glow 1.2s ease-in-out infinite;
+  border: 2px solid #ffc107 !important;
+  background-color: #fff3cd !important;
+  color: #d35400 !important;
+  text-shadow: 0 0 3px #fff;
+}
+#closePopupButton:hover {
+  background-color: #ff9800;
+  color: white;
+  transform: scale(1.05);
+}
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-soft {
+  animation: subtlePulse 2.5s ease-in-out infinite;
+}
+
         @keyframes float {
             0% {
                 transform: translatey(0px);
@@ -316,178 +395,29 @@
             <p>Making News Fun 4 U!</p>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="../">Home</a></li>
-            <li><a href="tech">Tech</a></li>
-            <li1><a href="sports">Sports</a></li1>
-            <li><a href="tv">TV</a></li>
-            <li><a href="music">Music</a></li>
-            <li><a href="working">Forums</a></li>
-        </ul>
+            <li1><a href="../Pages/tech">Tech</a></li1>
+            <li><a href="../Pages/sports">Sports</a></li>
+            <li><a href="../Pages/tv">TV</a></li>
+            <li><a href="../Pages/music">Music</a></li>
+            <li><a href="/Pages/working">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections</h2>
-            <div class="section-grid">
-                <div data-aos="fade-up">
-            <article class="section-card">
-                <img src="https://cdn.vox-cdn.com/thumbor/ghFkDChYFYBavi0zT1lrA6aBkFE=/0x0:2641x3960/1200x800/filters:focal(1091x879:1513x1301)/cdn.vox-cdn.com/uploads/chorus_image/image/74026980/2208651506.0.jpg
-            " alt="Sports Blog" loading="lazy">
-                <div class="section-content">
-                    <h2>NBA's Unpredictable Final Four Takes Center Stage</h2>
-                    <p>The NBA playoffs are all about <b>unpredictability</b>, where the New York Knicks and Indiana...</p>
-                    <a href="/Articles/nba-unpredictable-final-four-playoffs.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
+        <div class="shrinker">
+        <h2>Gpogle Unveils Next AI Mode: What Could Go Wrong?</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://i.guim.co.uk/img/media/900eec4735ad09206b30f6c51b5f447038e0f926/300_0_6440_5152/master/6440.jpg?width=620&dpr=1&s=none&crop=none' alt="Cinque Terre" class="slider_image" loading="lazy">
+            <img src='https://res.cloudinary.com/graham-media-group/image/upload/f_auto/q_auto/c_scale,w_640/v1/media/gmg/GD7XPNLFEVCRXL3SJ5X2CDIIQ4.jpg?_a=DAJAUVWIZAAA' alt="Cinque Terre" class="slider_image" loading="lazy">
+            <img src='https://bloximages.chicago2.vip.townnews.com/moorenews.com/content/tncms/assets/v3/editorial/5/fe/5fe0608c-5107-539e-9a28-399cea113bfd/682cd54bd50cc.image.jpg' alt="Cinque Terre" class="slider_image" loading="lazy">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">Google Has Just Announced The Next Wave Of AI Technology, Ushering In A New “AI mode” For Its Search Engine In The United States. This Feature Transforms Searching Into A Dialogue With An Expert—Now You Can Ask About Your Inexplicable Interests Without Fear Of Judgment!</p></div><br><div data-aos="fade-up"><p class="p1">The AI Mode Will Be Available To Everyone Just Two-and-a-Half Months After A Limited Testing Phase. So, Who Needs A Therapist When You Have Google Ready To Chat With You About Your Plans To Run A Pizza Parlor On Mars? Is AI The Secret New Friend We’ve All Been Waiting For?</p></div><br><div data-aos="fade-up"><p class="p1">Also Joining The Party Is Google’s Latest AI Model, Gemini 2.5, Slated To Amp Up Search Results And Possibly Help You Get Concert Tickets While You’re Still In Your Pajamas. It’s Almost Like They’re Trying To Make Your Life Easier—Or Just Keep You Glued To Your Screen Longer. What A Time To Be Alive!</p></div><br><div data-aos="fade-up"><p class="p1">Meanwhile, Google Is Poised To Dive Back Into The Smart Glasses Market After A Long Hiatus Following The “Google Glass” Fiasco. With Stylish Android XR-Powered Forks—Oops, I Mean Glasses—Set To Be Launched, They Can’t Help But Compete Against Meta Platforms. Will They Finally Figure Out How To Make Useful Wearable Tech That Doesn’t Freak Everyone Out? Stay Tuned!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
         </div>
-                 <div data-aos="fade-up">
-            <article class="section-card">
-                <img src="https://i.ytimg.com/vi/t6zMF1gi_Hw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDKJng0WN_ZAa4XrcfS31RLNhNUsg
-            " alt="Sports Blog">
-                <div class="section-content">
-                    <h2>Coco Gauff Delivers Tennis Comedy Gold At Italian Open</h2>
-                    <p>In A Semifinal Match That Was More Grit Than Glitter, Coco Gauff Provided The...</p>
-                    <a href="/Articles/coco-gauff-italian-open-comdy-gold-tennis.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-                <img src="https://pbs.twimg.com/media/DbLzZsWV4AEEOzt.jpg
-            " alt="Sports Blog">
-                <div class="section-content">
-                    <h2>Game 5 Showdown: Maple Leafs Coach Plays Guessing Game</h2>
-                    <p>Toronto Maple Leafs Coach Craig Berube Is Keeping His Lineup Secrets Tighter Than A...</p>
-                    <a href="/Articles/maple-leafs-game-5-nfl-playoffs-coach-guessing-game.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-                <img src="https://www.amny.com/wp-content/uploads/2025/05/2025-05-08T013816Z_1668008990_MT1USATODAY26117977_RTRMADP_3_NBA-PLAYOFFS-NEW-YORK-KNICKS-AT-BOSTON-CELTICS.jpg?quality=51
-            " alt="Sports Blog">
-                <div class="section-content">
-                    <h2>Celtics Defeat Knicks in NBA Playoffs Today...But What Happens If They Can't Keep Up</h2>
-                    <p>The Boston Celtics snagged a win against the Knicks on May 10, but with...</p>
-                    <a href="/Articles/celtics-defeat-knicks-nba-playoffs-may-10.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://edmonton.citynews.ca/wp-content/blogs.dir/sites/15/CP174485396-1024x669.jpg
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Oilers Advance By Pummeling Kings In Wild Playoff Victory</h2>
-                            <p>In an electrifying showdown, the <b>Edmonton Oilers</b> triumphed over the <b>Los Angeles Kings</b> with...</p>
-                            <a href="/Articles/oilers-nhl-playoffs-advance-kings.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://www.usatoday.com/gcdn/authoring/authoring-images/2025/05/01/USAT/83381891007-gty-2212827699.jpg?crop=3070,1727,x0,y158&width=660&height=371&format=pjpg&auto=webp
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Lakers Buzzer Beater Turns Into Buzzer Defeat In Playoffs</h2>
-                            <p>In a shocking twist worthy of an epic saga, the <b>Los Angeles Lakers</b> made...</p>
-                            <a href="/Articles/lakers-nba-playoffs-timberwolves-eliminated.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5ZnQxwLnyVac8CoFwVurfqGJXeGx8w_O0nw&s
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Indiana's Comeback Overtime Victory Over Milwaukee Bucks Among The Craziest In NBA History</h2>
-                            <p>In an epic showdown of skill and chaos, the <b>Indiana Pacers</b> clinched a jaw-dropping...</p>
-                            <a href="/Articles/nba-indiana-pacers-milwaukee-bucks-overtime-2025.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://img.iol.pt/image/id/680d6cecd34e3f0bae9d6de9/1024
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>El Clásico: The Endless Rivalry Between Barcelona And Real Madrid</h2>
-                            <p>In a football saga that unfolds like a soap opera, <b>El Clásico</b> showcases the...</p>
-                            <a href="/Articles/El Clásico: The Endless Rivalry Between Barcelona And Real Madrid.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://i.guim.co.uk/img/media/ea14f6a48de3868470e1aeea3b4b94de4849e7aa/0_53_1024_614/master/1024.jpg?width=465&dpr=1&s=none&crop=none
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>NFL Draft Picks: Giants Secure Future With Jaxson Dart</h2>
-                            <p>In a shocking turn of events that feels as predictable as a rainy day...</p>
-                            <a href="/Articles/NFL Draft Picks: Giants Secure Future With Jaxson Dart.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://gsp-image-cdn.wmsports.io/cms/prod/bleacher-report/getty_images/2210933425_large_image.jpg
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Lakers Narrowly Edge Timberwolves in Dramatic Game</h2>
-                            <p>In a heart-stopping affair, the Lakers outgunned the Timberwolves 94-85, narrowly escaping disaster as...</p>
-                            <a href="/Articles/lakers narrowly edge timberwolves in dramatic game**.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://s.yimg.com/ny/api/res/1.2/gFdxmAIXkL.J1cciubKulQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTE2MDA7aD05MDA7cT01MDtjZj13ZWJw/https://s.yimg.com/os/creatr-uploaded-images/2025-04/44b166f0-1b3c-11f0-abbf-ca67efc7b400
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>5 NBA PLAYOFF BRACKET: WHERE CHAOS MEETS CINDERELLA STORIES</h2>
-                            <p>The drumroll of anticipation has reached a crescendo as the 2025 NBA playoff bracket...</p>
-                            <a href="/Articles/5 NBA PLAYOFF BRACKET: WHERE CHAOS MEETS CINDERELLA STORIES.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZg4ZNIkH44UUNZ2hcpl2Db820tZ9nZmJfkQ&s
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>MITCHELL SAVES THE DAY WITH A GUSTO OF THREE-POINTERS</h2>
-                            <p>In a dramatic twist that could rival a Greek tragedy, the Miami Heat battled...</p>
-                            <a href="/Articles/MITCHELL SAVES THE DAY WITH A GUSTO OF THREE-POINTERS.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzagIs7GMCCe_qIy5ee4Fi5EOdU_ocjOLVyw&s
-                    " alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Montreal Canadiens Clinch Playoff Spot with Victory over Carolina Hurricanes</h2>
-                            <p>The Montreal Canadiens have secured their place in the Stanley Cup Playoffs for the...</p>
-                            <a href="/Articles/Montreal Canadiens Clinch Playoff Spot with Victory over Carolina Hurricanes.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_903,h_507,x_110,y_0/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/si/01jr9vk74ycktapwm6mv.jpg" alt="Sports Blog">
-                        <div class="section-content">
-                            <h2>Gators Snatch Championship Trophy: They’re Back, Baby!</h2>
-                            <p>In a dramatic showdown that had more twists than a late-night soap opera, the Florida Gators...</p>
-                            <a href="/Articles/Gators Snatch Championship Trophy: They’re Back, Baby!.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-        <section>
+         <section>
             <div class="section-grid">
                 <div data-aos="fade-up">
                 <article class="section-card" style="background: linear-gradient(90deg,rgba(91, 0, 227, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(106, 189, 212, 1) 100%);">
@@ -507,80 +437,108 @@
             </div>
         </section>
         <br>
-        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
+        <div class="bbb"><a href="/Pages/working">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href=/Pages/working.html">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
+    </div>
+    <!-- Login Rewards Modal -->
+    <div id="loginRewardsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
+            <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666;">&times;</span>
+            <h2 style="color: #2c3e50; margin-bottom: 15px;">Welcome Back!</h2>
+            <div id="streakCounter" style="font-size: 18px; color: #3498db; margin-bottom: 20px;">
+                <span>Your login streak: <strong id="currentStreak">0</strong> days</span>
+            </div>
+            
+            <div id="weeklyRewards" style="display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap;">
+                <!-- Days will be generated by JavaScript -->
+            </div>
+            
+            <div id="rewardMessage" style="margin: 20px 0; padding: 15px; border-radius: 8px; background-color: #f4f4f8; font-weight: bold;"></div>
+            
+            <button id="claimReward" style="background-color: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+                Claim Daily Reward
+            </button>
+        </div>
     </div>
 
     <footer>
@@ -588,11 +546,7 @@
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
-            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo" loading="lazy">
         </div>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -682,7 +636,8 @@
         "Read and read are different",
         "You're getting into Harvard",
         "BE CONFIDENT! If Benny Blanco can pull Selena Gomez, u can do anything",
-        "You warm my heart :>"
+        "You warm my heart :>",
+        "By referring friends, you can change my avatar (top-right)!"
         ];
 
         // Create a function to add the whale to the page
@@ -693,7 +648,7 @@
         
         // Use an img element with the exact whale image
         whale.innerHTML = `
-            <img src="/Assets/whale.png" alt="Watercolor whale swimming" />
+            <img src="/Assets/whale.png" alt="Watercolor whale swimming" loading="lazy" />
         `;
         
         // Randomize starting position (top position)

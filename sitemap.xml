@@ -3,6 +3,34 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://www.youyounews.live/Articles/nba-unpredictable-final-four-playoffs.html</loc>
+    <lastmod>2025-05-20</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-20</news:publication_date>
+      <news:title>NBA's Unpredictable Final Four Takes Center Stage - You You News</news:title>
+      <news:keywords>NBA, Final Four, Indiana Pacers, New York Knicks, Oklahoma City Thunder, Playoffs, Western Conference Finals, Eastern Conference Finals, Minnesota Timberwolves, Game 1, Basketball, News, You You News, You You, Fun News, Fun Stories, Sports News</news:keywords>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.youyounews.live/Articles/google-unveils-next-ai-mode.html</loc>
+    <lastmod>2025-05-20</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-20</news:publication_date>
+      <news:title>Google Unveils Next AI Mode: What Could Go Wrong? - You You News</news:title>
+      <news:keywords>Google, AI Mode, Search Engine, News, You You News, You You, Fun News, Fun Stories, Tech News, Forum, Discussion, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.youyounews.live/</loc>
     <lastmod>2025-05-19</lastmod>
     <priority>1.00</priority>
