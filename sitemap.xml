@@ -3,6 +3,34 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://www.youyounews.live/Articles/openai-drops-6.5-billion-dollar-surprise-on-apple-buying-startup.html</loc>
+    <lastmod>2025-05-21</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-20</news:publication_date>
+      <news:title>OpenAI Drops $6.5 Billion Surprise on Apple - You You News</news:title>
+      <news:keywords>OpenAI, Apple, Jony Ive, Startup, iPhone, News, You You News, You You, Fun News, Fun Stories, Tech News, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.youyounews.live/Articles/the-voice-crowns-new-champion-in-shocking-finale-2025.html</loc>
+    <lastmod>2025-05-21</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-20</news:publication_date>
+      <news:title>The Voice Crowns New Champion in Shocking Finale - You You News</news:title>
+      <news:keywords>The Voice, Champion, Singer, Michale Bublé, News, You You News, You You, Fun News, Fun Stories, TV News, Music News, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.youyounews.live/Articles/nba-unpredictable-final-four-playoffs.html</loc>
     <lastmod>2025-05-20</lastmod>
     <priority>0.80</priority>
