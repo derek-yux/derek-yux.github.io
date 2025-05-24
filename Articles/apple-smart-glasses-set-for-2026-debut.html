@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +30,16 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tech breaking news in AI from Nvidia, Amazon, and Google">
-    <meta name="author" content="Derek (Yue) Yu">
-    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>Tech, AI, Amazon, Google, Nvidia, and More - You You News</title>
+    <meta name="description" content="Apple announces smart glasses set for 2026 debut. You You News: Your go-to source for fun news, trending stories, and tech updates. Stay informed with You You News!">
+    <meta name="author" content="You You News">
+    <meta name="keywords" content="Apple, Smart Glasses, 2026, Debut, New Tech, News, You You News, You You, Fun News, Fun Stories, Tech News, Trending News">
+    <title>Apple's Smart Glasses Set for 2026 Debut - You You News</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+    <link rel="canonical" href="https://www.youyounews.live">
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -61,12 +64,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -84,14 +115,16 @@
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -199,6 +232,23 @@
             padding: 20px 0;
             margin-top: 30px;
         }
+        .fa {
+        font-size: 30px;
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--color-pink);
+        background-position: center;
+        background-color: var(--color-blue);
+        border-radius: 50%;
+        }
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+        opacity: 0.7;
+        width: 80px;
+        background-color:#A6FFB9
+        }
         .cta-button {
             display: inline-block;
             background-color: var(--secondary-color);
@@ -219,24 +269,6 @@
             place-items: center;
             font: 2vw system-ui;
             background-color: var(--color-yellow);
-        }
-        /* Style all font awesome icons */
-        .fa {
-        font-size: 30px;
-        width: 60px;
-        text-align: center;
-        text-decoration: none;
-        color: var(--color-pink);
-        background-position: center;
-        background-color: var(--color-blue);
-        border-radius: 50%;
-        }
-
-        /* Add a hover effect if you want */
-        .fa:hover {
-        opacity: 0.7;
-        width: 80px;
-        background-color:#A6FFB9
         }
 
         .bbb a {
@@ -279,6 +311,53 @@
             box-shadow: 22px 22px var(--color-blue);
             z-index: -2;
         }
+        /* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px #ffcb6b, 0 0 50px #ffc107, 0 0 80px #ff5722;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+}
+
+.glow-reward {
+  animation: glow 1.2s ease-in-out infinite;
+  border: 2px solid #ffc107 !important;
+  background-color: #fff3cd !important;
+  color: #d35400 !important;
+  text-shadow: 0 0 3px #fff;
+}
+#closePopupButton:hover {
+  background-color: #ff9800;
+  color: white;
+  transform: scale(1.05);
+}
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-soft {
+  animation: subtlePulse 2.5s ease-in-out infinite;
+}
+
         @keyframes float {
             0% {
                 transform: translatey(0px);
@@ -316,190 +395,29 @@
             <p>Making News Fun 4 U!</p>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="../">Home</a></li>
-            <li1><a href="tech">Tech</a></li1>
-            <li><a href="sports">Sports</a></li>
-            <li><a href="tv">TV</a></li>
-            <li><a href="music">Music</a></li>
-            <li><a href="working">Forums</a></li>
-        </ul>
+            <li1><a href="../Pages/tech">Tech</a></li1>
+            <li><a href="../Pages/sports">Sports</a></li>
+            <li><a href="../Pages/tv">TV</a></li>
+            <li><a href="../Pages/music">Music</a></li>
+            <li><a href="/Pages/working">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections &#10629Assuming Cows are Uniform Spheres&#10630</h2>
-            <div class="section-grid">
-                 <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://techunwrapped.com/wp-content/uploads/2022/03/1646395778_536_Apple-Glass-release-date-price-technical-sheet-all-you-need.jpg
-            " alt="Tech Blog" loading="lazy">
-                <div class="section-content">
-                    <h2>Apple's Smart Glasses Set for 2026 Debut</h2>
-                    <p>In a revelation that had tech fans buzzing louder than a caffeinated bee, Apple...</p>
-                    <a href="Articles/apple-smart-glasses-set-for-2026-debut.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
+        <div class="shrinker">
+        <h2>Apple's Smart Glasses Set for 2026 Debut</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://techunwrapped.com/wp-content/uploads/2022/03/1646395778_536_Apple-Glass-release-date-price-technical-sheet-all-you-need.jpg' alt="Cinque Terre" class="slider_image" loading="lazy">
+            <img src='https://www.pymnts.com/wp-content/uploads/2025/05/Apple-smart-glasses.jpg?w=457' alt="Cinque Terre" class="slider_image" loading="lazy">
+            <img src='https://sm.mashable.com/mashable_sea/article/a/apple-smar/apple-smart-glasses-could-come-as-soon-as-2026_dbpp.jpg' alt="Cinque Terre" class="slider_image" loading="lazy">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">In a revelation that had tech fans buzzing louder than a caffeinated bee, Apple has announced plans to release smart glasses by the end of <b>2026</b>. These stylish spectacles, while lacking augmented reality, aim to outshine their competition, namely the <b>Meta Ray-Bans</b> and Google’s recently showcased XR glasses.</p></div><br><div data-aos="fade-up"><p class="p1">Expected to pack impressive features, these glasses will include <b>cameras, microphones,</b> and enough AI wizardry to make even your smartphone sigh in jealousy. They promise to capture photos, record videos, and even pretend to understand Siri’s ramblings—because who wouldn't want that? But alas, no augmented reality for now; guess they aren’t quite ready to become superheroes just yet!</p></div><br><div data-aos="fade-up"><p class="p1">With a timeline that’s faster than a New Year’s resolution to hit the gym, Apple is ramping up the production of prototypes this year. They’ll need to whip up “large quantities” of these testers to ensure they work well enough to impress consumers—or at least not make them look like confused martians wandering around. You know, no pressure!</p></div><br><div data-aos="fade-up"><p class="p1">An inside source (a.k.a. someone with questionable loyalty to their NDA) claims Apple's version will be "better made" than the notorious Meta glasses. Apparently, they’ll be using their own AI models, which sounds great until you realize even Siri sometimes struggles with the word "quinoa." Imagine wearing glasses that can’t even phone home, am I right?</p></div><br><div data-aos="fade-up"><p class="p1">Apple dreams big, aiming for true augmented reality glasses someday, but these smart glasses will be a stepping stone, so don’t throw away your good old-fashioned specs just yet. While they contemplate how to shrink chips and batteries, we’ll be here waiting, sipping our overpriced coffee, watching the world unfold one pixelated step at a time. Eventually, they just might deliver the future... or at least it’ll be an entertaining ride!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
         </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://external-preview.redd.it/openai-is-buying-jony-ives-ai-hardware-companyabout-55-v0-gw2aNlPDvGENVg3Q-Dq4j3u_PuMeCRGHjHLzLnRxEZM.jpg?width=640&crop=smart&auto=webp&s=8648cc78a9a59f7decf3a049e3ec2c9eb757e672
-            " alt="Tech Blog" loading="lazy">
-                <div class="section-content">
-                    <h2>OpenAI Drops $6.5 Billion Surprise on Apple</h2>
-                    <p>OpenAI has made waves by acquiring Jony Ive’s startup, io, for a staggering <b>$6.5...</b></p>
-                    <a href="/Articles/openai-drops-6.5-billion-dollar-surprise-on-apple-buying-startup.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://i.guim.co.uk/img/media/900eec4735ad09206b30f6c51b5f447038e0f926/300_0_6440_5152/master/6440.jpg?width=620&dpr=1&s=none&crop=none
-            " alt="Tech Blog" loading="lazy">
-                <div class="section-content">
-                    <h2>Google Unveils Next AI Mode: What Could Go Wrong?</h2>
-                    <p>Google Has Just Announced The Next Wave Of AI Technology, Ushering In A New...</p>
-                    <a href="/Articles/google-unveils-next-ai-mode.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://s3.amazonaws.com/cms.ipressroom.com/219/files/20254/nvlink-fusion.jpg
-            " alt="Tech Blog" loading="lazy">
-                <div class="section-content">
-                    <h2>Nvidia Unveils NVLink Fusion: The Future Is Now</h2>
-                    <p>Nvidia's CEO, Jensen Huang, Kicked Off Computex 2025 In Taiwan With A Bang—Or Was...</p>
-                    <a href="/Articles/nvidia-unveils-nvlink-fusion-future-of-ai-dominance.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2214285765.jpg?c=16x9&q=h_833,w_1480,c_fill
-            " alt="Tech Blog">
-                <div class="section-content">
-                    <h2>Trump Takes Tech Titans To Saudi Arabia For AI Boom</h2>
-                    <p>In A Bold Diplomatic Play, President Trump Landed In Saudi Arabia With Nearly <b>36</b>...</p>
-                    <a href="/Articles/trump-saudi-arabia-tech-ai-meeting.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://invezz.com/wp-content/uploads/2025/05/image-18-640x400.webp
-            " alt="Tech Blog">
-                <div class="section-content">
-                    <h2>NASDAQ Soars As US China Deal Temporarily Slashes Tariffs But What Happens Next</h2>
-                    <p>In a surprise twist, US stocks bounced back on Monday following a deal that...</p>
-                    <a href="/Articles/nasdaq-us-china-deal-trump-tech-stocks.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://aiexpert.network/wp-content/uploads/2023/11/How-Netflix-is-Leveraging-AI-to-Transform-Streaming.jpg
-            " alt="Tech Blog">
-                <div class="section-content">
-                    <h2>Netflix Rolls Out AI Overhaul That Will Make You Question Your Taste In Movies</h2>
-                    <p>Netflix is introducing a <b>beta</b> version of its user interface, incorporating <b>generative AI</b> tools...</p>
-                    <a href="/Articles/netflix-ai-overhaul-user-interface.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://images.ladbible.com/resize?type=webp&quality=70&width=3840&fit=contain&gravity=auto&url=https://images.ladbiblegroup.com/v3/assets/bltb5d92757ac1ee045/blt349441f9dbf32f5a/679cf9d1fbdd01aade09b78c/gta-6-issue-upcoming.png%3Fcrop%3D675%2C675%2Cx256%2Cy0
-            " alt="Tech Blog">
-                <div class="section-content">
-                    <h2>GTA 6: The Most Anticipated Video Game EVER</h2>
-                    <p>Gamers, brace yourselves: you'll need to wait until <b>May 26, 2026</b> for "GTA 6," but...</p>
-                    <a href="/Articles/gta-6-the-most-anticipated-video-game-ever.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                    <div data-aos="fade-up">
-                        <article class="section-card">
-                            <img src="https://cdn.prod.website-files.com/65a7d326e810bc36dae1978f/67b5b6fe971376c623ca522a_meta_unveils_llamacon_its_first_developer_conference_on_generative_ai.webp
-                " alt="Tech Blog">
-                    <div class="section-content">
-                        <h2>Meta Llama Conference Unveils AI Shenanigans and Llama Drama</h2>
-                        <p>Meta has officially launched its flashy new generative AI conference called <b>LlamaCon</b> on April...</p>
-                        <a href="/Articles/meta-llama-ai-conference.html" class="cta-button">Read Now!</a>
-                    </div>
-                </article>
-            </div>
-                    <div data-aos="fade-up">
-                        <article class="section-card">
-                            <img src="https://barchart-news-media-prod.aws.barchart.com/SYNDSRC/9404e2dca4817ba762a635c7590c2ad3/102050.jpg%3Fv%3D430052789
-                " alt="Tech Blog">
-                    <div class="section-content">
-                        <h2>Meta And Microsoft Stocks Soaring This Quarter</h2>
-                        <p>In a dazzling display that would make even the stock market gods nod in...</p>
-                        <a href="/Articles/meta-microsoft-stocks-quarter-report.html" class="cta-button">Read Now!</a>
-                    </div>
-                </article>
-            </div>
-                        <div data-aos="fade-up">
-                            <article class="section-card">
-                                <img src="https://assets.entrepreneur.com/content/3x2/2000/1716929631-andyjassycopy.jpg
-                    " alt="Tech Blog">
-                        <div class="section-content">
-                            <h2>Fossil Fuels and AI: Nvidia and Amazon Discuss the Future</h2>
-                            <p>Nvidia and Amazon declared <b>100%</b> of energy sources – from solar prophets to coal...</p>
-                            <a href="/Articles/Fossil Fuels and AI_Nvidia and Amazon Discuss Future.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                    <div data-aos="fade-up">
-                        <article class="section-card">
-                            <img src="https://static-ca.gamestop.ca/images/products/799692/3max.jpg
-                " alt="Tech Blog">
-                    <div class="section-content">
-                        <h2>Gamestop Sells Out Nintendo Switch 2 Within Minutes</h2>
-                        <p>In a shocking display of “who saw this coming,” <b>Gamestop</b> launched preorders for the...</p>
-                        <a href="/Articles/Gamestop Sells Out Nintendo Switch 2 Within Minutes.html" class="cta-button">Read Now!</a>
-                    </div>
-                </article>
-            </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa1XcNgpHrkCMHwZos3b4QDg7w3q6Po8QUfg&s
-            " alt="Tech Blog">
-                <div class="section-content">
-                    <h2>Intel Announces Layoffs Aimed At Cost Reduction</h2>
-                    <p>In a shocking turn of events that not even a flip of a quarter...</p>
-                    <a href="/Articles/Intel Announces Layoffs Aimed At Cost Reduction**.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAbSrM5tT60KIfUBz5XY7TXPt0wpXveA4NmA&s
-                        " alt="Tech Blog">
-                            <div class="section-content">
-                                <h2>Spotify Expands Global Reach with New Language Options</h2>
-                                <p>Spotify, the leading music streaming platform, has announced the introduction of new language options on its...</p>
-                                <a href="/Articles/Spotify Expands Global Reach with New Language Options.html" class="cta-button">Read Now!</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div data-aos="fade-up">
-                        <article class="section-card">
-                            <img src="https://www.uctoday.com/wp-content/uploads/2025/04/Zoom-Suffers-Major-Global-Outage-Has-Now-Recovered.jpg
-                            " alt="Tech Blog">
-                                <div class="section-content">
-                                    <h2>Zoom Outage Hits Thousands as Users Report Service Failures</h2>
-                                    <p>Zoom experienced a significant outage on April 16, 2025, affecting users worldwide as over 67,000 outage reports...</p>
-                                    <a href="/Articles/Zoom Outage Hits Thousands as Users Report Service Failures.html" class="cta-button">Read Now!</a>
-                                </div>
-                            </article>
-                        </div>
-            </div>
-        </section>
-        <section>
+         <section>
             <div class="section-grid">
                 <div data-aos="fade-up">
                 <article class="section-card" style="background: linear-gradient(90deg,rgba(91, 0, 227, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(106, 189, 212, 1) 100%);">
@@ -519,80 +437,108 @@
             </div>
         </section>
         <br>
-        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
+        <div class="bbb"><a href="/Pages/working">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href=/Pages/working.html">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
+    </div>
+    <!-- Login Rewards Modal -->
+    <div id="loginRewardsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
+            <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666;">&times;</span>
+            <h2 style="color: #2c3e50; margin-bottom: 15px;">Welcome Back!</h2>
+            <div id="streakCounter" style="font-size: 18px; color: #3498db; margin-bottom: 20px;">
+                <span>Your login streak: <strong id="currentStreak">0</strong> days</span>
+            </div>
+            
+            <div id="weeklyRewards" style="display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap;">
+                <!-- Days will be generated by JavaScript -->
+            </div>
+            
+            <div id="rewardMessage" style="margin: 20px 0; padding: 15px; border-radius: 8px; background-color: #f4f4f8; font-weight: bold;"></div>
+            
+            <button id="claimReward" style="background-color: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+                Claim Daily Reward
+            </button>
+        </div>
     </div>
 
     <footer>
@@ -600,11 +546,7 @@
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
-            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo" loading="lazy">
         </div>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -694,7 +636,8 @@
         "Read and read are different",
         "You're getting into Harvard",
         "BE CONFIDENT! If Benny Blanco can pull Selena Gomez, u can do anything",
-        "You warm my heart :>"
+        "You warm my heart :>",
+        "By referring friends, you can change my avatar (top-right)!"
         ];
 
         // Create a function to add the whale to the page
@@ -705,7 +648,7 @@
         
         // Use an img element with the exact whale image
         whale.innerHTML = `
-            <img src="/Assets/whale.png" alt="Watercolor whale swimming" />
+            <img src="/Assets/whale.png" alt="Watercolor whale swimming" loading="lazy" />
         `;
         
         // Randomize starting position (top position)
@@ -1105,5 +1048,140 @@
         }
         });
     </script>
+    <!-- Game Panel Container -->
+<div id="scrollGamePanel" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; background: linear-gradient(145deg, #2c3e50, #34495e); color: white; border-radius: 12px; padding: 12px 20px; font-family: 'Segoe UI', sans-serif; box-shadow: 0 5px 15px rgba(0,0,0,0.3); max-width: 300px; width: 80vw; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; font-size: clamp(14px, 2vw, 18px);">
+  <span id="gamePanelContent">Slowly Scroll Down!</span>
+</div>
+
+<!-- Style for highlights -->
+<style>
+.scroll-highlight {
+  background: linear-gradient(90deg, #ffe082, #ffca28);
+  padding: 0 4px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+</style>
+
+<!-- JavaScript Game Logic -->
+<script>
+const gameTriggers = [
+  {
+    textMatch: "Apple has announced plans to release smart glasses by the end of 2026",
+    gameHTML: `
+      <div style="text-align:center">
+        <h3>⚡ Buzz Race!</h3>
+        <p>Tap fast to power the glasses!</p>
+        <button id="tapBtn1" style="padding: 8px 16px; background: #f39c12; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">TAP!</button>
+        <div id="progressBar1" style="margin-top: 10px; height: 12px; background: #ddd; border-radius: 6px;"><div id="progressFill1" style="width:0%; height:100%; background: #2ecc71; border-radius: 6px;"></div></div>
+      </div>`,
+    onMount: () => {
+      let power = 0;
+      const btn = document.getElementById("tapBtn1");
+      const fill = document.getElementById("progressFill1");
+      btn.onclick = () => {
+        power += 10;
+        if (power >= 100) {
+          fill.style.width = "100%";
+          setTimeout(() => showPopup("Glasses powered up! 🚀 Scroll for more!"), 300);
+        } else {
+          fill.style.width = power + "%";
+        }
+      };
+    }
+  },
+  {
+    textMatch: "include cameras, microphones, and enough AI wizardry to make even your smartphone sigh in jealousy",
+    gameHTML: `
+      <div style="text-align:center">
+        <h3>🕵️ Spy Lens</h3>
+        <p>Find the 3 gadgets hidden in the HUD:</p>
+        <div id="hudGame" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:10px;"></div>
+      </div>`,
+    onMount: () => {
+      const hud = document.getElementById("hudGame");
+      const options = ["🔋", "🎙️", "📷", "📎", "🧃", "🔑"];
+      const targets = ["📷", "🎙️", "🔋"];
+      let found = [];
+      options.forEach(icon => {
+        const btn = document.createElement("button");
+        btn.textContent = icon;
+        btn.style.cssText = "padding:10px; font-size:24px; background:#3498db; border:none; border-radius:8px; color:white; cursor:pointer";
+        btn.onclick = () => {
+          if (targets.includes(icon) && !found.includes(icon)) {
+            found.push(icon);
+            btn.style.background = "#2ecc71";
+            if (found.length === targets.length) showPopup("Mission complete! 🎉 Scroll again!");
+          } else {
+            btn.style.background = "#e74c3c";
+          }
+        };
+        hud.appendChild(btn);
+      });
+    }
+  },
+  {
+    textMatch: "Siri sometimes struggles with the word \"quinoa\"",
+    gameHTML: `
+      <div style="text-align:center">
+        <h3>🧠 Quinoa Quest</h3>
+        <p>Fix Siri's autocorrect:</p>
+        <p style="margin:8px 0">Siri thinks: <b>"keen-wah"</b></p>
+        <input type="text" id="quinoaInput" placeholder="Type the correct word" style="padding:6px 10px; border-radius:6px; border:1px solid #ccc;">
+        <br><br>
+        <button id="checkQuinoa" style="padding: 6px 16px; background: #8e44ad; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Submit</button>
+      </div>`,
+    onMount: () => {
+      document.getElementById("checkQuinoa").onclick = () => {
+        const val = document.getElementById("quinoaInput").value.toLowerCase();
+        if (val.includes("quinoa")) {
+          showPopup("Correct! You win! 🎊 Check out more games at <a href='https://www.youyounews.live' style='color:#ffc107;font-weight:bold;'>youyounews.live</a>");
+        } else {
+          showPopup("Try again! 🍝");
+        }
+      };
+    }
+  }
+];
+
+function showPopup(msg) {
+  const panel = document.getElementById("scrollGamePanel");
+  panel.innerHTML = `<div style='text-align:center;'>${msg}</div>`;
+  setTimeout(() => {
+    panel.innerHTML = '<span id="gamePanelContent">Slowly Scroll Down!</span>';
+  }, 5000);
+}
+
+// Observe scrolling
+let activeIdx = -1;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      gameTriggers.forEach((game, i) => {
+        if (entry.target.innerText.includes(game.textMatch) && activeIdx !== i) {
+          const panel = document.getElementById("scrollGamePanel");
+          panel.innerHTML = game.gameHTML;
+          game.onMount();
+          document.querySelectorAll('.scroll-highlight').forEach(e => e.classList.remove('scroll-highlight'));
+          entry.target.classList.add('scroll-highlight');
+          activeIdx = i;
+        }
+      });
+    }
+  });
+}, { threshold: 0.6 });
+
+// Attach observer to paragraph tags
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll(".p1").forEach(p => {
+    gameTriggers.forEach(g => {
+      if (p.innerText.includes(g.textMatch)) {
+        observer.observe(p);
+      }
+    });
+  });
+});
+</script>
+
 </body>
 </html>

@@ -3,6 +3,20 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://www.youyounews.live/Articles/apple-smart-glasses-set-for-2026-debut.html</loc>
+    <lastmod>2025-05-23</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-23</news:publication_date>
+      <news:title>Apple's Smart Glasses Set for 2026 Debut - You You News</news:title>
+      <news:keywords>Apple, Smart Glasses, 2026, Debut, New Tech, News, You You News, You You, Fun News, Fun Stories, Tech News, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.youyounews.live/Articles/trump-bans-international-students-from-harvard.html</loc>
     <lastmod>2025-05-22</lastmod>
     <priority>0.80</priority>
@@ -11,7 +25,7 @@
         <news:name>You You News</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2025-05-20</news:publication_date>
+      <news:publication_date>2025-05-22</news:publication_date>
       <news:title>Trump Bans Harvard From Admitting International Students - You You News</news:title>
       <news:keywords>Harvard, Trump, Ban, International Students, University, Undergraduate, Enrollment, Tariffs, News, You You News, You You, Fun News, Fun Stories, TV News, Trending News</news:keywords>
     </news:news>
