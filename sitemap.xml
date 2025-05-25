@@ -3,6 +3,34 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://www.youyounews.live/Articles/florida-panthers-face-penalty-drama-in-eastern-conference-finals.html</loc>
+    <lastmod>2025-05-24</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-24</news:publication_date>
+      <news:title>Panthers Face Penalty Drama in Eastern Conference Finals - You You News</news:title>
+      <news:keywords>Florida Panthers, Carolina Hurricanes, NHL, Eastern Conference Finals, Eetu Luostarinen, Sam Reinhart, Playoffs, News, You You News, You You, Fun News, Fun Stories, Tech News, Sports News, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.youyounews.live/Articles/charli-xcx-chart-topping-clutches-ivor-novello-songwriter-of-the-year.html</loc>
+    <lastmod>2025-05-24</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-24</news:publication_date>
+      <news:title>Who Won the Songwriter of the Year? Meet Charli XCX - You You News</news:title>
+      <news:keywords>Charli XCX, Songwriter of the Year, Ivor Novello, Music Awards, Album, Brat, Singer, News, You You News, You You, Fun News, Fun Stories, Music News, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.youyounews.live/Articles/apple-smart-glasses-set-for-2026-debut.html</loc>
     <lastmod>2025-05-23</lastmod>
     <priority>0.80</priority>

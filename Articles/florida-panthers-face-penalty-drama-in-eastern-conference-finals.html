@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +30,16 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="New music releases and upcoming albums">
-    <meta name="author" content="Derek (Yue) Yu">
-    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>Music Releases, Upcoming Albums, Pop Star Drama - You You News</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <meta name="description" content="Florida Panthers lose Eetu Luostarinen and Sam Reinhart from penalties and ejections in the NHL eastern conference finals against the Carolina Hurricanes. You You News: Your go-to source for fun news, trending stories, and sports highlights. Stay informed with You You News!">
+    <meta name="author" content="You You News">
+    <meta name="keywords" content="Florida Panthers, Carolina Hurricanes, NHL, Eastern Conference Finals, Eetu Luostarinen, Sam Reinhart, Playoffs, News, You You News, You You, Fun News, Fun Stories, Tech News, Sports News, Trending News">
+    <title>Panthers Face Penalty Drama in Eastern Conference Finals - You You News</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+    <link rel="canonical" href="https://www.youyounews.live">
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -61,12 +64,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -75,23 +106,25 @@
                     rgba(0, 0, 0, 0.7)
                 ),
                 /* bottom, image */
-                url('../Assets/musicheader.png');
+                url('../Assets/sportsheader.png');
             background-color: var(--primary-color);
-            background-position-y: center;
+            background-position-y: 670px;
             background-position-x: center;
             color: white;
             text-align: center;
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -199,20 +232,6 @@
             padding: 20px 0;
             margin-top: 30px;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #2980b9;
-        }
-        /* Style all font awesome icons */
         .fa {
         font-size: 30px;
         width: 60px;
@@ -229,6 +248,19 @@
         opacity: 0.7;
         width: 80px;
         background-color:#A6FFB9
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
         }
         .bbb {
             height: 50vh;
@@ -279,6 +311,53 @@
             box-shadow: 22px 22px var(--color-blue);
             z-index: -2;
         }
+        /* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px #ffcb6b, 0 0 50px #ffc107, 0 0 80px #ff5722;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+}
+
+.glow-reward {
+  animation: glow 1.2s ease-in-out infinite;
+  border: 2px solid #ffc107 !important;
+  background-color: #fff3cd !important;
+  color: #d35400 !important;
+  text-shadow: 0 0 3px #fff;
+}
+#closePopupButton:hover {
+  background-color: #ff9800;
+  color: white;
+  transform: scale(1.05);
+}
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-soft {
+  animation: subtlePulse 2.5s ease-in-out infinite;
+}
+
         @keyframes float {
             0% {
                 transform: translatey(0px);
@@ -316,171 +395,29 @@
             <p>Making News Fun 4 U!</p>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="../">Home</a></li>
-            <li><a href="tech">Tech</a></li>
-            <li><a href="sports">Sports</a></li>
-            <li><a href="tv">TV</a></li>
-            <li1><a href="music">Music</a></li1>
-            <li><a href="working">Forums</a></li>
-        </ul>
+            <li><a href="../Pages/tech">Tech</a></li>
+            <li1><a href="../Pages/sports">Sports</a></li1>
+            <li><a href="../Pages/tv">TV</a></li>
+            <li><a href="../Pages/music">Music</a></li>
+            <li><a href="/Pages/working">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections</h2>
-            <div class="section-grid">
-                 <div data-aos="fade-up">
-            <article class="section-card">
-            <img src="https://swedenherald.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fstatic.swedenherald.com%2F415b5901-d183-4bf4-8613-ab4a8df0bc4e%2F415b5901-d183-4bf4-8613-ab4a8df0bc4e.jpg&w=1600&q=75
-            " alt="Music Blog" loading="lazy">
-                <div class="section-content">
-                    <h2>Who Won the Songwriter of the Year? Meet Charli XCX</h2>
-                    <p>Charli XCX just bagged the <b>coveted Ivor Novello award</b> for songwriter of the year,...</p>
-                    <a href="Articles/charli-xcx-chart-topping-clutches-ivor-novello-songwriter-of-the-year.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
+        <div class="shrinker">
+        <h2>Panthers Face Penalty Drama in Eastern Conference Finals</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://www.usatoday.com/gcdn/authoring/authoring-images/2025/05/23/USAT/83826472007-usatsi-26259981.jpg?crop=2910,1637,x0,y0&width=660&height=371&format=pjpg&auto=webp' alt="Cinque Terre" class="slider_image" loading="lazy">
+            <img src='https://www.reuters.com/resizer/v2/SJBIO2OWOFNF7G3ZC4ZWCVFE7E.jpg?auth=28a6f7ddb152344977d650e3c42a356ef2cd2aac99d39af67377391f19df4c9d&width=3309&quality=80' alt="Cinque Terre" class="slider_image" loading="lazy">
+            <img src='https://s.yimg.com/ny/api/res/1.2/kKEwJbh9WmQPzaqSbaVUXg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNztjZj13ZWJw/https://media.zenfs.com/en/sportsnaut_articles_397/34b56255c5f1b253181283a9715eaba6' alt="Cinque Terre" class="slider_image" loading="lazy">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">In a stunning twist during Game 3, the Florida Panthers lost forward <b>Eetu Luostarinen</b> after a shocking boarding penalty. His crime? Sending Carolina's <b>Jackson Blake</b> airborne into the boards, a move that might have won him an award for “best flight assist.”</p></div><br><div data-aos="fade-up"><p class="p1">As if fate had a twisted sense of humor, Luostarinen was handed a <b>5-minute major penalty</b> and a game misconduct, which was upheld after an all-important video review. Naturally, Blake took a brief vacation on the ice, proving that even hockey players need a moment to gather their thoughts—or recover from potential brain damage. But wait, there’s more!</p></div><br><div data-aos="fade-up"><p class="p1">Just when everyone thought the chaos was over, Blake, who appeared less like a battered hockey player and more like a determined stuntman, was back on the ice for the second period. Did the Panthers just lose their giant in a critical game, or will Blake’s return spark a wild comeback plot twist? Time will tell, and fans are on the edge of their seats.</p></div><br><div data-aos="fade-up"><p class="p1">As the game unfolded, analysts speculated whether Luostarinen’s ejection would torment the Panthers like a <b>haunting ghost</b> in a bad horror film. Would it be the defining moment that seals the fate of Florida, or merely a detour in their playoff journey? Whatever happens, hockey drama never looked so thrilling!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
         </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-            <img src="https://people.com/thmb/lt6N2geeNBcXxnMq03AQpz1ZD_4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(674x368:676x370)/adam-david-michael-buble-the-voice-052125-3-e0cbd2e6fcad4e60af610e932160fae3.jpg
-            " alt="Music Blog" loading="lazy">
-                <div class="section-content">
-                    <h2>The Voice Crowns New Champion in Shocking Finale</h2>
-                    <p>In a dramatic showdown on May 20, <b>Adam David</b> clinched victory on The Voice...</p>
-                    <a href="/Articles/the-voice-crowns-new-champion-in-shocking-finale-2025.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-            <img src="https://i.cbc.ca/1.7538159.1747526194!/cpImage/httpImage/image.jpg_gen/derivatives/16x9_1180/aptopix-switzerland-eurovision-song-contest.jpg?im=Resize%3D780
-            " alt="Music Blog">
-                <div class="section-content">
-                    <h2>Austrian Opera Singer Wins Eurovision With Epic Vocals</h2>
-                    <p>JJ, A Classically Trained Countertenor From Austria, Stole The Show At The 69th Eurovision...</p>
-                    <a href="/Articles/eurovision-won-by-austrian-opera-singer.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-            <img src="https://www.billboard.com/wp-content/uploads/2025/02/Smurfs-Official-Trailer-2025-Movie-Rihanna-billboard-1548.jpg
-            " alt="Music Blog">
-                <div class="section-content">
-                    <h2>Rihanna Teases New Song While Album Wait Continues</h2>
-                    <p>Rihanna Fans Can Breathe A Little Easier—The Pop Icon Has Announced A New Song,...</p>
-                    <a href="/Articles/rihanna-smurfs-new-song-album-movie.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-            <img src="https://s.yimg.com/ny/api/res/1.2/Ffi7nZxraICUvpA2Ymv2MQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU1Nw--/https://media.zenfs.com/en/gold_derby_993/e973c98d76b23ceb98fa2d3e8fc4465d
-            " alt="Music Blog">
-                <div class="section-content">
-                    <h2>American Idol Has Narrowed The Competition Down To The Top 5 Contestants, But Not Without A Dramatic Two-Episode Disney Night.</h2>
-                    <p>In Episode 16, The Top 7 Took Center Stage For A Magical Disney Night,...</p>
-                    <a href="/Articles/american-idol-top-five-singers-mothers-day.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://cdn.mos.cms.futurecdn.net/jnjcJyia94aeXKjAS4XTqU-650-80.jpg.webp
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>Shazam Launches Viral Charts Because We All Need Another Way To Judge Our Music Taste</h2>
-                            <p>Shazam has officially unveiled its <b>Viral Charts</b>, promising to deliver the <b>fastest-growing songs</b> in...</p>
-                            <a href="/Articles/shazam-launches-viral-charts-music.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://www.billboard.com/wp-content/uploads/media/los-tigres-del-norte-2002-live-billboard-1548.jpg?w=1024
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>The Cinco De Mayo Essential Playlist</h2>
-                            <p>Every year, Billboard creates a playlist so essential it could single-handedly fuel a fiesta....</p>
-                            <a href="/Articles/cinco-de-mayo-essential-playlist.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://www.ascap.com/~/media/site-pages/news-and-events/awards/2025/pop-awards/1000-x-1000-pop-music.jpg
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>ASCAP Pop Music Awards 2025 Crown New Kings of the Charts</h2>
-                            <p>At the glitzy ASCAP Pop Music Awards in Los Angeles, <b>Jack Antonoff</b> and <b>Teddy...</p>
-                            <a href="/Articles/ascap-pop-music-awards-2025-winners.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://backstage.officialcharts.com/sites/default/files/legacy_images/media/663262/miley-vs-lana.jpg
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>Sneak Peek! 2026's Upcoming Album Releases</h2>
-                            <p>Miley Cyrus and Lana Del Rey are leading 2026's musical stampede, with...</p>
-                            <a href="/Articles/Sneak Peek! 2026's Upcoming Album Releases.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                </div>
-                <div class="section-grid">
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi2HghBgmhMOLPO0WbXQiI1qt5LM6ovsZDJg&s
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>ED SHEERAN EMBRACES HIS INNER BOLLYWOOD STAR WITH AZIZAM</h2>
-                            <p>In an unexpected twist that left fans wondering if he was auditioning for a...</p>
-                            <a href="/Articles/ED SHEERAN EMBRACES HIS INNER BOLLYWOOD STAR WITH AZIZAM.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1020x680/public/d8/images/canvas/2024/08/28/0f47f05e-d6b1-4c29-bea1-ae17a26971b6_dbec454f.jpg?itok=gxj4CTB1&v=1724821730
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>BIG OCEAN: THE HEAR-THROBBING K-POP SENSATION THAT CAN'T HEAR YOU SCREAM</h2>
-                            <p>In an unexpected twist to the K-pop saga, Big Ocean has shown that hearing...</p>
-                            <a href="/Articles/BIG OCEAN: THE HEAR-THROBBING K-POP SENSATION THAT CAN'T HEAR YOU SCREAM.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://assets.teenvogue.com/photos/673f1a29c4f19f93077998a2/16:9/w_2560%2Cc_limit/COACHELLA%25202026.jpg
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>Coachella 2025: A Beautiful Mess in the Desert</h2>
-                            <p>Coachella, the crown jewel of music festivals where stars shine and influencers flex, is...</p>
-                            <a href="https://www.youyounews.live/Articles/Coachella%202025_%20A%20Beautiful%20Mess%20in%20the%20Desert.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://i.cbc.ca/1.7513070.1744908779!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_1180/music-drake-kendrick-lamar.jpg?im=Resize%3D780
-            " alt="Music Blog">
-                <div class="section-content">
-                    <h2>Drake Expands Lawsuit Against Universal Music Over Kendrick Lamar's Super Bowl Performance</h2>
-                    <p>In a twist worthy of a dramatic rap feud, Drake has expanded his defamation...</p>
-                    <a href="/Articles/Drake Expands Lawsuit Against Universal Music Over Kendrick Lamar's Super Bowl Performance.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-        </div>
-            </div>
-        </section>
-        <section>
+         <section>
             <div class="section-grid">
                 <div data-aos="fade-up">
                 <article class="section-card" style="background: linear-gradient(90deg,rgba(91, 0, 227, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(106, 189, 212, 1) 100%);">
@@ -500,80 +437,108 @@
             </div>
         </section>
         <br>
-        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
+        <div class="bbb"><a href="/Pages/working">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href=/Pages/working.html">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
+    </div>
+    <!-- Login Rewards Modal -->
+    <div id="loginRewardsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
+            <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666;">&times;</span>
+            <h2 style="color: #2c3e50; margin-bottom: 15px;">Welcome Back!</h2>
+            <div id="streakCounter" style="font-size: 18px; color: #3498db; margin-bottom: 20px;">
+                <span>Your login streak: <strong id="currentStreak">0</strong> days</span>
+            </div>
+            
+            <div id="weeklyRewards" style="display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap;">
+                <!-- Days will be generated by JavaScript -->
+            </div>
+            
+            <div id="rewardMessage" style="margin: 20px 0; padding: 15px; border-radius: 8px; background-color: #f4f4f8; font-weight: bold;"></div>
+            
+            <button id="claimReward" style="background-color: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+                Claim Daily Reward
+            </button>
+        </div>
     </div>
 
     <footer>
@@ -581,11 +546,7 @@
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
-            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo" loading="lazy">
         </div>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -675,7 +636,8 @@
         "Read and read are different",
         "You're getting into Harvard",
         "BE CONFIDENT! If Benny Blanco can pull Selena Gomez, u can do anything",
-        "You warm my heart :>"
+        "You warm my heart :>",
+        "By referring friends, you can change my avatar (top-right)!"
         ];
 
         // Create a function to add the whale to the page
@@ -686,7 +648,7 @@
         
         // Use an img element with the exact whale image
         whale.innerHTML = `
-            <img src="/Assets/whale.png" alt="Watercolor whale swimming" />
+            <img src="/Assets/whale.png" alt="Watercolor whale swimming" loading="lazy" />
         `;
         
         // Randomize starting position (top position)
@@ -1086,5 +1048,251 @@
         }
         });
     </script>
+    <!-- Inject below this line in your HTML document -->
+
+<style>
+.active-highlight {
+  background: linear-gradient(90deg, #ffc107, #ff9800);
+  font-weight: bold;
+  padding: 0 4px;
+  border-radius: 4px;
+  animation: pulseHighlight 1.2s infinite;
+}
+@keyframes pulseHighlight {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#gamePanel {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  max-width: 340px;
+  width: 42vw;
+  min-width: 260px;
+  background: linear-gradient(135deg, #6EE7B7, #3B82F6);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.25);
+  padding: 1rem;
+  font-size: 1rem;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+#gamePanel.shrink {
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.game-btn {
+  background-color: #fff;
+  color: #333;
+  padding: 6px 12px;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.game-btn:hover {
+  background-color: #fcd34d;
+}
+
+.popup {
+  background-color: #fff;
+  color: #111;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+<div id="gamePanel" class="shrink">Slowly Scroll Down!</div>
+
+<script>
+const gameStates = [];
+
+gameStates.push({
+  selectorText: 'Florida Panthers lost forward <b>Eetu Luostarinen</b>',
+  game: function (container) {
+    container.innerHTML = `<div><strong>Mini Maze</strong><br><canvas id='mazeGame' width='250' height='250' style='background:#fff;border-radius:8px; touch-action:none;'></canvas></div>`;
+    const canvas = document.getElementById('mazeGame');
+    const ctx = canvas.getContext('2d');
+    let player = { x: 10, y: 10, size: 20 };
+    const goal = { x: 210, y: 210, size: 20 };
+    const walls = [
+      {x: 0, y: 50, w: 200, h: 10},
+      {x: 50, y: 100, w: 200, h: 10},
+      {x: 0, y: 150, w: 200, h: 10},
+      {x: 100, y: 200, w: 150, h: 10}
+    ];
+
+    function drawMaze() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#eee';
+      ctx.fillRect(goal.x, goal.y, goal.size, goal.size);
+      ctx.fillStyle = '#444';
+      walls.forEach(w => ctx.fillRect(w.x, w.y, w.w, w.h));
+      ctx.fillStyle = '#3B82F6';
+      ctx.fillRect(player.x, player.y, player.size, player.size);
+    }
+
+    function collides(nx, ny) {
+      return walls.some(w =>
+        nx < w.x + w.w &&
+        nx + player.size > w.x &&
+        ny < w.y + w.h &&
+        ny + player.size > w.y
+      );
+    }
+
+    function startDrag(e) {
+      e.preventDefault();
+      canvas.addEventListener('mousemove', drag);
+      canvas.addEventListener('mouseup', stopDrag);
+    }
+
+    function drag(e) {
+      const rect = canvas.getBoundingClientRect();
+      let nx = e.clientX - rect.left - player.size / 2;
+      let ny = e.clientY - rect.top - player.size / 2;
+      if (!collides(nx, ny)) {
+        player.x = nx;
+        player.y = ny;
+        drawMaze();
+      }
+      if (
+        player.x + player.size > goal.x &&
+        player.y + player.size > goal.y
+      ) {
+        canvas.removeEventListener('mousemove', drag);
+        canvas.removeEventListener('mouseup', stopDrag);
+        successPopup("🏁 You reached the goal! Keep scrolling.");
+      }
+    }
+
+    function stopDrag() {
+      canvas.removeEventListener('mousemove', drag);
+      canvas.removeEventListener('mouseup', stopDrag);
+    }
+
+    canvas.addEventListener('mousedown', startDrag);
+    drawMaze();
+  }
+});
+
+// Game 2: Reflex Tester
+gameStates.push({
+  selectorText: 'Luostarinen was handed a <b>5-minute major penalty</b>',
+  game: function (container) {
+    container.innerHTML = `<div><strong>Reflex Test!</strong><br><button class='game-btn' id='startReflex'>Start</button><div id='reflexResult'></div></div>`;
+    const btn = document.getElementById('startReflex');
+    const result = document.getElementById('reflexResult');
+    let start;
+    btn.onclick = () => {
+      btn.disabled = true;
+      result.innerText = 'Wait for it...';
+      setTimeout(() => {
+        start = performance.now();
+        result.innerHTML = `<button class='game-btn' id='clickNow'>CLICK!</button>`;
+        document.getElementById('clickNow').onclick = () => {
+          const end = performance.now();
+          const time = Math.floor(end - start);
+          successPopup(`⚡ Your time: ${time}ms! Scroll on!`);
+        };
+      }, Math.random() * 2000 + 1000);
+    };
+  }
+});
+
+// Game 3: Ghost Hunt
+gameStates.push({
+  selectorText: 'Luostarinen’s ejection would torment the Panthers like a <b>haunting ghost</b>',
+  game: function (container) {
+    container.innerHTML = `<div><strong>Ghost Hunt 🎯</strong><br><canvas id='ghostCanvas' width='250' height='150' style='background:#fff;border-radius:8px;'></canvas></div>`;
+    const canvas = document.getElementById('ghostCanvas');
+    const ctx = canvas.getContext('2d');
+    let ghostX = Math.random() * 200, ghostY = Math.random() * 100;
+    function drawGhost() {
+      ctx.clearRect(0, 0, 250, 150);
+      ctx.fillStyle = '#ccc';
+      ctx.beginPath();
+      ctx.arc(ghostX, ghostY, 15, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    drawGhost();
+    canvas.onclick = (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const clickY = e.clientY - rect.top;
+      if (Math.abs(clickX - ghostX) < 20 && Math.abs(clickY - ghostY) < 20) {
+        successPopup("👻 You caught the ghost! Play more at <a href='https://www.youyounews.live' style='color:#3B82F6;'>You You News</a>.");
+      }
+    };
+  }
+});
+
+function highlightAndBindGame() {
+  gameStates.forEach((state, index) => {
+    const allParagraphs = Array.from(document.querySelectorAll(".p1"));
+    allParagraphs.forEach(p => {
+      if (p.innerHTML.includes(state.selectorText)) {
+        const span = document.createElement('span');
+        span.className = 'game-fragment';
+        span.dataset.index = index;
+        span.innerHTML = state.selectorText;
+        p.innerHTML = p.innerHTML.replace(state.selectorText, span.outerHTML);
+      }
+    });
+  });
+}
+
+function successPopup(message) {
+  const panel = document.getElementById('gamePanel');
+  panel.classList.remove('shrink');
+  panel.innerHTML = `<div class='popup pulse-soft'>${message}</div>`;
+}
+
+function scrollHandler() {
+  const panel = document.getElementById('gamePanel');
+  let activated = false;
+  document.querySelectorAll('.game-fragment').forEach((el, idx) => {
+    const rect = el.getBoundingClientRect();
+    const inView = rect.top >= 0 && rect.top <= window.innerHeight * 0.5;
+    el.classList.remove('active-highlight');
+    if (inView && !activated) {
+      el.classList.add('active-highlight');
+      const container = document.getElementById('gamePanel');
+      container.classList.remove('shrink');
+      container.innerHTML = '';
+      gameStates[idx].game(container);
+      activated = true;
+    }
+  });
+  if (!activated) {
+    panel.classList.add('shrink');
+    panel.innerHTML = 'Slowly Scroll Down!';
+  }
+}
+
+window.addEventListener('load', () => {
+  highlightAndBindGame();
+  scrollHandler();
+  window.addEventListener('scroll', scrollHandler);
+});
+</script>
+
 </body>
 </html>
