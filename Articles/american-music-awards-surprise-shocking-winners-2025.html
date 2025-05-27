@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +30,16 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="New music releases and upcoming albums">
-    <meta name="author" content="Derek (Yue) Yu">
-    <meta name="keywords" content="News, You You, Tech, Sports, TV, Music, Forum, Discussion">
-    <title>Music Releases, Upcoming Albums, Pop Star Drama - You You News</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/youyounewslogo.png">
+    <meta name="description" content="American Music Awards 2025 announced with winners like Benson Boone, Billie Eillish, Taylor Swift, and Gracie Abrams. You You News: Your go-to source for fun news, trending stories, and music news. Stay informed with You You News!">
+    <meta name="author" content="You You News">
+    <meta name="keywords" content="American Music Awards, AMAs, Benson Boone, Billie Eillish, Taylor Swift, Gracie Abrams, Jennifer Lopez, Alex Warren, Gwen Stefani, News, You You News, You You, Fun News, Fun Stories,Music News, Celebrities, Singers, Trending News">
+    <title>AMAs Surprise: Shocking Winners and Unexpected Twists! - You You News</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <style>
+    <link rel="canonical" href="https://www.youyounews.live">
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -61,12 +64,40 @@
             color: var(--text-color);
             font-family: 'Times New Roman', serif;
         }
+        #footerlink a {
+            line-height: 1.6;
+            color: var(--light-bg);
+            font-family: 'Times New Roman', serif;
+        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+               .p1 {
+            font-size: 1.2em;
+        }
+        .shrinker {
+            text-align: center;
+            margin-right: 7vw;
+            margin-left: 7vw;
+            object-fit: cover;
+        }
+        .slider_image {
+            width: 432px;
+            height: 323px;
+            object-fit: cover;
+        }
+        div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 1px;
+        }
+        div.scroll-container img {
+            padding: 1px;
+        } 
         header {
             background:
                 /* top, transparent black, faked with gradient */ 
@@ -84,14 +115,16 @@
             padding: 20px 0;
             font-family: 'Times New Roman', serif;
         }
+        pre {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+            text-align: center;
+            margin: auto;
+            white-space: pre-wrap;
+        }
         header h1 {
             font-size: 2.5em;
             letter-spacing: -1px;
-        }
-        #footerlink a {
-            line-height: 1.6;
-            color: var(--light-bg);
-            font-family: 'Times New Roman', serif;
         }
         nav {
             background-color: #34495e;
@@ -199,20 +232,6 @@
             padding: 20px 0;
             margin-top: 30px;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #2980b9;
-        }
-        /* Style all font awesome icons */
         .fa {
         font-size: 30px;
         width: 60px;
@@ -229,6 +248,19 @@
         opacity: 0.7;
         width: 80px;
         background-color:#A6FFB9
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
         }
         .bbb {
             height: 50vh;
@@ -279,6 +311,53 @@
             box-shadow: 22px 22px var(--color-blue);
             z-index: -2;
         }
+        /* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px #ffcb6b, 0 0 50px #ffc107, 0 0 80px #ff5722;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 10px #ffcb6b, 0 0 20px #ffc107, 0 0 30px #ff9800;
+    transform: scale(1);
+  }
+}
+
+.glow-reward {
+  animation: glow 1.2s ease-in-out infinite;
+  border: 2px solid #ffc107 !important;
+  background-color: #fff3cd !important;
+  color: #d35400 !important;
+  text-shadow: 0 0 3px #fff;
+}
+#closePopupButton:hover {
+  background-color: #ff9800;
+  color: white;
+  transform: scale(1.05);
+}
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-soft {
+  animation: subtlePulse 2.5s ease-in-out infinite;
+}
+
         @keyframes float {
             0% {
                 transform: translatey(0px);
@@ -316,182 +395,29 @@
             <p>Making News Fun 4 U!</p>
         </div>
     </header>
-
     <nav>
         <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="tech">Tech</a></li>
-            <li><a href="sports">Sports</a></li>
-            <li><a href="tv">TV</a></li>
-            <li1><a href="music">Music</a></li1>
-            <li><a href="working">Forums</a></li>
-        </ul>
+            <li><a href="../index">Home</a></li>
+            <li><a href="../Pages/tech">Tech</a></li>
+            <li><a href="../Pages/sports">Sports</a></li>
+            <li><a href="../Pages/tv">TV</a></li>
+            <li1><a href="../Pages/music">Music</a></li1>
+            <li><a href="/Pages/working">Forums</a></li></ul>
     </nav>
-
     <div class="container">
-        <section>
-            <h2>Latest Blog Sections</h2>
-            <div class="section-grid">
-                 <div data-aos="fade-up">
-            <article class="section-card">
-            <img src="https://people.com/thmb/fyCBJFrZhmIQePUqU12NlyEQKOY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/Lainey-Wilson-Benson-Boone-Ciara-AMAs9_11252019-ce814dee54c547c4ac2a55e31daf99ae.jpg
-            " alt="Music Blog" loading="lazy">
-                <div class="section-content">
-                    <h2>AMAs Surprise: Shocking Winners and Unexpected Twists!</h2>
-                    <p>The 2025 American Music Awards featured jaw-dropping moments as <b>Billie Eilish</b> triumphed for Artist...</p>
-                    <a href="/Articles/american-music-awards-surprise-shocking-winners-2025.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
+        <div class="shrinker">
+        <h2>As Surprise: Shocking Winners and Unexpected Twists!</h2>
+        <br>
+        <div class="scroll-container">
+            <img src='https://people.com/thmb/fyCBJFrZhmIQePUqU12NlyEQKOY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/Lainey-Wilson-Benson-Boone-Ciara-AMAs9_11252019-ce814dee54c547c4ac2a55e31daf99ae.jpg' alt="Cinque Terre" class="slider_image" loading="lazy">
+            <img src='https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/2025_AMAs_poster.png/220px-2025_AMAs_poster.png' alt="Cinque Terre" class="slider_image" loading="lazy">
+            <img src='https://images.toofab.com/image/36/4by3/2025/05/27/3670365a29d44a70b61baba5530c775a_md.jpg' alt="Cinque Terre" class="slider_image" loading="lazy">
+          </div>
+        <pre>
+        <p class="p1"><div data-aos="fade-up"><p class="p1">The 2025 American Music Awards featured jaw-dropping moments as <b>Billie Eilish</b> triumphed for Artist of the Year. Meanwhile, Kendrick Lamar topped the nominations with an astounding <b>10 nods</b>, intriguingly leaving fans wondering if he’d magically break records or just establish new levels of disappointment.</p></div><br><div data-aos="fade-up"><p class="p1">As the night unfolded, both <b>hosts Jennifer Lopez</b> and presenters like <b>Wayne Brady</b> kept the excitement alive, though one couldn't help but wonder if they planned a surprise dance-off. Kendrick’s possibility of winning all categories could tie him with legends like <b>Michael Jackson</b>, making the stakes higher than your average high school prom.</p></div><br><div data-aos="fade-up"><p class="p1">The audience watched anxiously as <b>Gracie Abrams</b> snagged New Artist of the Year, while <b>Kendrick’s captivating “Not Like Us”</b> was just one song away from taking it all. With presenters ranging from <b>Ciara</b> to <b>Tiffany Haddish</b>, did anyone really pay attention to the actual awards? Or were we all there for the celebrity gossip?</p></div><br><div data-aos="fade-up"><p class="p1">As always, the night culminated in unforgettable performances, showcasing talents like <b>Gwen Stefani</b> and <b>Gloria Estefan</b>, proving that venue decor isn’t the only thing worth a standing ovation. With the winners list now out, fans are left eagerly predicting next year’s drama whilst planning their AMAs viewing parties—pajamas included!</p></div><br><div data-aos="fade-up"><p class="p1"></p></div></p>
+        </pre>
         </div>
-                 <div data-aos="fade-up">
-            <article class="section-card">
-            <img src="https://swedenherald.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fstatic.swedenherald.com%2F415b5901-d183-4bf4-8613-ab4a8df0bc4e%2F415b5901-d183-4bf4-8613-ab4a8df0bc4e.jpg&w=1600&q=75
-            " alt="Music Blog" loading="lazy">
-                <div class="section-content">
-                    <h2>Who Won the Songwriter of the Year? Meet Charli XCX</h2>
-                    <p>Charli XCX just bagged the <b>coveted Ivor Novello award</b> for songwriter of the year,...</p>
-                    <a href="/Articles/charli-xcx-chart-topping-clutches-ivor-novello-songwriter-of-the-year.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-            <img src="https://people.com/thmb/lt6N2geeNBcXxnMq03AQpz1ZD_4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(674x368:676x370)/adam-david-michael-buble-the-voice-052125-3-e0cbd2e6fcad4e60af610e932160fae3.jpg
-            " alt="Music Blog" loading="lazy">
-                <div class="section-content">
-                    <h2>The Voice Crowns New Champion in Shocking Finale</h2>
-                    <p>In a dramatic showdown on May 20, <b>Adam David</b> clinched victory on The Voice...</p>
-                    <a href="/Articles/the-voice-crowns-new-champion-in-shocking-finale-2025.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-            <img src="https://i.cbc.ca/1.7538159.1747526194!/cpImage/httpImage/image.jpg_gen/derivatives/16x9_1180/aptopix-switzerland-eurovision-song-contest.jpg?im=Resize%3D780
-            " alt="Music Blog">
-                <div class="section-content">
-                    <h2>Austrian Opera Singer Wins Eurovision With Epic Vocals</h2>
-                    <p>JJ, A Classically Trained Countertenor From Austria, Stole The Show At The 69th Eurovision...</p>
-                    <a href="/Articles/eurovision-won-by-austrian-opera-singer.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-            <img src="https://www.billboard.com/wp-content/uploads/2025/02/Smurfs-Official-Trailer-2025-Movie-Rihanna-billboard-1548.jpg
-            " alt="Music Blog">
-                <div class="section-content">
-                    <h2>Rihanna Teases New Song While Album Wait Continues</h2>
-                    <p>Rihanna Fans Can Breathe A Little Easier—The Pop Icon Has Announced A New Song,...</p>
-                    <a href="/Articles/rihanna-smurfs-new-song-album-movie.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-            <article class="section-card">
-            <img src="https://s.yimg.com/ny/api/res/1.2/Ffi7nZxraICUvpA2Ymv2MQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU1Nw--/https://media.zenfs.com/en/gold_derby_993/e973c98d76b23ceb98fa2d3e8fc4465d
-            " alt="Music Blog">
-                <div class="section-content">
-                    <h2>American Idol Has Narrowed The Competition Down To The Top 5 Contestants, But Not Without A Dramatic Two-Episode Disney Night.</h2>
-                    <p>In Episode 16, The Top 7 Took Center Stage For A Magical Disney Night,...</p>
-                    <a href="/Articles/american-idol-top-five-singers-mothers-day.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://cdn.mos.cms.futurecdn.net/jnjcJyia94aeXKjAS4XTqU-650-80.jpg.webp
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>Shazam Launches Viral Charts Because We All Need Another Way To Judge Our Music Taste</h2>
-                            <p>Shazam has officially unveiled its <b>Viral Charts</b>, promising to deliver the <b>fastest-growing songs</b> in...</p>
-                            <a href="/Articles/shazam-launches-viral-charts-music.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://www.billboard.com/wp-content/uploads/media/los-tigres-del-norte-2002-live-billboard-1548.jpg?w=1024
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>The Cinco De Mayo Essential Playlist</h2>
-                            <p>Every year, Billboard creates a playlist so essential it could single-handedly fuel a fiesta....</p>
-                            <a href="/Articles/cinco-de-mayo-essential-playlist.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://www.ascap.com/~/media/site-pages/news-and-events/awards/2025/pop-awards/1000-x-1000-pop-music.jpg
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>ASCAP Pop Music Awards 2025 Crown New Kings of the Charts</h2>
-                            <p>At the glitzy ASCAP Pop Music Awards in Los Angeles, <b>Jack Antonoff</b> and <b>Teddy...</p>
-                            <a href="/Articles/ascap-pop-music-awards-2025-winners.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://backstage.officialcharts.com/sites/default/files/legacy_images/media/663262/miley-vs-lana.jpg
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>Sneak Peek! 2026's Upcoming Album Releases</h2>
-                            <p>Miley Cyrus and Lana Del Rey are leading 2026's musical stampede, with...</p>
-                            <a href="/Articles/Sneak Peek! 2026's Upcoming Album Releases.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                </div>
-                <div class="section-grid">
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi2HghBgmhMOLPO0WbXQiI1qt5LM6ovsZDJg&s
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>ED SHEERAN EMBRACES HIS INNER BOLLYWOOD STAR WITH AZIZAM</h2>
-                            <p>In an unexpected twist that left fans wondering if he was auditioning for a...</p>
-                            <a href="/Articles/ED SHEERAN EMBRACES HIS INNER BOLLYWOOD STAR WITH AZIZAM.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1020x680/public/d8/images/canvas/2024/08/28/0f47f05e-d6b1-4c29-bea1-ae17a26971b6_dbec454f.jpg?itok=gxj4CTB1&v=1724821730
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>BIG OCEAN: THE HEAR-THROBBING K-POP SENSATION THAT CAN'T HEAR YOU SCREAM</h2>
-                            <p>In an unexpected twist to the K-pop saga, Big Ocean has shown that hearing...</p>
-                            <a href="/Articles/BIG OCEAN: THE HEAR-THROBBING K-POP SENSATION THAT CAN'T HEAR YOU SCREAM.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                    <img src="https://assets.teenvogue.com/photos/673f1a29c4f19f93077998a2/16:9/w_2560%2Cc_limit/COACHELLA%25202026.jpg
-                    " alt="Music Blog">
-                        <div class="section-content">
-                            <h2>Coachella 2025: A Beautiful Mess in the Desert</h2>
-                            <p>Coachella, the crown jewel of music festivals where stars shine and influencers flex, is...</p>
-                            <a href="https://www.youyounews.live/Articles/Coachella%202025_%20A%20Beautiful%20Mess%20in%20the%20Desert.html" class="cta-button">Read Now!</a>
-                        </div>
-                    </article>
-                </div>
-                <div data-aos="fade-up">
-                    <article class="section-card">
-                        <img src="https://i.cbc.ca/1.7513070.1744908779!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_1180/music-drake-kendrick-lamar.jpg?im=Resize%3D780
-            " alt="Music Blog">
-                <div class="section-content">
-                    <h2>Drake Expands Lawsuit Against Universal Music Over Kendrick Lamar's Super Bowl Performance</h2>
-                    <p>In a twist worthy of a dramatic rap feud, Drake has expanded his defamation...</p>
-                    <a href="/Articles/Drake Expands Lawsuit Against Universal Music Over Kendrick Lamar's Super Bowl Performance.html" class="cta-button">Read Now!</a>
-                </div>
-            </article>
-        </div>
-        </div>
-            </div>
-        </section>
-        <section>
+         <section>
             <div class="section-grid">
                 <div data-aos="fade-up">
                 <article class="section-card" style="background: linear-gradient(90deg,rgba(91, 0, 227, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(106, 189, 212, 1) 100%);">
@@ -511,80 +437,108 @@
             </div>
         </section>
         <br>
-        <div class="bbb"><a href="https://reindeer-blessed-adversely.ngrok-free.app/">Want to Join the Discussion?</a></div>
+        <div class="bbb"><a href="/Pages/working">Want to Join the Discussion?</a></div>
         <section style="margin-top: 40px;">
             <h2>Community Forums</h2>
             <div class="section-grid">
-                <div class="forum-section">
-                    <h3>Tech Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Jensen Huang</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">deepseek vs openai</a>
-                            <span>189 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Programming Help</a>
-                            <span>376 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Tech Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Jensen Huang</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">deepseek vs openai</a>
+                                <span>189 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Programming Help</a>
+                                <span>376 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Sports Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">March Madness</a>
-                            <span>512 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Fantasy Football</a>
-                            <span>287 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Canucks vs Devils</a>
-                            <span>203 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Sports Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">March Madness</a>
+                                <span>512 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Fantasy Football</a>
+                                <span>287 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Canucks vs Devils</a>
+                                <span>203 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>TV Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Grant Ellis: The Bachelor</a>
-                            <span>421 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Streaming Recommendations</a>
-                            <span>356 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">TV Show Theories</a>
-                            <span>278 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>TV Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">Grant Ellis: The Bachelor</a>
+                                <span>421 discussions</span>
+                            </li>
+                            <li>
+                                <a href=/Pages/working.html">Streaming Recommendations</a>
+                                <span>356 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">TV Show Theories</a>
+                                <span>278 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="forum-section">
-                    <h3>Music Forum</h3>
-                    <ul class="forum-list">
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">New Releases</a>
-                            <span>332 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Genre Discussions</a>
-                            <span>245 discussions</span>
-                        </li>
-                        <li>
-                            <a href="https://reindeer-blessed-adversely.ngrok-free.app/">Concert Experiences</a>
-                            <span>167 discussions</span>
-                        </li>
-                    </ul>
+                <div data-aos="fade-up">
+                    <div class="forum-section">
+                        <h3>Music Forum</h3>
+                        <ul class="forum-list">
+                            <li>
+                                <a href="/Pages/working.html">New Releases</a>
+                                <span>332 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Genre Discussions</a>
+                                <span>245 discussions</span>
+                            </li>
+                            <li>
+                                <a href="/Pages/working.html">Concert Experiences</a>
+                                <span>167 discussions</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
+    </div>
+    <!-- Login Rewards Modal -->
+    <div id="loginRewardsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background-color: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: popIn 0.5s ease-out;">
+            <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666;">&times;</span>
+            <h2 style="color: #2c3e50; margin-bottom: 15px;">Welcome Back!</h2>
+            <div id="streakCounter" style="font-size: 18px; color: #3498db; margin-bottom: 20px;">
+                <span>Your login streak: <strong id="currentStreak">0</strong> days</span>
+            </div>
+            
+            <div id="weeklyRewards" style="display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap;">
+                <!-- Days will be generated by JavaScript -->
+            </div>
+            
+            <div id="rewardMessage" style="margin: 20px 0; padding: 15px; border-radius: 8px; background-color: #f4f4f8; font-weight: bold;"></div>
+            
+            <button id="claimReward" style="background-color: #3498db; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+                Claim Daily Reward
+            </button>
+        </div>
     </div>
 
     <footer>
@@ -592,11 +546,7 @@
             <p>&copy; 2025 You You News. All Rights Reserved.</p>
             <p>Connect with us on social media</p>
             <a href="https://www.instagram.com/youyou_news/" class="fa fa-instagram"></a>
-            <div id="footerlink">
-                <a href="/Terms_and_Conditions/terms_of_service.html">Terms of Service</a>
-            </div>
-            <br>
-            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo">
+            <img src="../Assets/sectigo_trust_seal_md_106x42.png" alt="Verified Logo" loading="lazy">
         </div>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -686,7 +636,8 @@
         "Read and read are different",
         "You're getting into Harvard",
         "BE CONFIDENT! If Benny Blanco can pull Selena Gomez, u can do anything",
-        "You warm my heart :>"
+        "You warm my heart :>",
+        "By referring friends, you can change my avatar (top-right)!"
         ];
 
         // Create a function to add the whale to the page
@@ -697,7 +648,7 @@
         
         // Use an img element with the exact whale image
         whale.innerHTML = `
-            <img src="/Assets/whale.png" alt="Watercolor whale swimming" />
+            <img src="/Assets/whale.png" alt="Watercolor whale swimming" loading="lazy" />
         `;
         
         // Randomize starting position (top position)
