@@ -3,6 +3,34 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://www.youyounews.live/Articles/chelsea-makes-uefa-history-with-comeback-victory.html</loc>
+    <lastmod>2025-05-28</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-28</news:publication_date>
+      <news:title>Chelsea Makes UEFA History with Epic Comeback Victory - You You News</news:title>
+      <news:keywords>Chelsea, Real Betis, UEFA, Soccer, Football, Championship, Comeback, News, You You News, You You, Fun News, Fun Stories, Europe, Sports News, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.youyounews.live/Articles/how-to-train-your-dragon-june-13-live-movie-preview.html</loc>
+    <lastmod>2025-05-28</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-28</news:publication_date>
+      <news:title>Summer Blockbuster: June 13 How to Train Your Dragon Preview! - You You News</news:title>
+      <news:keywords>How to Train Your Dragon, Movie, Summer, Preview, Live Action, Remake, DreamWorks, News, You You News, You You, Fun News, Fun Stories, TV News, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.youyounews.live/Articles/canadians-dominate-french-open-gabriel-diallo-and-denis-shapovalov.html</loc>
     <lastmod>2025-05-26</lastmod>
     <priority>0.80</priority>
