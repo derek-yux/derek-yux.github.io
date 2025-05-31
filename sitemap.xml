@@ -3,6 +3,34 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://www.youyounews.live/Articles/uefa-finals-preview-paris-saint-germain-inter-milan.html</loc>
+    <lastmod>2025-05-30</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-30</news:publication_date>
+      <news:title>UEFA Finals Preview: Youth vs Experience Showdown! - You You News</news:title>
+      <news:keywords>UEFA, Champions League, Paris Saint-Germain, Inter Milan, PSG, Soccer, Football, Finals, Munich, News, You You News, You You, Fun News, Fun Stories, Sports News, TV News, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.youyounews.live/Articles/taylor-swift-reclaims-first-six-albums.html</loc>
+    <lastmod>2025-05-30</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-30</news:publication_date>
+      <news:title>Taylor Swift Reclaims Her Music Empire: The Saga Continues! - You You News</news:title>
+      <news:keywords>Taylor Swift, Albums, Music, Label, Song, Singer, Songwriter, News, You You News, You You, Fun News, Fun Stories, Music News, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.youyounews.live/Articles/chelsea-makes-uefa-history-with-comeback-victory.html</loc>
     <lastmod>2025-05-28</lastmod>
     <priority>0.80</priority>
