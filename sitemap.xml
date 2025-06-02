@@ -3,6 +3,48 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://www.youyounews.live/Articles/all-i-want-for-christmas-is-mariah-carey's-hottest-summer-album.html</loc>
+    <lastmod>2025-06-02</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-06-02</news:publication_date>
+      <news:title>All I Want For CHRISTMAS Is...Mariah Carey's Hottest Summer Album?? - You You News</news:title>
+      <news:keywords>Mariah Carey, New Album, All I Want For Christmas Is You, Sixteenth album, 16, Tease, June, Song, Singer, Music, New Music, News, Instagram, You You News, You You, Fun News, Fun Stories Music News, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.youyounews.live/Articles/love-money-and-shaq-2025-reality-tv-summer-preview.html </loc>
+    <lastmod>2025-06-02</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-06-02</news:publication_date>
+      <news:title>Love, Money, and Shaq? 2025 Reality TV Summer Preview - You You News</news:title>
+      <news:keywords>Shaquille O'Neal, Love Island, Real Housewives, Bachelor, Reality TV, Bachelor in Paradise, News, You You News, Summer, You You, Drama, Fun News, Fun Stories, Trending News, Big Brother, Below Deck</news:keywords>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.youyounews.live/Articles/salesforce-snags-startup-moonhub-but-misses-full-buyout.html</loc>
+    <lastmod>2025-06-02</lastmod>
+    <priority>0.80</priority>
+    <news:news>
+      <news:publication>
+        <news:name>You You News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-06-02</news:publication_date>
+      <news:title>Salesforce Snags Startup Moonhub but Misses Full Buyout - You You News</news:title>
+      <news:keywords>Salesforce, Moonhub, Startup, Nancy Xu, Buyout, Purchase, AI, Virtual Reality, News, You You News, You You, Fun News, Fun Stories, Tech News, Trending News</news:keywords>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.youyounews.live/Articles/uefa-finals-preview-paris-saint-germain-inter-milan.html</loc>
     <lastmod>2025-05-30</lastmod>
     <priority>0.80</priority>
