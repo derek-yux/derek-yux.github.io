@@ -1,626 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-
-  <url>
-    <loc>https://www.youyounews.live/Articles/nvidia-jensen-huang-and-anthropic-ceo-ai-clash-of-titans.html</loc>
-    <lastmod>2025-06-13</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-06-13</news:publication_date>
-      <news:title>Nvidia’s Jensen Huang Says 'Almost Everything' Antrhopic CEO Claims is Fake - You You News</news:title>
-      <news:keywords>fun news, toronto news, anthropic ceo, jensen huang, nvidia, nvidia and anthropic, viral stories, positive news, entertainment news, AI news, uplifting content, trending stories, you you news</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/nba-finals-pacers-haliban-haliburton-controversial-nickname.html</loc>
-    <lastmod>2025-06-13</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-06-13</news:publication_date>
-      <news:title>NBA Finals: 'Haliban' Haliburton's Controversial Nicknames Heat Up! - You You News</news:title>
-      <news:keywords>fun news, toronto news, haliban, haliburton, nba finals, indiana pacers, comeback playoffs, viral stories, positive news, entertainment news, AI news, uplifting content, trending stories, you you news</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/the-traitors-season-4-cast-stars-tv.html</loc>
-    <lastmod>2025-06-13</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-06-13</news:publication_date>
-      <news:title>The Traitors Season 4 Cast: A Mashup of Stars! - You You News</news:title>
-      <news:keywords>fun news, toronto news, the traitors, tv cast reveal, viral stories, positive news, entertainment news, AI news, uplifting content, trending stories, you you news</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/kendrick-lamar-steals-toronto-spotlight-from-drake.html</loc>
-    <lastmod>2025-06-13</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-06-13</news:publication_date>
-      <news:title>Kendrick Lamar Steals Toronto Fans From Drake in Standing Ovation - You You News</news:title>
-      <news:keywords>kendrick lamar toronto, kendrick toronto concert, kendrick vs drake, fun news, toronto news, viral stories, positive news, entertainment news, AI news, uplifting content, trending stories, you you news</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/all-i-want-for-christmas-is-mariah-carey's-hottest-summer-album.html</loc>
-    <lastmod>2025-06-02</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-06-02</news:publication_date>
-      <news:title>All I Want For CHRISTMAS Is...Mariah Carey's Hottest Summer Album?? - You You News</news:title>
-      <news:keywords>Mariah Carey, New Album, All I Want For Christmas Is You, Sixteenth album, 16, Tease, June, Song, Singer, Music, New Music, News, Instagram, You You News, You You, Fun News, Fun Stories Music News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/love-money-and-shaq-2025-reality-tv-summer-preview.html </loc>
-    <lastmod>2025-06-02</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-06-02</news:publication_date>
-      <news:title>Love, Money, and Shaq? 2025 Reality TV Summer Preview - You You News</news:title>
-      <news:keywords>Shaquille O'Neal, Love Island, Real Housewives, Bachelor, Reality TV, Bachelor in Paradise, News, You You News, Summer, You You, Drama, Fun News, Fun Stories, Trending News, Big Brother, Below Deck</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/salesforce-snags-startup-moonhub-but-misses-full-buyout.html</loc>
-    <lastmod>2025-06-02</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-06-02</news:publication_date>
-      <news:title>Salesforce Snags Startup Moonhub but Misses Full Buyout - You You News</news:title>
-      <news:keywords>Salesforce, Moonhub, Startup, Nancy Xu, Buyout, Purchase, AI, Virtual Reality, News, You You News, You You, Fun News, Fun Stories, Tech News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/uefa-finals-preview-paris-saint-germain-inter-milan.html</loc>
-    <lastmod>2025-05-30</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-30</news:publication_date>
-      <news:title>UEFA Finals Preview: Youth vs Experience Showdown! - You You News</news:title>
-      <news:keywords>UEFA, Champions League, Paris Saint-Germain, Inter Milan, PSG, Soccer, Football, Finals, Munich, News, You You News, You You, Fun News, Fun Stories, Sports News, TV News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/taylor-swift-reclaims-first-six-albums.html</loc>
-    <lastmod>2025-05-30</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-30</news:publication_date>
-      <news:title>Taylor Swift Reclaims Her Music Empire: The Saga Continues! - You You News</news:title>
-      <news:keywords>Taylor Swift, Albums, Music, Label, Song, Singer, Songwriter, News, You You News, You You, Fun News, Fun Stories, Music News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/chelsea-makes-uefa-history-with-comeback-victory.html</loc>
-    <lastmod>2025-05-28</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-28</news:publication_date>
-      <news:title>Chelsea Makes UEFA History with Epic Comeback Victory - You You News</news:title>
-      <news:keywords>Chelsea, Real Betis, UEFA, Soccer, Football, Championship, Comeback, News, You You News, You You, Fun News, Fun Stories, Europe, Sports News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/how-to-train-your-dragon-june-13-live-movie-preview.html</loc>
-    <lastmod>2025-05-28</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-28</news:publication_date>
-      <news:title>Summer Blockbuster: June 13 How to Train Your Dragon Preview! - You You News</news:title>
-      <news:keywords>How to Train Your Dragon, Movie, Summer, Preview, Live Action, Remake, DreamWorks, News, You You News, You You, Fun News, Fun Stories, TV News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/canadians-dominate-french-open-gabriel-diallo-and-denis-shapovalov.html</loc>
-    <lastmod>2025-05-26</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-26</news:publication_date>
-      <news:title>Canadians Dominate French Open, Nobody Saw It Coming! - You You News</news:title>
-      <news:keywords>French Open, Gabriel Diallo, Denis Shapovalov, Tennis, You You News, You You, Fun News, Fun Stories, Sports News, TV News, Forum, Discussion, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/american-music-awards-surprise-shocking-winners-2025.html</loc>
-    <lastmod>2025-05-26</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-26</news:publication_date>
-      <news:title>AMAs Surprise: Shocking Winners and Unexpected Twists! - You You News</news:title>
-      <news:keywords>American Music Awards, AMAs, Benson Boone, Billie Eillish, Taylor Swift, Gracie Abrams, Jennifer Lopez, Alex Warren, Gwen Stefani, News, You You News, You You, Fun News, Fun Stories,Music News, Celebrities, Singers, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/florida-panthers-face-penalty-drama-in-eastern-conference-finals.html</loc>
-    <lastmod>2025-05-24</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-24</news:publication_date>
-      <news:title>Panthers Face Penalty Drama in Eastern Conference Finals - You You News</news:title>
-      <news:keywords>Florida Panthers, Carolina Hurricanes, NHL, Eastern Conference Finals, Eetu Luostarinen, Sam Reinhart, Playoffs, News, You You News, You You, Fun News, Fun Stories, Tech News, Sports News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/charli-xcx-chart-topping-clutches-ivor-novello-songwriter-of-the-year.html</loc>
-    <lastmod>2025-05-24</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-24</news:publication_date>
-      <news:title>Who Won the Songwriter of the Year? Meet Charli XCX - You You News</news:title>
-      <news:keywords>Charli XCX, Songwriter of the Year, Ivor Novello, Music Awards, Album, Brat, Singer, News, You You News, You You, Fun News, Fun Stories, Music News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/apple-smart-glasses-set-for-2026-debut.html</loc>
-    <lastmod>2025-05-23</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-23</news:publication_date>
-      <news:title>Apple's Smart Glasses Set for 2026 Debut - You You News</news:title>
-      <news:keywords>Apple, Smart Glasses, 2026, Debut, New Tech, News, You You News, You You, Fun News, Fun Stories, Tech News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/trump-bans-international-students-from-harvard.html</loc>
-    <lastmod>2025-05-22</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-22</news:publication_date>
-      <news:title>Trump Bans Harvard From Admitting International Students - You You News</news:title>
-      <news:keywords>Harvard, Trump, Ban, International Students, University, Undergraduate, Enrollment, Tariffs, News, You You News, You You, Fun News, Fun Stories, TV News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/openai-drops-6.5-billion-dollar-surprise-on-apple-buying-startup.html</loc>
-    <lastmod>2025-05-21</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-20</news:publication_date>
-      <news:title>OpenAI Drops $6.5 Billion Surprise on Apple - You You News</news:title>
-      <news:keywords>OpenAI, Apple, Jony Ive, Startup, iPhone, News, You You News, You You, Fun News, Fun Stories, Tech News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/the-voice-crowns-new-champion-in-shocking-finale-2025.html</loc>
-    <lastmod>2025-05-21</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-20</news:publication_date>
-      <news:title>The Voice Crowns New Champion in Shocking Finale - You You News</news:title>
-      <news:keywords>The Voice, Champion, Singer, Michale Bublé, News, You You News, You You, Fun News, Fun Stories, TV News, Music News, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/nba-unpredictable-final-four-playoffs.html</loc>
-    <lastmod>2025-05-20</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-20</news:publication_date>
-      <news:title>NBA's Unpredictable Final Four Takes Center Stage - You You News</news:title>
-      <news:keywords>NBA, Final Four, Indiana Pacers, New York Knicks, Oklahoma City Thunder, Playoffs, Western Conference Finals, Eastern Conference Finals, Minnesota Timberwolves, Game 1, Basketball, News, You You News, You You, Fun News, Fun Stories, Sports News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/google-unveils-next-ai-mode.html</loc>
-    <lastmod>2025-05-20</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-20</news:publication_date>
-      <news:title>Google Unveils Next AI Mode: What Could Go Wrong? - You You News</news:title>
-      <news:keywords>Google, AI Mode, Search Engine, News, You You News, You You, Fun News, Fun Stories, Tech News, Forum, Discussion, Trending News</news:keywords>
-    </news:news>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.youyounews.live/</loc>
-    <lastmod>2025-05-19</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://www.youyounews.live/index</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://www.youyounews.live/Pages/tech</loc>
-    <lastmod>2025-05-19</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.youyounews.live/Pages/sports</loc>
-    <lastmod>2025-05-19</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.youyounews.live/Pages/tv</loc>
-    <lastmod>2025-05-19</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.youyounews.live/Pages/music</loc>
-    <lastmod>2025-05-19</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.youyounews.live/Pages/working</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/nvidia-unveils-nvlink-fusion-future-of-ai-dominance.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-19</news:publication_date>
-      <news:title>Nvidia Unveils NVLink Fusion: The Future Is Now - You You News</news:title>
-      <news:keywords>Nvidia, NVLink Fusion, AI, Future, News, You You News, You You, Fun News, Fun Stories, Tech News, Forum, Discussion, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/coco-gauff-italian-open-comdy-gold-tennis.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/scarlett-johansson-steals-saturday-night-live-snl-finale.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-18</news:publication_date>
-      <news:title>Scarlett Johansson Steals Spotlight In SNL Season Finale - You You News</news:title>
-      <news:keywords>Scarlett Johnasson, Saturday Night Live, SNL, Season Finale, News, You You News, You You, Fun News, Fun Stories, Tech News, Sports News, TV News, Music News, Forum, Discussion, Trending New</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/eurovision-won-by-austrian-opera-singer.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-18</news:publication_date>
-      <news:title>Austrian Opera Singer Wins Eurovision With Epic Vocals - You You News</news:title>
-      <news:keywords>Austria, Eurovision, Singer, Music, Opera, Pop, Vocals, News, You You News, You You, Fun News, Fun Stories, Music News, Forum, Discussion, Trending News</news:keywords>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Pages/working.html</loc>
-    <lastmod>2025-05-19</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.youyounews.live/Terms_and_Conditions/terms_of_service.html</loc>
-    <lastmod>2025-05-19</lastmod>
+    <lastmod>2025-06-14</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.youyounews.live/Articles/trump-saudi-arabia-tech-ai-meeting.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
+    <loc>https://www.youyounews.live/Terms_and_Conditions/privacy_policy.html</loc>
+    <lastmod>2025-06-14</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.youyounews.live/Articles/nasdaq-us-china-deal-trump-tech-stocks.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
+    <loc>https://www.youyounews.live/Articles/nvidia-jensen-huang-and-anthropic-ceo-ai-clash-of-titans.html</loc>
+    <lastmod>2025-06-14</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.youyounews.live/Articles/netflix-ai-overhaul-user-interface.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
+    <loc>https://www.youyounews.live/Articles/kendrick-lamar-steals-toronto-spotlight-from-drake.html</loc>
+    <lastmod>2025-06-14</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.youyounews.live/Articles/gta-6-the-most-anticipated-video-game-ever.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
+    <loc>https://www.youyounews.live/Articles/all-i-want-for-christmas-is-mariah-carey's-hottest-summer-album.html</loc>
+    <lastmod>2025-06-14</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.youyounews.live/Articles/meta-llama-ai-conference.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
+    <loc>https://www.youyounews.live/Articles/openai-drops-6.5-billion-dollar-surprise-on-apple-buying-startup.html</loc>
+    <lastmod>2025-06-14</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.youyounews.live/Articles/meta-microsoft-stocks-quarter-report.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2025-06-14</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.youyounews.live/Articles/Fossil%20Fuels%20and%20AI_Nvidia%20and%20Amazon%20Discuss%20Future.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
+    <loc>https://www.youyounews.live/Articles/google-unveils-next-ai-mode.html</loc>
+    <lastmod>2025-06-14</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.youyounews.live/Articles/Gamestop%20Sells%20Out%20Nintendo%20Switch%202%20Within%20Minutes.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
+    <loc>https://www.youyounews.live/Articles/the-voice-crowns-new-champion-in-shocking-finale-2025.html</loc>
+    <lastmod>2025-06-14</lastmod>
+    <priority>0.80</priority>
   </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/Intel%20Announces%20Layoffs%20Aimed%20At%20Cost%20Reduction.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/Spotify%20Expands%20Global%20Reach%20with%20New%20Language%20Options.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/Zoom%20Outage%20Hits%20Thousands%20as%20Users%20Report%20Service%20Failures.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/maple-leafs-game-5-nfl-playoffs-coach-guessing-game.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/celtics-defeat-knicks-nba-playoffs-may-10.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/oilers-nhl-playoffs-advance-kings.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/lakers-nba-playoffs-timberwolves-eliminated.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/nba-indiana-pacers-milwaukee-bucks-overtime-2025.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/El%20Cl%C3%A1sico:%20The%20Endless%20Rivalry%20Between%20Barcelona%20And%20Real%20Madrid.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/NFL%20Draft%20Picks:%20Giants%20Secure%20Future%20With%20Jaxson%20Dart.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/lakers%20narrowly%20edge%20timberwolves%20in%20dramatic%20game.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/5%20NBA%20PLAYOFF%20BRACKET:%20WHERE%20CHAOS%20MEETS%20CINDERELLA%20STORIES.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/MITCHELL%20SAVES%20THE%20DAY%20WITH%20A%20GUSTO%20OF%20THREE-POINTERS.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/Montreal%20Canadiens%20Clinch%20Playoff%20Spot%20with%20Victory%20over%20Carolina%20Hurricanes.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/tarantino-heist-film-reservoir-dogs-movie.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/robert-prevost-pope-leo-xiv-american.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/teacher-appreciation-day-us-2025.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/met-gala-2025-fashion-celebrities-art-extravaganza.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/thunderbolts-movie-release-marvel.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/may-day-trump-protests.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/BC!%20Million%20Dollar%20Secret%20Unveils%20Hidden%20Fortunes%20and%20Twists%20in%20Kelowna.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/Hunger%20Games:%20Sunrise%20On%20The%20Reaping%20Unveils%20Teen%20Haymitch.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/HAILEE%20STEINFELD%20SPINS%20WEBS%20AND%20VOICES%20GWEN%20STACY%20AGAIN.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/Ryan%20Gosling%20Joins%20the%20Star%20Wars%20Universe%20as%20Starfighter.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/rihanna-smurfs-new-song-album-movie.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/american-idol-top-five-singers-mothers-day.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/shazam-launches-viral-charts-music.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/cinco-de-mayo-essential-playlist.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/ascap-pop-music-awards-2025-winners.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/Sneak%20Peek!%202026%27s%20Upcoming%20Album%20Releases.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/ED%20SHEERAN%20EMBRACES%20HIS%20INNER%20BOLLYWOOD%20STAR%20WITH%20AZIZAM.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/BIG%20OCEAN:%20THE%20HEAR-THROBBING%20K-POP%20SENSATION%20THAT%20CAN%27T%20HEAR%20YOU%20SCREAM.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/Coachella%202025_%20A%20Beautiful%20Mess%20in%20the%20Desert.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/index.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Pages/tech.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Pages/sports.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Pages/tv.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Pages/music.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Terms_and_Conditions/privacy_policy.html</loc>
-    <lastmod>2025-05-19</lastmod>
-    <priority>0.64</priority> </url>
-
 </urlset>
