@@ -150,6 +150,58 @@ def main():
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="You You News (also known as You-You-News and YouYouNews) is Toronto’s #1 fun news source: AI-curated uplifting stories, viral content & community forums. 15,000+ daily readers.">
+    <meta name="author" content="You You News">
+    <meta name="keywords" content="fun news, toronto news, viral stories, positive news, entertainment news, AI news, uplifting content, trending stories, you you news">
+    <title>""" + str(response_title) + """ | #1 Fun News Source in Toronto | You You News (You-You-News / YouYouNews) - AI-Powered Entertainment</title>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.youyounews.live/""" + str(final_html) + """"
+    },
+    "headline": '""" + str(response_title) + """',
+    "description": '""" + str(temp_repr[:16])+"""',
+    "image": [
+        {
+        "@type": "ImageObject",
+        "url": '""" + str(images[0]) + """',
+        "width": 432,
+        "height": 323,
+        "caption": "Live Image for """ + str(response_title) + """"
+        },
+        {
+        "@type": "ImageObject",
+        "url": '""" + str(images[1]) + """',
+        "width": 432,
+        "height": 323,
+        "caption": "Live Image for """ + str(response_title) + """"
+        }
+    ],
+    "datePublished": "2025-06-02T00:00:00+00:00",
+    "dateModified": "2025-06-02T00:00:00+00:00",
+    "author": {
+        "@type": "Organization",
+        "name": "You You News"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "You You News",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.youyounews.live/Assets/youyounewslogo.png",
+        "width": 300,
+        "height": 300
+        }
+    }
+    }
+    </script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4F7KKQ08M"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -175,17 +227,24 @@ def main():
         });
       });
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="You You News: Your go-to source for fun news, trending stories, tech updates, sports highlights, TV buzz, music news, and engaging forum discussions. Stay informed with You You News!">
-    <meta name="author" content="You You News">
-    <meta name="keywords" content="News, You You News, You You, Fun News, Fun Stories, Tech News, Sports News, TV News, Music News, Forum, Discussion, Trending News">
-    <title>""" + str(response_title) + """ - You You News</title>
+
     <link rel="icon" type="image/x-icon" href="../Assets/youyounewslogo.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://www.youyounews.live">
+
+     <!-- Open Graph / Social -->
+    <meta property="og:title" content="#1 Fun News Source in Toronto | You You News">
+    <meta property="og:description" content="Toronto's top-rated fun news: AI-curated uplifting stories with 9.7/10 emotional resonance. 15,000+ daily readers.">
+    <meta property="og:image" content="https://www.youyounews.live/Assets/youyounewslogo.png">
+    <meta property="og:url" content="https://www.youyounews.live">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Toronto's #1 Fun News Source | You You News">
+    <meta name="twitter:description" content="Experience AI-curated fun news with 142s avg engagement. 28.5 daily articles. Join 15k+ readers!">
+    <meta name="twitter:image" content="https://www.youyounews.live/Assets/youyounewslogo.png">
  <style>
         * {
             margin: 0;
