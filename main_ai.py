@@ -166,7 +166,7 @@ def main():
         "@id": "https://www.youyounews.live/""" + str(final_html) + """"
     },
     "headline": '""" + str(response_title) + """',
-    "description": '""" + str(temp_repr[:16])+"""',
+    "description": '""" + str(response_rest[:16])+"""',
     "image": [
         {
         "@type": "ImageObject",
