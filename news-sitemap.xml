@@ -3,55 +3,42 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
-    <loc>https://www.youyounews.live/Articles/nvidia-jensen-huang-and-anthropic-ceo-ai-clash-of-titans.html</loc>
-    <lastmod>2025-06-13</lastmod>
+    <loc>https://www.youyounews.live/Articles/tj-mcconnell-the-unexpected-nba-finals-hero.html</loc>
+    <lastmod>2025-06-19</lastmod>
     <priority>0.80</priority>
     <news:news>
       <news:publication>
         <news:name>You You News</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2025-06-13</news:publication_date>
-      <news:title>Nvidia’s Jensen Huang Says 'Almost Everything' Anthropic CEO Claims is Fake - You You News</news:title>
+      <news:publication_date>2025-06-19</news:publication_date>
+      <news:title>T.J. McConnell: The Unexpected NBA Finals Hero!</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.youyounews.live/Articles/nba-finals-pacers-haliban-haliburton-controversial-nickname.html</loc>
-    <lastmod>2025-06-13</lastmod>
+    <loc>https://www.youyounews.live/Articles/villa-votaility-love-island-dramatic-showdown-2025.html</loc>
+    <lastmod>2025-06-19</lastmod>
     <priority>0.80</priority>
     <news:news>
       <news:publication>
         <news:name>You You News</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2025-06-13</news:publication_date>
-      <news:title>NBA Finals: 'Haliban' Haliburton's Controversial Nicknames Heat Up! - You You News</news:title>
+      <news:publication_date>2025-06-19</news:publication_date>
+      <news:title>Villa Volatility: Love Island's Dramatic Showdown 2025</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.youyounews.live/Articles/the-traitors-season-4-cast-stars-tv.html</loc>
-    <lastmod>2025-06-13</lastmod>
+    <loc>https://www.youyounews.live/Articles/legal-wizards-unite-in-vancouver-ai-showdown.html</loc>
+    <lastmod>2025-06-19</lastmod>
     <priority>0.80</priority>
     <news:news>
       <news:publication>
         <news:name>You You News</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2025-06-13</news:publication_date>
-      <news:title>The Traitors Season 4 Cast: A Mashup of Stars! - You You News</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.youyounews.live/Articles/kendrick-lamar-steals-toronto-spotlight-from-drake.html</loc>
-    <lastmod>2025-06-13</lastmod>
-    <priority>0.80</priority>
-    <news:news>
-      <news:publication>
-        <news:name>You You News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2025-06-13</news:publication_date>
-      <news:title>Kendrick Lamar Steals Toronto Fans From Drake in Standing Ovation - You You News</news:title>
+      <news:publication_date>2025-06-19</news:publication_date>
+      <news:title>Legal Wizards Unite in Vancouver's AI Showdown</news:title>
     </news:news>
   </url>
 </urlset>
