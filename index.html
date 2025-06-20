@@ -2221,34 +2221,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const rewardBtn = document.getElementById("rewardsButton");
-            const claimBtn = document.getElementById("claimReward");
-            const today = new Date().toDateString();
-        
-            function updateGlowState() {
-                const claimed = localStorage.getItem("dailyRewardClaimed");
-                if (claimed === today) {
-                    rewardBtn.classList.remove("glow-reward");
-                } else {
-                    rewardBtn.classList.add("glow-reward");
-                }
-            }
-        
-            // Always update on page load
-            updateGlowState();
-        
-            // Attach glow removal after claim
-            if (claimBtn) {
-                claimBtn.addEventListener("click", function () {
-                    localStorage.setItem("dailyRewardClaimed", today);
-                    updateGlowState();
-                });
-            }
-        });
-        </script>        
+    </script>     
         <script>
 // ================================
 // PHASE 1: Engagement Boosters
