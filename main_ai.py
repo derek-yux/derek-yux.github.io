@@ -3896,6 +3896,20 @@ function waitForMs(ms) {
         }
     });
     </script>
+    <script>
+        if (window.innerWidth > 768) {
+            const script = document.createElement('script');
+            script.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+            document.body.appendChild(script);
+            script.onload = function() {
+                AOS.init({
+                    duration: 400,
+                    once: true,
+                    offset: 120
+                });
+            };
+        }
+    </script>
     
 </body>
 </html>"""
